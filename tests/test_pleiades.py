@@ -11,6 +11,7 @@ Test the pleiades module
 
 from pathlib import Path
 from pleiades_accession.pleiades import Pleiades
+from shapely import Point
 
 test_data_path = Path(__file__).parent / "data"
 
@@ -25,3 +26,8 @@ class TestPleiades:
         assert p._spatial_index is not None
         assert len(p._spatial_index) == 1244
         assert len(p._spatial_index_2_pid) == 1244
+        c = Point(32.2592853, 40.0619819)
+        results = p.spatial_query(c)
+        assert results == [
+            "582288341",
+        ]

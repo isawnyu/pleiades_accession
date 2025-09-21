@@ -144,13 +144,19 @@ class Pleiades:
 
     def _initialize_spatial_index(self):
         """Initialize the spatial index."""
+        logger = logging.getLogger(f"{__name__}:Pleiades._initialize_spatial_index")
         hulls = list()
-        for i, pid in enumerate(self.fs.index.keys()):
+        i = 0
+        for pid in self.fs.index.keys():
             place = self.get(pid)
             if place.footprint:
                 self._spatial_index_2_pid[i] = pid
+                i += 1
                 hulls.append(place.footprint)
         self._spatial_index = STRtree(hulls)
+        logger.info(
+            f"Generated spatial index with {len(self._spatial_index_2_pid):,} place footprints from Pleiades data"
+        )
 
     def _load_names_index(self, names_index_path: Path):
         """Load the names index from the specified path."""
@@ -171,3 +177,11 @@ class Pleiades:
     def __len__(self):
         """Return the number of places in the Pleiades data set"""
         return len(self.fs)
+
+    def spatial_query(self, geometry):
+        """Return Pleiades places within which this geometry intersects."""
+        if self._spatial_index is None:
+            raise RuntimeError("Spatial index not initialized")
+        match_indexes = self._spatial_index.query(geometry)
+        matched_pids = [self._spatial_index_2_pid[i] for i in match_indexes]
+        return matched_pids
