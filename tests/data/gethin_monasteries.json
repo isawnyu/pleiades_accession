@@ -1,0 +1,4523 @@
+{
+  "type": "FeatureCollection",
+  "@context": "https://raw.githubusercontent.com/LinkedPasts/linked-places/master/linkedplaces-context-v1.1.jsonld",
+  "citation": {
+    "id": "west_ghats_monast",
+    "type": "dataset",
+    "title": "Buddhist monasteries of the Western Ghats",
+    "author": [
+      {
+        "family": "Rees",
+        "given": "Gethin"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2020,
+          10,
+          5
+        ]
+      ]
+    },
+    "URL": "https://doi.org/10.5281/zenodo.998080",
+    "DOI": "10.60681/whg-dataset-693",
+    "publisher": "World Historical Gazetteer",
+    "publisher-place": "Pittsburgh, PA, USA",
+    "description": "Locations of early Buddhist rock-cut monasteries in the Western Ghats and Konkan coast regions of India. Only the caves cut between second century BCE and the early fifth century CE are included.",
+    "record_count": 55,
+    "source": "GPS, in person visits to the sites by the author",
+    "source_citation": "https://doi.org/10.1016/j.ara.2021.100307; https://ethos.bl.uk/OrderDetails.do?uin=uk.bl.ethos.609215"
+  },
+  "filename": "//app/media/downloads/73_west_ghats_monast_20250918_153849.json",
+  "description": "Locations of early Buddhist rock-cut monasteries in the Western Ghats and Konkan coast regions of India. Only the caves cut between second century BCE and the early fifth century CE are included.",
+  "features": [
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524424",
+      "properties": {
+        "pid": 6524424,
+        "src_id": "wgm1",
+        "title": "Ambivale",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q60785397",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.497052,
+                19.018668
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.497 19.019)",
+            "coordinates": [
+              73.497,
+              19.019
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Ambivale",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q60785397"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524425",
+      "properties": {
+        "pid": 6524425,
+        "src_id": "wgm2",
+        "title": "Kondane",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q15040927",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.38444444,
+                18.83972222
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.384 18.839)",
+            "coordinates": [
+              73.384,
+              18.839
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Kondane",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q15040927"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524426",
+      "properties": {
+        "pid": 6524426,
+        "src_id": "wgm3",
+        "title": "Pandavadara",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "Point",
+        "geowkt": "POINT(74.047 16.824)",
+        "coordinates": [
+          74.047,
+          16.824
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Pandavadara",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524427",
+      "properties": {
+        "pid": 6524427,
+        "src_id": "wgm4",
+        "title": "Pohale",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q59296643",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                74.191172,
+                16.790872
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(74.191 16.791)",
+            "coordinates": [
+              74.191,
+              16.791
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Pohale",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q59296643"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524428",
+      "properties": {
+        "pid": 6524428,
+        "src_id": "wgm5",
+        "title": "Chaul",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q1068374",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                72.9272,
+                18.5461
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(72.947 18.568)",
+            "coordinates": [
+              72.947,
+              18.568
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Chaul",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q1068374"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1274503"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "viaf:245125742"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524429",
+      "properties": {
+        "pid": 6524429,
+        "src_id": "wgm6",
+        "title": "Chaul Wagjai",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "Point",
+        "geowkt": "POINT(72.958 18.572)",
+        "coordinates": [
+          72.958,
+          18.572
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Chaul Wagjai",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524430",
+      "properties": {
+        "pid": 6524430,
+        "src_id": "wgm7",
+        "title": "Karanja",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "Point",
+        "geowkt": "POINT(72.948 18.876)",
+        "coordinates": [
+          72.948,
+          18.876
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Karanja",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524431",
+      "properties": {
+        "pid": 6524431,
+        "src_id": "wgm8",
+        "title": "Bedsa",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q4879428",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.53505887,
+                18.72131833
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.535 18.721)",
+            "coordinates": [
+              73.535,
+              18.721
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Bedsa",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q4879428"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524432",
+      "properties": {
+        "pid": 6524432,
+        "src_id": "wgm9",
+        "title": "Bhaja",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q854709",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.48194487,
+                18.72777778
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.481 18.729)",
+            "coordinates": [
+              73.481,
+              18.729
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Bhaja",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q854709"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524433",
+      "properties": {
+        "pid": 6524433,
+        "src_id": "wgm10",
+        "title": "Devgad",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "Point",
+        "geowkt": "POINT(73.452 18.768)",
+        "coordinates": [
+          73.452,
+          18.768
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Devgad",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524434",
+      "properties": {
+        "pid": 6524434,
+        "src_id": "wgm11",
+        "title": "Halkhurd",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "Point",
+        "geowkt": "POINT(73.314 18.818)",
+        "coordinates": [
+          73.314,
+          18.818
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Halkhurd",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524435",
+      "properties": {
+        "pid": 6524435,
+        "src_id": "wgm12",
+        "title": "Induri",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q24894384",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.6887303,
+                18.7369867
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.734 18.747)",
+            "coordinates": [
+              73.734,
+              18.747
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Induri",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q24894384"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524436",
+      "properties": {
+        "pid": 6524436,
+        "src_id": "wgm13",
+        "title": "Karle",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q6372431",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.47055556,
+                18.78333333
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.47 18.784)",
+            "coordinates": [
+              73.47,
+              18.784
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Karle",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q6372431"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "loc:sh2020008062"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0999"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524437",
+      "properties": {
+        "pid": 6524437,
+        "src_id": "wgm14",
+        "title": "Patan Lohagad",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q28402666",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.4867871,
+                18.7415538
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.5 18.733)",
+            "coordinates": [
+              73.5,
+              18.733
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Patan Lohagad",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q28402666"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524438",
+      "properties": {
+        "pid": 6524438,
+        "src_id": "wgm15",
+        "title": "Shelarwadi",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q15040935",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.704056,
+                18.692251
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.704 18.692)",
+            "coordinates": [
+              73.704,
+              18.692
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Shelarwadi",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q15040935"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524439",
+      "properties": {
+        "pid": 6524439,
+        "src_id": "wgm16",
+        "title": "Junnar Ambika",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q2445461",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.88,
+                19.2
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.884 19.186)",
+            "coordinates": [
+              73.884,
+              19.186
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Junnar Ambika",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q2445461"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1268761"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524440",
+      "properties": {
+        "pid": 6524440,
+        "src_id": "wgm17",
+        "title": "Junnar Bhimashankar",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q2445461",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.88,
+                19.2
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.888 19.182)",
+            "coordinates": [
+              73.888,
+              19.182
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Junnar Bhimashankar",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q2445461"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1268761"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524441",
+      "properties": {
+        "pid": 6524441,
+        "src_id": "wgm18",
+        "title": "Junnar Bhut Ling",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q2445461",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.88,
+                19.2
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.878 19.189)",
+            "coordinates": [
+              73.878,
+              19.189
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Junnar Bhut Ling",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q2445461"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1268761"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524442",
+      "properties": {
+        "pid": 6524442,
+        "src_id": "wgm19",
+        "title": "Junnar Dudharaya",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q2445461",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.88,
+                19.2
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.911 19.18)",
+            "coordinates": [
+              73.911,
+              19.18
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Junnar Dudharaya",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q2445461"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1268761"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524443",
+      "properties": {
+        "pid": 6524443,
+        "src_id": "wgm20",
+        "title": "Junnar Isolated",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q2445461",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.88,
+                19.2
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.891 19.246)",
+            "coordinates": [
+              73.891,
+              19.246
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Junnar Isolated",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q2445461"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1268761"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524444",
+      "properties": {
+        "pid": 6524444,
+        "src_id": "wgm21",
+        "title": "Junnar Lenyadri",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q2445461",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.88,
+                19.2
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.888 19.243)",
+            "coordinates": [
+              73.888,
+              19.243
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Junnar Lenyadri",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q2445461"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1268761"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524445",
+      "properties": {
+        "pid": 6524445,
+        "src_id": "wgm22",
+        "title": "Junnar Manmodi West",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q2445461",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.88,
+                19.2
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.873 19.192)",
+            "coordinates": [
+              73.873,
+              19.192
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Junnar Manmodi West",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q2445461"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1268761"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524446",
+      "properties": {
+        "pid": 6524446,
+        "src_id": "wgm23",
+        "title": "Junnar Sivneri East 1",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "Point",
+        "geowkt": "POINT(73.86 19.197)",
+        "coordinates": [
+          73.86,
+          19.197
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Junnar Sivneri East 1",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524447",
+      "properties": {
+        "pid": 6524447,
+        "src_id": "wgm24",
+        "title": "Junnar Sivneri East 2",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q2445461",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.88,
+                19.2
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.86 19.198)",
+            "coordinates": [
+              73.86,
+              19.198
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Junnar Sivneri East 2",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q2445461"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1268761"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524448",
+      "properties": {
+        "pid": 6524448,
+        "src_id": "wgm25",
+        "title": "Junnar Sivneri East 3",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q2445461",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.88,
+                19.2
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.86 19.199)",
+            "coordinates": [
+              73.86,
+              19.199
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Junnar Sivneri East 3",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q2445461"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1268761"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524449",
+      "properties": {
+        "pid": 6524449,
+        "src_id": "wgm26",
+        "title": "Junnar Sivneri East 4",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q2445461",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.88,
+                19.2
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.86 19.201)",
+            "coordinates": [
+              73.86,
+              19.201
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Junnar Sivneri East 4",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q2445461"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1268761"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524450",
+      "properties": {
+        "pid": 6524450,
+        "src_id": "wgm27",
+        "title": "Junnar Sivneri South",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q2445461",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.88,
+                19.2
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.856 19.194)",
+            "coordinates": [
+              73.856,
+              19.194
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Junnar Sivneri South",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q2445461"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1268761"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524451",
+      "properties": {
+        "pid": 6524451,
+        "src_id": "wgm28",
+        "title": "Junnar Sivneri West",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q2445461",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.88,
+                19.2
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.857 19.197)",
+            "coordinates": [
+              73.857,
+              19.197
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Junnar Sivneri West",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q2445461"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1268761"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524452",
+      "properties": {
+        "pid": 6524452,
+        "src_id": "wgm29",
+        "title": "Junnar Tulja",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q2445461",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.88,
+                19.2
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.836 19.209)",
+            "coordinates": [
+              73.836,
+              19.209
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Junnar Tulja",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q2445461"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1268761"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524453",
+      "properties": {
+        "pid": 6524453,
+        "src_id": "wgm30",
+        "title": "Jivdhan",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "Point",
+        "geowkt": "POINT(72.828 19.466)",
+        "coordinates": [
+          72.828,
+          19.466
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Jivdhan",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0100"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524454",
+      "properties": {
+        "pid": 6524454,
+        "src_id": "wgm31",
+        "title": "Kanheri",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q1356198",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                72.9064,
+                19.2083
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(72.905 19.208)",
+            "coordinates": [
+              72.905,
+              19.208
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Kanheri",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q1356198"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1268067"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "tgn:1103310"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0999"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524455",
+      "properties": {
+        "pid": 6524455,
+        "src_id": "wgm32",
+        "title": "Kondivte",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q6732862",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                72.874133,
+                19.130436
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(72.874 19.13)",
+            "coordinates": [
+              72.874,
+              19.13
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Kondivte",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q6732862"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "loc:n89100824"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "viaf:131467103"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0999"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524456",
+      "properties": {
+        "pid": 6524456,
+        "src_id": "wgm33",
+        "title": "Magathane",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "Point",
+        "geowkt": "POINT(72.857 19.219)",
+        "coordinates": [
+          72.857,
+          19.219
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Magathane",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524457",
+      "properties": {
+        "pid": 6524457,
+        "src_id": "wgm34",
+        "title": "Karad Chachegaon East",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q15040926",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                74.1522222,
+                17.2352778
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(74.163 17.255)",
+            "coordinates": [
+              74.163,
+              17.255
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Karad Chachegaon East",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q15040926"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524458",
+      "properties": {
+        "pid": 6524458,
+        "src_id": "wgm35",
+        "title": "Karad Chachegaon West",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q15040926",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                74.1522222,
+                17.2352778
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(74.162 17.257)",
+            "coordinates": [
+              74.162,
+              17.257
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Karad Chachegaon West",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q15040926"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524459",
+      "properties": {
+        "pid": 6524459,
+        "src_id": "wgm36",
+        "title": "Karad Jakinwadi South",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q15040926",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                74.1522222,
+                17.2352778
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(74.151 17.235)",
+            "coordinates": [
+              74.151,
+              17.235
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Karad Jakinwadi South",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q15040926"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524460",
+      "properties": {
+        "pid": 6524460,
+        "src_id": "wgm37",
+        "title": "Karad Jakinwadi West",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q15040926",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                74.1522222,
+                17.2352778
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(74.148 17.24)",
+            "coordinates": [
+              74.148,
+              17.24
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Karad Jakinwadi West",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q15040926"
+        }
+      ],
+      "when": {}
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524461",
+      "properties": {
+        "pid": 6524461,
+        "src_id": "wgm38",
+        "title": "Karad Tip",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q15040926",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                74.1522222,
+                17.2352778
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(74.162 17.253)",
+            "coordinates": [
+              74.162,
+              17.253
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Karad Tip",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q15040926"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524462",
+      "properties": {
+        "pid": 6524462,
+        "src_id": "wgm39",
+        "title": "Digevadi",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "Point",
+        "geowkt": "POINT(73.961 17.365)",
+        "coordinates": [
+          73.961,
+          17.365
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Digevadi",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524463",
+      "properties": {
+        "pid": 6524463,
+        "src_id": "wgm40",
+        "title": "Tamkhane",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "Point",
+        "geowkt": "POINT(73.871 17.415)",
+        "coordinates": [
+          73.871,
+          17.415
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Tamkhane",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524464",
+      "properties": {
+        "pid": 6524464,
+        "src_id": "wgm41",
+        "title": "Yeradvadi",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "Point",
+        "geowkt": "POINT(73.994 17.354)",
+        "coordinates": [
+          73.994,
+          17.354
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Yeradvadi",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524465",
+      "properties": {
+        "pid": 6524465,
+        "src_id": "wgm42",
+        "title": "Yerphale",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q59296757",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.942973,
+                17.382077
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.942 17.382)",
+            "coordinates": [
+              73.942,
+              17.382
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Yerphale",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q59296757"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524466",
+      "properties": {
+        "pid": 6524466,
+        "src_id": "wgm43",
+        "title": "Kuda",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q15040928",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.073175,
+                18.285214
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.074 18.285)",
+            "coordinates": [
+              73.074,
+              18.285
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Kuda",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q15040928"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0999"
+            },
+            "start": {
+              "earliest": "0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524467",
+      "properties": {
+        "pid": 6524467,
+        "src_id": "wgm44",
+        "title": "Chiplun",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q1117869",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.52,
+                17.53
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.505 17.529)",
+            "coordinates": [
+              73.505,
+              17.529
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Chiplun",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q1117869"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1274119"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "loc:no2004101791"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "viaf:138727958"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524468",
+      "properties": {
+        "pid": 6524468,
+        "src_id": "wgm45",
+        "title": "Chiplun Kalambaste",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q1117869",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.52,
+                17.53
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.534 17.534)",
+            "coordinates": [
+              73.534,
+              17.534
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Chiplun Kalambaste",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q1117869"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1274119"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "loc:no2004101791"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "viaf:138727958"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524469",
+      "properties": {
+        "pid": 6524469,
+        "src_id": "wgm46",
+        "title": "Khed",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q26787507",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.396944444444,
+                17.718888888889
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.398 17.721)",
+            "coordinates": [
+              73.398,
+              17.721
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Khed",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q26787507"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1266814"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524470",
+      "properties": {
+        "pid": 6524470,
+        "src_id": "wgm47",
+        "title": "Mahad Kol",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q2238564",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.417,
+                18.083
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.43 18.066)",
+            "coordinates": [
+              73.43,
+              18.066
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Mahad Kol",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q2238564"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1264489"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "loc:n83132002"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "viaf:132561765"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524471",
+      "properties": {
+        "pid": 6524471,
+        "src_id": "wgm48",
+        "title": "Mahad Pale",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q2238564",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.417,
+                18.083
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.404 18.087)",
+            "coordinates": [
+              73.404,
+              18.087
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Mahad Pale",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q2238564"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1264489"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "loc:n83132002"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "viaf:132561765"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0999"
+            },
+            "start": {
+              "earliest": "0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524472",
+      "properties": {
+        "pid": 6524472,
+        "src_id": "wgm49",
+        "title": "Nasik Pandu Lena",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "Point",
+        "geowkt": "POINT(73.748 19.941)",
+        "coordinates": [
+          73.748,
+          19.941
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Nasik Pandu Lena",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524473",
+      "properties": {
+        "pid": 6524473,
+        "src_id": "wgm50",
+        "title": "Nenavali/Karsambla",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q15040932",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.335075,
+                18.506954
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.344 18.509)",
+            "coordinates": [
+              73.344,
+              18.509
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Nenavali/Karsambla",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q15040932"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0999"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524474",
+      "properties": {
+        "pid": 6524474,
+        "src_id": "wgm51",
+        "title": "Thanale/Nadsur",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q97308973",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.31931093,
+                18.5694735
+              ]
+            ]
+          },
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.319 18.569)",
+            "coordinates": [
+              73.319,
+              18.569
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Thanale/Nadsur",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q97308973"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q15040940"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524475",
+      "properties": {
+        "pid": 6524475,
+        "src_id": "wgm52",
+        "title": "Sirwal",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "Point",
+        "geowkt": "POINT(73.937 18.143)",
+        "coordinates": [
+          73.937,
+          18.143
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Sirwal",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524476",
+      "properties": {
+        "pid": 6524476,
+        "src_id": "wgm53",
+        "title": "Wai Bhadawan",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "Point",
+        "geowkt": "POINT(73.894 17.918)",
+        "coordinates": [
+          73.894,
+          17.918
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Wai Bhadawan",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524477",
+      "properties": {
+        "pid": 6524477,
+        "src_id": "wgm54",
+        "title": "Wai Lohare",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "Point",
+        "geowkt": "POINT(73.916 17.994)",
+        "coordinates": [
+          73.916,
+          17.994
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Wai Lohare",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=6524478",
+      "properties": {
+        "pid": 6524478,
+        "src_id": "wgm55",
+        "title": "Wai Pandavgad",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "Point",
+        "geowkt": "POINT(73.87 17.997)",
+        "coordinates": [
+          73.87,
+          17.997
+        ]
+      },
+      "names": [
+        {
+          "lang": "",
+          "toponym": "Wai Pandavgad",
+          "citations": [
+            {
+              "id": "https://doi.org/10.5281/zenodo.998080",
+              "label": "10.5281/zenodo.998080"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Buddhist monastery"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Satavahana"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "Early Historic"
+        }
+      ],
+      "links": [],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0449"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
