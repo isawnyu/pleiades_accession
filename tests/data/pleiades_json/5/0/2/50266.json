@@ -1,0 +1,503 @@
+{
+    "@type": "Place",
+    "bbox": [
+        80.7538398,
+        7.9553773,
+        80.7608191,
+        7.9587407
+    ],
+    "connections": [
+        {
+            "@type": "Connection",
+            "associationCertainty": "certain",
+            "attestations": [],
+            "connectionType": "on",
+            "connectionTypeURI": "https://pleiades.stoa.org/vocabularies/relationship-types/on",
+            "connectsTo": "https://pleiades.stoa.org/places/50298",
+            "contributors": [
+                {
+                    "homepage": null,
+                    "name": "Tom Elliott",
+                    "uri": "https://pleiades.stoa.org/author/thomase",
+                    "username": "thomase"
+                }
+            ],
+            "created": "2016-07-13T13:54:35Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Sean Gillies",
+                    "uri": "https://pleiades.stoa.org/author/sgillies",
+                    "username": "sgillies"
+                }
+            ],
+            "description": "",
+            "details": "",
+            "end": null,
+            "history": [
+                {
+                    "comment": "located on",
+                    "modified": "2024-07-18T19:28:08Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Publish externally",
+                    "modified": "2016-07-13T13:54:35Z",
+                    "modifiedBy": "admin"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2016-07-13T13:54:35Z",
+                    "modifiedBy": "admin"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2016-07-13T13:54:35Z",
+                    "modifiedBy": "admin"
+                }
+            ],
+            "id": "50298",
+            "provenance": "Pleiades",
+            "references": [],
+            "review_state": "published",
+            "start": null,
+            "title": "Taprobane/Palaisimoundou/Salike (island)",
+            "uri": "https://pleiades.stoa.org/places/50266/50298"
+        }
+    ],
+    "connectsWith": [
+        "https://pleiades.stoa.org/places/50298",
+        "https://pleiades.stoa.org/places/147924903",
+        "https://pleiades.stoa.org/places/675710846"
+    ],
+    "contributors": [
+        {
+            "name": "DARMC",
+            "username": null
+        },
+        {
+            "homepage": null,
+            "name": "Divya Kumar-Dumas",
+            "uri": "https://pleiades.stoa.org/author/dkumardumas",
+            "username": "dkumardumas"
+        },
+        {
+            "name": "R. Talbert",
+            "username": null
+        },
+        {
+            "name": "jfu",
+            "username": null
+        },
+        {
+            "homepage": null,
+            "name": "Sean Gillies",
+            "uri": "https://pleiades.stoa.org/author/sgillies",
+            "username": "sgillies"
+        },
+        {
+            "homepage": null,
+            "name": "Jeffrey Becker",
+            "uri": "https://pleiades.stoa.org/author/jbecker",
+            "username": "jbecker"
+        },
+        {
+            "homepage": null,
+            "name": "Tom Elliott",
+            "uri": "https://pleiades.stoa.org/author/thomase",
+            "username": "thomase"
+        }
+    ],
+    "created": "2024-07-18T13:14:37Z",
+    "creators": [
+        {
+            "name": "M.U. Erdosy",
+            "username": null
+        }
+    ],
+    "description": "An archaeological site currently interpreted as the capital city of the parricidal King Kassapa I (A.D. 477–95). The site was listed as a UNESCO World Heritage Site in 1982.",
+    "details": "<p>The Barrington Atlas Directory notes: Sigiriya, SRI</p>",
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        80.7541277,
+                        7.9584929
+                    ],
+                    [
+                        80.7538398,
+                        7.9566699
+                    ],
+                    [
+                        80.7551626,
+                        7.9564861
+                    ],
+                    [
+                        80.755107,
+                        7.9561529
+                    ],
+                    [
+                        80.759844,
+                        7.9553773
+                    ],
+                    [
+                        80.7605881,
+                        7.9559473
+                    ],
+                    [
+                        80.7608191,
+                        7.9573314
+                    ],
+                    [
+                        80.7602582,
+                        7.9580445
+                    ],
+                    [
+                        80.759077,
+                        7.9582379
+                    ],
+                    [
+                        80.755553,
+                        7.9587407
+                    ],
+                    [
+                        80.7554724,
+                        7.9582727
+                    ],
+                    [
+                        80.7541277,
+                        7.9584929
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "id": "osm-location-modern-sigiriya",
+            "properties": {
+                "description": "Location based on OpenStreetMap",
+                "link": "https://pleiades.stoa.org/places/50266/osm-location-modern-sigiriya",
+                "location_precision": "precise",
+                "snippet": "Archaeological-site; 337 BC - AD 1232",
+                "title": "OSM Location: modern Sigiriya"
+            },
+            "type": "Feature"
+        }
+    ],
+    "history": [
+        {
+            "comment": "create DARMC citation to preserve cross-project linkage after retracting DARMC location",
+            "modified": "2024-09-27T13:46:14Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "comment": "Edited the summary.",
+            "modified": "2024-07-18T19:27:44Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "comment": "Edited; reference cleanup",
+            "modified": "2020-06-19T14:51:15Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "added connection",
+            "modified": "2012-12-30T14:15:36Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "edited description",
+            "modified": "2012-12-29T15:35:30Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "added reference",
+            "modified": "2012-12-29T03:24:29Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "edited description; added references and UWHS",
+            "modified": "2012-12-29T03:23:44Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "Location updates and tags from Johan Ahlfeldt's (jahlfeldt) Digital Atlas of the Roman Empire in October 2012",
+            "modified": "2012-10-20T22:31:34Z",
+            "modifiedBy": "sgillies"
+        },
+        {
+            "comment": "Global migration and reindexing of citations and provenance, February 2012",
+            "modified": "2012-02-15T05:46:47Z",
+            "modifiedBy": "admin"
+        },
+        {
+            "comment": "New locations, coordinates, and metadata from Harvard's DARMC project. See http://atlantides.org/trac/pleiades/wiki/PlaceUpgradesAndMigrations",
+            "modified": "2011-08-02T20:27:52Z",
+            "modifiedBy": "sgillies"
+        },
+        {
+            "comment": "Detail text updated from former modernLocation. See http://atlantides.org/trac/pleiades/wiki/PlaceDetailsUpgrade",
+            "modified": "2011-01-14T20:08:10Z",
+            "modifiedBy": "sgillies"
+        },
+        {
+            "action": "Publish externally",
+            "modified": "2010-09-23T17:01:17Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "action": "Submit for review",
+            "modified": "2010-09-23T01:39:13Z",
+            "modifiedBy": "sgillies"
+        },
+        {
+            "action": "Create",
+            "modified": "2010-09-23T01:02:27Z",
+            "modifiedBy": "sgillies"
+        }
+    ],
+    "id": "50266",
+    "locations": [
+        {
+            "@type": "Location",
+            "accuracy": "https://pleiades.stoa.org/features/metadata/generic-osm-accuracy-assessment",
+            "accuracy_value": 20.0,
+            "archaeologicalRemains": "substantive",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "anuradhapura",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/anuradhapura"
+                },
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "polonnaruwa",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/polonnaruwa"
+                }
+            ],
+            "contributors": [],
+            "created": "2024-09-20T18:44:03Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Divya Kumar-Dumas",
+                    "uri": "https://pleiades.stoa.org/author/dkumardumas",
+                    "username": "dkumardumas"
+                },
+                {
+                    "homepage": null,
+                    "name": "Tom Elliott",
+                    "uri": "https://pleiades.stoa.org/author/thomase",
+                    "username": "thomase"
+                }
+            ],
+            "description": "Location based on OpenStreetMap",
+            "details": "",
+            "end": 1232,
+            "featureType": [
+                "archaeological-site"
+            ],
+            "featureTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/archaeological-site"
+            ],
+            "geometry": {
+                "coordinates": [
+                    [
+                        80.7541277,
+                        7.9584929
+                    ],
+                    [
+                        80.7538398,
+                        7.9566699
+                    ],
+                    [
+                        80.7551626,
+                        7.9564861
+                    ],
+                    [
+                        80.755107,
+                        7.9561529
+                    ],
+                    [
+                        80.759844,
+                        7.9553773
+                    ],
+                    [
+                        80.7605881,
+                        7.9559473
+                    ],
+                    [
+                        80.7608191,
+                        7.9573314
+                    ],
+                    [
+                        80.7602582,
+                        7.9580445
+                    ],
+                    [
+                        80.759077,
+                        7.9582379
+                    ],
+                    [
+                        80.755553,
+                        7.9587407
+                    ],
+                    [
+                        80.7554724,
+                        7.9582727
+                    ],
+                    [
+                        80.7541277,
+                        7.9584929
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2024-09-27T13:45:30Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2024-09-20T18:58:40Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2024-09-20T18:58:21Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2024-09-20T18:58:02Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "comment": "Initial revision",
+                    "modified": "2024-09-20T18:56:46Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "comment": "Location from OSM created by Products.PleiadesEntity.browser.osm.OSMLocationFactory",
+                    "modified": "2024-09-20T18:44:04Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2024-09-20T18:44:03Z",
+                    "modifiedBy": "thomase"
+                }
+            ],
+            "id": "osm-location-modern-sigiriya",
+            "locationType": [
+                "representative"
+            ],
+            "locationTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/archaeological-site"
+            ],
+            "provenance": "OpenStreetMap (Way 217591865, version 10, osm:changeset=107524959, 2021-07-06T23:43:42Z)",
+            "references": [
+                {
+                    "accessURI": "https://www.openstreetmap.org/browse/way/217591865",
+                    "alternateURI": "",
+                    "bibliographicURI": "",
+                    "citationDetail": "Way 217591865",
+                    "citationTypeURI": "http://purl.org/spar/cito/citesAsDataSource",
+                    "formattedCitation": "osm:way=217591865",
+                    "otherIdentifier": "",
+                    "shortTitle": "OSM",
+                    "type": "citesAsDataSource"
+                }
+            ],
+            "review_state": "published",
+            "start": -337,
+            "title": "OSM Location: modern Sigiriya",
+            "uri": "https://pleiades.stoa.org/places/50266/osm-location-modern-sigiriya"
+        }
+    ],
+    "names": [],
+    "placeTypeURIs": [
+        "https://pleiades.stoa.org/vocabularies/place-types/archaeological-site"
+    ],
+    "placeTypes": [
+        "archaeological-site"
+    ],
+    "provenance": "Barrington Atlas: BAtlas 5 inset Sigiriya",
+    "references": [
+        {
+            "accessURI": "http://www.worldcat.org/oclc/43970336",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/MIAGQ5C6",
+            "citationDetail": "5 inset Sigiriya",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Talbert, Richard J. A., ed. <i>Barrington Atlas of the Greek and Roman World</i>. Princeton, N.J.: Princeton University Press, 2000. http://www.worldcat.org/oclc/43970336.</div>",
+            "otherIdentifier": " ",
+            "shortTitle": "BAtlas",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/AAT5G2YQ",
+            "citationDetail": "381",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Wheeler, R.E.M. “Roman Contact with India, Pakistan and Afghanistan.” In <i>Aspects of Archaeology in Britain and beyond: Essays Presented to O.G.S. Crawford</i>, 345–81. London, 1951.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Wheeler 1951",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "http://whc.unesco.org/en/list/202",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/BIIFWTIR",
+            "citationDetail": "202: Ancient City of Sigiriya",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">UNESCO World Heritage Centre. <i>World Heritage List</i>, 1978. http://whc.unesco.org/en/list/.</div>",
+            "otherIdentifier": " ",
+            "shortTitle": "WHL",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "https://en.wikipedia.org/wiki/Sigiriya",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/2533/items/CI6F6W7W",
+            "citationDetail": "Sigiriya",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "Wikipedia: the free encyclopedia that anyone can edit (2001-), Sigiriya.",
+            "otherIdentifier": " ",
+            "shortTitle": "Wikipedia (English)",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "https://darmc.harvard.edu/",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/9UD9W75C",
+            "citationDetail": "13549",
+            "citationTypeURI": "http://purl.org/spar/cito/citesAsRelated",
+            "formattedCitation": "<div class=\"csl-entry\">Michael McCormick, Giovanni Zambotti, Leland Grigoli, and Kelly Gibson, eds. <i>The Digital Atlas of Roman and Medieval Civilizations</i>. Cambridge (Massachusetts): Harvard University, 2007. https://darmc.harvard.edu/.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "DARMC",
+            "type": "citesAsRelated"
+        }
+    ],
+    "reprPoint": [
+        80.75726324052827,
+        7.957136736929782
+    ],
+    "review_state": "published",
+    "rights": "Copyright © The Contributors. Sharing and remixing permitted under terms of the Creative Commons Attribution 3.0 License (cc-by).",
+    "subject": [
+        "dare:major=0",
+        "dare:ancient=0",
+        "dare:feature=settlement",
+        "UWHS"
+    ],
+    "title": "Sigiriya",
+    "type": "FeatureCollection",
+    "uri": "https://pleiades.stoa.org/places/50266"
+}

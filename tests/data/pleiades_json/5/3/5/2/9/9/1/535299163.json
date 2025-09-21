@@ -1,0 +1,561 @@
+{
+    "@type": "Place",
+    "bbox": [
+        12.4903778,
+        41.8995297,
+        12.4910454,
+        41.8999476
+    ],
+    "connections": [
+        {
+            "@type": "Connection",
+            "associationCertainty": "certain",
+            "attestations": [],
+            "connectionType": "at",
+            "connectionTypeURI": "https://pleiades.stoa.org/vocabularies/relationship-types/at",
+            "connectsTo": "https://pleiades.stoa.org/places/423025",
+            "contributors": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "created": "2016-07-13T14:03:30Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Sean Gillies",
+                    "uri": "https://pleiades.stoa.org/author/sgillies",
+                    "username": "sgillies"
+                }
+            ],
+            "description": "",
+            "details": "",
+            "end": null,
+            "history": [
+                {
+                    "comment": "change type, add reference - wikidata",
+                    "modified": "2024-08-14T14:30:18Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Publish externally",
+                    "modified": "2016-07-13T14:03:30Z",
+                    "modifiedBy": "admin"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2016-07-13T14:03:30Z",
+                    "modifiedBy": "admin"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2016-07-13T14:03:30Z",
+                    "modifiedBy": "admin"
+                }
+            ],
+            "id": "423025",
+            "provenance": "Pleiades",
+            "references": [
+                {
+                    "accessURI": "https://www.wikidata.org/wiki/Q1579529",
+                    "alternateURI": "",
+                    "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/BCQIKDKS",
+                    "citationDetail": "San Vitale (Q1579529)",
+                    "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+                    "formattedCitation": "<div class=\"csl-entry\"><i>Wikidata: The Free Knowledge Base That Anyone Can Edit</i>. Wikimedia Foundation, 2014. https://www.wikidata.org/.</div>",
+                    "otherIdentifier": "",
+                    "shortTitle": "Wikidata",
+                    "type": "seeFurther"
+                }
+            ],
+            "review_state": "published",
+            "start": null,
+            "title": "Roma",
+            "uri": "https://pleiades.stoa.org/places/535299163/423025"
+        }
+    ],
+    "connectsWith": [
+        "https://pleiades.stoa.org/places/423025"
+    ],
+    "contributors": [
+        {
+            "homepage": null,
+            "name": "Tom Elliott",
+            "uri": "https://pleiades.stoa.org/author/thomase",
+            "username": "thomase"
+        }
+    ],
+    "created": "2013-04-14T16:06:47Z",
+    "creators": [
+        {
+            "homepage": null,
+            "name": "Jeffrey Becker",
+            "uri": "https://pleiades.stoa.org/author/jbecker",
+            "username": "jbecker"
+        }
+    ],
+    "description": "The basilica of Saints Vitalis, Valeris, Gervase, and Protase, commonly known as the Basilica di San Vitale, is a titular minor basilica church in Rome. The church was built ca. AD 400 by Pope Innocent I.",
+    "details": "",
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        12.4904171,
+                        41.8997931
+                    ],
+                    [
+                        12.4903921,
+                        41.8998108
+                    ],
+                    [
+                        12.4903788,
+                        41.8998336
+                    ],
+                    [
+                        12.4903778,
+                        41.8998567
+                    ],
+                    [
+                        12.4903907,
+                        41.8998819
+                    ],
+                    [
+                        12.4904142,
+                        41.8998997
+                    ],
+                    [
+                        12.4904444,
+                        41.8999093
+                    ],
+                    [
+                        12.4904756,
+                        41.89991
+                    ],
+                    [
+                        12.4905078,
+                        41.899901
+                    ],
+                    [
+                        12.4905471,
+                        41.8999476
+                    ],
+                    [
+                        12.490635,
+                        41.8999151
+                    ],
+                    [
+                        12.4906059,
+                        41.8998715
+                    ],
+                    [
+                        12.4909338,
+                        41.8997187
+                    ],
+                    [
+                        12.4910454,
+                        41.8996688
+                    ],
+                    [
+                        12.4910365,
+                        41.8996564
+                    ],
+                    [
+                        12.4909401,
+                        41.8995297
+                    ],
+                    [
+                        12.4908712,
+                        41.8995635
+                    ],
+                    [
+                        12.49084,
+                        41.8995771
+                    ],
+                    [
+                        12.4904081,
+                        41.8997825
+                    ],
+                    [
+                        12.4904171,
+                        41.8997931
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "id": "location-of-san-vitale",
+            "properties": {
+                "description": "Representative location based on OpenStreetMap",
+                "link": "https://pleiades.stoa.org/places/535299163/location-of-san-vitale",
+                "location_precision": "precise",
+                "snippet": "Church-2; AD 300 - AD 2100",
+                "title": "OSM location of Santi Vitale e Compagni Martiri in Fovea"
+            },
+            "type": "Feature"
+        }
+    ],
+    "history": [
+        {
+            "comment": "wikidata San Vitale (Q1579529)",
+            "modified": "2024-08-14T14:29:25Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "add wikipedia (it)",
+            "modified": "2023-04-05T14:29:23Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "action": "Publish externally",
+            "modified": "2013-04-18T14:24:14Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "action": "Submit for review",
+            "modified": "2013-04-14T16:08:57Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "created place",
+            "modified": "2013-04-14T16:06:54Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "action": "Create",
+            "modified": "2013-04-14T16:06:47Z",
+            "modifiedBy": "jbecker"
+        }
+    ],
+    "id": "535299163",
+    "locations": [
+        {
+            "@type": "Location",
+            "accuracy": "https://pleiades.stoa.org/features/metadata/generic-osm-accuracy-assessment",
+            "accuracy_value": 20.0,
+            "archaeologicalRemains": "unknown",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "late-antique",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/late-antique"
+                },
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "modern",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/modern"
+                }
+            ],
+            "contributors": [],
+            "created": "2013-04-14T16:07:45Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "description": "Representative location based on OpenStreetMap",
+            "details": "",
+            "end": 2100,
+            "featureType": [
+                "church-2"
+            ],
+            "featureTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/church-2"
+            ],
+            "geometry": {
+                "coordinates": [
+                    [
+                        12.4904171,
+                        41.8997931
+                    ],
+                    [
+                        12.4903921,
+                        41.8998108
+                    ],
+                    [
+                        12.4903788,
+                        41.8998336
+                    ],
+                    [
+                        12.4903778,
+                        41.8998567
+                    ],
+                    [
+                        12.4903907,
+                        41.8998819
+                    ],
+                    [
+                        12.4904142,
+                        41.8998997
+                    ],
+                    [
+                        12.4904444,
+                        41.8999093
+                    ],
+                    [
+                        12.4904756,
+                        41.89991
+                    ],
+                    [
+                        12.4905078,
+                        41.899901
+                    ],
+                    [
+                        12.4905471,
+                        41.8999476
+                    ],
+                    [
+                        12.490635,
+                        41.8999151
+                    ],
+                    [
+                        12.4906059,
+                        41.8998715
+                    ],
+                    [
+                        12.4909338,
+                        41.8997187
+                    ],
+                    [
+                        12.4910454,
+                        41.8996688
+                    ],
+                    [
+                        12.4910365,
+                        41.8996564
+                    ],
+                    [
+                        12.4909401,
+                        41.8995297
+                    ],
+                    [
+                        12.4908712,
+                        41.8995635
+                    ],
+                    [
+                        12.49084,
+                        41.8995771
+                    ],
+                    [
+                        12.4904081,
+                        41.8997825
+                    ],
+                    [
+                        12.4904171,
+                        41.8997931
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "history": [
+                {
+                    "comment": "update title, summary, place type; refresh OSM data",
+                    "modified": "2023-04-05T14:28:29Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Reimported full way geometry and updated provenance",
+                    "modified": "2023-04-05T14:27:31Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Publish externally",
+                    "modified": "2013-04-18T14:24:19Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2013-04-14T16:08:32Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "added location",
+                    "modified": "2013-04-14T16:08:23Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Location from OSM created by Products.PleiadesEntity.browser.osm.OSMLocationFactory",
+                    "modified": "2013-04-14T16:07:47Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2013-04-14T16:07:46Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "location-of-san-vitale",
+            "locationType": [
+                "representative"
+            ],
+            "locationTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/church-2"
+            ],
+            "provenance": "OpenStreetMap (Way 201294911, version 8, osm:changeset=74255785, 2019-09-09T10:58:56Z)",
+            "references": [
+                {
+                    "accessURI": "http://www.openstreetmap.org/browse/way/201294911",
+                    "alternateURI": "",
+                    "bibliographicURI": "",
+                    "citationDetail": "Way 201294911",
+                    "citationTypeURI": "http://purl.org/spar/cito/citesAsDataSource",
+                    "formattedCitation": "osm:way=201294911",
+                    "otherIdentifier": " ",
+                    "shortTitle": "OSM",
+                    "type": "citesAsDataSource"
+                }
+            ],
+            "review_state": "published",
+            "start": 300,
+            "title": "OSM location of Santi Vitale e Compagni Martiri in Fovea",
+            "uri": "https://pleiades.stoa.org/places/535299163/location-of-san-vitale"
+        }
+    ],
+    "names": [
+        {
+            "@type": "Name",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [],
+            "attested": "Titulus Vestinae",
+            "contributors": [
+                {
+                    "homepage": null,
+                    "name": "Tom Elliott",
+                    "uri": "https://pleiades.stoa.org/author/thomase",
+                    "username": "thomase"
+                }
+            ],
+            "created": "2018-05-23T18:24:47Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "description": "",
+            "details": "",
+            "end": null,
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2023-04-05T18:37:22Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2023-04-05T18:37:18Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2023-04-05T14:31:39Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "reference",
+                    "modified": "2023-04-05T14:31:35Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "name",
+                    "modified": "2018-05-23T18:24:48Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2018-05-23T18:24:47Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "name.2018-05-23.8739479009",
+            "language": "la",
+            "nameType": "geographic",
+            "provenance": "Pleiades",
+            "references": [
+                {
+                    "accessURI": "https://journals.openedition.org/mefrm/1858?lang=en",
+                    "alternateURI": "",
+                    "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/TMT9SUWF",
+                    "citationDetail": "",
+                    "citationTypeURI": "http://purl.org/spar/cito/cites",
+                    "formattedCitation": "<div class=\"csl-entry\">Thacker, Alan. “The origin and early development of Rome’s intramural cults: a context for the cult of Sant’Agnese in Agone.” <i>Mélanges de l’École française de Rome - Moyen Âge</i>, no. 126–1 (April 3, 2014). https://doi.org/10.4000/mefrm.1858.</div>",
+                    "otherIdentifier": "",
+                    "shortTitle": "Thacker 2014",
+                    "type": "cites"
+                }
+            ],
+            "review_state": "published",
+            "romanized": "Titulus Vestinae",
+            "start": null,
+            "transcriptionAccuracy": "accurate",
+            "transcriptionCompleteness": "complete",
+            "uri": "https://pleiades.stoa.org/places/535299163/name.2018-05-23.8739479009"
+        }
+    ],
+    "placeTypeURIs": [
+        "https://pleiades.stoa.org/vocabularies/place-types/church-2",
+        "https://pleiades.stoa.org/vocabularies/place-types/church"
+    ],
+    "placeTypes": [
+        "church-2",
+        "church"
+    ],
+    "provenance": "Pleiades",
+    "references": [
+        {
+            "accessURI": "https://en.wikipedia.org/wiki/San_Vitale,_Rome",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/2533/items/CI6F6W7W",
+            "citationDetail": "San Vitale, Rome",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "Wikipedia: the free encyclopedia that anyone can edit (2001-), San Vitale, Rome.",
+            "otherIdentifier": " ",
+            "shortTitle": "Wikipedia (English)",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "https://it.wikipedia.org/wiki/it:Basilica%20di%20San%20Vitale%20(Roma)?uselang=en",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/UMFZH98D",
+            "citationDetail": "Basilica di San Vitale (Roma)",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\"><i>Wikipedia: L’enciclopedia libera e collaborativa</i>. Wikimedia Foundation, 2001. https://it.wikipedia.org.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Wikipedia (Italian)",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "https://www.wikidata.org/wiki/Q1579529",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/BCQIKDKS",
+            "citationDetail": "San Vitale (Q1579529)",
+            "citationTypeURI": "http://purl.org/spar/cito/citesAsRelated",
+            "formattedCitation": "<div class=\"csl-entry\"><i>Wikidata: The Free Knowledge Base That Anyone Can Edit</i>. Wikimedia Foundation, 2014. https://www.wikidata.org/.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Wikidata",
+            "type": "citesAsRelated"
+        }
+    ],
+    "reprPoint": [
+        12.490701233887817,
+        41.89974517188001
+    ],
+    "review_state": "published",
+    "rights": "Copyright © The Contributors. Sharing and remixing permitted under terms of the Creative Commons Attribution 3.0 License (cc-by).",
+    "subject": [],
+    "title": "San Vitale",
+    "type": "FeatureCollection",
+    "uri": "https://pleiades.stoa.org/places/535299163"
+}

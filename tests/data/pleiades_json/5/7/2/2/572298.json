@@ -1,0 +1,278 @@
+{
+    "@type": "Place",
+    "bbox": [
+        22.54,
+        36.88,
+        22.54,
+        36.88
+    ],
+    "connections": [],
+    "connectsWith": [],
+    "contributors": [
+        {
+            "name": "R. Talbert",
+            "username": null
+        },
+        {
+            "homepage": null,
+            "name": "Sean Gillies",
+            "uri": "https://pleiades.stoa.org/author/sgillies",
+            "username": "sgillies"
+        },
+        {
+            "homepage": null,
+            "name": "Tom Elliott",
+            "uri": "https://pleiades.stoa.org/author/thomase",
+            "username": "thomase"
+        },
+        {
+            "homepage": null,
+            "name": "Jeffrey Becker",
+            "uri": "https://pleiades.stoa.org/author/jbecker",
+            "username": "jbecker"
+        }
+    ],
+    "created": "2010-09-20T20:56:57Z",
+    "creators": [
+        {
+            "name": "G. Reger",
+            "username": null
+        },
+        {
+            "name": "J. McK. Camp II",
+            "username": null
+        }
+    ],
+    "description": "An unnamed quarry at Krokeai.",
+    "details": "<p>The Barrington Atlas Directory notes: Krokeai. According to the Oxford Roman Economy Project, this quarry was a source of a dark green serpentine known either as porfido verde di Grecia or serpentino. This stone was used from the Late Bronze Age (Mycenaeans) to the Roman Imperial period.</p>",
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    22.54,
+                    36.88
+                ],
+                "type": "Point"
+            },
+            "id": "location-of-quarry",
+            "properties": {
+                "description": "Coordinates after Oxford Roman Economy Project",
+                "link": "https://pleiades.stoa.org/places/572298/location-of-quarry",
+                "location_precision": "precise",
+                "snippet": "Quarry; 30 BC - AD 300",
+                "title": "Imagery location of quarry"
+            },
+            "type": "Feature"
+        }
+    ],
+    "history": [
+        {
+            "comment": "Edit typo",
+            "modified": "2021-10-16T18:09:26Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "removed deprecated type. update and augmented references, added summary and details.",
+            "modified": "2021-10-15T20:18:55Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "ctype",
+            "modified": "2021-02-20T01:10:33Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "added reference",
+            "modified": "2014-01-26T22:12:13Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "Global migration and reindexing of citations and provenance, February 2012",
+            "modified": "2012-02-15T06:34:22Z",
+            "modifiedBy": "admin"
+        },
+        {
+            "comment": "Detail text updated from former modernLocation. See http://atlantides.org/trac/pleiades/wiki/PlaceDetailsUpgrade",
+            "modified": "2011-01-14T20:25:54Z",
+            "modifiedBy": "sgillies"
+        },
+        {
+            "action": "Publish externally",
+            "modified": "2010-09-22T18:39:20Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "action": "Submit for review",
+            "modified": "2010-09-20T22:20:11Z",
+            "modifiedBy": "sgillies"
+        },
+        {
+            "action": "Create",
+            "modified": "2010-09-20T20:56:57Z",
+            "modifiedBy": "sgillies"
+        }
+    ],
+    "id": "572298",
+    "locations": [
+        {
+            "@type": "Location",
+            "accuracy": "https://pleiades.stoa.org/features/metadata/google-earth-and-geoeye-imagery-2012",
+            "accuracy_value": 5.0,
+            "archaeologicalRemains": "unknown",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "roman",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/roman"
+                }
+            ],
+            "contributors": [],
+            "created": "2014-01-26T22:14:59Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "description": "Coordinates after Oxford Roman Economy Project",
+            "details": "",
+            "end": 300,
+            "featureType": [
+                "quarry"
+            ],
+            "featureTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/quarry"
+            ],
+            "geometry": {
+                "coordinates": [
+                    22.54,
+                    36.88
+                ],
+                "type": "Point"
+            },
+            "history": [
+                {
+                    "comment": "Edited",
+                    "modified": "2021-10-16T18:08:39Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Ctype",
+                    "modified": "2021-10-16T18:08:05Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Publish externally",
+                    "modified": "2021-10-15T20:32:32Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2021-10-15T20:19:14Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2021-10-15T20:19:10Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "added location",
+                    "modified": "2014-01-26T22:15:06Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2014-01-26T22:15:01Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "location-of-quarry",
+            "locationType": [
+                "representative"
+            ],
+            "locationTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/quarry"
+            ],
+            "provenance": "Pleiades",
+            "references": [
+                {
+                    "accessURI": "http://oxrep.classics.ox.ac.uk/popup.php?ste=3175",
+                    "alternateURI": "",
+                    "bibliographicURI": "",
+                    "citationDetail": "",
+                    "citationTypeURI": "http://purl.org/spar/cito/citesAsDataSource",
+                    "formattedCitation": "Oxrep, 3175",
+                    "otherIdentifier": " ",
+                    "shortTitle": "",
+                    "type": "citesAsDataSource"
+                }
+            ],
+            "review_state": "published",
+            "start": -30,
+            "title": "Imagery location of quarry",
+            "uri": "https://pleiades.stoa.org/places/572298/location-of-quarry"
+        }
+    ],
+    "names": [],
+    "placeTypeURIs": [
+        "https://pleiades.stoa.org/vocabularies/place-types/quarry"
+    ],
+    "placeTypes": [
+        "quarry"
+    ],
+    "provenance": "Barrington Atlas: BAtlas 58 D4",
+    "references": [
+        {
+            "accessURI": "http://www.worldcat.org/oclc/43970336",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/MIAGQ5C6",
+            "citationDetail": "58 D4",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Talbert, Richard J. A., ed. <i>Barrington Atlas of the Greek and Roman World</i>. Princeton, N.J.: Princeton University Press, 2000. http://www.worldcat.org/oclc/43970336.</div>",
+            "otherIdentifier": " ",
+            "shortTitle": "BAtlas",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/RKT5CDSP",
+            "citationDetail": "",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Dworakowska, Angelina. <i>Quarries in Ancient Greece</i>. Bibliotheca Antiqua 14. Wroclaw: Zaklad Narodowy im. Ossolinskich, Wydawn. Polskiej Akademii Nauk, 1975.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Dworakowska 1975",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "http://oxrep.classics.ox.ac.uk/popup.php?ste=3175",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/R9E44TD6",
+            "citationDetail": "Krokeai",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Russell, Ben. <i>Stone Quarries Database</i>. Oxford Roman Economy Project, 2013. http://oxrep.classics.ox.ac.uk/databases/stone_quarries_database/.</div>",
+            "otherIdentifier": " ",
+            "shortTitle": "OXREP Stone Quarries Database",
+            "type": "seeFurther"
+        }
+    ],
+    "reprPoint": [
+        22.54,
+        36.88
+    ],
+    "review_state": "published",
+    "rights": "Copyright © The Contributors. Sharing and remixing permitted under terms of the Creative Commons Attribution 3.0 License (cc-by).",
+    "subject": [
+        "mine, quarry",
+        "serpentine"
+    ],
+    "title": "Krokeai (quarry)",
+    "type": "FeatureCollection",
+    "uri": "https://pleiades.stoa.org/places/572298"
+}

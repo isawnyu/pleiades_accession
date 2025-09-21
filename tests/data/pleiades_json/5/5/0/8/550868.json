@@ -1,0 +1,514 @@
+{
+    "@type": "Place",
+    "bbox": [
+        27.4885518,
+        38.799426,
+        27.4983105,
+        38.8086452
+    ],
+    "connections": [],
+    "connectsWith": [],
+    "contributors": [
+        {
+            "name": "DARMC",
+            "username": null
+        },
+        {
+            "name": "R. Talbert",
+            "username": null
+        },
+        {
+            "homepage": null,
+            "name": "Sean Gillies",
+            "uri": "https://pleiades.stoa.org/author/sgillies",
+            "username": "sgillies"
+        },
+        {
+            "homepage": null,
+            "name": "Jeffrey Becker",
+            "uri": "https://pleiades.stoa.org/author/jbecker",
+            "username": "jbecker"
+        },
+        {
+            "homepage": null,
+            "name": "Noah Kaye",
+            "uri": "https://pleiades.stoa.org/author/nkaye",
+            "username": "nkaye"
+        },
+        {
+            "homepage": null,
+            "name": "Tom Elliott",
+            "uri": "https://pleiades.stoa.org/author/thomase",
+            "username": "thomase"
+        }
+    ],
+    "created": "2009-10-15T08:35:47Z",
+    "creators": [
+        {
+            "name": "C. Foss",
+            "username": null
+        },
+        {
+            "name": "G. Reger",
+            "username": null
+        },
+        {
+            "name": "S. Mitchell",
+            "username": null
+        }
+    ],
+    "description": "An ancient place, cited: BAtlas 56 E4 Sarıçam",
+    "details": "<p>The Barrington Atlas Directory notes: Sarıçam, settlement and temple</p>",
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        27.4913398,
+                        38.8076057
+                    ],
+                    [
+                        27.4942018,
+                        38.8086452
+                    ],
+                    [
+                        27.4983105,
+                        38.8053068
+                    ],
+                    [
+                        27.4979303,
+                        38.799426
+                    ],
+                    [
+                        27.4885518,
+                        38.8045345
+                    ],
+                    [
+                        27.4900418,
+                        38.8074554
+                    ],
+                    [
+                        27.4912148,
+                        38.8076276
+                    ],
+                    [
+                        27.4913398,
+                        38.8076057
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "id": "ancient-site-at-sara-assam",
+            "properties": {
+                "description": "Location based on OpenStreetMap",
+                "link": "https://pleiades.stoa.org/places/550868/ancient-site-at-sara-assam",
+                "location_precision": "precise",
+                "snippet": "Settlement; 540 BC - AD 1453",
+                "title": "OSM location for ancient site at Sarıçam"
+            },
+            "type": "Feature"
+        }
+    ],
+    "history": [
+        {
+            "comment": "create DARMC citation to preserve cross-project linkage after retracting DARMC location",
+            "modified": "2024-06-14T22:15:09Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "comment": "update reference",
+            "modified": "2023-12-29T01:54:19Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "Location updates and tags from Johan Ahlfeldt's (jahlfeldt) Digital Atlas of the Roman Empire in October 2012",
+            "modified": "2012-10-20T19:34:02Z",
+            "modifiedBy": "sgillies"
+        },
+        {
+            "comment": "Global migration and reindexing of citations and provenance, February 2012",
+            "modified": "2012-02-15T06:21:41Z",
+            "modifiedBy": "admin"
+        },
+        {
+            "comment": "Fixing modern/alt locations fumbled in intial import",
+            "modified": "2011-12-20T23:25:53Z",
+            "modifiedBy": "sgillies"
+        },
+        {
+            "comment": "New locations, coordinates, and metadata from Harvard's DARMC project. See http://atlantides.org/trac/pleiades/wiki/PlaceUpgradesAndMigrations",
+            "modified": "2011-03-01T03:32:12Z",
+            "modifiedBy": "sgillies"
+        },
+        {
+            "action": "Publish externally",
+            "modified": "2009-10-15T17:53:41Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "action": "Submit for review",
+            "modified": "2009-10-15T08:43:50Z",
+            "modifiedBy": "sgillies"
+        },
+        {
+            "action": "Create",
+            "modified": "2009-10-15T08:35:47Z",
+            "modifiedBy": "sgillies"
+        }
+    ],
+    "id": "550868",
+    "locations": [
+        {
+            "@type": "Location",
+            "accuracy": "https://pleiades.stoa.org/features/metadata/generic-osm-accuracy-assessment",
+            "accuracy_value": 20.0,
+            "archaeologicalRemains": "substantive",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident-inferred",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident-inferred",
+                    "timePeriod": "achaemenid-middle-east",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/achaemenid-middle-east"
+                },
+                {
+                    "confidence": "confident-inferred",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident-inferred",
+                    "timePeriod": "hellenistic-republican",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/hellenistic-republican"
+                },
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "roman",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/roman"
+                },
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "mediaeval-byzantine",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/mediaeval-byzantine"
+                }
+            ],
+            "contributors": [],
+            "created": "2024-06-10T17:25:23Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Noah Kaye",
+                    "uri": "https://pleiades.stoa.org/author/nkaye",
+                    "username": "nkaye"
+                }
+            ],
+            "description": "Location based on OpenStreetMap",
+            "details": "",
+            "end": 1453,
+            "featureType": [
+                "settlement"
+            ],
+            "featureTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/settlement"
+            ],
+            "geometry": {
+                "coordinates": [
+                    [
+                        27.4913398,
+                        38.8076057
+                    ],
+                    [
+                        27.4942018,
+                        38.8086452
+                    ],
+                    [
+                        27.4983105,
+                        38.8053068
+                    ],
+                    [
+                        27.4979303,
+                        38.799426
+                    ],
+                    [
+                        27.4885518,
+                        38.8045345
+                    ],
+                    [
+                        27.4900418,
+                        38.8074554
+                    ],
+                    [
+                        27.4912148,
+                        38.8076276
+                    ],
+                    [
+                        27.4913398,
+                        38.8076057
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2024-06-14T22:14:37Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2024-06-10T21:49:57Z",
+                    "modifiedBy": "nkaye"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2024-06-10T21:49:50Z",
+                    "modifiedBy": "nkaye"
+                },
+                {
+                    "comment": "Initial revision",
+                    "modified": "2024-06-10T18:09:23Z",
+                    "modifiedBy": "nkaye"
+                },
+                {
+                    "comment": "Location from OSM created by Products.PleiadesEntity.browser.osm.OSMLocationFactory",
+                    "modified": "2024-06-10T17:25:24Z",
+                    "modifiedBy": "nkaye"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2024-06-10T17:25:23Z",
+                    "modifiedBy": "nkaye"
+                }
+            ],
+            "id": "ancient-site-at-sara-assam",
+            "locationType": [
+                "representative"
+            ],
+            "locationTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/settlement"
+            ],
+            "provenance": "OpenStreetMap (Way 1290767276, version 2, osm:changeset=152471839, 2024-06-09T21:14:49Z)",
+            "references": [
+                {
+                    "accessURI": "https://www.openstreetmap.org/browse/way/1290767276",
+                    "alternateURI": "",
+                    "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/HDF2SRXM",
+                    "citationDetail": "56-69",
+                    "citationTypeURI": "http://purl.org/spar/cito/citesAsDataSource",
+                    "formattedCitation": "<div class=\"csl-entry\">Robert, Louis, Segre, Mario. <i>Hellenica: recueil d’épigraphie, de numismatique et d’antiquités grecques. Vol. V Vol. V</i>, 1948.</div>",
+                    "otherIdentifier": "",
+                    "shortTitle": "Robert, Hell. V",
+                    "type": "citesAsDataSource"
+                },
+                {
+                    "accessURI": "https://www.yeniasya.com.tr/2010/04/06/yurthaber/h2.htm?fbclid=IwZXh0bgNhZW0CMTAAAR2ySoA7mm8wIjBbiye02RPJOycujan-0N5Mj9Z6CPA9rAFofU7_XDOUWrQ_aem_AUORbN55AJImyqWGU3Qqa-3mbrHBCT2cZinh_vCk6f09sv4QPD6OWFm-qFHaz51p8cXV8NDMtJGf3WkA93e7icPu",
+                    "alternateURI": "",
+                    "bibliographicURI": "https://www.yeniasya.com.tr/2010/04/06/yurthaber/h2.htm?fbclid=IwZXh0bgNhZW0CMTAAAR2ySoA7mm8wIjBbiye02RPJOycujan-0N5Mj9Z6CPA9rAFofU7_XDOUWrQ_aem_AUORbN55AJImyqWGU3Qqa-3mbrHBCT2cZinh_vCk6f09sv4QPD6OWFm-qFHaz51p8cXV8NDMtJGf3WkA93e7icPu",
+                    "citationDetail": "2010.04.06",
+                    "citationTypeURI": "http://purl.org/spar/cito/citesAsDataSource",
+                    "formattedCitation": "Yeniasya 2010.04.06",
+                    "otherIdentifier": "",
+                    "shortTitle": "Yeniasya ",
+                    "type": "citesAsDataSource"
+                }
+            ],
+            "review_state": "published",
+            "start": -540,
+            "title": "OSM location for ancient site at Sarıçam",
+            "uri": "https://pleiades.stoa.org/places/550868/ancient-site-at-sara-assam"
+        }
+    ],
+    "names": [
+        {
+            "@type": "Name",
+            "associationCertainty": "less-certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/less-certain",
+            "attestations": [
+                {
+                    "confidence": "confident-inferred",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident-inferred",
+                    "timePeriod": "achaemenid-middle-east",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/achaemenid-middle-east"
+                },
+                {
+                    "confidence": "confident-inferred",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident-inferred",
+                    "timePeriod": "hellenistic-republican",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/hellenistic-republican"
+                },
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "first-bce",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/first-bce"
+                }
+            ],
+            "attested": "ἱερολόφος",
+            "contributors": [],
+            "created": "2024-06-24T18:00:02Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Noah Kaye",
+                    "uri": "https://pleiades.stoa.org/author/nkaye",
+                    "username": "nkaye"
+                }
+            ],
+            "description": "",
+            "details": "",
+            "end": -1,
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2024-07-15T20:52:12Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2024-06-24T18:21:35Z",
+                    "modifiedBy": "nkaye"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2024-06-24T18:21:17Z",
+                    "modifiedBy": "nkaye"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2024-06-24T18:11:39Z",
+                    "modifiedBy": "nkaye"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2024-06-24T18:06:07Z",
+                    "modifiedBy": "nkaye"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2024-06-24T18:05:09Z",
+                    "modifiedBy": "nkaye"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2024-06-24T18:02:26Z",
+                    "modifiedBy": "nkaye"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2024-06-24T18:00:44Z",
+                    "modifiedBy": "nkaye"
+                },
+                {
+                    "comment": "Initial revision",
+                    "modified": "2024-06-24T18:00:04Z",
+                    "modifiedBy": "nkaye"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2024-06-24T18:00:02Z",
+                    "modifiedBy": "nkaye"
+                }
+            ],
+            "id": "hierolophos",
+            "language": "grc",
+            "nameType": "geographic",
+            "provenance": "Pleiades",
+            "references": [
+                {
+                    "accessURI": "https://digi.ub.uni-heidelberg.de/diglit/pergamon1895/0066/image,info",
+                    "alternateURI": "https://epigraphy.packhum.org/text/301970?hs=64-74",
+                    "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/42PGA6FH",
+                    "citationDetail": "no. 316, line 2",
+                    "citationTypeURI": "http://purl.org/spar/cito/citesAsEvidence",
+                    "formattedCitation": "<div class=\"csl-entry\">Fränkel, Max. <i>Die Inschriften von Pergamon / 1 Bis zum Ende der Königszeit</i>. Berlin: Spemann, 1890.</div>",
+                    "otherIdentifier": "OCLC 1406589406",
+                    "shortTitle": "Fränkel 1895",
+                    "type": "citesAsEvidence"
+                },
+                {
+                    "accessURI": "https://search.worldcat.org/title/995630298",
+                    "alternateURI": "",
+                    "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/R99CBHDH",
+                    "citationDetail": "p. 189",
+                    "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+                    "formattedCitation": "Canepa, Matthew P. Iranian Expanse Transforming Royal Identity through Architecture, Landscape, and the Built Environment, 550 BCE-642 CE. Berkeley: University of California Press, 2018, p. 189.",
+                    "otherIdentifier": "",
+                    "shortTitle": "Canepa 2018",
+                    "type": "seeFurther"
+                },
+                {
+                    "accessURI": "https://books.google.com/books?id=MWiMV6llZesC&printsec=frontcover&source=gbs_ViewAPI#v=onepage&q&f=false",
+                    "alternateURI": "https://search.worldcat.org/title/18166364",
+                    "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/X36CCNUU",
+                    "citationDetail": "pp. 216-17",
+                    "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+                    "formattedCitation": "<div class=\"csl-entry\">Boyce, Mary, and F. Grenet. <i>A History of Zoroastrianism, Zoroastrianism under Macedonian and Roman Rule</i>. BRILL, 1991.</div>",
+                    "otherIdentifier": "",
+                    "shortTitle": "Boyce and Grenet 1991",
+                    "type": "seeFurther"
+                }
+            ],
+            "review_state": "published",
+            "romanized": "Hierolophos",
+            "start": -540,
+            "transcriptionAccuracy": "accurate",
+            "transcriptionCompleteness": "complete",
+            "uri": "https://pleiades.stoa.org/places/550868/hierolophos"
+        }
+    ],
+    "placeTypeURIs": [
+        "https://pleiades.stoa.org/vocabularies/place-types/settlement"
+    ],
+    "placeTypes": [
+        "settlement"
+    ],
+    "provenance": "Barrington Atlas: BAtlas 56 E4 Sarıçam",
+    "references": [
+        {
+            "accessURI": "http://www.worldcat.org/oclc/43970336",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/MIAGQ5C6",
+            "citationDetail": "56 E4 Sarıçam",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Talbert, Richard J. A., ed. <i>Barrington Atlas of the Greek and Roman World</i>. Princeton, N.J.: Princeton University Press, 2000. http://www.worldcat.org/oclc/43970336.</div>",
+            "otherIdentifier": " ",
+            "shortTitle": "BAtlas",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "http://www.worldcat.org/oclc/879065914",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/4JJHZU6A",
+            "citationDetail": "5.2 500",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Akademie der Wissenschaften (Vienna). <i>Tituli Asiae Minoris</i>. Vienna: Apud Academiam scientiarum Austriacam, 1901. http://www.worldcat.org/oclc/879065914.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "TAM",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "https://darmc.harvard.edu/",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/9UD9W75C",
+            "citationDetail": "14609",
+            "citationTypeURI": "http://purl.org/spar/cito/citesAsRelated",
+            "formattedCitation": "<div class=\"csl-entry\">Michael McCormick, Giovanni Zambotti, Leland Grigoli, and Kelly Gibson, eds. <i>The Digital Atlas of Roman and Medieval Civilizations</i>. Cambridge (Massachusetts): Harvard University, 2007. https://darmc.harvard.edu/.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "DARMC",
+            "type": "citesAsRelated"
+        }
+    ],
+    "reprPoint": [
+        27.494156361638375,
+        38.80428196215599
+    ],
+    "review_state": "published",
+    "rights": "Copyright © The Creators. Sharing and remixing permitted under terms of the Creative Commons Attribution 3.0 License (cc-by).",
+    "subject": [
+        "dare:major=0",
+        "dare:ancient=0",
+        "dare:feature=settlement"
+    ],
+    "title": "Sarıçam",
+    "type": "FeatureCollection",
+    "uri": "https://pleiades.stoa.org/places/550868"
+}

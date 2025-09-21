@@ -1,0 +1,478 @@
+{
+    "@type": "Place",
+    "bbox": [
+        -2.0563683,
+        50.8242679,
+        -2.0483109,
+        50.8284988
+    ],
+    "connections": [
+        {
+            "@type": "Connection",
+            "associationCertainty": "certain",
+            "attestations": [],
+            "connectionType": "connection",
+            "connectionTypeURI": "https://pleiades.stoa.org/vocabularies/relationship-types/connection",
+            "connectsTo": "https://pleiades.stoa.org/places/79438",
+            "contributors": [],
+            "created": "2016-07-13T13:56:19Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "",
+                    "uri": "https://pleiades.stoa.org/author/admin",
+                    "username": "admin"
+                }
+            ],
+            "description": "",
+            "details": "",
+            "end": null,
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2016-07-13T13:56:19Z",
+                    "modifiedBy": "admin"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2016-07-13T13:56:19Z",
+                    "modifiedBy": "admin"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2016-07-13T13:56:19Z",
+                    "modifiedBy": "admin"
+                }
+            ],
+            "id": "79438",
+            "provenance": "Pleiades",
+            "references": [],
+            "review_state": "published",
+            "start": null,
+            "title": "Durotriges",
+            "uri": "https://pleiades.stoa.org/places/511968274/79438"
+        }
+    ],
+    "connectsWith": [
+        "https://pleiades.stoa.org/places/79438"
+    ],
+    "contributors": [
+        {
+            "homepage": null,
+            "name": "Tom Elliott",
+            "uri": "https://pleiades.stoa.org/author/thomase",
+            "username": "thomase"
+        },
+        {
+            "homepage": null,
+            "name": "Maxime Guénette",
+            "uri": "https://pleiades.stoa.org/author/maximeg",
+            "username": "maximeg"
+        }
+    ],
+    "created": "2024-12-16T18:31:01Z",
+    "creators": [
+        {
+            "homepage": null,
+            "name": "Jeffrey Becker",
+            "uri": "https://pleiades.stoa.org/author/jbecker",
+            "username": "jbecker"
+        }
+    ],
+    "description": "Badbury Rings is an Iron Age hill fort in Dorset, England.",
+    "details": "",
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        -2.0529565,
+                        50.8284155
+                    ],
+                    [
+                        -2.0521192,
+                        50.8284988
+                    ],
+                    [
+                        -2.0512399,
+                        50.8284901
+                    ],
+                    [
+                        -2.0502235,
+                        50.828323
+                    ],
+                    [
+                        -2.0492444,
+                        50.827975
+                    ],
+                    [
+                        -2.0488796,
+                        50.8277582
+                    ],
+                    [
+                        -2.0483753,
+                        50.8272499
+                    ],
+                    [
+                        -2.0483109,
+                        50.8267213
+                    ],
+                    [
+                        -2.0483646,
+                        50.8261927
+                    ],
+                    [
+                        -2.0486543,
+                        50.825698
+                    ],
+                    [
+                        -2.050446,
+                        50.8246204
+                    ],
+                    [
+                        -2.0516798,
+                        50.8243493
+                    ],
+                    [
+                        -2.0528492,
+                        50.8242679
+                    ],
+                    [
+                        -2.0541045,
+                        50.8243696
+                    ],
+                    [
+                        -2.055628,
+                        50.824966
+                    ],
+                    [
+                        -2.0563027,
+                        50.8257853
+                    ],
+                    [
+                        -2.0563683,
+                        50.8264028
+                    ],
+                    [
+                        -2.0561752,
+                        50.826945
+                    ],
+                    [
+                        -2.0557675,
+                        50.8274397
+                    ],
+                    [
+                        -2.0551345,
+                        50.8279479
+                    ],
+                    [
+                        -2.0542333,
+                        50.8282732
+                    ],
+                    [
+                        -2.0535037,
+                        50.8283681
+                    ],
+                    [
+                        -2.0529565,
+                        50.8284155
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "id": "osm-location-of-badbury-rings",
+            "properties": {
+                "description": "Representative location based on OpenStreetMap",
+                "link": "https://pleiades.stoa.org/places/511968274/osm-location-of-badbury-rings",
+                "location_precision": "precise",
+                "snippet": "Hillfort; 800 BC - AD 100",
+                "title": "OSM location of Badbury Rings"
+            },
+            "type": "Feature"
+        }
+    ],
+    "history": [
+        {
+            "comment": "update references",
+            "modified": "2024-12-16T22:58:25Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "Edited type for hillfort @maximeg",
+            "modified": "2024-12-16T22:55:10Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "comment": "Baseline created",
+            "modified": "2024-12-16T18:31:00Z",
+            "modifiedBy": "maximeg"
+        },
+        {
+            "action": "Publish externally",
+            "modified": "2013-09-25T20:13:38Z",
+            "modifiedBy": "bdturner"
+        },
+        {
+            "action": "Submit for review",
+            "modified": "2013-09-01T04:35:27Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "created place",
+            "modified": "2013-09-01T04:34:09Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "action": "Create",
+            "modified": "2013-09-01T04:34:05Z",
+            "modifiedBy": "jbecker"
+        }
+    ],
+    "id": "511968274",
+    "locations": [
+        {
+            "@type": "Location",
+            "accuracy": "https://pleiades.stoa.org/features/metadata/generic-osm-accuracy-assessment",
+            "accuracy_value": 20.0,
+            "archaeologicalRemains": "unknown",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "iron-age-britain",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/iron-age-britain"
+                }
+            ],
+            "contributors": [],
+            "created": "2024-12-16T22:56:59Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "description": "Representative location based on OpenStreetMap",
+            "details": "",
+            "end": 100,
+            "featureType": [
+                "hillfort"
+            ],
+            "featureTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/hillfort"
+            ],
+            "geometry": {
+                "coordinates": [
+                    [
+                        -2.0529565,
+                        50.8284155
+                    ],
+                    [
+                        -2.0521192,
+                        50.8284988
+                    ],
+                    [
+                        -2.0512399,
+                        50.8284901
+                    ],
+                    [
+                        -2.0502235,
+                        50.828323
+                    ],
+                    [
+                        -2.0492444,
+                        50.827975
+                    ],
+                    [
+                        -2.0488796,
+                        50.8277582
+                    ],
+                    [
+                        -2.0483753,
+                        50.8272499
+                    ],
+                    [
+                        -2.0483109,
+                        50.8267213
+                    ],
+                    [
+                        -2.0483646,
+                        50.8261927
+                    ],
+                    [
+                        -2.0486543,
+                        50.825698
+                    ],
+                    [
+                        -2.050446,
+                        50.8246204
+                    ],
+                    [
+                        -2.0516798,
+                        50.8243493
+                    ],
+                    [
+                        -2.0528492,
+                        50.8242679
+                    ],
+                    [
+                        -2.0541045,
+                        50.8243696
+                    ],
+                    [
+                        -2.055628,
+                        50.824966
+                    ],
+                    [
+                        -2.0563027,
+                        50.8257853
+                    ],
+                    [
+                        -2.0563683,
+                        50.8264028
+                    ],
+                    [
+                        -2.0561752,
+                        50.826945
+                    ],
+                    [
+                        -2.0557675,
+                        50.8274397
+                    ],
+                    [
+                        -2.0551345,
+                        50.8279479
+                    ],
+                    [
+                        -2.0542333,
+                        50.8282732
+                    ],
+                    [
+                        -2.0535037,
+                        50.8283681
+                    ],
+                    [
+                        -2.0529565,
+                        50.8284155
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "history": [
+                {
+                    "comment": "Reimported full way geometry and updated provenance",
+                    "modified": "2025-05-07T23:59:39Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Publish externally",
+                    "modified": "2025-01-09T20:56:06Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2024-12-16T22:57:29Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "add OSM location",
+                    "modified": "2024-12-16T22:57:25Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Location from OSM created by Products.PleiadesEntity.browser.osm.OSMLocationFactory",
+                    "modified": "2024-12-16T22:56:59Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2024-12-16T22:56:59Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "osm-location-of-badbury-rings",
+            "locationType": [
+                "representative"
+            ],
+            "locationTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/hillfort"
+            ],
+            "provenance": "OpenStreetMap (Way 1301857308, version 2, osm:changeset=154035324, 2024-07-16T23:10:28Z)",
+            "references": [
+                {
+                    "accessURI": "https://www.openstreetmap.org/browse/way/1301857308",
+                    "alternateURI": "",
+                    "bibliographicURI": "",
+                    "citationDetail": "Way 1301857308",
+                    "citationTypeURI": "http://purl.org/spar/cito/citesAsDataSource",
+                    "formattedCitation": "osm:way=1301857308",
+                    "otherIdentifier": "",
+                    "shortTitle": "OSM",
+                    "type": "citesAsDataSource"
+                }
+            ],
+            "review_state": "published",
+            "start": -800,
+            "title": "OSM location of Badbury Rings",
+            "uri": "https://pleiades.stoa.org/places/511968274/osm-location-of-badbury-rings"
+        }
+    ],
+    "names": [],
+    "placeTypeURIs": [
+        "https://pleiades.stoa.org/vocabularies/place-types/hillfort",
+        "https://pleiades.stoa.org/vocabularies/place-types/fort"
+    ],
+    "placeTypes": [
+        "hillfort",
+        "fort"
+    ],
+    "provenance": "Pleiades",
+    "references": [
+        {
+            "accessURI": "https://en.wikipedia.org/wiki/Badbury_Rings",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/2533/items/CI6F6W7W",
+            "citationDetail": "Badbury Rings",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "Wikipedia: the free encyclopedia that anyone can edit (2001-), Badbury Rings.",
+            "otherIdentifier": " ",
+            "shortTitle": "Wikipedia (English)",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "http://www.pastscape.org.uk/hob.aspx?hob_id=209560",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/2GLEU38X",
+            "citationDetail": "no. 209560: BADBURY RINGS",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Historic England. <i>PastScape: Information on England’s Archaeology and Architecture</i>, 2015. https://www.pastscape.org.uk/.</div>",
+            "otherIdentifier": " ",
+            "shortTitle": "PastScape",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "https://www.wikidata.org/wiki/Q798831",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/BCQIKDKS",
+            "citationDetail": "Badbury Rings (Q798831)",
+            "citationTypeURI": "http://purl.org/spar/cito/citesAsRelated",
+            "formattedCitation": "<div class=\"csl-entry\"><i>Wikidata: The Free Knowledge Base That Anyone Can Edit</i>. Wikimedia Foundation, 2014. https://www.wikidata.org/.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Wikidata",
+            "type": "citesAsRelated"
+        }
+    ],
+    "reprPoint": [
+        -2.0523427778004923,
+        50.82643087077124
+    ],
+    "review_state": "published",
+    "rights": "Copyright © The Contributors. Sharing and remixing permitted under terms of the Creative Commons Attribution 3.0 License (cc-by).",
+    "subject": [],
+    "title": "Badbury Rings",
+    "type": "FeatureCollection",
+    "uri": "https://pleiades.stoa.org/places/511968274"
+}

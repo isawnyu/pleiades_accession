@@ -1,0 +1,524 @@
+{
+    "@type": "Place",
+    "bbox": [
+        30.4646704,
+        36.9821576,
+        30.4652187,
+        36.9827159
+    ],
+    "connections": [
+        {
+            "@type": "Connection",
+            "associationCertainty": "certain",
+            "attestations": [],
+            "connectionType": "at",
+            "connectionTypeURI": "https://pleiades.stoa.org/vocabularies/relationship-types/at",
+            "connectsTo": "https://pleiades.stoa.org/places/639139",
+            "contributors": [],
+            "created": "2023-11-05T04:16:46Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "description": "",
+            "details": "",
+            "end": null,
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2023-11-06T11:32:30Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2023-11-05T04:16:52Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "cnxn",
+                    "modified": "2023-11-05T04:16:48Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2023-11-05T04:16:46Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "termessos",
+            "provenance": "Pleiades",
+            "references": [],
+            "review_state": "published",
+            "start": null,
+            "title": "Termessos",
+            "uri": "https://pleiades.stoa.org/places/544710174/termessos"
+        }
+    ],
+    "connectsWith": [
+        "https://pleiades.stoa.org/places/639139"
+    ],
+    "contributors": [
+        {
+            "homepage": null,
+            "name": "Jeffrey Becker",
+            "uri": "https://pleiades.stoa.org/author/jbecker",
+            "username": "jbecker"
+        }
+    ],
+    "created": "2016-06-06T15:16:59Z",
+    "creators": [
+        {
+            "homepage": null,
+            "name": "Tom Elliott",
+            "uri": "https://pleiades.stoa.org/author/thomase",
+            "username": "thomase"
+        }
+    ],
+    "description": "The Theater at Termessos is a Hellenistic and Roman structure, with the Roman theater preserving elements of the earlier phase.",
+    "details": "",
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    30.4649424,
+                    36.9824565
+                ],
+                "type": "Point"
+            },
+            "id": "termessos-theater",
+            "properties": {
+                "description": "Representative location based on OpenStreetMap",
+                "link": "https://pleiades.stoa.org/places/544710174/termessos-theater",
+                "location_precision": "precise",
+                "snippet": "Theatre; 330 BC - AD 300",
+                "title": "OSM location of Termessos - Theater"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        30.4650822,
+                        36.9827097
+                    ],
+                    [
+                        30.4652187,
+                        36.9826854
+                    ],
+                    [
+                        30.4650715,
+                        36.9821576
+                    ],
+                    [
+                        30.464935,
+                        36.9821819
+                    ],
+                    [
+                        30.464852,
+                        36.9822061
+                    ],
+                    [
+                        30.4647796,
+                        36.9822466
+                    ],
+                    [
+                        30.4647229,
+                        36.9823008
+                    ],
+                    [
+                        30.4646857,
+                        36.9823648
+                    ],
+                    [
+                        30.4646704,
+                        36.9824343
+                    ],
+                    [
+                        30.4646782,
+                        36.9825046
+                    ],
+                    [
+                        30.4647085,
+                        36.9825709
+                    ],
+                    [
+                        30.4647593,
+                        36.9826287
+                    ],
+                    [
+                        30.464827,
+                        36.982674
+                    ],
+                    [
+                        30.4649072,
+                        36.9827038
+                    ],
+                    [
+                        30.4649942,
+                        36.9827159
+                    ],
+                    [
+                        30.4650822,
+                        36.9827097
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "id": "osm-location-of-termessos-tiyatrosu",
+            "properties": {
+                "description": "Representstive location based on OpenStreetMap",
+                "link": "https://pleiades.stoa.org/places/544710174/osm-location-of-termessos-tiyatrosu",
+                "location_precision": "precise",
+                "snippet": "Theatre; 330 BC - AD 300",
+                "title": "OSM location of Termessos Tiyatrosu"
+            },
+            "type": "Feature"
+        }
+    ],
+    "history": [
+        {
+            "action": "Publish externally",
+            "modified": "2018-09-08T15:24:43Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "action": "Submit for review",
+            "modified": "2018-06-04T16:39:39Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "summary, reference",
+            "modified": "2018-06-04T16:39:02Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "Initial revision",
+            "modified": "2016-06-06T15:17:05Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "action": "Create",
+            "modified": "2016-06-06T15:16:59Z",
+            "modifiedBy": "thomase"
+        }
+    ],
+    "id": "544710174",
+    "locations": [
+        {
+            "@type": "Location",
+            "accuracy": "https://pleiades.stoa.org/features/metadata/generic-osm-accuracy-assessment",
+            "accuracy_value": 20.0,
+            "archaeologicalRemains": "unknown",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "hellenistic-republican",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/hellenistic-republican"
+                },
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "roman",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/roman"
+                }
+            ],
+            "contributors": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "created": "2016-06-06T15:18:31Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Tom Elliott",
+                    "uri": "https://pleiades.stoa.org/author/thomase",
+                    "username": "thomase"
+                }
+            ],
+            "description": "Representative location based on OpenStreetMap",
+            "details": "",
+            "end": 300,
+            "featureType": [
+                "theatre"
+            ],
+            "featureTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/theatre"
+            ],
+            "geometry": {
+                "coordinates": [
+                    30.4649424,
+                    36.9824565
+                ],
+                "type": "Point"
+            },
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2018-09-08T15:24:44Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2018-06-04T16:39:40Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2018-06-04T16:39:31Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Initial revision",
+                    "modified": "2016-06-06T15:21:48Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "comment": "Location from OSM created by Products.PleiadesEntity.browser.osm.OSMLocationFactory",
+                    "modified": "2016-06-06T15:18:32Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2016-06-06T15:18:31Z",
+                    "modifiedBy": "thomase"
+                }
+            ],
+            "id": "termessos-theater",
+            "locationType": [
+                "representative"
+            ],
+            "locationTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/theatre"
+            ],
+            "provenance": "OpenStreetMap (Node 764437342, version 3, osm:changeset=26630808, 2014-11-07T22:42:26Z)",
+            "references": [
+                {
+                    "accessURI": "http://www.openstreetmap.org/browse/node/764437342",
+                    "alternateURI": "",
+                    "bibliographicURI": "",
+                    "citationDetail": "Node 764437342",
+                    "citationTypeURI": "http://purl.org/spar/cito/citesAsDataSource",
+                    "formattedCitation": "osm:node=764437342",
+                    "otherIdentifier": " ",
+                    "shortTitle": "OSM",
+                    "type": "citesAsDataSource"
+                }
+            ],
+            "review_state": "published",
+            "start": -330,
+            "title": "OSM location of Termessos - Theater",
+            "uri": "https://pleiades.stoa.org/places/544710174/termessos-theater"
+        },
+        {
+            "@type": "Location",
+            "accuracy": "https://pleiades.stoa.org/features/metadata/generic-osm-accuracy-assessment",
+            "accuracy_value": 20.0,
+            "archaeologicalRemains": "substantive",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "hellenistic-republican",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/hellenistic-republican"
+                },
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "roman",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/roman"
+                }
+            ],
+            "contributors": [],
+            "created": "2023-11-05T04:15:47Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                },
+                {
+                    "homepage": null,
+                    "name": "Tom Elliott",
+                    "uri": "https://pleiades.stoa.org/author/thomase",
+                    "username": "thomase"
+                }
+            ],
+            "description": "Representstive location based on OpenStreetMap",
+            "details": "",
+            "end": 300,
+            "featureType": [
+                "theatre"
+            ],
+            "featureTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/theatre"
+            ],
+            "geometry": {
+                "coordinates": [
+                    [
+                        30.4650822,
+                        36.9827097
+                    ],
+                    [
+                        30.4652187,
+                        36.9826854
+                    ],
+                    [
+                        30.4650715,
+                        36.9821576
+                    ],
+                    [
+                        30.464935,
+                        36.9821819
+                    ],
+                    [
+                        30.464852,
+                        36.9822061
+                    ],
+                    [
+                        30.4647796,
+                        36.9822466
+                    ],
+                    [
+                        30.4647229,
+                        36.9823008
+                    ],
+                    [
+                        30.4646857,
+                        36.9823648
+                    ],
+                    [
+                        30.4646704,
+                        36.9824343
+                    ],
+                    [
+                        30.4646782,
+                        36.9825046
+                    ],
+                    [
+                        30.4647085,
+                        36.9825709
+                    ],
+                    [
+                        30.4647593,
+                        36.9826287
+                    ],
+                    [
+                        30.464827,
+                        36.982674
+                    ],
+                    [
+                        30.4649072,
+                        36.9827038
+                    ],
+                    [
+                        30.4649942,
+                        36.9827159
+                    ],
+                    [
+                        30.4650822,
+                        36.9827097
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2023-11-06T11:32:22Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2023-11-05T04:16:21Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "supersedes previously published location.",
+                    "modified": "2023-11-05T04:16:15Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Location from OSM created by Products.PleiadesEntity.browser.osm.OSMLocationFactory",
+                    "modified": "2023-11-05T04:15:47Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2023-11-05T04:15:47Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "osm-location-of-termessos-tiyatrosu",
+            "locationType": [
+                "representative"
+            ],
+            "locationTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/theatre"
+            ],
+            "provenance": "OpenStreetMap (Way 431891710, version 3, osm:changeset=137722780, 2023-06-24T13:59:29Z)",
+            "references": [
+                {
+                    "accessURI": "https://www.openstreetmap.org/browse/way/431891710",
+                    "alternateURI": "",
+                    "bibliographicURI": "",
+                    "citationDetail": "Way 431891710",
+                    "citationTypeURI": "http://purl.org/spar/cito/citesAsDataSource",
+                    "formattedCitation": "osm:way=431891710",
+                    "otherIdentifier": "",
+                    "shortTitle": "OSM",
+                    "type": "citesAsDataSource"
+                }
+            ],
+            "review_state": "published",
+            "start": -330,
+            "title": "OSM location of Termessos Tiyatrosu",
+            "uri": "https://pleiades.stoa.org/places/544710174/osm-location-of-termessos-tiyatrosu"
+        }
+    ],
+    "names": [],
+    "placeTypeURIs": [
+        "https://pleiades.stoa.org/vocabularies/place-types/theatre"
+    ],
+    "placeTypes": [
+        "theatre"
+    ],
+    "provenance": "Pleiades",
+    "references": [
+        {
+            "accessURI": "https://en.wikipedia.org/wiki/Termessos",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/2533/pleiades/items/itemKey/CI6F6W7W/q/wikipedia",
+            "citationDetail": "Termessos",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "",
+            "otherIdentifier": "",
+            "shortTitle": "Wikipedia (English)",
+            "type": "seeFurther"
+        }
+    ],
+    "reprPoint": [
+        30.464947901523953,
+        36.982457520112604
+    ],
+    "review_state": "published",
+    "rights": "Copyright © The Contributors. Sharing and remixing permitted under terms of the Creative Commons Attribution 3.0 License (cc-by).",
+    "subject": [],
+    "title": "Theater at Termessos",
+    "type": "FeatureCollection",
+    "uri": "https://pleiades.stoa.org/places/544710174"
+}

@@ -1,0 +1,399 @@
+{
+    "@type": "Place",
+    "bbox": [
+        9.399956,
+        40.0013462,
+        9.4023002,
+        40.0035406
+    ],
+    "connections": [
+        {
+            "@type": "Connection",
+            "associationCertainty": "certain",
+            "attestations": [],
+            "connectionType": "connection",
+            "connectionTypeURI": "https://pleiades.stoa.org/vocabularies/relationship-types/connection",
+            "connectsTo": "https://pleiades.stoa.org/places/472014",
+            "contributors": [],
+            "created": "2016-07-13T13:59:14Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "",
+                    "uri": "https://pleiades.stoa.org/author/admin",
+                    "username": "admin"
+                }
+            ],
+            "description": "",
+            "details": "",
+            "end": null,
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2016-07-13T13:59:14Z",
+                    "modifiedBy": "admin"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2016-07-13T13:59:14Z",
+                    "modifiedBy": "admin"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2016-07-13T13:59:14Z",
+                    "modifiedBy": "admin"
+                }
+            ],
+            "id": "472014",
+            "provenance": "Pleiades",
+            "references": [],
+            "review_state": "published",
+            "start": null,
+            "title": "Sardinia (island)",
+            "uri": "https://pleiades.stoa.org/places/594406649/472014"
+        }
+    ],
+    "connectsWith": [
+        "https://pleiades.stoa.org/places/472014"
+    ],
+    "contributors": [],
+    "created": "2014-09-20T11:40:25Z",
+    "creators": [
+        {
+            "homepage": null,
+            "name": "Jeffrey Becker",
+            "uri": "https://pleiades.stoa.org/author/jbecker",
+            "username": "jbecker"
+        }
+    ],
+    "description": "A significant nuragic complex with major occupational phases during the middle Bronze Age and during the Bronze- to Iron Age transition. A 17 meter long megaron with its temenos is a main feature of the site.",
+    "details": "",
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        9.3999989,
+                        40.0033844
+                    ],
+                    [
+                        9.399956,
+                        40.0021927
+                    ],
+                    [
+                        9.4004173,
+                        40.0013709
+                    ],
+                    [
+                        9.4007499,
+                        40.0013462
+                    ],
+                    [
+                        9.4012917,
+                        40.0018681
+                    ],
+                    [
+                        9.4016511,
+                        40.0018599
+                    ],
+                    [
+                        9.4017423,
+                        40.0018928
+                    ],
+                    [
+                        9.4021983,
+                        40.0021147
+                    ],
+                    [
+                        9.4023002,
+                        40.0028831
+                    ],
+                    [
+                        9.4006855,
+                        40.0033187
+                    ],
+                    [
+                        9.4004281,
+                        40.0035406
+                    ],
+                    [
+                        9.3999989,
+                        40.0033844
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "id": "osm-location",
+            "properties": {
+                "description": "Location based on OpenStreetMap",
+                "link": "https://pleiades.stoa.org/places/594406649/osm-location",
+                "location_precision": "precise",
+                "snippet": "Settlement, ; 2000 BC - 1000 BC",
+                "title": "OSM location of Area archeologica di S'Arcu 'e is Forros"
+            },
+            "type": "Feature"
+        }
+    ],
+    "history": [
+        {
+            "comment": "wikidata Q2382870",
+            "modified": "2024-12-21T22:17:13Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "action": "Publish externally",
+            "modified": "2018-09-25T22:02:12Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "comment": "Edited",
+            "modified": "2016-07-31T01:55:52Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "added reference",
+            "modified": "2015-06-29T19:05:06Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "action": "Submit for review",
+            "modified": "2014-09-20T14:49:43Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "edited description",
+            "modified": "2014-09-20T14:46:09Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "added reference",
+            "modified": "2014-09-20T11:44:42Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "created place",
+            "modified": "2014-09-20T11:40:35Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "action": "Create",
+            "modified": "2014-09-20T11:40:25Z",
+            "modifiedBy": "jbecker"
+        }
+    ],
+    "id": "594406649",
+    "locations": [
+        {
+            "@type": "Location",
+            "accuracy": "https://pleiades.stoa.org/features/metadata/generic-osm-accuracy-assessment",
+            "accuracy_value": 20.0,
+            "archaeologicalRemains": "substantive",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "2nd-millenium-bce",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/2nd-millenium-bce"
+                }
+            ],
+            "contributors": [],
+            "created": "2014-09-20T11:43:17Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "description": "Location based on OpenStreetMap",
+            "details": "",
+            "end": -1000,
+            "featureType": [
+                "settlement",
+                ""
+            ],
+            "featureTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/settlement",
+                "https://pleiades.stoa.org/vocabularies/place-types/"
+            ],
+            "geometry": {
+                "coordinates": [
+                    [
+                        9.3999989,
+                        40.0033844
+                    ],
+                    [
+                        9.399956,
+                        40.0021927
+                    ],
+                    [
+                        9.4004173,
+                        40.0013709
+                    ],
+                    [
+                        9.4007499,
+                        40.0013462
+                    ],
+                    [
+                        9.4012917,
+                        40.0018681
+                    ],
+                    [
+                        9.4016511,
+                        40.0018599
+                    ],
+                    [
+                        9.4017423,
+                        40.0018928
+                    ],
+                    [
+                        9.4021983,
+                        40.0021147
+                    ],
+                    [
+                        9.4023002,
+                        40.0028831
+                    ],
+                    [
+                        9.4006855,
+                        40.0033187
+                    ],
+                    [
+                        9.4004281,
+                        40.0035406
+                    ],
+                    [
+                        9.3999989,
+                        40.0033844
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "history": [
+                {
+                    "comment": "Reimported full way geometry and updated provenance",
+                    "modified": "2024-12-21T22:16:24Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Publish externally",
+                    "modified": "2018-09-25T22:02:12Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2016-07-31T01:56:49Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2014-09-20T15:02:07Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "added location",
+                    "modified": "2014-09-20T11:43:54Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Location from OSM created by Products.PleiadesEntity.browser.osm.OSMLocationFactory",
+                    "modified": "2014-09-20T11:43:22Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2014-09-20T11:43:20Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "osm-location",
+            "locationType": [
+                "representative",
+                ""
+            ],
+            "locationTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/settlement",
+                "https://pleiades.stoa.org/vocabularies/place-types/"
+            ],
+            "provenance": "OpenStreetMap (Way 304204374, version 4, osm:changeset=44484857, 2016-12-18T08:29:24Z)",
+            "references": [
+                {
+                    "accessURI": "http://www.openstreetmap.org/browse/way/304204374",
+                    "alternateURI": "",
+                    "bibliographicURI": "",
+                    "citationDetail": "Way 304204374",
+                    "citationTypeURI": "http://purl.org/spar/cito/citesAsDataSource",
+                    "formattedCitation": "osm:way=304204374",
+                    "otherIdentifier": " ",
+                    "shortTitle": "OSM",
+                    "type": "citesAsDataSource"
+                }
+            ],
+            "review_state": "published",
+            "start": -2000,
+            "title": "OSM location of Area archeologica di S'Arcu 'e is Forros",
+            "uri": "https://pleiades.stoa.org/places/594406649/osm-location"
+        }
+    ],
+    "names": [],
+    "placeTypeURIs": [
+        "https://pleiades.stoa.org/vocabularies/place-types/nuraghe",
+        "https://pleiades.stoa.org/vocabularies/place-types/settlement"
+    ],
+    "placeTypes": [
+        "nuraghe",
+        "settlement"
+    ],
+    "provenance": "Pleiades",
+    "references": [
+        {
+            "accessURI": "https://it.wikipedia.org/wiki/Complesso_nuragico_di_S'Arcu_'e_Is_Forros",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/2533/pleiades/items/itemKey/UMFZH98D",
+            "citationDetail": "Complesso nuragico di S'Arcu 'e Is Forros",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "Wikipedia: L’enciclopedia libera e collaborativa (2001-), Complesso nuragico di S'Arcu 'e Is Forros.",
+            "otherIdentifier": " ",
+            "shortTitle": "Wikipedia (Italian)",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "http://www.arkeosardinia.it/en/santuario-di-sarcu-e-is-forros/",
+            "alternateURI": "",
+            "bibliographicURI": "",
+            "citationDetail": "",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "ArkeoSardinia: Santuario di S’Arcu ‘e Is Forros",
+            "otherIdentifier": " ",
+            "shortTitle": "",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "https://www.wikidata.org/wiki/Q2382870",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/BCQIKDKS",
+            "citationDetail": "Nuragic complex of S'Arcu 'e Is Forros (Q2382870)",
+            "citationTypeURI": "http://purl.org/spar/cito/citesAsRelated",
+            "formattedCitation": "<div class=\"csl-entry\"><i>Wikidata: The Free Knowledge Base That Anyone Can Edit</i>. Wikimedia Foundation, 2014. https://www.wikidata.org/.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Wikidata",
+            "type": "citesAsRelated"
+        }
+    ],
+    "reprPoint": [
+        9.400986902384313,
+        40.00247762224666
+    ],
+    "review_state": "published",
+    "rights": "Copyright © The Contributors. Sharing and remixing permitted under terms of the Creative Commons Attribution 3.0 License (cc-by).",
+    "subject": [
+        "nuraghe",
+        "extant remains"
+    ],
+    "title": "S'Arcu 'e is Forros",
+    "type": "FeatureCollection",
+    "uri": "https://pleiades.stoa.org/places/594406649"
+}

@@ -1,0 +1,591 @@
+{
+    "@type": "Place",
+    "bbox": [
+        5.3935575,
+        48.6341707,
+        5.4119897,
+        48.6427776
+    ],
+    "connections": [
+        {
+            "@type": "Connection",
+            "associationCertainty": "certain",
+            "attestations": [],
+            "connectionType": "connection",
+            "connectionTypeURI": "https://pleiades.stoa.org/vocabularies/relationship-types/connection",
+            "connectsTo": "https://pleiades.stoa.org/places/109190",
+            "contributors": [],
+            "created": "2016-07-13T13:47:10Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "",
+                    "uri": "https://pleiades.stoa.org/author/admin",
+                    "username": "admin"
+                }
+            ],
+            "description": "",
+            "details": "",
+            "end": null,
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2016-07-13T13:47:10Z",
+                    "modifiedBy": "admin"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2016-07-13T13:47:10Z",
+                    "modifiedBy": "admin"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2016-07-13T13:47:10Z",
+                    "modifiedBy": "admin"
+                }
+            ],
+            "id": "109190",
+            "provenance": "Pleiades",
+            "references": [],
+            "review_state": "published",
+            "start": null,
+            "title": "Nasium",
+            "uri": "https://pleiades.stoa.org/places/58239709/109190"
+        }
+    ],
+    "connectsWith": [
+        "https://pleiades.stoa.org/places/109190"
+    ],
+    "contributors": [
+        {
+            "homepage": null,
+            "name": "Jeffrey Becker",
+            "uri": "https://pleiades.stoa.org/author/jbecker",
+            "username": "jbecker"
+        },
+        {
+            "homepage": null,
+            "name": "Tom Elliott",
+            "uri": "https://pleiades.stoa.org/author/thomase",
+            "username": "thomase"
+        }
+    ],
+    "created": "2012-03-18T21:28:37Z",
+    "creators": [
+        {
+            "homepage": null,
+            "name": "Johan Åhlfeldt",
+            "uri": "https://pleiades.stoa.org/author/jahlfeldt",
+            "username": "jahlfeldt"
+        }
+    ],
+    "description": "Gallo-Roman hilltop settlement",
+    "details": "",
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        5.3949737,
+                        48.6400411
+                    ],
+                    [
+                        5.3976774,
+                        48.6407075
+                    ],
+                    [
+                        5.4024625,
+                        48.642494
+                    ],
+                    [
+                        5.4069257,
+                        48.6427776
+                    ],
+                    [
+                        5.4119897,
+                        48.6420829
+                    ],
+                    [
+                        5.4099941,
+                        48.6387934
+                    ],
+                    [
+                        5.4093718,
+                        48.6382404
+                    ],
+                    [
+                        5.4033637,
+                        48.6373754
+                    ],
+                    [
+                        5.4015827,
+                        48.6364963
+                    ],
+                    [
+                        5.400998,
+                        48.6358617
+                    ],
+                    [
+                        5.4004884,
+                        48.6351208
+                    ],
+                    [
+                        5.3977847,
+                        48.6341707
+                    ],
+                    [
+                        5.3967333,
+                        48.6357022
+                    ],
+                    [
+                        5.3960466,
+                        48.636709
+                    ],
+                    [
+                        5.3948664,
+                        48.6374888
+                    ],
+                    [
+                        5.3945446,
+                        48.6380844
+                    ],
+                    [
+                        5.3951883,
+                        48.6388217
+                    ],
+                    [
+                        5.3957677,
+                        48.6393747
+                    ],
+                    [
+                        5.3952741,
+                        48.6396299
+                    ],
+                    [
+                        5.3943085,
+                        48.6393038
+                    ],
+                    [
+                        5.3935575,
+                        48.6392329
+                    ],
+                    [
+                        5.3949737,
+                        48.6400411
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "id": "osm-location-of-oppidum-boviolles",
+            "properties": {
+                "description": "Representative location based on OpenStreetMap",
+                "link": "https://pleiades.stoa.org/places/58239709/osm-location-of-oppidum-boviolles",
+                "location_precision": "precise",
+                "snippet": "Fortified-settlement; 330 BC - AD 640",
+                "title": "OSM location of Oppidum boviolles"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    5.402328,
+                    48.639069
+                ],
+                "type": "Point"
+            },
+            "id": "imagery-location-center-point-of-the-oppidum",
+            "properties": {
+                "description": "Gallo-Roman oppidum at Mont Châtel, commune Boviolles, département Meuse",
+                "link": "https://pleiades.stoa.org/places/58239709/imagery-location-center-point-of-the-oppidum",
+                "location_precision": "precise",
+                "snippet": "Unknown; 330 BC - AD 640",
+                "title": "Imagery Location: Center point of the oppidum"
+            },
+            "type": "Feature"
+        }
+    ],
+    "history": [
+        {
+            "comment": "update references",
+            "modified": "2023-11-29T14:40:36Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "added reference",
+            "modified": "2016-08-21T13:01:39Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "action": "Publish externally",
+            "modified": "2012-07-09T16:06:36Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "comment": "Edited",
+            "modified": "2012-07-09T16:06:15Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "action": "Submit for review",
+            "modified": "2012-03-18T21:31:14Z",
+            "modifiedBy": "jahlfeldt"
+        },
+        {
+            "comment": "Initial revision",
+            "modified": "2012-03-18T21:28:39Z",
+            "modifiedBy": "jahlfeldt"
+        },
+        {
+            "action": "Create",
+            "modified": "2012-03-18T21:28:37Z",
+            "modifiedBy": "jahlfeldt"
+        }
+    ],
+    "id": "58239709",
+    "locations": [
+        {
+            "@type": "Location",
+            "accuracy": "https://pleiades.stoa.org/features/metadata/generic-osm-accuracy-assessment",
+            "accuracy_value": 20.0,
+            "archaeologicalRemains": "unknown",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "hellenistic-republican",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/hellenistic-republican"
+                },
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "roman",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/roman"
+                },
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "late-antique",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/late-antique"
+                }
+            ],
+            "contributors": [],
+            "created": "2023-11-29T14:39:14Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "description": "Representative location based on OpenStreetMap",
+            "details": "",
+            "end": 640,
+            "featureType": [
+                "fortified-settlement"
+            ],
+            "featureTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/fortified-settlement"
+            ],
+            "geometry": {
+                "coordinates": [
+                    [
+                        5.3949737,
+                        48.6400411
+                    ],
+                    [
+                        5.3976774,
+                        48.6407075
+                    ],
+                    [
+                        5.4024625,
+                        48.642494
+                    ],
+                    [
+                        5.4069257,
+                        48.6427776
+                    ],
+                    [
+                        5.4119897,
+                        48.6420829
+                    ],
+                    [
+                        5.4099941,
+                        48.6387934
+                    ],
+                    [
+                        5.4093718,
+                        48.6382404
+                    ],
+                    [
+                        5.4033637,
+                        48.6373754
+                    ],
+                    [
+                        5.4015827,
+                        48.6364963
+                    ],
+                    [
+                        5.400998,
+                        48.6358617
+                    ],
+                    [
+                        5.4004884,
+                        48.6351208
+                    ],
+                    [
+                        5.3977847,
+                        48.6341707
+                    ],
+                    [
+                        5.3967333,
+                        48.6357022
+                    ],
+                    [
+                        5.3960466,
+                        48.636709
+                    ],
+                    [
+                        5.3948664,
+                        48.6374888
+                    ],
+                    [
+                        5.3945446,
+                        48.6380844
+                    ],
+                    [
+                        5.3951883,
+                        48.6388217
+                    ],
+                    [
+                        5.3957677,
+                        48.6393747
+                    ],
+                    [
+                        5.3952741,
+                        48.6396299
+                    ],
+                    [
+                        5.3943085,
+                        48.6393038
+                    ],
+                    [
+                        5.3935575,
+                        48.6392329
+                    ],
+                    [
+                        5.3949737,
+                        48.6400411
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2023-11-29T17:57:26Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2023-11-29T14:39:46Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "added osm location",
+                    "modified": "2023-11-29T14:39:40Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Location from OSM created by Products.PleiadesEntity.browser.osm.OSMLocationFactory",
+                    "modified": "2023-11-29T14:39:14Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2023-11-29T14:39:14Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "osm-location-of-oppidum-boviolles",
+            "locationType": [
+                "representative"
+            ],
+            "locationTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/fortified-settlement"
+            ],
+            "provenance": "OpenStreetMap (Way 695825816, version 3, osm:changeset=138540695, 2023-07-15T11:19:31Z)",
+            "references": [
+                {
+                    "accessURI": "https://www.openstreetmap.org/browse/way/695825816",
+                    "alternateURI": "",
+                    "bibliographicURI": "",
+                    "citationDetail": "Way 695825816",
+                    "citationTypeURI": "http://purl.org/spar/cito/citesAsDataSource",
+                    "formattedCitation": "osm:way=695825816",
+                    "otherIdentifier": "",
+                    "shortTitle": "OSM",
+                    "type": "citesAsDataSource"
+                }
+            ],
+            "review_state": "published",
+            "start": -330,
+            "title": "OSM location of Oppidum boviolles",
+            "uri": "https://pleiades.stoa.org/places/58239709/osm-location-of-oppidum-boviolles"
+        },
+        {
+            "@type": "Location",
+            "accuracy": "https://pleiades.stoa.org/features/metadata/google-earth-and-digitalglobe-imagery-2012",
+            "accuracy_value": 4.2,
+            "archaeologicalRemains": "unknown",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "hellenistic-republican",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/hellenistic-republican"
+                },
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "roman",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/roman"
+                },
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "late-antique",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/late-antique"
+                }
+            ],
+            "contributors": [],
+            "created": "2012-03-18T21:30:50Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Johan Åhlfeldt",
+                    "uri": "https://pleiades.stoa.org/author/jahlfeldt",
+                    "username": "jahlfeldt"
+                }
+            ],
+            "description": "Gallo-Roman oppidum at Mont Châtel, commune Boviolles, département Meuse",
+            "details": "",
+            "end": 640,
+            "featureType": [
+                "unknown"
+            ],
+            "featureTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/unknown"
+            ],
+            "geometry": {
+                "coordinates": [
+                    5.402328,
+                    48.639069
+                ],
+                "type": "Point"
+            },
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2012-07-09T16:06:46Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2012-03-18T21:31:00Z",
+                    "modifiedBy": "jahlfeldt"
+                },
+                {
+                    "comment": "Initial revision",
+                    "modified": "2012-03-18T21:30:52Z",
+                    "modifiedBy": "jahlfeldt"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2012-03-18T21:30:50Z",
+                    "modifiedBy": "jahlfeldt"
+                }
+            ],
+            "id": "imagery-location-center-point-of-the-oppidum",
+            "locationType": [
+                "representative"
+            ],
+            "locationTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/unknown"
+            ],
+            "provenance": "Pleiades",
+            "references": [],
+            "review_state": "published",
+            "start": -330,
+            "title": "Imagery Location: Center point of the oppidum",
+            "uri": "https://pleiades.stoa.org/places/58239709/imagery-location-center-point-of-the-oppidum"
+        }
+    ],
+    "names": [],
+    "placeTypeURIs": [
+        "https://pleiades.stoa.org/vocabularies/place-types/fortified-settlement",
+        "https://pleiades.stoa.org/vocabularies/place-types/earthwork",
+        "https://pleiades.stoa.org/vocabularies/place-types/settlement",
+        "https://pleiades.stoa.org/vocabularies/place-types/fort"
+    ],
+    "placeTypes": [
+        "fortified-settlement",
+        "earthwork",
+        "settlement",
+        "fort"
+    ],
+    "provenance": "Pleiades",
+    "references": [
+        {
+            "accessURI": "http://www.oppida.org/page.php?lg=fr&rub=00&id_oppidum=5",
+            "alternateURI": "",
+            "bibliographicURI": "",
+            "citationDetail": "",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "Oppida.org Boviolles",
+            "otherIdentifier": " ",
+            "shortTitle": "",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "https://fr.wikipedia.org/wiki/Boviolles",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/2533/pleiades/items/itemKey/B4HPCZIK",
+            "citationDetail": "Boviolles",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "Wikipédia: L’encyclopédie libre que chacun peut améliorer (2001-), Boviolles.",
+            "otherIdentifier": " ",
+            "shortTitle": "Wikipedia (French)",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "https://www.pop.culture.gouv.fr/notice/merimee/PA00132873",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/KQ7A48AA",
+            "citationDetail": "PA00132873",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\"><i>Mérimée</i>. Ministére de la Culture (France), 2014. http://www.culture.gouv.fr/Espace-documentation/Bases-de-donnees/Merimee-consultable-depuis-le-moteur-Collections.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Mérimée",
+            "type": "seeFurther"
+        }
+    ],
+    "reprPoint": [
+        5.402287686645153,
+        48.63918430412572
+    ],
+    "review_state": "published",
+    "rights": "Copyright © The Contributors. Sharing and remixing permitted under terms of the Creative Commons Attribution 3.0 License (cc-by).",
+    "subject": [
+        "earthwork",
+        "murus Gallicus"
+    ],
+    "title": "Boviolles",
+    "type": "FeatureCollection",
+    "uri": "https://pleiades.stoa.org/places/58239709"
+}

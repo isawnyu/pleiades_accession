@@ -1,0 +1,241 @@
+{
+    "@type": "Place",
+    "bbox": [
+        69.2831672,
+        34.5833132,
+        69.2831672,
+        34.5833132
+    ],
+    "connections": [],
+    "connectsWith": [],
+    "contributors": [],
+    "created": "2013-11-26T03:20:25Z",
+    "creators": [
+        {
+            "homepage": null,
+            "name": "Jeffrey Becker",
+            "uri": "https://pleiades.stoa.org/author/jbecker",
+            "username": "jbecker"
+        }
+    ],
+    "description": "Minar-i Chakri, located in the Kabul province of Afghanistan, was the site of a Kushan-era pillar dating to the second or third century AD that was destroyed in the later twentieth century by the Soviet army.",
+    "details": "",
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    69.2831672,
+                    34.5833132
+                ],
+                "type": "Point"
+            },
+            "id": "location-of-minar-i-chakri",
+            "properties": {
+                "description": "Representative location based on OpenStreetMap.",
+                "link": "https://pleiades.stoa.org/places/569531630/location-of-minar-i-chakri",
+                "location_precision": "precise",
+                "snippet": "Monument; 30 BC - AD 226",
+                "title": "OSM location of Minar-i Chakri"
+            },
+            "type": "Feature"
+        }
+    ],
+    "history": [
+        {
+            "comment": "updates",
+            "modified": "2021-08-16T00:39:42Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "action": "Publish externally",
+            "modified": "2021-03-07T00:29:45Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "action": "Submit for review",
+            "modified": "2017-01-02T17:06:21Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "Edited",
+            "modified": "2017-01-02T17:05:27Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "created place",
+            "modified": "2013-11-26T03:20:30Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "action": "Create",
+            "modified": "2013-11-26T03:20:26Z",
+            "modifiedBy": "jbecker"
+        }
+    ],
+    "id": "569531630",
+    "locations": [
+        {
+            "@type": "Location",
+            "accuracy": "https://pleiades.stoa.org/features/metadata/generic-osm-accuracy-assessment",
+            "accuracy_value": 20.0,
+            "archaeologicalRemains": "traces",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "roman-early-empire-parthian-middle-east",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/roman-early-empire-parthian-middle-east"
+                }
+            ],
+            "contributors": [],
+            "created": "2013-11-26T03:22:28Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "description": "Representative location based on OpenStreetMap.",
+            "details": "",
+            "end": 226,
+            "featureType": [
+                "monument"
+            ],
+            "featureTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/monument"
+            ],
+            "geometry": {
+                "coordinates": [
+                    69.2831672,
+                    34.5833132
+                ],
+                "type": "Point"
+            },
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2021-03-07T00:29:45Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2017-01-02T17:06:21Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2017-01-02T17:04:56Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "added location",
+                    "modified": "2013-11-26T03:23:04Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Location from OSM created by Products.PleiadesEntity.browser.osm.OSMLocationFactory",
+                    "modified": "2013-11-26T03:22:31Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2013-11-26T03:22:30Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "location-of-minar-i-chakri",
+            "locationType": [
+                "representative"
+            ],
+            "locationTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/monument"
+            ],
+            "provenance": "OpenStreetMap (Node 2551955816, version 1, osm:changeset=19120584, 2013-11-26T03:22:04Z)",
+            "references": [
+                {
+                    "accessURI": "http://www.openstreetmap.org/browse/node/2551955816",
+                    "alternateURI": "",
+                    "bibliographicURI": "",
+                    "citationDetail": "Node 2551955816",
+                    "citationTypeURI": "http://purl.org/spar/cito/citesAsDataSource",
+                    "formattedCitation": "osm:node=2551955816",
+                    "otherIdentifier": " ",
+                    "shortTitle": "OSM",
+                    "type": "citesAsDataSource"
+                }
+            ],
+            "review_state": "published",
+            "start": -30,
+            "title": "OSM location of Minar-i Chakri",
+            "uri": "https://pleiades.stoa.org/places/569531630/location-of-minar-i-chakri"
+        }
+    ],
+    "names": [],
+    "placeTypeURIs": [
+        "https://pleiades.stoa.org/vocabularies/place-types/monument"
+    ],
+    "placeTypes": [
+        "monument"
+    ],
+    "provenance": "Pleiades",
+    "references": [
+        {
+            "accessURI": "",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/I5AVS237",
+            "citationDetail": "n. 718",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Ball, Warwick, and Jean Claude Gardin. <i>Archaeological Gazetteer of Afghanistan</i>. 2 vols. Synthèse (Editions Recherche Sur Les Civilisations) 8. Paris: Editions Recherche sur les civilisations, 1982.</div>",
+            "otherIdentifier": " ",
+            "shortTitle": "Ball 1982",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "https://de.wikipedia.org/wiki/Minar-i_Chakri",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/2533/pleiades/items/itemKey/QVRBJVTM",
+            "citationDetail": "Minar-i Chakri",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "Wikipedia: Die freie Enzyklopädie (2001-), Minar-i Chakri.",
+            "otherIdentifier": " ",
+            "shortTitle": "Wikipedia (German)",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "https://www.aiamilitarypanel.org/profiles/cptraining/afgh05-148.html",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/KQP9AVP6",
+            "citationDetail": "148. Minar-i Chakri",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">CENTCOM Historical/Cultural Advisory Group. “Cultural Heritage Training - Afghanistan.” Accessed August 2, 2017. https://www.aiamilitarypanel.org/profiles/cptraining/afghanstart.html.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "CENTCOM Afghanistan",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "https://en.wikipedia.org/wiki/Minar-i_Chakri",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/CI6F6W7W",
+            "citationDetail": "Minar-i Chakri",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\"><i>Wikipedia: The Free Encyclopedia That Anyone Can Edit</i>. Wikimedia Foundation, 2001. https://en.wikipedia.org.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Wikipedia (English)",
+            "type": "seeFurther"
+        }
+    ],
+    "reprPoint": [
+        69.2831672,
+        34.5833132
+    ],
+    "review_state": "published",
+    "rights": "Copyright © The Contributors. Sharing and remixing permitted under terms of the Creative Commons Attribution 3.0 License (cc-by).",
+    "subject": [],
+    "title": "Minar-i Chakri",
+    "type": "FeatureCollection",
+    "uri": "https://pleiades.stoa.org/places/569531630"
+}

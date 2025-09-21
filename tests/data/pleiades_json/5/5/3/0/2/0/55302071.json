@@ -1,0 +1,1169 @@
+{
+    "@type": "Place",
+    "bbox": [
+        12.4861156,
+        41.8916355,
+        12.4862813,
+        41.8917516
+    ],
+    "connections": [
+        {
+            "@type": "Connection",
+            "associationCertainty": "certain",
+            "attestations": [],
+            "connectionType": "at",
+            "connectionTypeURI": "https://pleiades.stoa.org/vocabularies/relationship-types/at",
+            "connectsTo": "https://pleiades.stoa.org/places/423025",
+            "contributors": [],
+            "created": "2017-02-10T18:36:17Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Tom Elliott",
+                    "uri": "https://pleiades.stoa.org/author/thomase",
+                    "username": "thomase"
+                }
+            ],
+            "description": "",
+            "details": "",
+            "end": null,
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2017-02-10T18:36:18Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2017-02-10T18:36:17Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2017-02-10T18:36:17Z",
+                    "modifiedBy": "thomase"
+                }
+            ],
+            "id": "7774741262",
+            "provenance": "Pleiades",
+            "references": [],
+            "review_state": "published",
+            "start": null,
+            "title": "Roma",
+            "uri": "https://pleiades.stoa.org/places/55302071/7774741262"
+        },
+        {
+            "@type": "Connection",
+            "associationCertainty": "certain",
+            "attestations": [],
+            "connectionType": "part_of_analytical",
+            "connectionTypeURI": "https://pleiades.stoa.org/vocabularies/relationship-types/part_of_analytical",
+            "connectsTo": "https://pleiades.stoa.org/places/337325364",
+            "contributors": [],
+            "created": "2021-10-24T03:04:34Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "description": "",
+            "details": "",
+            "end": null,
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2022-04-13T21:52:30Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2022-04-13T03:41:30Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "reference",
+                    "modified": "2022-04-13T03:41:12Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "cnxn",
+                    "modified": "2021-10-24T03:04:35Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2021-10-24T03:04:34Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "regio-viii-forum-romanum",
+            "provenance": "Pleiades",
+            "references": [
+                {
+                    "accessURI": "https://en.wikipedia.org/wiki/Regio_VIII_Forum_Romanum",
+                    "alternateURI": "",
+                    "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/CI6F6W7W",
+                    "citationDetail": "Regio VIII Forum Romanum",
+                    "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+                    "formattedCitation": "<div class=\"csl-entry\"><i>Wikipedia: The Free Encyclopedia That Anyone Can Edit</i>. Wikimedia Foundation, 2001. https://en.wikipedia.org.</div>",
+                    "otherIdentifier": "",
+                    "shortTitle": "Wikipedia (English)",
+                    "type": "seeFurther"
+                }
+            ],
+            "review_state": "published",
+            "start": null,
+            "title": "Regio VIII (Forum Romanum)",
+            "uri": "https://pleiades.stoa.org/places/55302071/regio-viii-forum-romanum"
+        }
+    ],
+    "connectsWith": [
+        "https://pleiades.stoa.org/places/423025",
+        "https://pleiades.stoa.org/places/337325364",
+        "https://pleiades.stoa.org/places/795139357"
+    ],
+    "contributors": [
+        {
+            "homepage": null,
+            "name": "Jeffrey Becker",
+            "uri": "https://pleiades.stoa.org/author/jbecker",
+            "username": "jbecker"
+        },
+        {
+            "homepage": null,
+            "name": "Brady Kiesling",
+            "uri": "https://pleiades.stoa.org/author/bkiesling",
+            "username": "bkiesling"
+        },
+        {
+            "homepage": null,
+            "name": "Sean Gillies",
+            "uri": "https://pleiades.stoa.org/author/sgillies",
+            "username": "sgillies"
+        }
+    ],
+    "created": "2017-02-10T18:36:07Z",
+    "creators": [
+        {
+            "homepage": null,
+            "name": "Sebastian Heath",
+            "uri": "https://pleiades.stoa.org/author/sebs",
+            "username": "sebs"
+        },
+        {
+            "homepage": null,
+            "name": "Tom Elliott",
+            "uri": "https://pleiades.stoa.org/author/thomase",
+            "username": "thomase"
+        }
+    ],
+    "description": "The Temple of Vesta, located at the east end of the Forum Romanum.",
+    "details": "<p>The visible remains of the temple belong to the Severan period.</p>",
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    12.4862,
+                    41.8917
+                ],
+                "type": "Point"
+            },
+            "id": "temple-of-vesta",
+            "properties": {
+                "description": "Representative point as determined from Google Earth. Dates after Platner & Ashby.",
+                "link": "https://pleiades.stoa.org/places/55302071/temple-of-vesta",
+                "location_precision": "precise",
+                "snippet": "Temple-2; 750 BC - AD 640",
+                "title": "Imagery Location of the Temple of Vesta"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            12.4862609,
+                            41.8917334
+                        ],
+                        [
+                            12.4862698,
+                            41.8917254
+                        ],
+                        [
+                            12.4862746,
+                            41.8917193
+                        ],
+                        [
+                            12.4862789,
+                            41.8917108
+                        ],
+                        [
+                            12.4862813,
+                            41.891698
+                        ],
+                        [
+                            12.4862797,
+                            41.8916858
+                        ],
+                        [
+                            12.4862757,
+                            41.8916757
+                        ],
+                        [
+                            12.4862669,
+                            41.8916669
+                        ]
+                    ],
+                    [
+                        [
+                            12.4862366,
+                            41.8917447
+                        ],
+                        [
+                            12.4862486,
+                            41.8917407
+                        ],
+                        [
+                            12.4862609,
+                            41.8917334
+                        ]
+                    ],
+                    [
+                        [
+                            12.486183,
+                            41.8917509
+                        ],
+                        [
+                            12.4861935,
+                            41.8917516
+                        ],
+                        [
+                            12.4862056,
+                            41.8917513
+                        ],
+                        [
+                            12.4862176,
+                            41.8917497
+                        ],
+                        [
+                            12.4862281,
+                            41.8917473
+                        ],
+                        [
+                            12.4862366,
+                            41.8917447
+                        ]
+                    ],
+                    [
+                        [
+                            12.4861725,
+                            41.8917483
+                        ],
+                        [
+                            12.486183,
+                            41.8917509
+                        ]
+                    ],
+                    [
+                        [
+                            12.4861725,
+                            41.8917483
+                        ],
+                        [
+                            12.4861577,
+                            41.8917437
+                        ],
+                        [
+                            12.4861435,
+                            41.8917365
+                        ],
+                        [
+                            12.4861338,
+                            41.8917285
+                        ],
+                        [
+                            12.4861234,
+                            41.8917175
+                        ],
+                        [
+                            12.4861164,
+                            41.8917042
+                        ]
+                    ],
+                    [
+                        [
+                            12.4861164,
+                            41.8917042
+                        ],
+                        [
+                            12.4861156,
+                            41.891689
+                        ],
+                        [
+                            12.4861201,
+                            41.8916741
+                        ],
+                        [
+                            12.4861295,
+                            41.8916606
+                        ],
+                        [
+                            12.4861433,
+                            41.8916493
+                        ],
+                        [
+                            12.4861605,
+                            41.8916411
+                        ],
+                        [
+                            12.48618,
+                            41.8916363
+                        ],
+                        [
+                            12.4862004,
+                            41.8916355
+                        ],
+                        [
+                            12.4862205,
+                            41.8916386
+                        ],
+                        [
+                            12.4862388,
+                            41.8916454
+                        ],
+                        [
+                            12.4862542,
+                            41.8916554
+                        ],
+                        [
+                            12.4862669,
+                            41.8916669
+                        ]
+                    ]
+                ],
+                "type": "MultiLineString"
+            },
+            "id": "osm-location-of-temple-of-vesta",
+            "properties": {
+                "description": "Representative location based on OpenStreetMap",
+                "link": "https://pleiades.stoa.org/places/55302071/osm-location-of-temple-of-vesta",
+                "location_precision": "precise",
+                "snippet": "Temple-2; 750 BC - AD 640",
+                "title": "OSM location of Temple of Vesta"
+            },
+            "type": "Feature"
+        }
+    ],
+    "history": [
+        {
+            "comment": "update references",
+            "modified": "2025-01-01T00:01:27Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "update references",
+            "modified": "2023-07-27T22:38:25Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "Arachne 2105606: Tempel der Vesta Rom",
+            "modified": "2022-04-13T03:39:43Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "added references for wikidata, vici.org, geonames, TM GEO",
+            "modified": "2020-07-25T14:22:11Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "added topostext",
+            "modified": "2020-07-23T23:29:13Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "action": "Publish externally",
+            "modified": "2017-02-10T18:53:24Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "action": "Submit for review",
+            "modified": "2017-02-10T18:51:21Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "comment": "added Platner & AShby",
+            "modified": "2017-02-10T18:50:56Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "comment": "Edited",
+            "modified": "2017-02-10T18:47:12Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "comment": "Initial revision",
+            "modified": "2017-02-10T18:38:22Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "comment": "Migrated from location",
+            "modified": "2017-02-10T18:36:20Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "action": "Create",
+            "modified": "2017-02-10T18:36:07Z",
+            "modifiedBy": "thomase"
+        }
+    ],
+    "id": "55302071",
+    "locations": [
+        {
+            "@type": "Location",
+            "accuracy": "https://pleiades.stoa.org/features/metadata/google-geoeye-2010",
+            "accuracy_value": 5.0,
+            "archaeologicalRemains": "substantive",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "archaic",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/archaic"
+                },
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "classical",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/classical"
+                },
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "hellenistic-republican",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/hellenistic-republican"
+                },
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "roman",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/roman"
+                },
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "late-antique",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/late-antique"
+                }
+            ],
+            "contributors": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                },
+                {
+                    "homepage": null,
+                    "name": "Sean Gillies",
+                    "uri": "https://pleiades.stoa.org/author/sgillies",
+                    "username": "sgillies"
+                },
+                {
+                    "homepage": null,
+                    "name": "Tom Elliott",
+                    "uri": "https://pleiades.stoa.org/author/thomase",
+                    "username": "thomase"
+                }
+            ],
+            "created": "2011-01-24T18:04:52Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Sebastian Heath",
+                    "uri": "https://pleiades.stoa.org/author/sebs",
+                    "username": "sebs"
+                }
+            ],
+            "description": "Representative point as determined from Google Earth. Dates after Platner & Ashby.",
+            "details": "<p>The visible remains of the temple belong to the Severan period.</p>",
+            "end": 640,
+            "featureType": [
+                "temple-2"
+            ],
+            "featureTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/temple-2"
+            ],
+            "geometry": {
+                "coordinates": [
+                    12.4862,
+                    41.8917
+                ],
+                "type": "Point"
+            },
+            "history": [
+                {
+                    "comment": "description and title",
+                    "modified": "2017-02-10T18:53:16Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "comment": "added reference",
+                    "modified": "2016-12-24T12:19:09Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2016-07-19T16:46:02Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2016-07-08T18:44:48Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2014-02-16T15:20:22Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "added reference",
+                    "modified": "2014-02-16T15:19:23Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Global migration and reindexing of citations and provenance, February 2012",
+                    "modified": "2012-02-15T04:56:44Z",
+                    "modifiedBy": "admin"
+                },
+                {
+                    "action": "Publish externally",
+                    "modified": "2011-06-17T04:56:03Z",
+                    "modifiedBy": "sgillies"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2011-06-17T04:55:34Z",
+                    "modifiedBy": "sgillies"
+                },
+                {
+                    "comment": "accuracy assessment",
+                    "modified": "2011-02-23T17:36:26Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2011-01-24T20:41:55Z",
+                    "modifiedBy": "sgillies"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2011-01-24T18:04:53Z",
+                    "modifiedBy": "sebs"
+                }
+            ],
+            "id": "temple-of-vesta",
+            "locationType": [
+                "representative"
+            ],
+            "locationTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/temple-2"
+            ],
+            "provenance": "Pleiades",
+            "references": [
+                {
+                    "accessURI": "https://en.wikipedia.org/wiki/Temple_of_Vesta",
+                    "alternateURI": "",
+                    "bibliographicURI": "https://www.zotero.org/groups/2533/items/CI6F6W7W",
+                    "citationDetail": "Temple of Vesta",
+                    "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+                    "formattedCitation": "Wikipedia: the free encyclopedia that anyone can edit (2001-), Temple of Vesta.",
+                    "otherIdentifier": " ",
+                    "shortTitle": "Wikipedia (English)",
+                    "type": "seeFurther"
+                },
+                {
+                    "accessURI": "http://www.geonames.org/10278740/temple-of-vesta.html",
+                    "alternateURI": "",
+                    "bibliographicURI": "",
+                    "citationDetail": "",
+                    "citationTypeURI": "http://purl.org/spar/cito/citesAsRelated",
+                    "formattedCitation": "GeoNames 10278740",
+                    "otherIdentifier": "",
+                    "shortTitle": "",
+                    "type": "citesAsRelated"
+                },
+                {
+                    "accessURI": "http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0054%3Aalphabetic+letter%3DV%3Aentry+group%3D1%3Aentry%3Dvesta-aedes",
+                    "alternateURI": "",
+                    "bibliographicURI": "",
+                    "citationDetail": "",
+                    "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+                    "formattedCitation": "Platner and Ashby 1929 (Perseus), VESTA, AEDES",
+                    "otherIdentifier": "",
+                    "shortTitle": "",
+                    "type": "seeFurther"
+                }
+            ],
+            "review_state": "published",
+            "start": -750,
+            "title": "Imagery Location of the Temple of Vesta",
+            "uri": "https://pleiades.stoa.org/places/55302071/temple-of-vesta"
+        },
+        {
+            "@type": "Location",
+            "accuracy": "https://pleiades.stoa.org/features/metadata/generic-osm-accuracy-assessment",
+            "accuracy_value": 20.0,
+            "archaeologicalRemains": "traces",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "archaic",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/archaic"
+                },
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "classical",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/classical"
+                },
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "hellenistic-republican",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/hellenistic-republican"
+                },
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "roman",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/roman"
+                },
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "late-antique",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/late-antique"
+                }
+            ],
+            "contributors": [],
+            "created": "2023-10-15T14:36:15Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "description": "Representative location based on OpenStreetMap",
+            "details": "",
+            "end": 640,
+            "featureType": [
+                "temple-2"
+            ],
+            "featureTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/temple-2"
+            ],
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            12.4862609,
+                            41.8917334
+                        ],
+                        [
+                            12.4862698,
+                            41.8917254
+                        ],
+                        [
+                            12.4862746,
+                            41.8917193
+                        ],
+                        [
+                            12.4862789,
+                            41.8917108
+                        ],
+                        [
+                            12.4862813,
+                            41.891698
+                        ],
+                        [
+                            12.4862797,
+                            41.8916858
+                        ],
+                        [
+                            12.4862757,
+                            41.8916757
+                        ],
+                        [
+                            12.4862669,
+                            41.8916669
+                        ]
+                    ],
+                    [
+                        [
+                            12.4862366,
+                            41.8917447
+                        ],
+                        [
+                            12.4862486,
+                            41.8917407
+                        ],
+                        [
+                            12.4862609,
+                            41.8917334
+                        ]
+                    ],
+                    [
+                        [
+                            12.486183,
+                            41.8917509
+                        ],
+                        [
+                            12.4861935,
+                            41.8917516
+                        ],
+                        [
+                            12.4862056,
+                            41.8917513
+                        ],
+                        [
+                            12.4862176,
+                            41.8917497
+                        ],
+                        [
+                            12.4862281,
+                            41.8917473
+                        ],
+                        [
+                            12.4862366,
+                            41.8917447
+                        ]
+                    ],
+                    [
+                        [
+                            12.4861725,
+                            41.8917483
+                        ],
+                        [
+                            12.486183,
+                            41.8917509
+                        ]
+                    ],
+                    [
+                        [
+                            12.4861725,
+                            41.8917483
+                        ],
+                        [
+                            12.4861577,
+                            41.8917437
+                        ],
+                        [
+                            12.4861435,
+                            41.8917365
+                        ],
+                        [
+                            12.4861338,
+                            41.8917285
+                        ],
+                        [
+                            12.4861234,
+                            41.8917175
+                        ],
+                        [
+                            12.4861164,
+                            41.8917042
+                        ]
+                    ],
+                    [
+                        [
+                            12.4861164,
+                            41.8917042
+                        ],
+                        [
+                            12.4861156,
+                            41.891689
+                        ],
+                        [
+                            12.4861201,
+                            41.8916741
+                        ],
+                        [
+                            12.4861295,
+                            41.8916606
+                        ],
+                        [
+                            12.4861433,
+                            41.8916493
+                        ],
+                        [
+                            12.4861605,
+                            41.8916411
+                        ],
+                        [
+                            12.48618,
+                            41.8916363
+                        ],
+                        [
+                            12.4862004,
+                            41.8916355
+                        ],
+                        [
+                            12.4862205,
+                            41.8916386
+                        ],
+                        [
+                            12.4862388,
+                            41.8916454
+                        ],
+                        [
+                            12.4862542,
+                            41.8916554
+                        ],
+                        [
+                            12.4862669,
+                            41.8916669
+                        ]
+                    ]
+                ],
+                "type": "MultiLineString"
+            },
+            "history": [
+                {
+                    "comment": "Reimported full relation geometry and updated provenance",
+                    "modified": "2025-02-17T17:05:51Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Publish externally",
+                    "modified": "2023-10-18T18:06:39Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2023-10-15T14:36:50Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "added osm location",
+                    "modified": "2023-10-15T14:36:47Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Location from OSM created by Products.PleiadesEntity.browser.osm.OSMLocationFactory",
+                    "modified": "2023-10-15T14:36:15Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2023-10-15T14:36:15Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "osm-location-of-temple-of-vesta",
+            "locationType": [
+                "representative"
+            ],
+            "locationTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/temple-2"
+            ],
+            "provenance": "OpenStreetMap (Relation 1842062, version 9, osm:changeset=134641071, 2023-04-08T07:28:02Z)",
+            "references": [
+                {
+                    "accessURI": "https://www.openstreetmap.org/browse/relation/1842062",
+                    "alternateURI": "",
+                    "bibliographicURI": "",
+                    "citationDetail": "Relation 1842062",
+                    "citationTypeURI": "http://purl.org/spar/cito/citesAsDataSource",
+                    "formattedCitation": "osm:relation=1842062",
+                    "otherIdentifier": "",
+                    "shortTitle": "OSM",
+                    "type": "citesAsDataSource"
+                }
+            ],
+            "review_state": "published",
+            "start": -750,
+            "title": "OSM location of Temple of Vesta",
+            "uri": "https://pleiades.stoa.org/places/55302071/osm-location-of-temple-of-vesta"
+        }
+    ],
+    "names": [
+        {
+            "@type": "Name",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "modern",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/modern"
+                }
+            ],
+            "attested": "Temple of Vesta",
+            "contributors": [],
+            "created": "2017-02-11T14:13:10Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "description": "",
+            "details": "",
+            "end": 2100,
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2020-07-25T11:42:57Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2017-02-11T14:13:20Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "added name",
+                    "modified": "2017-02-11T14:13:11Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2017-02-11T14:13:10Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "name.2017-02-11.3472388480",
+            "language": "en",
+            "nameType": "geographic",
+            "provenance": "Pleiades",
+            "references": [
+                {
+                    "accessURI": "http://www.geonames.org/10278740/temple-of-vesta.html",
+                    "alternateURI": "",
+                    "bibliographicURI": "",
+                    "citationDetail": "",
+                    "citationTypeURI": "http://purl.org/spar/cito/citesAsEvidence",
+                    "formattedCitation": "GeoNames 10278740",
+                    "otherIdentifier": "",
+                    "shortTitle": "",
+                    "type": "citesAsEvidence"
+                }
+            ],
+            "review_state": "published",
+            "romanized": "Temple of Vesta",
+            "start": 1700,
+            "transcriptionAccuracy": "accurate",
+            "transcriptionCompleteness": "complete",
+            "uri": "https://pleiades.stoa.org/places/55302071/name.2017-02-11.3472388480"
+        },
+        {
+            "@type": "Name",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "roman",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/roman"
+                }
+            ],
+            "attested": "Ἑστίας ἱερόν",
+            "contributors": [],
+            "created": "2020-07-23T23:31:29Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "description": "",
+            "details": "",
+            "end": 300,
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2020-07-25T11:42:57Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2020-07-23T23:31:37Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "name",
+                    "modified": "2020-07-23T23:31:30Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2020-07-23T23:31:29Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "vestias-hieron",
+            "language": "grc",
+            "nameType": "geographic",
+            "provenance": "Pleiades",
+            "references": [
+                {
+                    "accessURI": "http://data.perseus.org/citations/urn:cts:greekLit:tlg0007.tlg002.perseus-grc1:18.7",
+                    "alternateURI": "",
+                    "bibliographicURI": "",
+                    "citationDetail": "",
+                    "citationTypeURI": "http://purl.org/spar/cito/citesAsEvidence",
+                    "formattedCitation": "Plut. Rom. 18.7",
+                    "otherIdentifier": "",
+                    "shortTitle": "",
+                    "type": "citesAsEvidence"
+                }
+            ],
+            "review_state": "published",
+            "romanized": "Vestias hieron",
+            "start": -30,
+            "transcriptionAccuracy": "accurate",
+            "transcriptionCompleteness": "complete",
+            "uri": "https://pleiades.stoa.org/places/55302071/vestias-hieron"
+        }
+    ],
+    "placeTypeURIs": [
+        "https://pleiades.stoa.org/vocabularies/place-types/temple-2"
+    ],
+    "placeTypes": [
+        "temple-2"
+    ],
+    "provenance": "Pleiades",
+    "references": [
+        {
+            "accessURI": "https://en.wikipedia.org/wiki/Temple_of_Vesta",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/2533/items/CI6F6W7W",
+            "citationDetail": "Temple of Vesta",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "Wikipedia: the free encyclopedia that anyone can edit (2001-), Temple of Vesta.",
+            "otherIdentifier": " ",
+            "shortTitle": "Wikipedia (English)",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "http://penelope.uchicago.edu/Thayer/E/Gazetteer/Places/Europe/Italy/Lazio/Roma/Rome/_Texts/PLATOP*/Vesta.html#aedes",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/H6XK259J",
+            "citationDetail": "VESTA, AEDES",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Platner, Samuel Ball, and Thomas Ashby. <i>A Topographical Dictionary of Ancient Rome</i>. London: Oxford University Press, 1929. http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a1999.04.0054.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Platner 1929 (Perseus)",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "https://topostext.org/place/419125SVes",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/MC9RGDVB",
+            "citationDetail": "Vesta T. (Rome)",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Kiesling, Brady. <i>ToposText – a Reference Tool for Greek Civilization</i>. Version 2.0. Aikaterini Laskaridis Foundation, 2016. https://topostext.org/.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "ToposText",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "https://www.wikidata.org/wiki/Q753791",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/BCQIKDKS",
+            "citationDetail": "Q753791: Temple of Vesta",
+            "citationTypeURI": "http://purl.org/spar/cito/citesAsRelated",
+            "formattedCitation": "<div class=\"csl-entry\"><i>Wikidata: The Free Knowledge Base That Anyone Can Edit</i>. Wikimedia Foundation, 2014. https://www.wikidata.org/.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Wikidata",
+            "type": "citesAsRelated"
+        },
+        {
+            "accessURI": "https://vici.org/vici/15010/",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/CQWHNDIM",
+            "citationDetail": "15010: Temple of Vesta",
+            "citationTypeURI": "http://purl.org/spar/cito/citesAsRelated",
+            "formattedCitation": "<div class=\"csl-entry\">Voorburg, René. <i>Vici.Org: Archaeological Atlas of Antiquity</i>, 2012. https://vici.org/.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "vici.org",
+            "type": "citesAsRelated"
+        },
+        {
+            "accessURI": "https://www.geonames.org/10278740/temple-of-vesta.html",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/IIFE4W6M",
+            "citationDetail": "10278740: Temple of Vesta",
+            "citationTypeURI": "http://purl.org/spar/cito/citesAsRelated",
+            "formattedCitation": "<div class=\"csl-entry\">Marc Wick, and Christophe Boutreux. “GeoNames,” 2005. http://www.geonames.org/.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "GeoNames",
+            "type": "citesAsRelated"
+        },
+        {
+            "accessURI": "https://www.trismegistos.org/place/43989",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/TN3GJAU8",
+            "citationDetail": "GEO ID 43989: Aedis Vestae",
+            "citationTypeURI": "http://purl.org/spar/cito/citesAsRelated",
+            "formattedCitation": "<div class=\"csl-entry\">Depauw, Mark, Tom Gheldof, Herbert Verreth, Nico Dogaer, Willy Clarysse, Yanne Broux, Gert Baetens, and Heinz-Josef Thissen. <i>Trismegistos: An Interdisciplinary Portal of the Ancient World</i>. Leuven, 2006. http://www.trismegistos.org/.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "TM",
+            "type": "citesAsRelated"
+        },
+        {
+            "accessURI": "https://arachne.dainst.org/entity/8407",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/HUWENJCW",
+            "citationDetail": "Tempel der Vesta Forum Romanum, Rom",
+            "citationTypeURI": "http://purl.org/spar/cito/citesAsRelated",
+            "formattedCitation": "<div class=\"csl-entry\">Reinhard Foertsch, ed. <i>Arachne: IDAI Objects</i>. Köln; Berlin: Archaeological Institute, University of Cologne; German Archaeological Institute. Accessed February 5, 2020. https://arachne.uni-koeln.de/.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Arachne",
+            "type": "citesAsRelated"
+        },
+        {
+            "accessURI": "https://www.info.roma.it/monumenti_dettaglio.asp?ID_schede=572",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/UC92I57E",
+            "citationDetail": "572: Tempio di Vesta al Foro Romano",
+            "citationTypeURI": "http://purl.org/spar/cito/citesAsRelated",
+            "formattedCitation": "<div class=\"csl-entry\">“Info.roma.it: La meraviglie di roma.” Accessed February 5, 2020. https://www.info.roma.it.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Info.roma.it",
+            "type": "citesAsRelated"
+        }
+    ],
+    "reprPoint": [
+        12.48619901092189,
+        41.89169706229082
+    ],
+    "review_state": "published",
+    "rights": "Copyright © The Contributors. Sharing and remixing permitted under terms of the Creative Commons Attribution 3.0 License (cc-by).",
+    "subject": [
+        "extant remains",
+        "Vesta",
+        "temple"
+    ],
+    "title": "Temple of Vesta at Rome",
+    "type": "FeatureCollection",
+    "uri": "https://pleiades.stoa.org/places/55302071"
+}

@@ -1,0 +1,415 @@
+{
+    "@type": "Place",
+    "bbox": [
+        12.0865389,
+        41.9435262,
+        12.0865389,
+        41.9435262
+    ],
+    "connections": [
+        {
+            "@type": "Connection",
+            "associationCertainty": "certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "roman",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/roman"
+                }
+            ],
+            "connectionType": "at",
+            "connectionTypeURI": "https://pleiades.stoa.org/vocabularies/relationship-types/at",
+            "connectsTo": "https://pleiades.stoa.org/places/422953",
+            "contributors": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "created": "2016-07-13T13:54:52Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Sean Gillies",
+                    "uri": "https://pleiades.stoa.org/author/sgillies",
+                    "username": "sgillies"
+                }
+            ],
+            "description": "",
+            "details": "",
+            "end": 300,
+            "history": [
+                {
+                    "comment": "Edited",
+                    "modified": "2019-07-05T03:04:13Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Initial revision",
+                    "modified": "2019-07-05T03:03:56Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Publish externally",
+                    "modified": "2016-07-13T13:54:52Z",
+                    "modifiedBy": "admin"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2016-07-13T13:54:52Z",
+                    "modifiedBy": "admin"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2016-07-13T13:54:52Z",
+                    "modifiedBy": "admin"
+                }
+            ],
+            "id": "422953",
+            "provenance": "Pleiades",
+            "references": [
+                {
+                    "accessURI": "http://www.worldcat.org/oclc/949205965",
+                    "alternateURI": "",
+                    "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/CZN7DAZR",
+                    "citationDetail": "389",
+                    "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+                    "formattedCitation": "<div class=\"csl-entry\">Marzano, Annalisa. <i>Roman Villas in Central Italy: A Social and Economic History.</i> Leiden: E.J. Brill, 2007. http://www.worldcat.org/oclc/949205965.</div>",
+                    "otherIdentifier": "",
+                    "shortTitle": "Marzano 2007",
+                    "type": "seeFurther"
+                }
+            ],
+            "review_state": "published",
+            "start": -30,
+            "title": "Ladispoli",
+            "uri": "https://pleiades.stoa.org/places/584868519/422953"
+        }
+    ],
+    "connectsWith": [
+        "https://pleiades.stoa.org/places/422953"
+    ],
+    "contributors": [],
+    "created": "2014-02-13T19:12:14Z",
+    "creators": [
+        {
+            "homepage": null,
+            "name": "Jeffrey Becker",
+            "uri": "https://pleiades.stoa.org/author/jbecker",
+            "username": "jbecker"
+        }
+    ],
+    "description": "An Imperial maritime villa located in Ladispoli, Italy.",
+    "details": "",
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        12.0865389,
+                        41.9435262
+                    ],
+                    [
+                        12.0864303,
+                        41.9435362
+                    ],
+                    [
+                        12.086142,
+                        41.9433486
+                    ],
+                    [
+                        12.0861326,
+                        41.9433287
+                    ],
+                    [
+                        12.0863284,
+                        41.9431771
+                    ],
+                    [
+                        12.0862734,
+                        41.9431402
+                    ],
+                    [
+                        12.0863243,
+                        41.9430993
+                    ],
+                    [
+                        12.0863874,
+                        41.9431392
+                    ],
+                    [
+                        12.0866583,
+                        41.9429416
+                    ],
+                    [
+                        12.08696,
+                        41.9431152
+                    ],
+                    [
+                        12.0869748,
+                        41.943188
+                    ],
+                    [
+                        12.0867696,
+                        41.9433476
+                    ],
+                    [
+                        12.0865389,
+                        41.9435262
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "id": "location-of-roman-villa",
+            "properties": {
+                "description": "Representative location based on OpenStreetMap.",
+                "link": "https://pleiades.stoa.org/places/584868519/location-of-roman-villa",
+                "location_precision": "precise",
+                "snippet": "Villa, ; 30 BC - AD 640",
+                "title": "OSM location of villa romana (Marina di Palo)"
+            },
+            "type": "Feature"
+        }
+    ],
+    "history": [
+        {
+            "action": "Publish externally",
+            "modified": "2021-05-19T00:43:54Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "comment": "Edited",
+            "modified": "2019-07-05T03:03:34Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "action": "Submit for review",
+            "modified": "2016-07-17T16:59:45Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "Edited",
+            "modified": "2016-07-17T16:59:39Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "created place",
+            "modified": "2014-02-13T19:12:20Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "action": "Create",
+            "modified": "2014-02-13T19:12:15Z",
+            "modifiedBy": "jbecker"
+        }
+    ],
+    "id": "584868519",
+    "locations": [
+        {
+            "@type": "Location",
+            "accuracy": "https://pleiades.stoa.org/features/metadata/generic-osm-accuracy-assessment",
+            "accuracy_value": 20.0,
+            "archaeologicalRemains": "substantive",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "roman-early-empire-late-antique",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/roman-early-empire-late-antique"
+                }
+            ],
+            "contributors": [],
+            "created": "2014-02-13T19:12:37Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "description": "Representative location based on OpenStreetMap.",
+            "details": "",
+            "end": 640,
+            "featureType": [
+                "villa",
+                ""
+            ],
+            "featureTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/villa",
+                "https://pleiades.stoa.org/vocabularies/place-types/"
+            ],
+            "geometry": {
+                "coordinates": [
+                    [
+                        12.0865389,
+                        41.9435262
+                    ],
+                    [
+                        12.0864303,
+                        41.9435362
+                    ],
+                    [
+                        12.086142,
+                        41.9433486
+                    ],
+                    [
+                        12.0861326,
+                        41.9433287
+                    ],
+                    [
+                        12.0863284,
+                        41.9431771
+                    ],
+                    [
+                        12.0862734,
+                        41.9431402
+                    ],
+                    [
+                        12.0863243,
+                        41.9430993
+                    ],
+                    [
+                        12.0863874,
+                        41.9431392
+                    ],
+                    [
+                        12.0866583,
+                        41.9429416
+                    ],
+                    [
+                        12.08696,
+                        41.9431152
+                    ],
+                    [
+                        12.0869748,
+                        41.943188
+                    ],
+                    [
+                        12.0867696,
+                        41.9433476
+                    ],
+                    [
+                        12.0865389,
+                        41.9435262
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "history": [
+                {
+                    "comment": "Reimported full way geometry and updated provenance",
+                    "modified": "2024-02-05T20:49:23Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Publish externally",
+                    "modified": "2021-05-19T00:43:54Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2016-07-17T16:59:20Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2016-07-17T16:59:10Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "added location",
+                    "modified": "2014-02-13T19:13:15Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Location from OSM created by Products.PleiadesEntity.browser.osm.OSMLocationFactory",
+                    "modified": "2014-02-13T19:12:38Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2014-02-13T19:12:38Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "location-of-roman-villa",
+            "locationType": [
+                "representative",
+                ""
+            ],
+            "locationTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/villa",
+                "https://pleiades.stoa.org/vocabularies/place-types/"
+            ],
+            "provenance": "OpenStreetMap (Way 261437066, version 4, osm:changeset=61949405, 2018-08-24T10:15:47Z)",
+            "references": [
+                {
+                    "accessURI": "http://www.openstreetmap.org/browse/way/261437066",
+                    "alternateURI": "",
+                    "bibliographicURI": "",
+                    "citationDetail": "Way 261437066",
+                    "citationTypeURI": "http://purl.org/spar/cito/citesAsDataSource",
+                    "formattedCitation": "osm:way=261437066",
+                    "otherIdentifier": " ",
+                    "shortTitle": "OSM",
+                    "type": "citesAsDataSource"
+                }
+            ],
+            "review_state": "published",
+            "start": -30,
+            "title": "OSM location of villa romana (Marina di Palo)",
+            "uri": "https://pleiades.stoa.org/places/584868519/location-of-roman-villa"
+        }
+    ],
+    "names": [],
+    "placeTypeURIs": [
+        "https://pleiades.stoa.org/vocabularies/place-types/villa"
+    ],
+    "placeTypes": [
+        "villa"
+    ],
+    "provenance": "Pleiades",
+    "references": [
+        {
+            "accessURI": "http://www.archeoetruria.altervista.org/marinadipaloen.html",
+            "alternateURI": "",
+            "bibliographicURI": "",
+            "citationDetail": "",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "The Roman villa of Marina di Palo",
+            "otherIdentifier": " ",
+            "shortTitle": "",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "http://www.worldcat.org/oclc/949205965",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/CZN7DAZR",
+            "citationDetail": "389",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Marzano, Annalisa. <i>Roman Villas in Central Italy: A Social and Economic History.</i> Leiden: E.J. Brill, 2007. http://www.worldcat.org/oclc/949205965.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Marzano 2007",
+            "type": "seeFurther"
+        }
+    ],
+    "reprPoint": [
+        12.0865389,
+        41.9435262
+    ],
+    "review_state": "published",
+    "rights": "Copyright © The Contributors. Sharing and remixing permitted under terms of the Creative Commons Attribution 3.0 License (cc-by).",
+    "subject": [
+        "extant remains",
+        "villa"
+    ],
+    "title": "Marina di Palo Roman villa ",
+    "type": "FeatureCollection",
+    "uri": "https://pleiades.stoa.org/places/584868519"
+}

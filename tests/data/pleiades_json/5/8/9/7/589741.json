@@ -1,0 +1,1012 @@
+{
+    "@type": "Place",
+    "bbox": [
+        27.612308,
+        36.2220226,
+        27.6254751,
+        36.226496
+    ],
+    "connections": [
+        {
+            "@type": "Connection",
+            "associationCertainty": "certain",
+            "attestations": [],
+            "connectionType": "on",
+            "connectionTypeURI": "https://pleiades.stoa.org/vocabularies/relationship-types/on",
+            "connectsTo": "https://pleiades.stoa.org/places/589742",
+            "contributors": [],
+            "created": "2025-01-27T15:43:24Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "description": "",
+            "details": "",
+            "end": null,
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2025-01-27T16:26:32Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2025-01-27T15:43:30Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "cnxn",
+                    "modified": "2025-01-27T15:43:25Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2025-01-27T15:43:24Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "chalke-island",
+            "provenance": "Pleiades",
+            "references": [
+                {
+                    "accessURI": "",
+                    "alternateURI": "",
+                    "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/9377UUFB",
+                    "citationDetail": "p. 922",
+                    "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+                    "formattedCitation": "<div class=\"csl-entry\">Talbert, Richard J. A. <i>Barrington Atlas of the Greek and Roman World : Map-by-Map Directory</i>. 2 vols. Princeton, N.J.: Princeton University Press, 2000.</div>",
+                    "otherIdentifier": "",
+                    "shortTitle": "BAtlDir",
+                    "type": "seeFurther"
+                }
+            ],
+            "review_state": "published",
+            "start": null,
+            "title": "Chalke Island",
+            "uri": "https://pleiades.stoa.org/places/589741/chalke-island"
+        },
+        {
+            "@type": "Connection",
+            "associationCertainty": "certain",
+            "attestations": [],
+            "connectionType": "in",
+            "connectionTypeURI": "https://pleiades.stoa.org/vocabularies/relationship-types/in",
+            "connectsTo": "https://pleiades.stoa.org/places/599691",
+            "contributors": [],
+            "created": "2021-03-30T23:14:10Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Tom Elliott",
+                    "uri": "https://pleiades.stoa.org/author/thomase",
+                    "username": "thomase"
+                }
+            ],
+            "description": "",
+            "details": "",
+            "end": null,
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2021-03-30T23:14:18Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2021-03-30T23:14:14Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "comment": "Initial revision",
+                    "modified": "2021-03-30T23:14:10Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2021-03-30T23:14:10Z",
+                    "modifiedBy": "thomase"
+                }
+            ],
+            "id": "karpathion-mare",
+            "provenance": "Pleiades",
+            "references": [],
+            "review_state": "published",
+            "start": null,
+            "title": "Karpathion Mare",
+            "uri": "https://pleiades.stoa.org/places/589741/karpathion-mare"
+        }
+    ],
+    "connectsWith": [
+        "https://pleiades.stoa.org/places/589742",
+        "https://pleiades.stoa.org/places/599691"
+    ],
+    "contributors": [
+        {
+            "name": "R. Talbert",
+            "username": null
+        },
+        {
+            "homepage": null,
+            "name": "Brady Kiesling",
+            "uri": "https://pleiades.stoa.org/author/bkiesling",
+            "username": "bkiesling"
+        },
+        {
+            "homepage": null,
+            "name": "Sean Gillies",
+            "uri": "https://pleiades.stoa.org/author/sgillies",
+            "username": "sgillies"
+        },
+        {
+            "homepage": null,
+            "name": "Tom Elliott",
+            "uri": "https://pleiades.stoa.org/author/thomase",
+            "username": "thomase"
+        },
+        {
+            "homepage": null,
+            "name": "Jeffrey Becker",
+            "uri": "https://pleiades.stoa.org/author/jbecker",
+            "username": "jbecker"
+        }
+    ],
+    "created": "2025-01-27T15:41:43Z",
+    "creators": [
+        {
+            "name": "J. Bennet",
+            "username": null
+        },
+        {
+            "name": "G. Reger",
+            "username": null
+        }
+    ],
+    "description": "Chalke is a settlement located on an island of the same name located in the Dodecanese off the west coast of Rhodes.",
+    "details": "<p>The Barrington Atlas Directory notes: Kastro</p>",
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        27.6128555,
+                        36.2220226
+                    ],
+                    [
+                        27.6128741,
+                        36.2222261
+                    ],
+                    [
+                        27.6123192,
+                        36.2222686
+                    ],
+                    [
+                        27.6123104,
+                        36.2223147
+                    ],
+                    [
+                        27.612308,
+                        36.2223277
+                    ],
+                    [
+                        27.6123105,
+                        36.2223434
+                    ],
+                    [
+                        27.6123472,
+                        36.2225736
+                    ],
+                    [
+                        27.6123629,
+                        36.2226167
+                    ],
+                    [
+                        27.6126387,
+                        36.2229101
+                    ],
+                    [
+                        27.6126951,
+                        36.2229435
+                    ],
+                    [
+                        27.6129064,
+                        36.2230202
+                    ],
+                    [
+                        27.6131733,
+                        36.2230672
+                    ],
+                    [
+                        27.6132973,
+                        36.2231402
+                    ],
+                    [
+                        27.6135068,
+                        36.2232149
+                    ],
+                    [
+                        27.6135545,
+                        36.2231827
+                    ],
+                    [
+                        27.6136772,
+                        36.2232192
+                    ],
+                    [
+                        27.6136765,
+                        36.2232415
+                    ],
+                    [
+                        27.6146695,
+                        36.2237654
+                    ],
+                    [
+                        27.6152113,
+                        36.2240916
+                    ],
+                    [
+                        27.6154759,
+                        36.2242989
+                    ],
+                    [
+                        27.615715,
+                        36.224502
+                    ],
+                    [
+                        27.6160126,
+                        36.2246559
+                    ],
+                    [
+                        27.6162364,
+                        36.2246847
+                    ],
+                    [
+                        27.6164908,
+                        36.22466
+                    ],
+                    [
+                        27.6168469,
+                        36.2246724
+                    ],
+                    [
+                        27.6171395,
+                        36.2246293
+                    ],
+                    [
+                        27.6174015,
+                        36.2245226
+                    ],
+                    [
+                        27.6178796,
+                        36.2242964
+                    ],
+                    [
+                        27.6180831,
+                        36.224243
+                    ],
+                    [
+                        27.6183324,
+                        36.2242471
+                    ],
+                    [
+                        27.6185257,
+                        36.2242184
+                    ],
+                    [
+                        27.6187088,
+                        36.2242676
+                    ],
+                    [
+                        27.6189174,
+                        36.2242184
+                    ],
+                    [
+                        27.6189378,
+                        36.224165
+                    ],
+                    [
+                        27.619299,
+                        36.2241158
+                    ],
+                    [
+                        27.6198993,
+                        36.2240132
+                    ],
+                    [
+                        27.62,
+                        36.2239949
+                    ],
+                    [
+                        27.6201864,
+                        36.2240352
+                    ],
+                    [
+                        27.6200451,
+                        36.2238974
+                    ],
+                    [
+                        27.6202843,
+                        36.2238495
+                    ],
+                    [
+                        27.6205205,
+                        36.223828
+                    ],
+                    [
+                        27.6208085,
+                        36.2238504
+                    ],
+                    [
+                        27.621025,
+                        36.2239611
+                    ],
+                    [
+                        27.6214255,
+                        36.224165
+                    ],
+                    [
+                        27.6219445,
+                        36.2244852
+                    ],
+                    [
+                        27.622265,
+                        36.2247068
+                    ],
+                    [
+                        27.6225954,
+                        36.2246757
+                    ],
+                    [
+                        27.6230266,
+                        36.2246924
+                    ],
+                    [
+                        27.6232452,
+                        36.2247071
+                    ],
+                    [
+                        27.6236573,
+                        36.2247671
+                    ],
+                    [
+                        27.6240897,
+                        36.2249333
+                    ],
+                    [
+                        27.6246866,
+                        36.2250849
+                    ],
+                    [
+                        27.625286,
+                        36.2252735
+                    ],
+                    [
+                        27.6254294,
+                        36.2254045
+                    ],
+                    [
+                        27.6254751,
+                        36.2256179
+                    ],
+                    [
+                        27.6254029,
+                        36.2257238
+                    ],
+                    [
+                        27.6253154,
+                        36.2257312
+                    ],
+                    [
+                        27.6252037,
+                        36.225762
+                    ],
+                    [
+                        27.6251301,
+                        36.2258432
+                    ],
+                    [
+                        27.6251422,
+                        36.225873
+                    ],
+                    [
+                        27.6252106,
+                        36.2258887
+                    ],
+                    [
+                        27.6253191,
+                        36.2259029
+                    ],
+                    [
+                        27.625292,
+                        36.2260283
+                    ],
+                    [
+                        27.625099,
+                        36.226496
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "id": "osm-location-of-halki-island",
+            "properties": {
+                "description": "Location based on OpenStreetMap",
+                "link": "https://pleiades.stoa.org/places/589741/osm-location-of-halki-island",
+                "location_precision": "precise",
+                "snippet": "Island, ; AD 1700 - AD 2100",
+                "title": "OSM location of Halki (island)"
+            },
+            "type": "Feature"
+        }
+    ],
+    "history": [
+        {
+            "comment": "update title, edit summary, exit references; updated Connections by @jbecker",
+            "modified": "2025-01-27T16:26:23Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "comment": "wikidata Q917162",
+            "modified": "2025-01-27T15:39:01Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "updated refs., summary, added Topostext",
+            "modified": "2021-03-31T00:57:04Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "added reference",
+            "modified": "2015-07-12T18:16:39Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "Global migration and reindexing of citations and provenance, February 2012",
+            "modified": "2012-02-15T06:47:47Z",
+            "modifiedBy": "admin"
+        },
+        {
+            "comment": "Detail text updated from former modernLocation. See http://atlantides.org/trac/pleiades/wiki/PlaceDetailsUpgrade",
+            "modified": "2011-01-14T20:33:26Z",
+            "modifiedBy": "sgillies"
+        },
+        {
+            "action": "Publish externally",
+            "modified": "2010-09-22T20:03:50Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "action": "Submit for review",
+            "modified": "2010-09-22T19:58:05Z",
+            "modifiedBy": "sgillies"
+        },
+        {
+            "action": "Create",
+            "modified": "2010-09-22T19:18:31Z",
+            "modifiedBy": "sgillies"
+        }
+    ],
+    "id": "589741",
+    "locations": [
+        {
+            "@type": "Location",
+            "accuracy": "https://pleiades.stoa.org/features/metadata/generic-osm-accuracy-assessment",
+            "accuracy_value": 20.0,
+            "archaeologicalRemains": "unknown",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "modern",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/modern"
+                }
+            ],
+            "contributors": [],
+            "created": "2015-07-12T18:17:10Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "description": "Location based on OpenStreetMap",
+            "details": "",
+            "end": 2100,
+            "featureType": [
+                "island",
+                ""
+            ],
+            "featureTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/island",
+                "https://pleiades.stoa.org/vocabularies/place-types/"
+            ],
+            "geometry": {
+                "coordinates": [
+                    [
+                        27.6128555,
+                        36.2220226
+                    ],
+                    [
+                        27.6128741,
+                        36.2222261
+                    ],
+                    [
+                        27.6123192,
+                        36.2222686
+                    ],
+                    [
+                        27.6123104,
+                        36.2223147
+                    ],
+                    [
+                        27.612308,
+                        36.2223277
+                    ],
+                    [
+                        27.6123105,
+                        36.2223434
+                    ],
+                    [
+                        27.6123472,
+                        36.2225736
+                    ],
+                    [
+                        27.6123629,
+                        36.2226167
+                    ],
+                    [
+                        27.6126387,
+                        36.2229101
+                    ],
+                    [
+                        27.6126951,
+                        36.2229435
+                    ],
+                    [
+                        27.6129064,
+                        36.2230202
+                    ],
+                    [
+                        27.6131733,
+                        36.2230672
+                    ],
+                    [
+                        27.6132973,
+                        36.2231402
+                    ],
+                    [
+                        27.6135068,
+                        36.2232149
+                    ],
+                    [
+                        27.6135545,
+                        36.2231827
+                    ],
+                    [
+                        27.6136772,
+                        36.2232192
+                    ],
+                    [
+                        27.6136765,
+                        36.2232415
+                    ],
+                    [
+                        27.6146695,
+                        36.2237654
+                    ],
+                    [
+                        27.6152113,
+                        36.2240916
+                    ],
+                    [
+                        27.6154759,
+                        36.2242989
+                    ],
+                    [
+                        27.615715,
+                        36.224502
+                    ],
+                    [
+                        27.6160126,
+                        36.2246559
+                    ],
+                    [
+                        27.6162364,
+                        36.2246847
+                    ],
+                    [
+                        27.6164908,
+                        36.22466
+                    ],
+                    [
+                        27.6168469,
+                        36.2246724
+                    ],
+                    [
+                        27.6171395,
+                        36.2246293
+                    ],
+                    [
+                        27.6174015,
+                        36.2245226
+                    ],
+                    [
+                        27.6178796,
+                        36.2242964
+                    ],
+                    [
+                        27.6180831,
+                        36.224243
+                    ],
+                    [
+                        27.6183324,
+                        36.2242471
+                    ],
+                    [
+                        27.6185257,
+                        36.2242184
+                    ],
+                    [
+                        27.6187088,
+                        36.2242676
+                    ],
+                    [
+                        27.6189174,
+                        36.2242184
+                    ],
+                    [
+                        27.6189378,
+                        36.224165
+                    ],
+                    [
+                        27.619299,
+                        36.2241158
+                    ],
+                    [
+                        27.6198993,
+                        36.2240132
+                    ],
+                    [
+                        27.62,
+                        36.2239949
+                    ],
+                    [
+                        27.6201864,
+                        36.2240352
+                    ],
+                    [
+                        27.6200451,
+                        36.2238974
+                    ],
+                    [
+                        27.6202843,
+                        36.2238495
+                    ],
+                    [
+                        27.6205205,
+                        36.223828
+                    ],
+                    [
+                        27.6208085,
+                        36.2238504
+                    ],
+                    [
+                        27.621025,
+                        36.2239611
+                    ],
+                    [
+                        27.6214255,
+                        36.224165
+                    ],
+                    [
+                        27.6219445,
+                        36.2244852
+                    ],
+                    [
+                        27.622265,
+                        36.2247068
+                    ],
+                    [
+                        27.6225954,
+                        36.2246757
+                    ],
+                    [
+                        27.6230266,
+                        36.2246924
+                    ],
+                    [
+                        27.6232452,
+                        36.2247071
+                    ],
+                    [
+                        27.6236573,
+                        36.2247671
+                    ],
+                    [
+                        27.6240897,
+                        36.2249333
+                    ],
+                    [
+                        27.6246866,
+                        36.2250849
+                    ],
+                    [
+                        27.625286,
+                        36.2252735
+                    ],
+                    [
+                        27.6254294,
+                        36.2254045
+                    ],
+                    [
+                        27.6254751,
+                        36.2256179
+                    ],
+                    [
+                        27.6254029,
+                        36.2257238
+                    ],
+                    [
+                        27.6253154,
+                        36.2257312
+                    ],
+                    [
+                        27.6252037,
+                        36.225762
+                    ],
+                    [
+                        27.6251301,
+                        36.2258432
+                    ],
+                    [
+                        27.6251422,
+                        36.225873
+                    ],
+                    [
+                        27.6252106,
+                        36.2258887
+                    ],
+                    [
+                        27.6253191,
+                        36.2259029
+                    ],
+                    [
+                        27.625292,
+                        36.2260283
+                    ],
+                    [
+                        27.625099,
+                        36.226496
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "history": [
+                {
+                    "comment": "Reimported full way geometry and updated provenance",
+                    "modified": "2025-01-27T15:38:10Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Publish externally",
+                    "modified": "2021-03-30T23:13:35Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2015-07-12T18:18:23Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "added location",
+                    "modified": "2015-07-12T18:18:10Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Location from OSM created by Products.PleiadesEntity.browser.osm.OSMLocationFactory",
+                    "modified": "2015-07-12T18:17:14Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2015-07-12T18:17:12Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "osm-location-of-halki-island",
+            "locationType": [
+                "representative"
+            ],
+            "locationTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/island",
+                "https://pleiades.stoa.org/vocabularies/place-types/"
+            ],
+            "provenance": "OpenStreetMap (Way 144056614, version 2, osm:changeset=65957270, 2019-01-02T12:48:33Z)",
+            "references": [
+                {
+                    "accessURI": "http://www.openstreetmap.org/browse/way/144056614",
+                    "alternateURI": "",
+                    "bibliographicURI": "",
+                    "citationDetail": "Way 144056614",
+                    "citationTypeURI": "http://purl.org/spar/cito/citesAsDataSource",
+                    "formattedCitation": "osm:way=144056614",
+                    "otherIdentifier": " ",
+                    "shortTitle": "OSM",
+                    "type": "citesAsDataSource"
+                }
+            ],
+            "review_state": "published",
+            "start": 1700,
+            "title": "OSM location of Halki (island)",
+            "uri": "https://pleiades.stoa.org/places/589741/osm-location-of-halki-island"
+        }
+    ],
+    "names": [
+        {
+            "@type": "Name",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "classical",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/classical"
+                },
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "hellenistic-republican",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/hellenistic-republican"
+                },
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "roman",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/roman"
+                },
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "late-antique",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/late-antique"
+                }
+            ],
+            "attested": "",
+            "contributors": [
+                {
+                    "name": "R. Talbert",
+                    "username": null
+                },
+                {
+                    "name": "T. Elliott",
+                    "username": null
+                },
+                {
+                    "homepage": null,
+                    "name": "Sean Gillies",
+                    "uri": "https://pleiades.stoa.org/author/sgillies",
+                    "username": "sgillies"
+                }
+            ],
+            "created": "2010-09-22T19:18:31Z",
+            "creators": [
+                {
+                    "name": "J. Bennet",
+                    "username": null
+                },
+                {
+                    "name": "G. Reger",
+                    "username": null
+                }
+            ],
+            "description": "",
+            "details": "",
+            "end": 640,
+            "history": [
+                {
+                    "comment": "Global migration and reindexing of citations and provenance, February 2012",
+                    "modified": "2012-02-15T06:47:47Z",
+                    "modifiedBy": "admin"
+                },
+                {
+                    "action": "Publish externally",
+                    "modified": "2010-09-22T20:03:50Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2010-09-22T19:58:05Z",
+                    "modifiedBy": "sgillies"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2010-09-22T19:18:32Z",
+                    "modifiedBy": "sgillies"
+                }
+            ],
+            "id": "chalke",
+            "language": "",
+            "nameType": "geographic",
+            "provenance": "Barrington Atlas: BAtlas 60 F3 Chalke",
+            "references": [],
+            "review_state": "published",
+            "romanized": "Chalke",
+            "start": -550,
+            "transcriptionAccuracy": "accurate",
+            "transcriptionCompleteness": "complete",
+            "uri": "https://pleiades.stoa.org/places/589741/chalke"
+        }
+    ],
+    "placeTypeURIs": [
+        "https://pleiades.stoa.org/vocabularies/place-types/settlement",
+        "https://pleiades.stoa.org/vocabularies/place-types/island"
+    ],
+    "placeTypes": [
+        "settlement",
+        "island"
+    ],
+    "provenance": "Barrington Atlas: BAtlas 60 F3 Chalke",
+    "references": [
+        {
+            "accessURI": "http://www.worldcat.org/oclc/43970336",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/MIAGQ5C6",
+            "citationDetail": "60 F3 Chalke",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Talbert, Richard J. A., ed. <i>Barrington Atlas of the Greek and Roman World</i>. Princeton, N.J.: Princeton University Press, 2000. http://www.worldcat.org/oclc/43970336.</div>",
+            "otherIdentifier": " ",
+            "shortTitle": "BAtlas",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/EIM6TN9Z",
+            "citationDetail": "156-57",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">R. Hope Simpson, and J.F. Lazenby. “Notes from the Dodecanese III.” <i>The Annual of the British School at Athens</i> 68 (1973): 127–79.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Hope Simpson 1973",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "https://en.wikipedia.org/wiki/Halki_(Greece)",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/2533/items/CI6F6W7W",
+            "citationDetail": "Halki (Greece)",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "Wikipedia: the free encyclopedia that anyone can edit (2001-), Halki (Greece).",
+            "otherIdentifier": " ",
+            "shortTitle": "Wikipedia (English)",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "https://topostext.org/place/362276ICha",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/MC9RGDVB",
+            "citationDetail": "Chalke (Khalki) 26 Khalki - Χάλκη",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Kiesling, Brady. <i>ToposText – a Reference Tool for Greek Civilization</i>. Version 2.0. Aikaterini Laskaridis Foundation, 2016. https://topostext.org/.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "ToposText",
+            "type": "seeFurther"
+        }
+    ],
+    "reprPoint": [
+        27.618974324965972,
+        36.22423519601725
+    ],
+    "review_state": "published",
+    "rights": "Copyright © The Contributors. Sharing and remixing permitted under terms of the Creative Commons Attribution 3.0 License (cc-by).",
+    "subject": [],
+    "title": "Chalke (settlement)",
+    "type": "FeatureCollection",
+    "uri": "https://pleiades.stoa.org/places/589741"
+}

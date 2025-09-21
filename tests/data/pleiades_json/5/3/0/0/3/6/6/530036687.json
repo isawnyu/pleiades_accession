@@ -1,0 +1,297 @@
+{
+    "@type": "Place",
+    "bbox": [
+        -5.0,
+        40.0,
+        -5.0,
+        40.0
+    ],
+    "connections": [
+        {
+            "@type": "Connection",
+            "associationCertainty": "certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "roman",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/roman"
+                }
+            ],
+            "connectionType": "part_of_regional",
+            "connectionTypeURI": "https://pleiades.stoa.org/vocabularies/relationship-types/part_of_regional",
+            "connectsTo": "https://pleiades.stoa.org/places/540456066",
+            "contributors": [],
+            "created": "2019-06-13T04:09:01Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Ryan Horne",
+                    "uri": "https://pleiades.stoa.org/author/rmhorne",
+                    "username": "rmhorne"
+                }
+            ],
+            "description": "",
+            "details": "",
+            "end": 300,
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2020-02-12T12:22:53Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2019-06-13T04:09:08Z",
+                    "modifiedBy": "rmhorne"
+                },
+                {
+                    "comment": "Initial revision",
+                    "modified": "2019-06-13T04:09:02Z",
+                    "modifiedBy": "rmhorne"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2019-06-13T04:09:01Z",
+                    "modifiedBy": "rmhorne"
+                }
+            ],
+            "id": "iberia-modern-region-peninsula",
+            "provenance": "Pleiades",
+            "references": [
+                {
+                    "accessURI": "https://www.trismegistos.org/place/16933",
+                    "alternateURI": "",
+                    "bibliographicURI": "",
+                    "citationDetail": "",
+                    "citationTypeURI": "http://purl.org/spar/cito/seeAlso",
+                    "formattedCitation": "Trismegistos: Hispania Citerior",
+                    "otherIdentifier": "",
+                    "shortTitle": "",
+                    "type": "seeAlso"
+                }
+            ],
+            "review_state": "published",
+            "start": -30,
+            "title": "Iberia (modern region/peninsula)",
+            "uri": "https://pleiades.stoa.org/places/530036687/iberia-modern-region-peninsula"
+        },
+        {
+            "@type": "Connection",
+            "associationCertainty": "certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "roman",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/roman"
+                }
+            ],
+            "connectionType": "part_of_regional",
+            "connectionTypeURI": "https://pleiades.stoa.org/vocabularies/relationship-types/part_of_regional",
+            "connectsTo": "https://pleiades.stoa.org/places/1027",
+            "contributors": [],
+            "created": "2019-06-13T19:03:56Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Ryan Horne",
+                    "uri": "https://pleiades.stoa.org/author/rmhorne",
+                    "username": "rmhorne"
+                }
+            ],
+            "description": "",
+            "details": "",
+            "end": 300,
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2020-02-12T12:22:53Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2019-06-13T19:05:27Z",
+                    "modifiedBy": "rmhorne"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2019-06-13T19:04:35Z",
+                    "modifiedBy": "rmhorne"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2019-06-13T19:04:08Z",
+                    "modifiedBy": "rmhorne"
+                },
+                {
+                    "comment": "Initial revision",
+                    "modified": "2019-06-13T19:03:57Z",
+                    "modifiedBy": "rmhorne"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2019-06-13T19:03:56Z",
+                    "modifiedBy": "rmhorne"
+                }
+            ],
+            "id": "hispania",
+            "provenance": "Pleiades",
+            "references": [
+                {
+                    "accessURI": "https://en.wikipedia.org/wiki/Hispania_Citerior",
+                    "alternateURI": "",
+                    "bibliographicURI": "",
+                    "citationDetail": "",
+                    "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+                    "formattedCitation": "Wikipedia: Hispania Citerior",
+                    "otherIdentifier": "",
+                    "shortTitle": "",
+                    "type": "seeFurther"
+                }
+            ],
+            "review_state": "published",
+            "start": -30,
+            "title": "Hispania",
+            "uri": "https://pleiades.stoa.org/places/530036687/hispania"
+        }
+    ],
+    "connectsWith": [
+        "https://pleiades.stoa.org/places/540456066",
+        "https://pleiades.stoa.org/places/1027",
+        "https://pleiades.stoa.org/places/981551"
+    ],
+    "contributors": [
+        {
+            "homepage": null,
+            "name": "Jeffrey Becker",
+            "uri": "https://pleiades.stoa.org/author/jbecker",
+            "username": "jbecker"
+        },
+        {
+            "homepage": null,
+            "name": "Tom Elliott",
+            "uri": "https://pleiades.stoa.org/author/thomase",
+            "username": "thomase"
+        }
+    ],
+    "created": "2023-08-30T21:40:41Z",
+    "creators": [
+        {
+            "homepage": null,
+            "name": "Ryan Horne",
+            "uri": "https://pleiades.stoa.org/author/rmhorne",
+            "username": "rmhorne"
+        }
+    ],
+    "description": "Province of the Roman Republic in the Iberian peninsula. In the first century BCE Augustus incorporated Hispania Citerior into the new province of Hispania Tarraconensis.",
+    "details": "",
+    "features": [],
+    "history": [
+        {
+            "comment": "place type; added Carreras 2022",
+            "modified": "2023-08-30T21:45:48Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "comment": "Baseline created",
+            "modified": "2023-08-30T21:40:39Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "comment": "Baseline created",
+            "modified": "2021-11-14T04:05:19Z",
+            "modifiedBy": "iluo"
+        },
+        {
+            "action": "Publish externally",
+            "modified": "2020-02-12T12:22:53Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "comment": "Edited",
+            "modified": "2019-06-13T13:45:14Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "zotero fetch on refs.",
+            "modified": "2019-06-13T13:44:24Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "action": "Submit for review",
+            "modified": "2019-06-13T04:04:48Z",
+            "modifiedBy": "rmhorne"
+        },
+        {
+            "comment": "Edited",
+            "modified": "2019-06-13T04:01:33Z",
+            "modifiedBy": "rmhorne"
+        },
+        {
+            "comment": "Initial revision",
+            "modified": "2019-06-13T04:01:13Z",
+            "modifiedBy": "rmhorne"
+        },
+        {
+            "action": "Create",
+            "modified": "2019-06-13T04:01:12Z",
+            "modifiedBy": "rmhorne"
+        }
+    ],
+    "id": "530036687",
+    "locations": [],
+    "names": [],
+    "placeTypeURIs": [
+        "https://pleiades.stoa.org/vocabularies/place-types/province-2"
+    ],
+    "placeTypes": [
+        "province-2"
+    ],
+    "provenance": "Pleiades",
+    "references": [
+        {
+            "accessURI": "https://www.trismegistos.org/place/16933",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/TN3GJAU8",
+            "citationDetail": "GEO ID 16933",
+            "citationTypeURI": "http://purl.org/spar/cito/citesAsRelated",
+            "formattedCitation": "<div class=\"csl-entry\">Mark Depauw, Tom Gheldof, Herbert Verreth, Nico Dogaer, Willy Clarysse, Yanne Broux, Gert Baetens, and Heinz-Josef Thissen. <i>Trismegistos</i>. Leuven, 2006. http://www.trismegistos.org/.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "TM",
+            "type": "citesAsRelated"
+        },
+        {
+            "accessURI": "https://en.wikipedia.org/wiki/Hispania_Citerior",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/CI6F6W7W",
+            "citationDetail": "Hispania Citerior",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\"><i>Wikipedia: The Free Encyclopedia That Anyone Can Edit</i>. Wikimedia Foundation, 2001. https://en.wikipedia.org.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Wikipedia (English)",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "https://periodicos.unifesp.br/index.php/herodoto/article/view/15477",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/9MIS76TH",
+            "citationDetail": "",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Carreras, Cesar, Laia Catarineu, Esther Rodrigo, Núria Romani, and Joaquim Pera. “A Conquista romana da Hispânia Citerior: Um modelo teórico a partir da Arqueologia.” <i>Heródoto: Revista do Grupo de Estudos e Pesquisas sobre a Antiguidade Clássica e suas Conexões Afro-asiáticas</i> 7, no. 2 (2022): 107–38. https://doi.org/10.34024/herodoto.2022.v7.15477.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Carreras 2022",
+            "type": "seeFurther"
+        }
+    ],
+    "reprPoint": [
+        -5.0,
+        40.0
+    ],
+    "review_state": "published",
+    "rights": "Copyright © The Contributors. Sharing and remixing permitted under terms of the Creative Commons Attribution 3.0 License (cc-by).",
+    "subject": [],
+    "title": "Hispania Citerior",
+    "type": "FeatureCollection",
+    "uri": "https://pleiades.stoa.org/places/530036687"
+}

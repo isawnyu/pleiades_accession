@@ -1,0 +1,191 @@
+{
+    "@type": "Place",
+    "bbox": [
+        27.18373,
+        39.129049,
+        27.185694,
+        39.1325
+    ],
+    "connections": [
+        {
+            "@type": "Connection",
+            "associationCertainty": "certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "roman",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/roman"
+                }
+            ],
+            "connectionType": "at",
+            "connectionTypeURI": "https://pleiades.stoa.org/vocabularies/relationship-types/at",
+            "connectsTo": "https://pleiades.stoa.org/places/550812",
+            "contributors": [
+                {
+                    "homepage": null,
+                    "name": "Gabriel Mckee",
+                    "uri": "https://pleiades.stoa.org/author/gmckee",
+                    "username": "gmckee"
+                }
+            ],
+            "created": "2020-12-01T03:39:44Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Annette Lei Guan",
+                    "uri": "https://pleiades.stoa.org/author/alguan",
+                    "username": "alguan"
+                }
+            ],
+            "description": "",
+            "details": "",
+            "end": 300,
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2020-12-02T11:50:36Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2020-12-01T15:03:38Z",
+                    "modifiedBy": "gmckee"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2020-12-01T03:40:10Z",
+                    "modifiedBy": "alguan"
+                },
+                {
+                    "comment": "Initial revision",
+                    "modified": "2020-12-01T03:39:47Z",
+                    "modifiedBy": "alguan"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2020-12-01T03:39:44Z",
+                    "modifiedBy": "alguan"
+                }
+            ],
+            "id": "pergamum",
+            "provenance": "Pleiades",
+            "references": [],
+            "review_state": "published",
+            "start": -30,
+            "title": "Pergamum",
+            "uri": "https://pleiades.stoa.org/places/537932154/pergamum"
+        }
+    ],
+    "connectsWith": [
+        "https://pleiades.stoa.org/places/550812"
+    ],
+    "contributors": [
+        {
+            "homepage": null,
+            "name": "Jeffrey Becker",
+            "uri": "https://pleiades.stoa.org/author/jbecker",
+            "username": "jbecker"
+        },
+        {
+            "homepage": null,
+            "name": "Gabriel Mckee",
+            "uri": "https://pleiades.stoa.org/author/gmckee",
+            "username": "gmckee"
+        },
+        {
+            "homepage": null,
+            "name": "Tom Elliott",
+            "uri": "https://pleiades.stoa.org/author/thomase",
+            "username": "thomase"
+        }
+    ],
+    "created": "2020-12-01T03:39:09Z",
+    "creators": [
+        {
+            "homepage": null,
+            "name": "Annette Lei Guan",
+            "uri": "https://pleiades.stoa.org/author/alguan",
+            "username": "alguan"
+        }
+    ],
+    "description": "A temple grove at the Nikephorion in the settlement of Pergamum. Mentioned by Polybius, the precise location of the grove is not known today.",
+    "details": "",
+    "features": [],
+    "history": [
+        {
+            "comment": "update reference",
+            "modified": "2022-06-10T00:52:54Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "action": "Publish externally",
+            "modified": "2020-12-02T11:50:36Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "comment": "summary",
+            "modified": "2020-12-02T11:50:30Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "comment": "Edited",
+            "modified": "2020-12-01T15:03:19Z",
+            "modifiedBy": "gmckee"
+        },
+        {
+            "action": "Submit for review",
+            "modified": "2020-12-01T03:40:10Z",
+            "modifiedBy": "alguan"
+        },
+        {
+            "comment": "Initial revision",
+            "modified": "2020-12-01T03:39:10Z",
+            "modifiedBy": "alguan"
+        },
+        {
+            "action": "Create",
+            "modified": "2020-12-01T03:39:09Z",
+            "modifiedBy": "alguan"
+        }
+    ],
+    "id": "537932154",
+    "locations": [],
+    "names": [],
+    "placeTypeURIs": [
+        "https://pleiades.stoa.org/vocabularies/place-types/grove",
+        "https://pleiades.stoa.org/vocabularies/place-types/unlocated",
+        "https://pleiades.stoa.org/vocabularies/place-types/sanctuary"
+    ],
+    "placeTypes": [
+        "grove",
+        "unlocated",
+        "sanctuary"
+    ],
+    "provenance": "Pleiades",
+    "references": [
+        {
+            "accessURI": "http://data.perseus.org/citations/urn:cts:greekLit:tlg0543.tlg001.perseus-eng1:16.1",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/QPGBM7G4",
+            "citationDetail": "16.1.6",
+            "citationTypeURI": "http://purl.org/spar/cito/citesAsEvidence",
+            "formattedCitation": "<div class=\"csl-entry\">Polybius. <i>Polybiou Historiai = Polybii Historiae</i>. Edited by Theodor Büttner-Wobst and Ludwig August Dindorf. 4 vols. Lipsiae: B.G. Teubneri, 1882. http://data.perseus.org/texts/urn:cts:greekLit:tlg0543.tlg001.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Polyb. (Büttner-Wobst: Perseus)",
+            "type": "citesAsEvidence"
+        }
+    ],
+    "reprPoint": [
+        27.18453033333333,
+        39.131213333333335
+    ],
+    "review_state": "published",
+    "rights": "Copyright © The Contributors. Sharing and remixing permitted under terms of the Creative Commons Attribution 3.0 License (cc-by).",
+    "subject": [
+        "GardRomEmp"
+    ],
+    "title": "Temple Grove of Nikephorion at Pergamum",
+    "type": "FeatureCollection",
+    "uri": "https://pleiades.stoa.org/places/537932154"
+}

@@ -1,0 +1,418 @@
+{
+    "@type": "Place",
+    "bbox": [
+        40.844142,
+        36.411153,
+        40.844142,
+        36.411153
+    ],
+    "connections": [],
+    "connectsWith": [],
+    "contributors": [
+        {
+            "homepage": null,
+            "name": "Sean Gillies",
+            "uri": "https://pleiades.stoa.org/author/sgillies",
+            "username": "sgillies"
+        },
+        {
+            "homepage": null,
+            "name": "Tom Elliott",
+            "uri": "https://pleiades.stoa.org/author/thomase",
+            "username": "thomase"
+        },
+        {
+            "homepage": null,
+            "name": "Francis Deblauwe",
+            "uri": "https://pleiades.stoa.org/author/fdeblauwe",
+            "username": "fdeblauwe"
+        },
+        {
+            "homepage": null,
+            "name": "Eric Kansa",
+            "uri": "https://pleiades.stoa.org/author/ekansa",
+            "username": "ekansa"
+        }
+    ],
+    "created": "2013-08-22T06:44:43Z",
+    "creators": [
+        {
+            "name": "B. Siewert-Mayer",
+            "username": null
+        },
+        {
+            "name": "W. Röllig",
+            "username": null
+        },
+        {
+            "name": "H. Kopp",
+            "username": null
+        }
+    ],
+    "description": "A place from the TAVO Index",
+    "details": "GANE OBJECT 60337",
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    40.844142,
+                    36.411153
+                ],
+                "type": "Point"
+            },
+            "id": "imagery-location",
+            "properties": {
+                "description": "ID by excavation director from an old satellite image on Google Earth (personal communication), verified in Google Earth. Historical imagery on GE indicates that the site was surrounded or inundated by the reservoir behind the \"Hassakeh South\" between 2018 and 2021 but not during the period 2022-2024.",
+                "link": "https://pleiades.stoa.org/places/534964139/imagery-location",
+                "location_precision": "precise",
+                "snippet": "Unknown; 6500 BC - 3800 BC",
+                "title": "Imagery Location"
+            },
+            "type": "Feature"
+        }
+    ],
+    "history": [
+        {
+            "action": "Publish externally",
+            "modified": "2013-08-22T06:44:51Z",
+            "modifiedBy": "admin"
+        },
+        {
+            "action": "Submit for review",
+            "modified": "2013-08-22T06:44:50Z",
+            "modifiedBy": "admin"
+        },
+        {
+            "comment": "New locations, names, and places for the Ancient Near East from the Alexandria Archive Institute's GANE project: http://alexandriaarchive.org/projects/gane/.",
+            "modified": "2013-08-22T06:44:48Z",
+            "modifiedBy": "admin"
+        },
+        {
+            "action": "Create",
+            "modified": "2013-08-22T06:44:44Z",
+            "modifiedBy": "admin"
+        }
+    ],
+    "id": "534964139",
+    "locations": [
+        {
+            "@type": "Location",
+            "accuracy": "https://pleiades.stoa.org/features/metadata/google-geoeye-2010",
+            "accuracy_value": 5.0,
+            "archaeologicalRemains": "traces",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "ubaid",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/ubaid"
+                }
+            ],
+            "contributors": [
+                {
+                    "homepage": null,
+                    "name": "Tom Elliott",
+                    "uri": "https://pleiades.stoa.org/author/thomase",
+                    "username": "thomase"
+                }
+            ],
+            "created": "2025-01-15T19:12:25Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Francis Deblauwe",
+                    "uri": "https://pleiades.stoa.org/author/fdeblauwe",
+                    "username": "fdeblauwe"
+                }
+            ],
+            "description": "ID by excavation director from an old satellite image on Google Earth (personal communication), verified in Google Earth. Historical imagery on GE indicates that the site was surrounded or inundated by the reservoir behind the \"Hassakeh South\" between 2018 and 2021 but not during the period 2022-2024.",
+            "details": "",
+            "end": -3800,
+            "featureType": [],
+            "featureTypeURI": [],
+            "geometry": {
+                "coordinates": [
+                    40.844142,
+                    36.411153
+                ],
+                "type": "Point"
+            },
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2025-01-17T15:50:29Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2025-01-17T15:50:16Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "comment": "corrected coordinates",
+                    "modified": "2025-01-17T15:26:53Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2024-11-18T17:35:58Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2024-11-18T17:35:32Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2024-11-18T17:22:25Z",
+                    "modifiedBy": "fdeblauwe"
+                },
+                {
+                    "comment": "Initial revision",
+                    "modified": "2024-11-18T17:21:27Z",
+                    "modifiedBy": "fdeblauwe"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2024-11-18T17:21:26Z",
+                    "modifiedBy": "fdeblauwe"
+                }
+            ],
+            "id": "imagery-location",
+            "locationType": [
+                "representative",
+                "associated_modern"
+            ],
+            "locationTypeURI": [],
+            "provenance": "Pleiades",
+            "references": [],
+            "review_state": "published",
+            "start": -6500,
+            "title": "Imagery Location",
+            "uri": "https://pleiades.stoa.org/places/534964139/imagery-location"
+        }
+    ],
+    "names": [
+        {
+            "@type": "Name",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "early-dynastic-mesopotamia",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/early-dynastic-mesopotamia"
+                }
+            ],
+            "attested": null,
+            "contributors": [
+                {
+                    "homepage": null,
+                    "name": "Francis Deblauwe",
+                    "uri": "https://pleiades.stoa.org/author/fdeblauwe",
+                    "username": "fdeblauwe"
+                },
+                {
+                    "homepage": null,
+                    "name": "Eric Kansa",
+                    "uri": "https://pleiades.stoa.org/author/ekansa",
+                    "username": "ekansa"
+                }
+            ],
+            "created": "2013-08-22T06:44:54Z",
+            "creators": [
+                {
+                    "name": "B. Siewert-Mayer",
+                    "username": null
+                },
+                {
+                    "name": "W. Röllig",
+                    "username": null
+                },
+                {
+                    "name": "H. Kopp",
+                    "username": null
+                }
+            ],
+            "description": "A place name from the TAVO Index (Vol. 3, p. 1639)",
+            "details": "GANE OBJECT 60337",
+            "end": -2350,
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2013-08-22T06:45:00Z",
+                    "modifiedBy": "admin"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2013-08-22T06:44:58Z",
+                    "modifiedBy": "admin"
+                },
+                {
+                    "comment": "New locations, names, and places for the Ancient Near East from the Alexandria Archive Institute's GANE project: http://alexandriaarchive.org/projects/gane/.",
+                    "modified": "2013-08-22T06:44:58Z",
+                    "modifiedBy": "admin"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2013-08-22T06:44:58Z",
+                    "modifiedBy": "admin"
+                }
+            ],
+            "id": "tall-ziyada",
+            "language": "arb",
+            "nameType": "geographic",
+            "provenance": "TAVO Index",
+            "references": [
+                {
+                    "accessURI": "",
+                    "alternateURI": "",
+                    "bibliographicURI": "http://www.worldcat.org/oclc/32624915",
+                    "citationDetail": "",
+                    "citationTypeURI": "http://purl.org/spar/cito/cites",
+                    "formattedCitation": "TAVO Index (Vol. 3, p. 1639)",
+                    "otherIdentifier": " ",
+                    "shortTitle": "",
+                    "type": "cites"
+                }
+            ],
+            "review_state": "published",
+            "romanized": "Tall Ziyāda, Tall Ziyada, Tall Ziyadah, Tell Ziyade, Tell Ziyadeh",
+            "start": -2950,
+            "transcriptionAccuracy": "accurate",
+            "transcriptionCompleteness": "complete",
+            "uri": "https://pleiades.stoa.org/places/534964139/tall-ziyada"
+        },
+        {
+            "@type": "Name",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "chalcolithic-mesopotamia",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/chalcolithic-mesopotamia"
+                },
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "ubaid-early-dynastic-ii-mesopotamia",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/ubaid-early-dynastic-ii-mesopotamia"
+                }
+            ],
+            "attested": null,
+            "contributors": [
+                {
+                    "homepage": null,
+                    "name": "Francis Deblauwe",
+                    "uri": "https://pleiades.stoa.org/author/fdeblauwe",
+                    "username": "fdeblauwe"
+                },
+                {
+                    "homepage": null,
+                    "name": "Eric Kansa",
+                    "uri": "https://pleiades.stoa.org/author/ekansa",
+                    "username": "ekansa"
+                }
+            ],
+            "created": "2013-08-22T06:45:04Z",
+            "creators": [
+                {
+                    "name": "B. Siewert-Mayer",
+                    "username": null
+                },
+                {
+                    "name": "W. Röllig",
+                    "username": null
+                },
+                {
+                    "name": "H. Kopp",
+                    "username": null
+                }
+            ],
+            "description": "A place name from the TAVO Index (Vol. 3, p. 1639)",
+            "details": "GANE OBJECT 60336",
+            "end": -2600,
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2013-08-22T06:45:12Z",
+                    "modifiedBy": "admin"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2013-08-22T06:45:10Z",
+                    "modifiedBy": "admin"
+                },
+                {
+                    "comment": "New locations, names, and places for the Ancient Near East from the Alexandria Archive Institute's GANE project: http://alexandriaarchive.org/projects/gane/.",
+                    "modified": "2013-08-22T06:45:09Z",
+                    "modifiedBy": "admin"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2013-08-22T06:45:07Z",
+                    "modifiedBy": "admin"
+                }
+            ],
+            "id": "tall-ziyad",
+            "language": "arb",
+            "nameType": "geographic",
+            "provenance": "TAVO Index",
+            "references": [
+                {
+                    "accessURI": "",
+                    "alternateURI": "",
+                    "bibliographicURI": "http://www.worldcat.org/oclc/32624915",
+                    "citationDetail": "",
+                    "citationTypeURI": "http://purl.org/spar/cito/cites",
+                    "formattedCitation": "TAVO Index (Vol. 3, p. 1639)",
+                    "otherIdentifier": " ",
+                    "shortTitle": "",
+                    "type": "cites"
+                }
+            ],
+            "review_state": "published",
+            "romanized": "Tall Ziyād, Tell Ziyad",
+            "start": -6200,
+            "transcriptionAccuracy": "accurate",
+            "transcriptionCompleteness": "complete",
+            "uri": "https://pleiades.stoa.org/places/534964139/tall-ziyad"
+        }
+    ],
+    "placeTypeURIs": [
+        "https://pleiades.stoa.org/vocabularies/place-types/settlement"
+    ],
+    "placeTypes": [
+        "settlement"
+    ],
+    "provenance": "TAVO Index",
+    "references": [
+        {
+            "accessURI": "",
+            "alternateURI": "",
+            "bibliographicURI": "http://www.worldcat.org/oclc/32624915",
+            "citationDetail": "",
+            "citationTypeURI": "http://purl.org/spar/cito/cites",
+            "formattedCitation": "TAVO Index (Vol. 3, p. 1639)",
+            "otherIdentifier": " ",
+            "shortTitle": "",
+            "type": "cites"
+        }
+    ],
+    "reprPoint": [
+        40.844142,
+        36.411153
+    ],
+    "review_state": "published",
+    "rights": "Copyright © The Contributors. Sharing and remixing permitted under terms of the Creative Commons Attribution 3.0 License (cc-by).",
+    "subject": [],
+    "title": "Tall Ziyāda",
+    "type": "FeatureCollection",
+    "uri": "https://pleiades.stoa.org/places/534964139"
+}

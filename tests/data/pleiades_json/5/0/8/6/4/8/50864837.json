@@ -1,0 +1,486 @@
+{
+    "@type": "Place",
+    "bbox": [
+        12.3002788,
+        41.8880203,
+        12.3018773,
+        41.8889808
+    ],
+    "connections": [
+        {
+            "@type": "Connection",
+            "associationCertainty": "certain",
+            "attestations": [],
+            "connectionType": "near",
+            "connectionTypeURI": "https://pleiades.stoa.org/vocabularies/relationship-types/near",
+            "connectsTo": "https://pleiades.stoa.org/places/422963",
+            "contributors": [],
+            "created": "2025-06-07T15:27:18Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "description": "",
+            "details": "",
+            "end": null,
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2025-06-09T14:17:55Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2025-06-07T15:29:02Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "reference",
+                    "modified": "2025-06-07T15:28:58Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "cnxn",
+                    "modified": "2025-06-07T15:27:18Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2025-06-07T15:27:18Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "lorium",
+            "provenance": "Pleiades",
+            "references": [
+                {
+                    "accessURI": "https://www.info.roma.it/monumenti_dettaglio.asp?ID_schede=4713",
+                    "alternateURI": "",
+                    "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/UC92I57E",
+                    "citationDetail": "4713: Villa di Monte delle Colonnacce a Castel di Guido",
+                    "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+                    "formattedCitation": "<div class=\"csl-entry\">“Info.roma.it: La meraviglie di roma.” Accessed February 5, 2020. https://www.info.roma.it.</div>",
+                    "otherIdentifier": "",
+                    "shortTitle": "Info.roma.it",
+                    "type": "seeFurther"
+                }
+            ],
+            "review_state": "published",
+            "start": null,
+            "title": "Lorium",
+            "uri": "https://pleiades.stoa.org/places/50864837/lorium"
+        }
+    ],
+    "connectsWith": [
+        "https://pleiades.stoa.org/places/422963"
+    ],
+    "contributors": [],
+    "created": "2014-02-22T18:00:22Z",
+    "creators": [
+        {
+            "homepage": null,
+            "name": "Jeffrey Becker",
+            "uri": "https://pleiades.stoa.org/author/jbecker",
+            "username": "jbecker"
+        }
+    ],
+    "description": "A Roman villa located near Castel di Guido.",
+    "details": "",
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        12.3007159,
+                        41.8889808
+                    ],
+                    [
+                        12.3002788,
+                        41.8884197
+                    ],
+                    [
+                        12.3012524,
+                        41.8880203
+                    ],
+                    [
+                        12.3018773,
+                        41.8886872
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "id": "location-of-roman-villa",
+            "properties": {
+                "description": "Representative location based on OpenStreetMap.",
+                "link": "https://pleiades.stoa.org/places/50864837/location-of-roman-villa",
+                "location_precision": "precise",
+                "snippet": "Villa, ; 30 BC - AD 300",
+                "title": "OSM location of Villa di Monte delle Colonnacce a Castel di Guido"
+            },
+            "type": "Feature"
+        }
+    ],
+    "history": [
+        {
+            "comment": "update references",
+            "modified": "2025-01-26T16:40:00Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "Edited",
+            "modified": "2023-09-23T18:08:08Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "added GeoNames",
+            "modified": "2020-10-14T16:35:15Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "reference",
+            "modified": "2018-02-17T21:14:51Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "references",
+            "modified": "2017-07-02T02:53:54Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "Edited",
+            "modified": "2016-07-26T00:13:53Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "action": "Publish externally",
+            "modified": "2016-07-26T00:13:31Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "added reference",
+            "modified": "2016-05-21T15:42:54Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "action": "Submit for review",
+            "modified": "2014-06-15T17:18:42Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "created place",
+            "modified": "2014-02-22T18:00:28Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "action": "Create",
+            "modified": "2014-02-22T18:00:23Z",
+            "modifiedBy": "jbecker"
+        }
+    ],
+    "id": "50864837",
+    "locations": [
+        {
+            "@type": "Location",
+            "accuracy": "https://pleiades.stoa.org/features/metadata/generic-osm-accuracy-assessment",
+            "accuracy_value": 20.0,
+            "archaeologicalRemains": "unknown",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "roman",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/roman"
+                }
+            ],
+            "contributors": [],
+            "created": "2014-02-22T18:00:40Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "description": "Representative location based on OpenStreetMap.",
+            "details": "",
+            "end": 300,
+            "featureType": [
+                "villa",
+                ""
+            ],
+            "featureTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/villa",
+                "https://pleiades.stoa.org/vocabularies/place-types/"
+            ],
+            "geometry": {
+                "coordinates": [
+                    [
+                        12.3007159,
+                        41.8889808
+                    ],
+                    [
+                        12.3002788,
+                        41.8884197
+                    ],
+                    [
+                        12.3012524,
+                        41.8880203
+                    ],
+                    [
+                        12.3018773,
+                        41.8886872
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "history": [
+                {
+                    "comment": "Reimported full way geometry and updated provenance",
+                    "modified": "2023-06-29T03:00:20Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2016-07-26T00:14:32Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Publish externally",
+                    "modified": "2016-07-26T00:08:35Z",
+                    "modifiedBy": "rmhorne"
+                },
+                {
+                    "comment": "edited title",
+                    "modified": "2016-05-21T15:43:04Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2014-06-15T17:18:26Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2014-06-15T17:18:10Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "added location",
+                    "modified": "2014-02-22T18:02:26Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Location from OSM created by Products.PleiadesEntity.browser.osm.OSMLocationFactory",
+                    "modified": "2014-02-22T18:00:44Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2014-02-22T18:00:41Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "location-of-roman-villa",
+            "locationType": [
+                "representative",
+                ""
+            ],
+            "locationTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/villa",
+                "https://pleiades.stoa.org/vocabularies/place-types/"
+            ],
+            "provenance": "OpenStreetMap (Way 249317445, version 5, osm:changeset=133991270, 2023-03-22T18:36:35Z)",
+            "references": [
+                {
+                    "accessURI": "http://www.openstreetmap.org/browse/way/249317445",
+                    "alternateURI": "",
+                    "bibliographicURI": "",
+                    "citationDetail": "Way 249317445",
+                    "citationTypeURI": "http://purl.org/spar/cito/citesAsDataSource",
+                    "formattedCitation": "osm:way=249317445",
+                    "otherIdentifier": " ",
+                    "shortTitle": "OSM",
+                    "type": "citesAsDataSource"
+                }
+            ],
+            "review_state": "published",
+            "start": -30,
+            "title": "OSM location of Villa di Monte delle Colonnacce a Castel di Guido",
+            "uri": "https://pleiades.stoa.org/places/50864837/location-of-roman-villa"
+        }
+    ],
+    "names": [
+        {
+            "@type": "Name",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "modern",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/modern"
+                }
+            ],
+            "attested": "Villa romana delle colonnacce",
+            "contributors": [],
+            "created": "2018-03-07T01:28:25Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "description": "",
+            "details": "",
+            "end": 2100,
+            "history": [
+                {
+                    "comment": "update reference",
+                    "modified": "2025-01-26T16:40:58Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Publish externally",
+                    "modified": "2018-03-07T17:44:16Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2018-03-07T01:28:48Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "name - GeoNames 11134873",
+                    "modified": "2018-03-07T01:28:25Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2018-03-07T01:28:25Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "name.2018-03-06.0625363134",
+            "language": "it",
+            "nameType": "geographic",
+            "provenance": "Pleiades",
+            "references": [
+                {
+                    "accessURI": "http://www.geonames.org/11134873/villa-romana-delle-colonnacce.html",
+                    "alternateURI": "",
+                    "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/IIFE4W6M",
+                    "citationDetail": "11134873: Villa romana delle colonnacce",
+                    "citationTypeURI": "http://purl.org/spar/cito/citesAsDataSource",
+                    "formattedCitation": "<div class=\"csl-entry\">Marc Wick, and Christophe Boutreux. <i>GeoNames</i>, 2005. https://www.geonames.org/.</div>",
+                    "otherIdentifier": "",
+                    "shortTitle": "GeoNames",
+                    "type": "citesAsDataSource"
+                }
+            ],
+            "review_state": "published",
+            "romanized": "Villa romana delle colonnacce",
+            "start": 1700,
+            "transcriptionAccuracy": "accurate",
+            "transcriptionCompleteness": "complete",
+            "uri": "https://pleiades.stoa.org/places/50864837/name.2018-03-06.0625363134"
+        }
+    ],
+    "placeTypeURIs": [
+        "https://pleiades.stoa.org/vocabularies/place-types/villa"
+    ],
+    "placeTypes": [
+        "villa"
+    ],
+    "provenance": "Pleiades",
+    "references": [
+        {
+            "accessURI": "http://www.info.roma.it/monumenti_dettaglio.asp?ID_schede=4713",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/UC92I57E",
+            "citationDetail": "4713: Villa di Monte delle Colonnacce a Castel di Guido",
+            "citationTypeURI": "http://purl.org/spar/cito/citesAsRelated",
+            "formattedCitation": "info.roma.it, Villa di Monte delle Colonnacce a Castel di Guido",
+            "otherIdentifier": " ",
+            "shortTitle": "Info.roma.it",
+            "type": "citesAsRelated"
+        },
+        {
+            "accessURI": "https://books.google.com/books?id=gx2Fj7Rm80EC&lpg=PA459&ots=3iZ5VGtjfE&dq=Villa%20di%20Monte%20delle%20Colonnacce&pg=PA459#v=onepage&q=Villa%20di%20Monte%20delle%20Colonnacce&f=false",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/IWATNX33",
+            "citationDetail": "156",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">De Franceschini, Marina. <i>Ville dell’Agro Romano</i>. Monografie della carta dell’Agro romano 2. Roma: L’Erma di Bretschneider, 2005.</div>",
+            "otherIdentifier": " ",
+            "shortTitle": "De Franceschini 2005",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "http://www.worldcat.org/oclc/949205965",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/CZN7DAZR",
+            "citationDetail": "311",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Marzano, Annalisa. <i>Roman Villas in Central Italy: A Social and Economic History.</i> Leiden: E.J. Brill, 2007. http://www.worldcat.org/oclc/949205965.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Marzano 2007",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "http://www.worldcat.org/oclc/492773504",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/D9IQVKGD",
+            "citationDetail": "",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Sanzi Di Mino, Maria Rita, and Museo nazionale romano (Rome). <i>Archeologia a Roma la materia e la tecnica nell’arte antica</i>. Roma: De Luca edizioni d’arte, 1990. http://www.worldcat.org/oclc/492773504.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Sanzi Di Mino 1990",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "https://www.geonames.org/11134873/villa-romana-delle-colonnacce.html",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/IIFE4W6M",
+            "citationDetail": "11134873: Villa romana delle colonnacce",
+            "citationTypeURI": "http://purl.org/spar/cito/citesAsRelated",
+            "formattedCitation": "<div class=\"csl-entry\">Marc Wick, and Christophe Boutreux. “GeoNames,” 2005. http://www.geonames.org/.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "GeoNames",
+            "type": "citesAsRelated"
+        },
+        {
+            "accessURI": "https://www.wikidata.org/wiki/Q100349105",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/BCQIKDKS",
+            "citationDetail": "Colonnacce Roman villa (Q100349105)",
+            "citationTypeURI": "http://purl.org/spar/cito/citesAsRelated",
+            "formattedCitation": "<div class=\"csl-entry\"><i>Wikidata: The Free Knowledge Base That Anyone Can Edit</i>. Wikimedia Foundation, 2014. https://www.wikidata.org/.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Wikidata",
+            "type": "citesAsRelated"
+        }
+    ],
+    "reprPoint": [
+        12.300967151275488,
+        41.88839322717067
+    ],
+    "review_state": "published",
+    "rights": "Copyright © The Contributors. Sharing and remixing permitted under terms of the Creative Commons Attribution 3.0 License (cc-by).",
+    "subject": [
+        "extant remains",
+        "villa"
+    ],
+    "title": "Villa di Monte delle Colonnacce",
+    "type": "FeatureCollection",
+    "uri": "https://pleiades.stoa.org/places/50864837"
+}

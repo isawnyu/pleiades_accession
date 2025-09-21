@@ -1,0 +1,521 @@
+{
+    "@type": "Place",
+    "bbox": [
+        50.503186,
+        26.0719007,
+        50.5073703,
+        26.0786345
+    ],
+    "connections": [
+        {
+            "@type": "Connection",
+            "associationCertainty": "certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "2nd-millenium-bce",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/2nd-millenium-bce"
+                }
+            ],
+            "connectionType": "part_of_analytical",
+            "connectionTypeURI": "https://pleiades.stoa.org/vocabularies/relationship-types/part_of_analytical",
+            "connectsTo": "https://pleiades.stoa.org/places/933683602",
+            "contributors": [],
+            "created": "2019-07-06T23:07:44Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "description": "",
+            "details": "",
+            "end": -1000,
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2019-07-30T20:39:07Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2019-07-07T14:26:05Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2019-07-07T14:25:50Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "cnxn",
+                    "modified": "2019-07-06T23:07:48Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2019-07-06T23:07:44Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "dilmun-burial-mounds",
+            "provenance": "Pleiades",
+            "references": [
+                {
+                    "accessURI": "",
+                    "alternateURI": "",
+                    "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/26HJELPW",
+                    "citationDetail": "",
+                    "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+                    "formattedCitation": "<div class=\"csl-entry\">Srivastava, K. M., ed. <i>Madinat Hamad: Burial Mounds 1984-85</i>. Bahrain: Ministry of Information, 1991.</div>",
+                    "otherIdentifier": "",
+                    "shortTitle": "Srivastava 1991",
+                    "type": "seeFurther"
+                }
+            ],
+            "review_state": "published",
+            "start": -2000,
+            "title": "Dilmun Burial Mounds",
+            "uri": "https://pleiades.stoa.org/places/503873393/dilmun-burial-mounds"
+        }
+    ],
+    "connectsWith": [
+        "https://pleiades.stoa.org/places/933683602"
+    ],
+    "contributors": [],
+    "created": "2019-07-06T23:06:34Z",
+    "creators": [
+        {
+            "homepage": null,
+            "name": "Jeffrey Becker",
+            "uri": "https://pleiades.stoa.org/author/jbecker",
+            "username": "jbecker"
+        }
+    ],
+    "description": "A necropolis of the early Dilmun culture, dating to the second millennium B.C.",
+    "details": "",
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        50.503186,
+                        26.0781608
+                    ],
+                    [
+                        50.5036152,
+                        26.0764552
+                    ],
+                    [
+                        50.5041838,
+                        26.0737028
+                    ],
+                    [
+                        50.5041838,
+                        26.0726235
+                    ],
+                    [
+                        50.5048812,
+                        26.0725849
+                    ],
+                    [
+                        50.5049348,
+                        26.0724018
+                    ],
+                    [
+                        50.5052352,
+                        26.0724115
+                    ],
+                    [
+                        50.5053211,
+                        26.0722091
+                    ],
+                    [
+                        50.5060077,
+                        26.072132
+                    ],
+                    [
+                        50.5064368,
+                        26.0719393
+                    ],
+                    [
+                        50.506866,
+                        26.0719007
+                    ],
+                    [
+                        50.5070363,
+                        26.0719947
+                    ],
+                    [
+                        50.5072134,
+                        26.0721874
+                    ],
+                    [
+                        50.5070806,
+                        26.0736932
+                    ],
+                    [
+                        50.5066019,
+                        26.0765109
+                    ],
+                    [
+                        50.506508,
+                        26.0768675
+                    ],
+                    [
+                        50.5064717,
+                        26.0774275
+                    ],
+                    [
+                        50.506449,
+                        26.0778071
+                    ],
+                    [
+                        50.5063885,
+                        26.0781984
+                    ],
+                    [
+                        50.5061257,
+                        26.078567
+                    ],
+                    [
+                        50.5055034,
+                        26.078567
+                    ],
+                    [
+                        50.504967,
+                        26.0785574
+                    ],
+                    [
+                        50.504731,
+                        26.0784514
+                    ],
+                    [
+                        50.504452,
+                        26.0784321
+                    ],
+                    [
+                        50.5041409,
+                        26.0784225
+                    ],
+                    [
+                        50.5038512,
+                        26.0786345
+                    ],
+                    [
+                        50.503186,
+                        26.0781608
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "id": "osm-location-madinat-hamad-3-burial-mound-field",
+            "properties": {
+                "description": "Representative location based on OpenStreetMap.",
+                "link": "https://pleiades.stoa.org/places/503873393/osm-location-madinat-hamad-3-burial-mound-field",
+                "location_precision": "precise",
+                "snippet": "Cemetery; 2000 BC - 1000 BC",
+                "title": "OSM location Madinat Hamad 3 Burial Mound Field (Dar Kulayb)"
+            },
+            "type": "Feature"
+        }
+    ],
+    "history": [
+        {
+            "action": "Publish externally",
+            "modified": "2019-07-30T20:39:07Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "action": "Submit for review",
+            "modified": "2019-07-07T14:26:05Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "summary, references",
+            "modified": "2019-07-07T14:24:52Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "created",
+            "modified": "2019-07-06T23:06:37Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "action": "Create",
+            "modified": "2019-07-06T23:06:34Z",
+            "modifiedBy": "jbecker"
+        }
+    ],
+    "id": "503873393",
+    "locations": [
+        {
+            "@type": "Location",
+            "accuracy": "https://pleiades.stoa.org/features/metadata/generic-osm-accuracy-assessment",
+            "accuracy_value": 20.0,
+            "archaeologicalRemains": "substantive",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "2nd-millenium-bce",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/2nd-millenium-bce"
+                }
+            ],
+            "contributors": [],
+            "created": "2019-07-06T23:07:06Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "description": "Representative location based on OpenStreetMap.",
+            "details": "",
+            "end": -1000,
+            "featureType": [
+                "cemetery"
+            ],
+            "featureTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/cemetery"
+            ],
+            "geometry": {
+                "coordinates": [
+                    [
+                        50.503186,
+                        26.0781608
+                    ],
+                    [
+                        50.5036152,
+                        26.0764552
+                    ],
+                    [
+                        50.5041838,
+                        26.0737028
+                    ],
+                    [
+                        50.5041838,
+                        26.0726235
+                    ],
+                    [
+                        50.5048812,
+                        26.0725849
+                    ],
+                    [
+                        50.5049348,
+                        26.0724018
+                    ],
+                    [
+                        50.5052352,
+                        26.0724115
+                    ],
+                    [
+                        50.5053211,
+                        26.0722091
+                    ],
+                    [
+                        50.5060077,
+                        26.072132
+                    ],
+                    [
+                        50.5064368,
+                        26.0719393
+                    ],
+                    [
+                        50.506866,
+                        26.0719007
+                    ],
+                    [
+                        50.5070363,
+                        26.0719947
+                    ],
+                    [
+                        50.5072134,
+                        26.0721874
+                    ],
+                    [
+                        50.5070806,
+                        26.0736932
+                    ],
+                    [
+                        50.5066019,
+                        26.0765109
+                    ],
+                    [
+                        50.506508,
+                        26.0768675
+                    ],
+                    [
+                        50.5064717,
+                        26.0774275
+                    ],
+                    [
+                        50.506449,
+                        26.0778071
+                    ],
+                    [
+                        50.5063885,
+                        26.0781984
+                    ],
+                    [
+                        50.5061257,
+                        26.078567
+                    ],
+                    [
+                        50.5055034,
+                        26.078567
+                    ],
+                    [
+                        50.504967,
+                        26.0785574
+                    ],
+                    [
+                        50.504731,
+                        26.0784514
+                    ],
+                    [
+                        50.504452,
+                        26.0784321
+                    ],
+                    [
+                        50.5041409,
+                        26.0784225
+                    ],
+                    [
+                        50.5038512,
+                        26.0786345
+                    ],
+                    [
+                        50.503186,
+                        26.0781608
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "history": [
+                {
+                    "comment": "Reimported full way geometry and updated provenance",
+                    "modified": "2024-07-14T23:40:45Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Publish externally",
+                    "modified": "2019-07-30T20:39:07Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2019-07-07T14:26:05Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2019-07-07T14:25:10Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "added OSM location",
+                    "modified": "2019-07-06T23:07:22Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Location from OSM created by Products.PleiadesEntity.browser.osm.OSMLocationFactory",
+                    "modified": "2019-07-06T23:07:07Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2019-07-06T23:07:06Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "osm-location-madinat-hamad-3-burial-mound-field",
+            "locationType": [
+                "representative"
+            ],
+            "locationTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/cemetery"
+            ],
+            "provenance": "OpenStreetMap (Way 702158043, version 5, osm:changeset=138538323, 2023-07-15T10:12:14Z)",
+            "references": [
+                {
+                    "accessURI": "https://www.openstreetmap.org/browse/way/702158043",
+                    "alternateURI": "",
+                    "bibliographicURI": "",
+                    "citationDetail": "Way 702158043",
+                    "citationTypeURI": "http://purl.org/spar/cito/citesAsDataSource",
+                    "formattedCitation": "osm:way=702158043",
+                    "otherIdentifier": "",
+                    "shortTitle": "OSM",
+                    "type": "citesAsDataSource"
+                }
+            ],
+            "review_state": "published",
+            "start": -2000,
+            "title": "OSM location Madinat Hamad 3 Burial Mound Field (Dar Kulayb)",
+            "uri": "https://pleiades.stoa.org/places/503873393/osm-location-madinat-hamad-3-burial-mound-field"
+        }
+    ],
+    "names": [],
+    "placeTypeURIs": [
+        "https://pleiades.stoa.org/vocabularies/place-types/cemetery"
+    ],
+    "placeTypes": [
+        "cemetery"
+    ],
+    "provenance": "Pleiades",
+    "references": [
+        {
+            "accessURI": "",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/26HJELPW",
+            "citationDetail": "",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Srivastava, K. M., ed. <i>Madinat Hamad: Burial Mounds 1984-85</i>. Bahrain: Ministry of Information, 1991.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Srivastava 1991",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/84E4KDXU",
+            "citationDetail": "220",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Nayeem, M. A. <i>Bahrain</i>. Prehistory and Protohistory of the Arabian Peninsula, vol. 2. Hyderabad: Hyderabad Publishers, 1992.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Nayeem 1992",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "https://whc.unesco.org/en/list/1542/",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/BIIFWTIR",
+            "citationDetail": "Dilmun Burial Mounds",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">UNESCO World Heritage Centre. <i>World Heritage List</i>, 1978. http://whc.unesco.org/en/list/.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "WHL",
+            "type": "seeFurther"
+        }
+    ],
+    "reprPoint": [
+        50.50536263634506,
+        26.0753435357227
+    ],
+    "review_state": "published",
+    "rights": "Copyright © The Contributors. Sharing and remixing permitted under terms of the Creative Commons Attribution 3.0 License (cc-by).",
+    "subject": [
+        "UWHS"
+    ],
+    "title": "Madinat Hamad 3 Burial Mound Field (Dar Kulayb)",
+    "type": "FeatureCollection",
+    "uri": "https://pleiades.stoa.org/places/503873393"
+}

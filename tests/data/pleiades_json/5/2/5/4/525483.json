@@ -1,0 +1,549 @@
+{
+    "@type": "Place",
+    "bbox": [
+        28.9206407,
+        40.9922431,
+        28.9228226,
+        40.9997684
+    ],
+    "connections": [
+        {
+            "@type": "Connection",
+            "associationCertainty": "certain",
+            "attestations": [],
+            "connectionType": "at",
+            "connectionTypeURI": "https://pleiades.stoa.org/vocabularies/relationship-types/at",
+            "connectsTo": "https://pleiades.stoa.org/places/520998",
+            "contributors": [
+                {
+                    "homepage": null,
+                    "name": "Tom Elliott",
+                    "uri": "https://pleiades.stoa.org/author/thomase",
+                    "username": "thomase"
+                }
+            ],
+            "created": "2016-07-13T13:52:27Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Sean Gillies",
+                    "uri": "https://pleiades.stoa.org/author/sgillies",
+                    "username": "sgillies"
+                }
+            ],
+            "description": "",
+            "details": "",
+            "end": null,
+            "history": [
+                {
+                    "comment": "ctype: \"at\"",
+                    "modified": "2021-11-27T23:14:31Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Publish externally",
+                    "modified": "2016-07-13T13:52:27Z",
+                    "modifiedBy": "admin"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2016-07-13T13:52:27Z",
+                    "modifiedBy": "admin"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2016-07-13T13:52:27Z",
+                    "modifiedBy": "admin"
+                }
+            ],
+            "id": "520998",
+            "provenance": "Pleiades",
+            "references": [],
+            "review_state": "published",
+            "start": null,
+            "title": "Constantinopolis",
+            "uri": "https://pleiades.stoa.org/places/525483/520998"
+        }
+    ],
+    "connectsWith": [
+        "https://pleiades.stoa.org/places/520998"
+    ],
+    "contributors": [
+        {
+            "name": "R. Talbert",
+            "username": null
+        },
+        {
+            "homepage": null,
+            "name": "Sean Gillies",
+            "uri": "https://pleiades.stoa.org/author/sgillies",
+            "username": "sgillies"
+        },
+        {
+            "homepage": null,
+            "name": "Tom Elliott",
+            "uri": "https://pleiades.stoa.org/author/thomase",
+            "username": "thomase"
+        },
+        {
+            "homepage": null,
+            "name": "Jeffrey Becker",
+            "uri": "https://pleiades.stoa.org/author/jbecker",
+            "username": "jbecker"
+        }
+    ],
+    "created": "2010-06-24T13:33:15Z",
+    "creators": [
+        {
+            "name": "C. Foss",
+            "username": null
+        }
+    ],
+    "description": "The Theodosian Walls (Murus Theodosii) were erected during the reign of Emperor Theodosius II (r. 408–450) to defend the landward approach to the city of Constantinople.",
+    "details": "<p>The Barrington Atlas Directory notes: Murus Theodosii</p>",
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        28.9225689,
+                        40.9922431
+                    ],
+                    [
+                        28.9228226,
+                        40.9926936
+                    ],
+                    [
+                        28.9227638,
+                        40.9928722
+                    ],
+                    [
+                        28.9226686,
+                        40.9931187
+                    ],
+                    [
+                        28.9226062,
+                        40.9932802
+                    ],
+                    [
+                        28.9224067,
+                        40.9936449
+                    ],
+                    [
+                        28.9223659,
+                        40.993725
+                    ],
+                    [
+                        28.9217621,
+                        40.9946984
+                    ],
+                    [
+                        28.9217348,
+                        40.995256
+                    ],
+                    [
+                        28.9217336,
+                        40.9953234
+                    ],
+                    [
+                        28.9215132,
+                        40.9959487
+                    ],
+                    [
+                        28.9214766,
+                        40.9964699
+                    ],
+                    [
+                        28.9214736,
+                        40.9965341
+                    ],
+                    [
+                        28.9213906,
+                        40.9970988
+                    ],
+                    [
+                        28.9210953,
+                        40.9980597
+                    ],
+                    [
+                        28.9210666,
+                        40.9981434
+                    ],
+                    [
+                        28.9209303,
+                        40.9985838
+                    ],
+                    [
+                        28.9209068,
+                        40.998658
+                    ],
+                    [
+                        28.9207849,
+                        40.9988638
+                    ],
+                    [
+                        28.9207878,
+                        40.9991359
+                    ],
+                    [
+                        28.920769,
+                        40.9992283
+                    ],
+                    [
+                        28.9206531,
+                        40.9996745
+                    ],
+                    [
+                        28.9206407,
+                        40.9997684
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "id": "osm-location-of-segment-of-theodosian-wall",
+            "properties": {
+                "description": "Representative location based on OpenStreetMap.",
+                "link": "https://pleiades.stoa.org/places/525483/osm-location-of-segment-of-theodosian-wall",
+                "location_precision": "precise",
+                "snippet": "City-wall; AD 300 - AD 2100",
+                "title": "OSM location of segment of Theodosian Wall"
+            },
+            "type": "Feature"
+        }
+    ],
+    "history": [
+        {
+            "comment": "update references",
+            "modified": "2025-02-02T04:22:21Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "Edited",
+            "modified": "2017-09-09T02:27:29Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "Edited",
+            "modified": "2016-08-21T02:18:16Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "edited description; added references",
+            "modified": "2013-06-11T17:25:10Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "Global migration and reindexing of citations and provenance, February 2012",
+            "modified": "2012-02-15T05:56:11Z",
+            "modifiedBy": "admin"
+        },
+        {
+            "comment": "Detail text updated from former modernLocation. See http://atlantides.org/trac/pleiades/wiki/PlaceDetailsUpgrade",
+            "modified": "2011-01-14T20:12:08Z",
+            "modifiedBy": "sgillies"
+        },
+        {
+            "action": "Publish externally",
+            "modified": "2010-06-24T13:38:53Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "action": "Submit for review",
+            "modified": "2010-06-24T13:37:10Z",
+            "modifiedBy": "sgillies"
+        },
+        {
+            "action": "Create",
+            "modified": "2010-06-24T13:33:15Z",
+            "modifiedBy": "sgillies"
+        }
+    ],
+    "id": "525483",
+    "locations": [
+        {
+            "@type": "Location",
+            "accuracy": "https://pleiades.stoa.org/features/metadata/generic-osm-accuracy-assessment",
+            "accuracy_value": 20.0,
+            "archaeologicalRemains": "substantive",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "late-antique",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/late-antique"
+                },
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "mediaeval-byzantine",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/mediaeval-byzantine"
+                },
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "modern",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/modern"
+                }
+            ],
+            "contributors": [],
+            "created": "2017-09-09T02:18:14Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "description": "Representative location based on OpenStreetMap.",
+            "details": "",
+            "end": 2100,
+            "featureType": [
+                "city-wall"
+            ],
+            "featureTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/city-wall"
+            ],
+            "geometry": {
+                "coordinates": [
+                    [
+                        28.9225689,
+                        40.9922431
+                    ],
+                    [
+                        28.9228226,
+                        40.9926936
+                    ],
+                    [
+                        28.9227638,
+                        40.9928722
+                    ],
+                    [
+                        28.9226686,
+                        40.9931187
+                    ],
+                    [
+                        28.9226062,
+                        40.9932802
+                    ],
+                    [
+                        28.9224067,
+                        40.9936449
+                    ],
+                    [
+                        28.9223659,
+                        40.993725
+                    ],
+                    [
+                        28.9217621,
+                        40.9946984
+                    ],
+                    [
+                        28.9217348,
+                        40.995256
+                    ],
+                    [
+                        28.9217336,
+                        40.9953234
+                    ],
+                    [
+                        28.9215132,
+                        40.9959487
+                    ],
+                    [
+                        28.9214766,
+                        40.9964699
+                    ],
+                    [
+                        28.9214736,
+                        40.9965341
+                    ],
+                    [
+                        28.9213906,
+                        40.9970988
+                    ],
+                    [
+                        28.9210953,
+                        40.9980597
+                    ],
+                    [
+                        28.9210666,
+                        40.9981434
+                    ],
+                    [
+                        28.9209303,
+                        40.9985838
+                    ],
+                    [
+                        28.9209068,
+                        40.998658
+                    ],
+                    [
+                        28.9207849,
+                        40.9988638
+                    ],
+                    [
+                        28.9207878,
+                        40.9991359
+                    ],
+                    [
+                        28.920769,
+                        40.9992283
+                    ],
+                    [
+                        28.9206531,
+                        40.9996745
+                    ],
+                    [
+                        28.9206407,
+                        40.9997684
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2017-09-09T02:19:44Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2017-09-09T02:19:33Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "added new osm location since old osm way deleted",
+                    "modified": "2017-09-09T02:19:15Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Location from OSM created by Products.PleiadesEntity.browser.osm.OSMLocationFactory",
+                    "modified": "2017-09-09T02:18:14Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2017-09-09T02:18:14Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "osm-location-of-segment-of-theodosian-wall",
+            "locationType": [
+                "representative"
+            ],
+            "locationTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/city-wall"
+            ],
+            "provenance": "OpenStreetMap (Way 23273442, version 6, osm:changeset=41973379, 2016-09-07T08:09:12Z)",
+            "references": [
+                {
+                    "accessURI": "http://www.openstreetmap.org/browse/way/23273442",
+                    "alternateURI": "",
+                    "bibliographicURI": "",
+                    "citationDetail": "Way 23273442",
+                    "citationTypeURI": "http://purl.org/spar/cito/citesAsDataSource",
+                    "formattedCitation": "osm:way=23273442",
+                    "otherIdentifier": "",
+                    "shortTitle": "OSM",
+                    "type": "citesAsDataSource"
+                }
+            ],
+            "review_state": "published",
+            "start": 300,
+            "title": "OSM location of segment of Theodosian Wall",
+            "uri": "https://pleiades.stoa.org/places/525483/osm-location-of-segment-of-theodosian-wall"
+        }
+    ],
+    "names": [],
+    "placeTypeURIs": [
+        "https://pleiades.stoa.org/vocabularies/place-types/city-wall"
+    ],
+    "placeTypes": [
+        "city-wall"
+    ],
+    "provenance": "Barrington Atlas: BAtlas 53 A2",
+    "references": [
+        {
+            "accessURI": "http://www.worldcat.org/oclc/43970336",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/MIAGQ5C6",
+            "citationDetail": "53 A2",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Talbert, Richard J. A., ed. <i>Barrington Atlas of the Greek and Roman World</i>. Princeton, N.J.: Princeton University Press, 2000. http://www.worldcat.org/oclc/43970336.</div>",
+            "otherIdentifier": " ",
+            "shortTitle": "BAtlas",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/QECQN2PI",
+            "citationDetail": "265-83",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Janin, R. <i>Constantinople Byzantine: Dévelopment Urbain et Répertoire Topographique</i>. 2. éd. Archives de l’Orient Chrétien, 4 A. Paris: Institut Français d’Etudes Byzantines, 1964.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Janin 1964",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "https://en.wikipedia.org/wiki/Walls_of_Constantinople",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/2533/items/CI6F6W7W",
+            "citationDetail": "Walls of Constantinople",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "Wikipedia: the free encyclopedia that anyone can edit (2001-), Walls of Constantinople.",
+            "otherIdentifier": " ",
+            "shortTitle": "Wikipedia (English)",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "http://www.livius.org/articles/place/constantinople-istanbul/constantinople-photos/constantinople-theodosian-walls/?",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/726HWVKS",
+            "citationDetail": "Constantinople, Theodosian Walls",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Lendering, Jona. <i>Livius - Articles on Ancient History</i>, 1995. http://www.livius.org/.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Livius.org",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "https://de.wikipedia.org/wiki/Theodosianische_Mauer",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/2533/pleiades/items/itemKey/QVRBJVTM",
+            "citationDetail": "Theodosianische Mauer",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "Wikipedia: Die freie Enzyklopädie (2001-), Theodosianische Mauer.",
+            "otherIdentifier": "",
+            "shortTitle": "Wikipedia (German)",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "https://www.wikidata.org/wiki/Q89917",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/BCQIKDKS",
+            "citationDetail": "Walls of Constantinople (Q89917)",
+            "citationTypeURI": "http://purl.org/spar/cito/citesAsRelated",
+            "formattedCitation": "<div class=\"csl-entry\"><i>Wikidata: The Free Knowledge Base That Anyone Can Edit</i>. Wikimedia Foundation, 2014. https://www.wikidata.org/.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Wikidata",
+            "type": "citesAsRelated"
+        }
+    ],
+    "reprPoint": [
+        28.921659566988513,
+        40.99593949023186
+    ],
+    "review_state": "published",
+    "rights": "Copyright © The Creators. Sharing and remixing permitted under terms of the Creative Commons Attribution 3.0 License (cc-by).",
+    "subject": [
+        "fortification",
+        "extant remains"
+    ],
+    "title": "Theodosian Walls",
+    "type": "FeatureCollection",
+    "uri": "https://pleiades.stoa.org/places/525483"
+}

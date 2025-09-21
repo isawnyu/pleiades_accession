@@ -1,0 +1,449 @@
+{
+    "@type": "Place",
+    "bbox": [
+        4.8756242,
+        45.524061,
+        4.876699,
+        45.5250292
+    ],
+    "connections": [
+        {
+            "@type": "Connection",
+            "associationCertainty": "certain",
+            "attestations": [],
+            "connectionType": "at",
+            "connectionTypeURI": "https://pleiades.stoa.org/vocabularies/relationship-types/at",
+            "connectsTo": "https://pleiades.stoa.org/places/167719",
+            "contributors": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "created": "2016-07-13T13:37:52Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Sean Gillies",
+                    "uri": "https://pleiades.stoa.org/author/sgillies",
+                    "username": "sgillies"
+                }
+            ],
+            "description": "",
+            "details": "",
+            "end": null,
+            "history": [
+                {
+                    "comment": "change cnxn type",
+                    "modified": "2018-08-10T00:52:03Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Publish externally",
+                    "modified": "2016-07-13T13:37:52Z",
+                    "modifiedBy": "admin"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2016-07-13T13:37:52Z",
+                    "modifiedBy": "admin"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2016-07-13T13:37:52Z",
+                    "modifiedBy": "admin"
+                }
+            ],
+            "id": "167719",
+            "provenance": "Pleiades",
+            "references": [],
+            "review_state": "published",
+            "start": null,
+            "title": "Col. Vienna",
+            "uri": "https://pleiades.stoa.org/places/511545009/167719"
+        }
+    ],
+    "connectsWith": [
+        "https://pleiades.stoa.org/places/167719"
+    ],
+    "contributors": [],
+    "created": "2016-07-01T13:57:41Z",
+    "creators": [
+        {
+            "homepage": null,
+            "name": "Jeffrey Becker",
+            "uri": "https://pleiades.stoa.org/author/jbecker",
+            "username": "jbecker"
+        },
+        {
+            "homepage": null,
+            "name": "Tom Elliott",
+            "uri": "https://pleiades.stoa.org/author/thomase",
+            "username": "thomase"
+        }
+    ],
+    "description": "An archaeological area in Vienne that includes remains of municipal and domestic architecture.",
+    "details": "",
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        4.8756242,
+                        45.5243244
+                    ],
+                    [
+                        4.87564,
+                        45.5242107
+                    ],
+                    [
+                        4.8756608,
+                        45.524061
+                    ],
+                    [
+                        4.876044,
+                        45.524081
+                    ],
+                    [
+                        4.8765387,
+                        45.5243212
+                    ],
+                    [
+                        4.876699,
+                        45.5245005
+                    ],
+                    [
+                        4.8766837,
+                        45.5246994
+                    ],
+                    [
+                        4.876677,
+                        45.52482
+                    ],
+                    [
+                        4.876496,
+                        45.524818
+                    ],
+                    [
+                        4.8762029,
+                        45.5248251
+                    ],
+                    [
+                        4.8762024,
+                        45.5250292
+                    ],
+                    [
+                        4.8757959,
+                        45.5250256
+                    ],
+                    [
+                        4.8757701,
+                        45.5247939
+                    ],
+                    [
+                        4.8759526,
+                        45.5247892
+                    ],
+                    [
+                        4.8759515,
+                        45.524535
+                    ],
+                    [
+                        4.8757748,
+                        45.5245336
+                    ],
+                    [
+                        4.8756881,
+                        45.524325
+                    ],
+                    [
+                        4.8756242,
+                        45.5243244
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "id": "location-of-garden-of-cybele",
+            "properties": {
+                "description": "Location based on OpenStreetMap",
+                "link": "https://pleiades.stoa.org/places/511545009/location-of-garden-of-cybele",
+                "location_precision": "precise",
+                "snippet": "Sanctuary, ; 30 BC - AD 300",
+                "title": "OSM location of so-called Garden of Cybele"
+            },
+            "type": "Feature"
+        }
+    ],
+    "history": [
+        {
+            "comment": "wikidata Q23305483",
+            "modified": "2024-12-22T01:35:25Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "action": "Publish externally",
+            "modified": "2021-04-30T21:01:10Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "action": "Submit for review",
+            "modified": "2016-07-25T15:28:31Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "Initial revision",
+            "modified": "2016-07-25T15:28:24Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "Migrated from location",
+            "modified": "2016-07-01T13:57:42Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "action": "Create",
+            "modified": "2016-07-01T13:57:41Z",
+            "modifiedBy": "thomase"
+        }
+    ],
+    "id": "511545009",
+    "locations": [
+        {
+            "@type": "Location",
+            "accuracy": "https://pleiades.stoa.org/features/metadata/generic-osm-accuracy-assessment",
+            "accuracy_value": 20.0,
+            "archaeologicalRemains": "substantive",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "roman",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/roman"
+                }
+            ],
+            "contributors": [],
+            "created": "2013-04-12T22:40:23Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "description": "Location based on OpenStreetMap",
+            "details": "",
+            "end": 300,
+            "featureType": [
+                "sanctuary",
+                ""
+            ],
+            "featureTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/sanctuary",
+                "https://pleiades.stoa.org/vocabularies/place-types/"
+            ],
+            "geometry": {
+                "coordinates": [
+                    [
+                        4.8756242,
+                        45.5243244
+                    ],
+                    [
+                        4.87564,
+                        45.5242107
+                    ],
+                    [
+                        4.8756608,
+                        45.524061
+                    ],
+                    [
+                        4.876044,
+                        45.524081
+                    ],
+                    [
+                        4.8765387,
+                        45.5243212
+                    ],
+                    [
+                        4.876699,
+                        45.5245005
+                    ],
+                    [
+                        4.8766837,
+                        45.5246994
+                    ],
+                    [
+                        4.876677,
+                        45.52482
+                    ],
+                    [
+                        4.876496,
+                        45.524818
+                    ],
+                    [
+                        4.8762029,
+                        45.5248251
+                    ],
+                    [
+                        4.8762024,
+                        45.5250292
+                    ],
+                    [
+                        4.8757959,
+                        45.5250256
+                    ],
+                    [
+                        4.8757701,
+                        45.5247939
+                    ],
+                    [
+                        4.8759526,
+                        45.5247892
+                    ],
+                    [
+                        4.8759515,
+                        45.524535
+                    ],
+                    [
+                        4.8757748,
+                        45.5245336
+                    ],
+                    [
+                        4.8756881,
+                        45.524325
+                    ],
+                    [
+                        4.8756242,
+                        45.5243244
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "history": [
+                {
+                    "comment": "Reimported full way geometry and updated provenance",
+                    "modified": "2024-12-22T01:34:32Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "added reference",
+                    "modified": "2016-07-25T15:26:01Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Publish externally",
+                    "modified": "2013-04-13T12:20:43Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2013-04-12T22:47:00Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "added location",
+                    "modified": "2013-04-12T22:41:28Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Location from OSM created by Products.PleiadesEntity.browser.osm.OSMLocationFactory",
+                    "modified": "2013-04-12T22:40:29Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2013-04-12T22:40:27Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "location-of-garden-of-cybele",
+            "locationType": [
+                "representative",
+                ""
+            ],
+            "locationTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/sanctuary",
+                "https://pleiades.stoa.org/vocabularies/place-types/"
+            ],
+            "provenance": "OpenStreetMap (Way 54992718, version 11, osm:changeset=108876051, 2021-07-30T09:00:27Z)",
+            "references": [
+                {
+                    "accessURI": "http://www.openstreetmap.org/browse/way/54992718",
+                    "alternateURI": "",
+                    "bibliographicURI": "",
+                    "citationDetail": "Way 54992718",
+                    "citationTypeURI": "http://purl.org/spar/cito/citesAsDataSource",
+                    "formattedCitation": "osm:way=54992718",
+                    "otherIdentifier": " ",
+                    "shortTitle": "OSM",
+                    "type": "citesAsDataSource"
+                },
+                {
+                    "accessURI": "http://www.livius.org/pictures/france/vienne-vienna/vienne-garden-of-cybele/",
+                    "alternateURI": "",
+                    "bibliographicURI": "",
+                    "citationDetail": "",
+                    "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+                    "formattedCitation": "Livius.org: Vienne, Garden of Cybele",
+                    "otherIdentifier": " ",
+                    "shortTitle": "",
+                    "type": "seeFurther"
+                }
+            ],
+            "review_state": "published",
+            "start": -30,
+            "title": "OSM location of so-called Garden of Cybele",
+            "uri": "https://pleiades.stoa.org/places/511545009/location-of-garden-of-cybele"
+        }
+    ],
+    "names": [],
+    "placeTypeURIs": [
+        "https://pleiades.stoa.org/vocabularies/place-types/sanctuary",
+        "https://pleiades.stoa.org/vocabularies/place-types/architecturalcomplex"
+    ],
+    "placeTypes": [
+        "sanctuary",
+        "architecturalcomplex"
+    ],
+    "provenance": "Pleiades",
+    "references": [
+        {
+            "accessURI": "http://www.vienne-tourisme.com/jardin-archeologique-de-cybele.html",
+            "alternateURI": "",
+            "bibliographicURI": "",
+            "citationDetail": "",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "Jardin archéologique de Cybèle",
+            "otherIdentifier": " ",
+            "shortTitle": "",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "https://www.wikidata.org/wiki/Q23305483",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/BCQIKDKS",
+            "citationDetail": "Jardin archéologique de Cybèle (Q23305483)",
+            "citationTypeURI": "http://purl.org/spar/cito/citesAsRelated",
+            "formattedCitation": "<div class=\"csl-entry\"><i>Wikidata: The Free Knowledge Base That Anyone Can Edit</i>. Wikimedia Foundation, 2014. https://www.wikidata.org/.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Wikidata",
+            "type": "citesAsRelated"
+        }
+    ],
+    "reprPoint": [
+        4.876108541638462,
+        45.524560677864045
+    ],
+    "review_state": "published",
+    "rights": "Copyright © The Contributors. Sharing and remixing permitted under terms of the Creative Commons Attribution 3.0 License (cc-by).",
+    "subject": [
+        "extant remains"
+    ],
+    "title": "Garden of Cybele",
+    "type": "FeatureCollection",
+    "uri": "https://pleiades.stoa.org/places/511545009"
+}

@@ -1,0 +1,343 @@
+{
+    "@type": "Place",
+    "bbox": [
+        25.0923259,
+        36.6696467,
+        25.0924553,
+        36.6697443
+    ],
+    "connections": [
+        {
+            "@type": "Connection",
+            "associationCertainty": "certain",
+            "attestations": [],
+            "connectionType": "on",
+            "connectionTypeURI": "https://pleiades.stoa.org/vocabularies/relationship-types/on",
+            "connectsTo": "https://pleiades.stoa.org/places/590047",
+            "contributors": [],
+            "created": "2023-09-17T23:33:49Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "description": "",
+            "details": "",
+            "end": null,
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2023-11-07T15:18:02Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2023-11-07T00:25:02Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "reference",
+                    "modified": "2023-11-07T00:24:57Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "cnxn",
+                    "modified": "2023-09-17T23:33:51Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2023-09-17T23:33:49Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "sikinos-island",
+            "provenance": "Pleiades",
+            "references": [
+                {
+                    "accessURI": "https://www.jstor.org/stable/503997",
+                    "alternateURI": "",
+                    "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/ZFZ2N8G2",
+                    "citationDetail": "",
+                    "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+                    "formattedCitation": "<div class=\"csl-entry\">Frantz, A., H.A. Thompson, and J. Travlos. “The ‘Temple of Apollo Pythios’ on Sikinos.” <i>American Journal of Archaeology: The Journal of the Archaeological Institute of America</i> 73 (1969): 397–422. https://doi.org/https://doi.org/10.2307/503997.</div>",
+                    "otherIdentifier": "",
+                    "shortTitle": "Frantz 1969",
+                    "type": "seeFurther"
+                }
+            ],
+            "review_state": "published",
+            "start": null,
+            "title": "Sikinos (island)",
+            "uri": "https://pleiades.stoa.org/places/589778/sikinos-island"
+        }
+    ],
+    "connectsWith": [
+        "https://pleiades.stoa.org/places/590047"
+    ],
+    "contributors": [
+        {
+            "name": "R. Talbert",
+            "username": null
+        },
+        {
+            "homepage": null,
+            "name": "Sean Gillies",
+            "uri": "https://pleiades.stoa.org/author/sgillies",
+            "username": "sgillies"
+        },
+        {
+            "homepage": null,
+            "name": "Tom Elliott",
+            "uri": "https://pleiades.stoa.org/author/thomase",
+            "username": "thomase"
+        },
+        {
+            "homepage": null,
+            "name": "Jeffrey Becker",
+            "uri": "https://pleiades.stoa.org/author/jbecker",
+            "username": "jbecker"
+        }
+    ],
+    "created": "2010-09-22T19:19:20Z",
+    "creators": [
+        {
+            "name": "J. Bennet",
+            "username": null
+        },
+        {
+            "name": "G. Reger",
+            "username": null
+        }
+    ],
+    "description": "An ancient place, cited: BAtlas 60 D5 Episkopi",
+    "details": "<p>The Barrington Atlas Directory notes: Episkopi, on Sikinos</p>",
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        25.0923259,
+                        36.6697023
+                    ],
+                    [
+                        25.0924245,
+                        36.6697443
+                    ],
+                    [
+                        25.0924553,
+                        36.6696838
+                    ],
+                    [
+                        25.0923552,
+                        36.6696467
+                    ],
+                    [
+                        25.0923259,
+                        36.6697023
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "id": "osm-location-of-episkopi",
+            "properties": {
+                "description": "Representative location based on OpenStreetMap",
+                "link": "https://pleiades.stoa.org/places/589778/osm-location-of-episkopi",
+                "location_precision": "precise",
+                "snippet": "Archaeological-site",
+                "title": "OSM location of Episkopi"
+            },
+            "type": "Feature"
+        }
+    ],
+    "history": [
+        {
+            "comment": "Edited",
+            "modified": "2023-09-17T23:33:29Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "update references",
+            "modified": "2023-09-15T02:04:22Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "Global migration and reindexing of citations and provenance, February 2012",
+            "modified": "2012-02-15T06:48:08Z",
+            "modifiedBy": "admin"
+        },
+        {
+            "comment": "Detail text updated from former modernLocation. See http://atlantides.org/trac/pleiades/wiki/PlaceDetailsUpgrade",
+            "modified": "2011-01-14T20:33:42Z",
+            "modifiedBy": "sgillies"
+        },
+        {
+            "action": "Publish externally",
+            "modified": "2010-09-22T20:03:56Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "action": "Submit for review",
+            "modified": "2010-09-22T19:58:12Z",
+            "modifiedBy": "sgillies"
+        },
+        {
+            "action": "Create",
+            "modified": "2010-09-22T19:19:20Z",
+            "modifiedBy": "sgillies"
+        }
+    ],
+    "id": "589778",
+    "locations": [
+        {
+            "@type": "Location",
+            "accuracy": "https://pleiades.stoa.org/features/metadata/generic-osm-accuracy-assessment",
+            "accuracy_value": 20.0,
+            "archaeologicalRemains": "unknown",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [],
+            "contributors": [],
+            "created": "2023-09-17T23:34:07Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "description": "Representative location based on OpenStreetMap",
+            "details": "",
+            "end": null,
+            "featureType": [
+                "archaeological-site"
+            ],
+            "featureTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/archaeological-site"
+            ],
+            "geometry": {
+                "coordinates": [
+                    [
+                        25.0923259,
+                        36.6697023
+                    ],
+                    [
+                        25.0924245,
+                        36.6697443
+                    ],
+                    [
+                        25.0924553,
+                        36.6696838
+                    ],
+                    [
+                        25.0923552,
+                        36.6696467
+                    ],
+                    [
+                        25.0923259,
+                        36.6697023
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2023-09-18T16:25:17Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2023-09-17T23:34:24Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "added osm location",
+                    "modified": "2023-09-17T23:34:20Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Location from OSM created by Products.PleiadesEntity.browser.osm.OSMLocationFactory",
+                    "modified": "2023-09-17T23:34:07Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2023-09-17T23:34:07Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "osm-location-of-episkopi",
+            "locationType": [
+                "representative"
+            ],
+            "locationTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/archaeological-site"
+            ],
+            "provenance": "OpenStreetMap (Way 504259635, version 4, osm:changeset=138539769, 2023-07-15T10:49:33Z)",
+            "references": [
+                {
+                    "accessURI": "https://www.openstreetmap.org/browse/way/504259635",
+                    "alternateURI": "",
+                    "bibliographicURI": "",
+                    "citationDetail": "Way 504259635",
+                    "citationTypeURI": "http://purl.org/spar/cito/citesAsDataSource",
+                    "formattedCitation": "osm:way=504259635",
+                    "otherIdentifier": "",
+                    "shortTitle": "OSM",
+                    "type": "citesAsDataSource"
+                }
+            ],
+            "review_state": "published",
+            "start": null,
+            "title": "OSM location of Episkopi",
+            "uri": "https://pleiades.stoa.org/places/589778/osm-location-of-episkopi"
+        }
+    ],
+    "names": [],
+    "placeTypeURIs": [
+        "https://pleiades.stoa.org/vocabularies/place-types/archaeological-site"
+    ],
+    "placeTypes": [
+        "archaeological-site"
+    ],
+    "provenance": "Barrington Atlas: BAtlas 60 D5 Episkopi",
+    "references": [
+        {
+            "accessURI": "http://www.worldcat.org/oclc/43970336",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/MIAGQ5C6",
+            "citationDetail": "60 D5 Episkopi",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Talbert, Richard J. A., ed. <i>Barrington Atlas of the Greek and Roman World</i>. Princeton, N.J.: Princeton University Press, 2000. http://www.worldcat.org/oclc/43970336.</div>",
+            "otherIdentifier": " ",
+            "shortTitle": "BAtlas",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "https://www.jstor.org/stable/503997",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/ZFZ2N8G2",
+            "citationDetail": "",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Frantz, A., H.A. Thompson, and J. Travlos. “The ‘Temple of Apollo Pythios’ on Sikinos.” <i>American Journal of Archaeology: The Journal of the Archaeological Institute of America</i> 73 (1969): 397–422. https://doi.org/https://doi.org/10.2307/503997.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Frantz 1969",
+            "type": "seeFurther"
+        }
+    ],
+    "reprPoint": [
+        25.09239093329024,
+        36.66969459947272
+    ],
+    "review_state": "published",
+    "rights": "Copyright © The Contributors. Sharing and remixing permitted under terms of the Creative Commons Attribution 3.0 License (cc-by).",
+    "subject": [],
+    "title": "Episkopi",
+    "type": "FeatureCollection",
+    "uri": "https://pleiades.stoa.org/places/589778"
+}

@@ -1,0 +1,227 @@
+{
+    "@type": "Place",
+    "bbox": [
+        20.439784,
+        39.660436,
+        20.439784,
+        39.660436
+    ],
+    "connections": [],
+    "connectsWith": [],
+    "contributors": [
+        {
+            "name": "R. Talbert",
+            "username": null
+        },
+        {
+            "homepage": null,
+            "name": "Sean Gillies",
+            "uri": "https://pleiades.stoa.org/author/sgillies",
+            "username": "sgillies"
+        },
+        {
+            "homepage": null,
+            "name": "Tom Elliott",
+            "uri": "https://pleiades.stoa.org/author/thomase",
+            "username": "thomase"
+        }
+    ],
+    "created": "2010-06-24T13:50:43Z",
+    "creators": [
+        {
+            "name": "W.M. Murray",
+            "username": null
+        }
+    ],
+    "description": "A small guard tower in Epirus.",
+    "details": "<p>The Barrington Atlas Directory notes: Vigla, Keramitsas</p>",
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    20.439784,
+                    39.660436
+                ],
+                "type": "Point"
+            },
+            "id": "reported-location-of-vigla-keramitsas",
+            "properties": {
+                "description": "Coordinates converted from UTM in Sucha 2021 (NB: she marks this location as \"presumed/not found\" in her index. Dates after BAtlas.",
+                "link": "https://pleiades.stoa.org/places/531141/reported-location-of-vigla-keramitsas",
+                "location_precision": "precise",
+                "snippet": "Unknown; 330 BC - 30 BC",
+                "title": "Reported location of Vigla Keramitsas"
+            },
+            "type": "Feature"
+        }
+    ],
+    "history": [
+        {
+            "comment": "cleaned up references",
+            "modified": "2022-08-19T22:22:09Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "comment": "added Suha 2021",
+            "modified": "2022-08-19T22:17:28Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "comment": "title; summary; place type",
+            "modified": "2022-08-19T22:16:18Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "comment": "Global migration and reindexing of citations and provenance, February 2012",
+            "modified": "2012-02-15T06:02:12Z",
+            "modifiedBy": "admin"
+        },
+        {
+            "comment": "Detail text updated from former modernLocation. See http://atlantides.org/trac/pleiades/wiki/PlaceDetailsUpgrade",
+            "modified": "2011-01-14T20:14:45Z",
+            "modifiedBy": "sgillies"
+        },
+        {
+            "action": "Publish externally",
+            "modified": "2010-06-24T14:09:07Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "action": "Submit for review",
+            "modified": "2010-06-24T13:54:37Z",
+            "modifiedBy": "sgillies"
+        },
+        {
+            "action": "Create",
+            "modified": "2010-06-24T13:50:43Z",
+            "modifiedBy": "sgillies"
+        }
+    ],
+    "id": "531141",
+    "locations": [
+        {
+            "@type": "Location",
+            "accuracy": "https://pleiades.stoa.org/features/metadata/google-earth-2016ff",
+            "accuracy_value": 5.0,
+            "archaeologicalRemains": "unknown",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "hellenistic-republican",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/hellenistic-republican"
+                }
+            ],
+            "contributors": [],
+            "created": "2022-08-19T22:28:12Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Tom Elliott",
+                    "uri": "https://pleiades.stoa.org/author/thomase",
+                    "username": "thomase"
+                }
+            ],
+            "description": "Coordinates converted from UTM in Sucha 2021 (NB: she marks this location as \"presumed/not found\" in her index. Dates after BAtlas.",
+            "details": "",
+            "end": -30,
+            "featureType": [],
+            "featureTypeURI": [],
+            "geometry": {
+                "coordinates": [
+                    20.439784,
+                    39.660436
+                ],
+                "type": "Point"
+            },
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2022-08-19T23:48:55Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2022-08-19T22:28:34Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "comment": "Initial revision",
+                    "modified": "2022-08-19T22:28:12Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2022-08-19T22:28:12Z",
+                    "modifiedBy": "thomase"
+                }
+            ],
+            "id": "reported-location-of-vigla-keramitsas",
+            "locationType": [
+                "representative"
+            ],
+            "locationTypeURI": [],
+            "provenance": "Pleiades",
+            "references": [],
+            "review_state": "published",
+            "start": -330,
+            "title": "Reported location of Vigla Keramitsas",
+            "uri": "https://pleiades.stoa.org/places/531141/reported-location-of-vigla-keramitsas"
+        }
+    ],
+    "names": [],
+    "placeTypeURIs": [
+        "https://pleiades.stoa.org/vocabularies/place-types/tower-single"
+    ],
+    "placeTypes": [
+        "tower-single"
+    ],
+    "provenance": "Barrington Atlas: BAtlas 54 B2 Vigla",
+    "references": [
+        {
+            "accessURI": "http://www.worldcat.org/oclc/43970336",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/MIAGQ5C6",
+            "citationDetail": "54 B2 Vigla",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Talbert, Richard J. A., ed. <i>Barrington Atlas of the Greek and Roman World</i>. Princeton, N.J.: Princeton University Press, 2000. http://www.worldcat.org/oclc/43970336.</div>",
+            "otherIdentifier": " ",
+            "shortTitle": "BAtlas",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "http://www.worldcat.org/oclc/884608915",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/XXDEJCQ7",
+            "citationDetail": "157",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">S Dakaris. <i>Θεσπρωτία</i>. Ancient Greek Cities 15. Athens: Athens Center of Ekistics, 1972. http://www.worldcat.org/oclc/884608915.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Dakaris 1972",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "https://helda.helsinki.fi/handle/10138/335876",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/55TJBC4U",
+            "citationDetail": "pages 57, 60 and 410 number 71",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Suha, Mikko. “Late Classical - Hellenistic Fortifications in Epirus : Fourth to Second Century BC.” Doctoral, University of Helsinki, 2021. https://helda.helsinki.fi/handle/10138/335876.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Suha 2021",
+            "type": "seeFurther"
+        }
+    ],
+    "reprPoint": [
+        20.439784,
+        39.660436
+    ],
+    "review_state": "published",
+    "rights": "Copyright © The Creators. Sharing and remixing permitted under terms of the Creative Commons Attribution 3.0 License (cc-by).",
+    "subject": [],
+    "title": "Vigla Keramitsas",
+    "type": "FeatureCollection",
+    "uri": "https://pleiades.stoa.org/places/531141"
+}

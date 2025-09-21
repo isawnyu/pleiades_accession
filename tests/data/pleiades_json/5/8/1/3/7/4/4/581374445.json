@@ -1,0 +1,341 @@
+{
+    "@type": "Place",
+    "bbox": [
+        26.1298514,
+        34.947322,
+        26.1298514,
+        34.947322
+    ],
+    "connections": [
+        {
+            "@type": "Connection",
+            "associationCertainty": "certain",
+            "attestations": [],
+            "connectionType": "at",
+            "connectionTypeURI": "https://pleiades.stoa.org/vocabularies/relationship-types/at",
+            "connectsTo": "https://pleiades.stoa.org/places/589909",
+            "contributors": [],
+            "created": "2018-08-14T00:11:34Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "description": "",
+            "details": "",
+            "end": null,
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2018-08-14T00:11:34Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2018-08-14T00:11:34Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2018-08-14T00:11:34Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "4943878731",
+            "provenance": "Pleiades",
+            "references": [],
+            "review_state": "published",
+            "start": null,
+            "title": "Leuke",
+            "uri": "https://pleiades.stoa.org/places/581374445/4943878731"
+        }
+    ],
+    "connectsWith": [
+        "https://pleiades.stoa.org/places/589909"
+    ],
+    "contributors": [],
+    "created": "2018-08-14T00:11:33Z",
+    "creators": [
+        {
+            "homepage": null,
+            "name": "Jeffrey Becker",
+            "uri": "https://pleiades.stoa.org/author/jbecker",
+            "username": "jbecker"
+        }
+    ],
+    "description": "The theater is located at the north-east end of Kouphonesi. It was a stone-built building that could accommodated ca. 1000 spectators.",
+    "details": "",
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        26.1296702,
+                        34.9473953
+                    ],
+                    [
+                        26.1296948,
+                        34.9473605
+                    ],
+                    [
+                        26.129753,
+                        34.9473293
+                    ],
+                    [
+                        26.1298514,
+                        34.947322
+                    ],
+                    [
+                        26.1299141,
+                        34.9473586
+                    ],
+                    [
+                        26.1299364,
+                        34.9474155
+                    ],
+                    [
+                        26.1299364,
+                        34.947465
+                    ],
+                    [
+                        26.1298827,
+                        34.9475347
+                    ],
+                    [
+                        26.1296702,
+                        34.9473953
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "id": "osm-location-of-theater",
+            "properties": {
+                "description": "Location based on OpenStreetMap",
+                "link": "https://pleiades.stoa.org/places/581374445/osm-location-of-theater",
+                "location_precision": "precise",
+                "snippet": "Theatre, ; 30 BC - AD 300",
+                "title": "OSM location of theater"
+            },
+            "type": "Feature"
+        }
+    ],
+    "history": [
+        {
+            "action": "Publish externally",
+            "modified": "2018-08-14T18:24:22Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "action": "Submit for review",
+            "modified": "2018-08-14T13:57:00Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "Edited",
+            "modified": "2018-08-14T13:56:53Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "title",
+            "modified": "2018-08-14T00:11:55Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "Migrated from location",
+            "modified": "2018-08-14T00:11:36Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "action": "Create",
+            "modified": "2018-08-14T00:11:33Z",
+            "modifiedBy": "jbecker"
+        }
+    ],
+    "id": "581374445",
+    "locations": [
+        {
+            "@type": "Location",
+            "accuracy": "https://pleiades.stoa.org/features/metadata/generic-osm-accuracy-assessment",
+            "accuracy_value": 20.0,
+            "archaeologicalRemains": "unknown",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "roman",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/roman"
+                }
+            ],
+            "contributors": [],
+            "created": "2015-03-04T14:39:54Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "description": "Location based on OpenStreetMap",
+            "details": "",
+            "end": 300,
+            "featureType": [
+                "theatre",
+                ""
+            ],
+            "featureTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/theatre",
+                "https://pleiades.stoa.org/vocabularies/place-types/"
+            ],
+            "geometry": {
+                "coordinates": [
+                    [
+                        26.1296702,
+                        34.9473953
+                    ],
+                    [
+                        26.1296948,
+                        34.9473605
+                    ],
+                    [
+                        26.129753,
+                        34.9473293
+                    ],
+                    [
+                        26.1298514,
+                        34.947322
+                    ],
+                    [
+                        26.1299141,
+                        34.9473586
+                    ],
+                    [
+                        26.1299364,
+                        34.9474155
+                    ],
+                    [
+                        26.1299364,
+                        34.947465
+                    ],
+                    [
+                        26.1298827,
+                        34.9475347
+                    ],
+                    [
+                        26.1296702,
+                        34.9473953
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "history": [
+                {
+                    "comment": "Reimported full way geometry and updated provenance",
+                    "modified": "2024-12-21T23:09:05Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Publish externally",
+                    "modified": "2018-08-14T18:24:22Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2015-03-04T14:48:48Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "added location",
+                    "modified": "2015-03-04T14:41:33Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Location from OSM created by Products.PleiadesEntity.browser.osm.OSMLocationFactory",
+                    "modified": "2015-03-04T14:39:57Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2015-03-04T14:39:56Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "osm-location-of-theater",
+            "locationType": [
+                "representative"
+            ],
+            "locationTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/theatre",
+                "https://pleiades.stoa.org/vocabularies/place-types/"
+            ],
+            "provenance": "OpenStreetMap (Way 280332291, version 2, osm:changeset=141821347, 2023-09-27T13:53:02Z)",
+            "references": [
+                {
+                    "accessURI": "http://www.openstreetmap.org/browse/way/280332291",
+                    "alternateURI": "",
+                    "bibliographicURI": "",
+                    "citationDetail": "Way 280332291",
+                    "citationTypeURI": "http://purl.org/spar/cito/citesAsDataSource",
+                    "formattedCitation": "osm:way=280332291",
+                    "otherIdentifier": " ",
+                    "shortTitle": "OSM",
+                    "type": "citesAsDataSource"
+                },
+                {
+                    "accessURI": "https://en.wikipedia.org/wiki/Koufonisi,_Crete",
+                    "alternateURI": "",
+                    "bibliographicURI": "https://www.zotero.org/groups/2533/items/CI6F6W7W",
+                    "citationDetail": "Koufonisi, Crete",
+                    "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+                    "formattedCitation": "Wikipedia: the free encyclopedia that anyone can edit (2001-), Koufonisi, Crete.",
+                    "otherIdentifier": " ",
+                    "shortTitle": "Wikipedia (English)",
+                    "type": "seeFurther"
+                }
+            ],
+            "review_state": "published",
+            "start": -30,
+            "title": "OSM location of theater",
+            "uri": "https://pleiades.stoa.org/places/581374445/osm-location-of-theater"
+        }
+    ],
+    "names": [],
+    "placeTypeURIs": [
+        "https://pleiades.stoa.org/vocabularies/place-types/theatre"
+    ],
+    "placeTypes": [
+        "theatre"
+    ],
+    "provenance": "Pleiades",
+    "references": [
+        {
+            "accessURI": "https://www.gtp.gr/TDirectoryDetails.asp?ID=14739",
+            "alternateURI": "",
+            "bibliographicURI": "",
+            "citationDetail": "",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "Archaeological Site of Koufonissi",
+            "otherIdentifier": "",
+            "shortTitle": "",
+            "type": "seeFurther"
+        }
+    ],
+    "reprPoint": [
+        26.1298514,
+        34.947322
+    ],
+    "review_state": "published",
+    "rights": "Copyright © The Contributors. Sharing and remixing permitted under terms of the Creative Commons Attribution 3.0 License (cc-by).",
+    "subject": [
+        "Theater",
+        "extant remains"
+    ],
+    "title": "Theater at Leuke",
+    "type": "FeatureCollection",
+    "uri": "https://pleiades.stoa.org/places/581374445"
+}

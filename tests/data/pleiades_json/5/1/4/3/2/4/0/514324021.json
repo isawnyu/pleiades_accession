@@ -1,0 +1,606 @@
+{
+    "@type": "Place",
+    "bbox": [
+        38.2685107,
+        34.5504027,
+        38.269146,
+        34.550937
+    ],
+    "connections": [
+        {
+            "@type": "Connection",
+            "associationCertainty": "certain",
+            "attestations": [],
+            "connectionType": "at",
+            "connectionTypeURI": "https://pleiades.stoa.org/vocabularies/relationship-types/at",
+            "connectsTo": "https://pleiades.stoa.org/places/668331",
+            "contributors": [],
+            "created": "2016-08-23T12:11:26Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Tom Elliott",
+                    "uri": "https://pleiades.stoa.org/author/thomase",
+                    "username": "thomase"
+                }
+            ],
+            "description": "",
+            "details": "",
+            "end": null,
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2016-08-23T12:11:46Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2016-08-23T12:11:38Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "comment": "Initial revision",
+                    "modified": "2016-08-23T12:11:27Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2016-08-23T12:11:26Z",
+                    "modifiedBy": "thomase"
+                }
+            ],
+            "id": "palmyra",
+            "provenance": "Pleiades",
+            "references": [],
+            "review_state": "published",
+            "start": null,
+            "title": "Palmyra",
+            "uri": "https://pleiades.stoa.org/places/514324021/palmyra"
+        }
+    ],
+    "connectsWith": [
+        "https://pleiades.stoa.org/places/668331"
+    ],
+    "contributors": [
+        {
+            "homepage": null,
+            "name": "Jeffrey Becker",
+            "uri": "https://pleiades.stoa.org/author/jbecker",
+            "username": "jbecker"
+        }
+    ],
+    "created": "2016-08-23T12:10:08Z",
+    "creators": [
+        {
+            "homepage": null,
+            "name": "Adam Prins",
+            "uri": "https://pleiades.stoa.org/author/adamp",
+            "username": "adamp"
+        },
+        {
+            "homepage": null,
+            "name": "Tom Elliott",
+            "uri": "https://pleiades.stoa.org/author/thomase",
+            "username": "thomase"
+        }
+    ],
+    "description": "Theatre in the Ancient City of Palmyra.",
+    "details": "",
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    38.268862,
+                    34.55079
+                ],
+                "type": "Point"
+            },
+            "id": "imagery-location",
+            "properties": {
+                "description": "Theatre in the Ancient City of Palmyra. Coordinates determined by eye in Google Earth in November 2012, following description in UNESCO World Heritage List.",
+                "link": "https://pleiades.stoa.org/places/514324021/imagery-location",
+                "location_precision": "precise",
+                "snippet": "Theatre, ",
+                "title": "Imagery Location of the Theatre of Palmyra"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        38.2687138,
+                        34.550937
+                    ],
+                    [
+                        38.2685785,
+                        34.5507797
+                    ],
+                    [
+                        38.2685445,
+                        34.5507403
+                    ],
+                    [
+                        38.268523,
+                        34.5507026
+                    ],
+                    [
+                        38.2685107,
+                        34.5506521
+                    ],
+                    [
+                        38.2685109,
+                        34.550603
+                    ],
+                    [
+                        38.2685205,
+                        34.5505519
+                    ],
+                    [
+                        38.268536,
+                        34.5505116
+                    ],
+                    [
+                        38.268563,
+                        34.5504778
+                    ],
+                    [
+                        38.2685996,
+                        34.5504468
+                    ],
+                    [
+                        38.2686497,
+                        34.5504209
+                    ],
+                    [
+                        38.2686963,
+                        34.5504085
+                    ],
+                    [
+                        38.2687589,
+                        34.5504027
+                    ],
+                    [
+                        38.2688246,
+                        34.5504075
+                    ],
+                    [
+                        38.2688761,
+                        34.550424
+                    ],
+                    [
+                        38.2689184,
+                        34.5504442
+                    ],
+                    [
+                        38.2689555,
+                        34.5504717
+                    ],
+                    [
+                        38.2689848,
+                        34.5505004
+                    ],
+                    [
+                        38.2690169,
+                        34.5505425
+                    ],
+                    [
+                        38.269146,
+                        34.5507084
+                    ],
+                    [
+                        38.2687138,
+                        34.550937
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "id": "osm-location-theater-of-palmyra",
+            "properties": {
+                "description": "Representative location based on OpenStreetMap",
+                "link": "https://pleiades.stoa.org/places/514324021/osm-location-theater-of-palmyra",
+                "location_precision": "precise",
+                "snippet": "Theatre; 30 BC - AD 640",
+                "title": "OSM location: Theater of Palmyra"
+            },
+            "type": "Feature"
+        }
+    ],
+    "history": [
+        {
+            "comment": "summary",
+            "modified": "2024-07-10T14:17:20Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "comment": "Edited",
+            "modified": "2024-06-24T08:42:33Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "added references",
+            "modified": "2020-10-28T15:16:32Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "action": "Publish externally",
+            "modified": "2016-08-23T12:11:46Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "action": "Submit for review",
+            "modified": "2016-08-23T12:11:38Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "comment": "Migrated from location",
+            "modified": "2016-08-23T12:10:10Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "action": "Create",
+            "modified": "2016-08-23T12:10:08Z",
+            "modifiedBy": "thomase"
+        }
+    ],
+    "id": "514324021",
+    "locations": [
+        {
+            "@type": "Location",
+            "accuracy": "https://pleiades.stoa.org/features/metadata/google-earth-and-digitalglobe-imagery-2012",
+            "accuracy_value": 4.2,
+            "archaeologicalRemains": "substantive",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [],
+            "contributors": [
+                {
+                    "homepage": null,
+                    "name": "Tom Elliott",
+                    "uri": "https://pleiades.stoa.org/author/thomase",
+                    "username": "thomase"
+                }
+            ],
+            "created": "2012-11-16T19:22:13Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Adam Prins",
+                    "uri": "https://pleiades.stoa.org/author/adamp",
+                    "username": "adamp"
+                }
+            ],
+            "description": "Theatre in the Ancient City of Palmyra. Coordinates determined by eye in Google Earth in November 2012, following description in UNESCO World Heritage List.",
+            "details": "",
+            "end": null,
+            "featureType": [
+                "theatre",
+                ""
+            ],
+            "featureTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/theatre",
+                "https://pleiades.stoa.org/vocabularies/place-types/"
+            ],
+            "geometry": {
+                "coordinates": [
+                    38.268862,
+                    34.55079
+                ],
+                "type": "Point"
+            },
+            "history": [
+                {
+                    "comment": "Edited",
+                    "modified": "2016-08-23T12:10:54Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Publish externally",
+                    "modified": "2012-12-13T15:55:37Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2012-12-10T16:14:20Z",
+                    "modifiedBy": "adamp"
+                },
+                {
+                    "action": "Send back",
+                    "modified": "2012-12-04T17:13:25Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2012-11-16T19:25:17Z",
+                    "modifiedBy": "adamp"
+                },
+                {
+                    "comment": "Added location",
+                    "modified": "2012-11-16T19:22:15Z",
+                    "modifiedBy": "adamp"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2012-11-16T19:22:13Z",
+                    "modifiedBy": "adamp"
+                }
+            ],
+            "id": "imagery-location",
+            "locationType": [
+                "representative",
+                ""
+            ],
+            "locationTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/theatre",
+                "https://pleiades.stoa.org/vocabularies/place-types/"
+            ],
+            "provenance": "Pleiades",
+            "references": [
+                {
+                    "accessURI": "http://whc.unesco.org/en/list/23/",
+                    "alternateURI": "",
+                    "bibliographicURI": "",
+                    "citationDetail": "",
+                    "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+                    "formattedCitation": "UNESCO World Heritage List, Site of Palmyra",
+                    "otherIdentifier": " ",
+                    "shortTitle": "",
+                    "type": "seeFurther"
+                }
+            ],
+            "review_state": "published",
+            "start": null,
+            "title": "Imagery Location of the Theatre of Palmyra",
+            "uri": "https://pleiades.stoa.org/places/514324021/imagery-location"
+        },
+        {
+            "@type": "Location",
+            "accuracy": "https://pleiades.stoa.org/features/metadata/generic-osm-accuracy-assessment",
+            "accuracy_value": 20.0,
+            "archaeologicalRemains": "substantive",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "roman",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/roman"
+                },
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "late-antique",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/late-antique"
+                }
+            ],
+            "contributors": [],
+            "created": "2024-06-24T08:41:50Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "description": "Representative location based on OpenStreetMap",
+            "details": "",
+            "end": 640,
+            "featureType": [
+                "theatre"
+            ],
+            "featureTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/theatre"
+            ],
+            "geometry": {
+                "coordinates": [
+                    [
+                        38.2687138,
+                        34.550937
+                    ],
+                    [
+                        38.2685785,
+                        34.5507797
+                    ],
+                    [
+                        38.2685445,
+                        34.5507403
+                    ],
+                    [
+                        38.268523,
+                        34.5507026
+                    ],
+                    [
+                        38.2685107,
+                        34.5506521
+                    ],
+                    [
+                        38.2685109,
+                        34.550603
+                    ],
+                    [
+                        38.2685205,
+                        34.5505519
+                    ],
+                    [
+                        38.268536,
+                        34.5505116
+                    ],
+                    [
+                        38.268563,
+                        34.5504778
+                    ],
+                    [
+                        38.2685996,
+                        34.5504468
+                    ],
+                    [
+                        38.2686497,
+                        34.5504209
+                    ],
+                    [
+                        38.2686963,
+                        34.5504085
+                    ],
+                    [
+                        38.2687589,
+                        34.5504027
+                    ],
+                    [
+                        38.2688246,
+                        34.5504075
+                    ],
+                    [
+                        38.2688761,
+                        34.550424
+                    ],
+                    [
+                        38.2689184,
+                        34.5504442
+                    ],
+                    [
+                        38.2689555,
+                        34.5504717
+                    ],
+                    [
+                        38.2689848,
+                        34.5505004
+                    ],
+                    [
+                        38.2690169,
+                        34.5505425
+                    ],
+                    [
+                        38.269146,
+                        34.5507084
+                    ],
+                    [
+                        38.2687138,
+                        34.550937
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2024-07-10T14:16:56Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2024-06-24T08:42:21Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "add OSM location",
+                    "modified": "2024-06-24T08:42:17Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "Location from OSM created by Products.PleiadesEntity.browser.osm.OSMLocationFactory",
+                    "modified": "2024-06-24T08:41:50Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2024-06-24T08:41:50Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "osm-location-theater-of-palmyra",
+            "locationType": [
+                "representative"
+            ],
+            "locationTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/theatre"
+            ],
+            "provenance": "OpenStreetMap (Way 303071540, version 7, osm:changeset=139196718, 2023-07-30T06:31:31Z)",
+            "references": [
+                {
+                    "accessURI": "https://www.openstreetmap.org/browse/way/303071540",
+                    "alternateURI": "",
+                    "bibliographicURI": "",
+                    "citationDetail": "Way 303071540",
+                    "citationTypeURI": "http://purl.org/spar/cito/citesAsDataSource",
+                    "formattedCitation": "osm:way=303071540",
+                    "otherIdentifier": "",
+                    "shortTitle": "OSM",
+                    "type": "citesAsDataSource"
+                }
+            ],
+            "review_state": "published",
+            "start": -30,
+            "title": "OSM location: Theater of Palmyra",
+            "uri": "https://pleiades.stoa.org/places/514324021/osm-location-theater-of-palmyra"
+        }
+    ],
+    "names": [],
+    "placeTypeURIs": [
+        "https://pleiades.stoa.org/vocabularies/place-types/theatre"
+    ],
+    "placeTypes": [
+        "theatre"
+    ],
+    "provenance": "Pleiades",
+    "references": [
+        {
+            "accessURI": "https://www.wikidata.org/wiki/Q555201",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/BCQIKDKS",
+            "citationDetail": "Q555201: Roman Theatre at Palmyra",
+            "citationTypeURI": "http://purl.org/spar/cito/citesAsRelated",
+            "formattedCitation": "<div class=\"csl-entry\"><i>Wikidata: The Free Knowledge Base That Anyone Can Edit</i>. Wikimedia Foundation, 2014. https://www.wikidata.org/.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Wikidata",
+            "type": "citesAsRelated"
+        },
+        {
+            "accessURI": "https://en.wikipedia.org/wiki/Roman_Theatre_at_Palmyra",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/CI6F6W7W",
+            "citationDetail": "Roman Theatre at Palmyra",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\"><i>Wikipedia: The Free Encyclopedia That Anyone Can Edit</i>. Wikimedia Foundation, 2001. https://en.wikipedia.org.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Wikipedia (English)",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/HXSX8YS3",
+            "citationDetail": "21, 321",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Sear, Frank. <i>Roman Theatres: An Architectural Study</i>. Lighning Source, UK; New York: Oxford University Press, 2010.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Sear 2010",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "http://www.worldcat.org/oclc/930067952",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/TK5TAQSV",
+            "citationDetail": "296",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Ball, Warwick. <i>Rome in the East: The Transformation of an Empire</i>. 2nd ed. 1 vols. London ; New York: Routledge, Taylor &amp; Francis Group, 2016. http://www.worldcat.org/oclc/930067952.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Ball 2016",
+            "type": "seeFurther"
+        }
+    ],
+    "reprPoint": [
+        38.26883103927889,
+        34.550721936063965
+    ],
+    "review_state": "published",
+    "rights": "Copyright © The Contributors. Sharing and remixing permitted under terms of the Creative Commons Attribution 3.0 License (cc-by).",
+    "subject": [
+        "Theater",
+        "UWHS"
+    ],
+    "title": "Theatre of Palmyra",
+    "type": "FeatureCollection",
+    "uri": "https://pleiades.stoa.org/places/514324021"
+}

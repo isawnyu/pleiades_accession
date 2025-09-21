@@ -1,0 +1,416 @@
+{
+    "@type": "Place",
+    "bbox": [
+        24.65612,
+        40.57768,
+        24.65612,
+        40.57768
+    ],
+    "connections": [
+        {
+            "@type": "Connection",
+            "associationCertainty": "certain",
+            "attestations": [],
+            "connectionType": "on",
+            "connectionTypeURI": "https://pleiades.stoa.org/vocabularies/relationship-types/on",
+            "connectsTo": "https://pleiades.stoa.org/places/501635",
+            "contributors": [],
+            "created": "2022-06-01T00:28:55Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Jeffrey Becker",
+                    "uri": "https://pleiades.stoa.org/author/jbecker",
+                    "username": "jbecker"
+                }
+            ],
+            "description": "",
+            "details": "",
+            "end": null,
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2023-08-22T16:18:58Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2023-08-22T00:30:45Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "added batlas reference",
+                    "modified": "2023-08-22T00:30:41Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "comment": "cnxn",
+                    "modified": "2022-06-01T00:28:56Z",
+                    "modifiedBy": "jbecker"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2022-06-01T00:28:55Z",
+                    "modifiedBy": "jbecker"
+                }
+            ],
+            "id": "thasos-island",
+            "provenance": "Pleiades",
+            "references": [
+                {
+                    "accessURI": "http://www.worldcat.org/oclc/43970336",
+                    "alternateURI": "",
+                    "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/MIAGQ5C6",
+                    "citationDetail": "51 D3 Koukos",
+                    "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+                    "formattedCitation": "<div class=\"csl-entry\">Talbert, Richard J. A., ed. <i>Barrington Atlas of the Greek and Roman World</i>. Princeton, N.J.: Princeton University Press, 2000. http://www.worldcat.org/oclc/43970336.</div>",
+                    "otherIdentifier": "",
+                    "shortTitle": "BAtlas",
+                    "type": "seeFurther"
+                }
+            ],
+            "review_state": "published",
+            "start": null,
+            "title": "Thasos (island)",
+            "uri": "https://pleiades.stoa.org/places/501479/thasos-island"
+        }
+    ],
+    "connectsWith": [
+        "https://pleiades.stoa.org/places/501635"
+    ],
+    "contributors": [
+        {
+            "name": "DARMC",
+            "username": null
+        },
+        {
+            "homepage": null,
+            "name": "Brady Kiesling",
+            "uri": "https://pleiades.stoa.org/author/bkiesling",
+            "username": "bkiesling"
+        },
+        {
+            "name": "R. Talbert",
+            "username": null
+        },
+        {
+            "homepage": null,
+            "name": "Jeffrey Becker",
+            "uri": "https://pleiades.stoa.org/author/jbecker",
+            "username": "jbecker"
+        },
+        {
+            "homepage": null,
+            "name": "Tom Elliott",
+            "uri": "https://pleiades.stoa.org/author/thomase",
+            "username": "thomase"
+        },
+        {
+            "homepage": null,
+            "name": "Catherine Bouras",
+            "uri": "https://pleiades.stoa.org/author/cbouras",
+            "username": "cbouras"
+        },
+        {
+            "name": "G. Reger",
+            "username": null
+        },
+        {
+            "homepage": null,
+            "name": "Sean Gillies",
+            "uri": "https://pleiades.stoa.org/author/sgillies",
+            "username": "sgillies"
+        },
+        {
+            "name": "Michèle Brunet",
+            "username": null
+        }
+    ],
+    "created": "2023-09-28T16:21:15Z",
+    "creators": [
+        {
+            "name": "E.N. Borza",
+            "username": null
+        }
+    ],
+    "description": "Site of an excavated amphora production facility in southern Thasos that may point to the existence of an associated settlement whose ancient name remains unknown.",
+    "details": "<p>The Barrington Atlas Directory notes: Koukos, on Thasos</p>",
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    24.65612,
+                    40.57768
+                ],
+                "type": "Point"
+            },
+            "id": "chronique-location-garlan-thasiaca",
+            "properties": {
+                "description": "Varkaris plot, remains of an amphora workshop",
+                "link": "https://pleiades.stoa.org/places/501479/chronique-location-garlan-thasiaca",
+                "location_precision": "precise",
+                "snippet": "Unknown; 400 BC - 301 BC",
+                "title": "Chronique Location: Koukos after Garlan, Thasiaca"
+            },
+            "type": "Feature"
+        }
+    ],
+    "history": [
+        {
+            "comment": "added ToposText reference; added Trismegistos reference provided by bkiesling; added Tomei 2022; summary; place type += ceramic production facility or area",
+            "modified": "2023-09-29T02:48:04Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "create DARMC citation to preserve cross-project linkage after retracting DARMC location",
+            "modified": "2023-09-28T15:41:47Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "comment": "update references",
+            "modified": "2023-08-22T00:33:18Z",
+            "modifiedBy": "jbecker"
+        },
+        {
+            "comment": "Location updates and tags from Johan Ahlfeldt's (jahlfeldt) Digital Atlas of the Roman Empire in October 2012",
+            "modified": "2012-10-20T22:29:17Z",
+            "modifiedBy": "sgillies"
+        },
+        {
+            "comment": "Global migration and reindexing of citations and provenance, February 2012",
+            "modified": "2012-02-15T05:42:17Z",
+            "modifiedBy": "admin"
+        },
+        {
+            "comment": "New locations, coordinates, and metadata from Harvard's DARMC project. See http://atlantides.org/trac/pleiades/wiki/PlaceUpgradesAndMigrations",
+            "modified": "2011-03-01T03:29:58Z",
+            "modifiedBy": "sgillies"
+        },
+        {
+            "comment": "Detail text updated from former modernLocation. See http://atlantides.org/trac/pleiades/wiki/PlaceDetailsUpgrade",
+            "modified": "2011-01-14T20:06:35Z",
+            "modifiedBy": "sgillies"
+        },
+        {
+            "action": "Publish externally",
+            "modified": "2010-06-24T13:29:57Z",
+            "modifiedBy": "thomase"
+        },
+        {
+            "action": "Submit for review",
+            "modified": "2010-06-24T10:55:25Z",
+            "modifiedBy": "sgillies"
+        },
+        {
+            "action": "Create",
+            "modified": "2010-06-24T10:42:19Z",
+            "modifiedBy": "sgillies"
+        }
+    ],
+    "id": "501479",
+    "locations": [
+        {
+            "@type": "Location",
+            "accuracy": "https://pleiades.stoa.org/features/metadata/chronique-en-ligne-report-coordinates",
+            "accuracy_value": 100.0,
+            "archaeologicalRemains": "traces",
+            "associationCertainty": "certain",
+            "associationCertaintyURI": "https://pleiades.stoa.org/vocabularies/association-certainty/certain",
+            "attestations": [
+                {
+                    "confidence": "confident",
+                    "confidenceURI": "https://pleiades.stoa.org/vocabularies/attestation-confidence/confident",
+                    "timePeriod": "fourth-bce",
+                    "timePeriodURI": "https://pleiades.stoa.org/vocabularies/time-periods/fourth-bce"
+                }
+            ],
+            "contributors": [
+                {
+                    "homepage": null,
+                    "name": "Tom Elliott",
+                    "uri": "https://pleiades.stoa.org/author/thomase",
+                    "username": "thomase"
+                }
+            ],
+            "created": "2023-09-27T08:26:27Z",
+            "creators": [
+                {
+                    "homepage": null,
+                    "name": "Catherine Bouras",
+                    "uri": "https://pleiades.stoa.org/author/cbouras",
+                    "username": "cbouras"
+                },
+                {
+                    "name": "Michèle Brunet",
+                    "username": null
+                }
+            ],
+            "description": "Varkaris plot, remains of an amphora workshop",
+            "details": "",
+            "end": -301,
+            "featureType": [
+                "unknown"
+            ],
+            "featureTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/unknown"
+            ],
+            "geometry": {
+                "coordinates": [
+                    24.65612,
+                    40.57768
+                ],
+                "type": "Point"
+            },
+            "history": [
+                {
+                    "action": "Publish externally",
+                    "modified": "2023-09-28T15:40:48Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2023-09-28T15:40:41Z",
+                    "modifiedBy": "thomase"
+                },
+                {
+                    "action": "Submit for review",
+                    "modified": "2023-09-28T07:57:03Z",
+                    "modifiedBy": "cbouras"
+                },
+                {
+                    "comment": "Edited",
+                    "modified": "2023-09-28T07:56:51Z",
+                    "modifiedBy": "cbouras"
+                },
+                {
+                    "comment": "Initial revision",
+                    "modified": "2023-09-27T08:26:28Z",
+                    "modifiedBy": "cbouras"
+                },
+                {
+                    "action": "Create",
+                    "modified": "2023-09-27T08:26:27Z",
+                    "modifiedBy": "cbouras"
+                }
+            ],
+            "id": "chronique-location-garlan-thasiaca",
+            "locationType": [
+                "representative",
+                "central_point"
+            ],
+            "locationTypeURI": [
+                "https://pleiades.stoa.org/vocabularies/place-types/unknown"
+            ],
+            "provenance": "Pleiades",
+            "references": [
+                {
+                    "accessURI": "",
+                    "alternateURI": "",
+                    "bibliographicURI": "http://atlantides.org/bibliography/g.html#Garlan",
+                    "citationDetail": "",
+                    "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+                    "formattedCitation": "Garlan, Y, Koukos: données nouvelles pour une nouvelle interprétation des timbres amphoriques thasiens, BCH Supplément V, 1979, Thasiaca, p. 213-268.",
+                    "otherIdentifier": "",
+                    "shortTitle": "",
+                    "type": "seeFurther"
+                }
+            ],
+            "review_state": "published",
+            "start": -400,
+            "title": "Chronique Location: Koukos after Garlan, Thasiaca",
+            "uri": "https://pleiades.stoa.org/places/501479/chronique-location-garlan-thasiaca"
+        }
+    ],
+    "names": [],
+    "placeTypeURIs": [
+        "https://pleiades.stoa.org/vocabularies/place-types/settlement",
+        "https://pleiades.stoa.org/vocabularies/place-types/ceramicproduction"
+    ],
+    "placeTypes": [
+        "settlement",
+        "ceramicproduction"
+    ],
+    "provenance": "Barrington Atlas: BAtlas 51 D3 Koukos",
+    "references": [
+        {
+            "accessURI": "http://www.worldcat.org/oclc/43970336",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/MIAGQ5C6",
+            "citationDetail": "51 D3 Koukos",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Talbert, Richard J. A., ed. <i>Barrington Atlas of the Greek and Roman World</i>. Princeton, N.J.: Princeton University Press, 2000. http://www.worldcat.org/oclc/43970336.</div>",
+            "otherIdentifier": " ",
+            "shortTitle": "BAtlas",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/2456GM4H",
+            "citationDetail": "228",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Garlan, Y. “Koukos. Données nouvelles pour une nouvelle interprétation des timbres amphoriques thasiens.” In <i>Thasiaca</i>, 213–68, Abb, n.d.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Garlan 1979",
+            "type": "seeFurther"
+        },
+        {
+            "accessURI": "https://darmc.harvard.edu/",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/9UD9W75C",
+            "citationDetail": "13291",
+            "citationTypeURI": "http://purl.org/spar/cito/citesAsRelated",
+            "formattedCitation": "<div class=\"csl-entry\">Michael McCormick, Giovanni Zambotti, Leland Grigoli, and Kelly Gibson, eds. <i>The Digital Atlas of Roman and Medieval Civilizations</i>. Cambridge (Massachusetts): Harvard University, 2007. https://darmc.harvard.edu/.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "DARMC",
+            "type": "citesAsRelated"
+        },
+        {
+            "accessURI": "https://topostext.org/place/406247XKou",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/MC9RGDVB",
+            "citationDetail": "Koukos site (Thasos) Astris",
+            "citationTypeURI": "http://purl.org/spar/cito/citesAsRelated",
+            "formattedCitation": "<div class=\"csl-entry\">Kiesling, Brady. <i>ToposText – a Reference Tool for Greek Civilization</i>. Version 2.0. Aikaterini Laskaridis Foundation, 2016. https://topostext.org/.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "ToposText",
+            "type": "citesAsRelated"
+        },
+        {
+            "accessURI": "https://www.trismegistos.org/place/58696",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/TN3GJAU8",
+            "citationDetail": "Geo 58696: Koukos",
+            "citationTypeURI": "http://purl.org/spar/cito/citesAsRelated",
+            "formattedCitation": "<div class=\"csl-entry\">Depauw, Mark, Tom Gheldof, Herbert Verreth, Nico Dogaer, Willy Clarysse, Yanne Broux, Gert Baetens, and Heinz-Josef Thissen. <i>Trismegistos: An Interdisciplinary Portal of the Ancient World</i>. Leuven, 2006. http://www.trismegistos.org/.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "TM",
+            "type": "citesAsRelated"
+        },
+        {
+            "accessURI": "https://livrepository.liverpool.ac.uk/3169006/",
+            "alternateURI": "",
+            "bibliographicURI": "https://www.zotero.org/groups/pleiades/items/TTFRX95T",
+            "citationDetail": "especially pages 254-255",
+            "citationTypeURI": "http://purl.org/spar/cito/seeFurther",
+            "formattedCitation": "<div class=\"csl-entry\">Tomei, Francesca. “Ancient Greek Pottery Workshops in Their Rural Landscape Setting. Exploring the Intersection between Production, Environment, Society and Agrarian Economy.” University of Liverpool, 2022. https://livrepository.liverpool.ac.uk/3169006/.</div>",
+            "otherIdentifier": "",
+            "shortTitle": "Tomei 2022",
+            "type": "seeFurther"
+        }
+    ],
+    "reprPoint": [
+        24.65612,
+        40.57768
+    ],
+    "review_state": "published",
+    "rights": "Copyright © The Creators. Sharing and remixing permitted under terms of the Creative Commons Attribution 3.0 License (cc-by).",
+    "subject": [
+        "dare:major=0",
+        "dare:ancient=0",
+        "dare:feature=settlement"
+    ],
+    "title": "Koukos",
+    "type": "FeatureCollection",
+    "uri": "https://pleiades.stoa.org/places/501479"
+}
