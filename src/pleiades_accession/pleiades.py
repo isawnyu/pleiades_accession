@@ -19,7 +19,10 @@ class Pleiades:
     """
 
     def __init__(self, root_path: Path):
+        """Initialize the Pleiades filesystem manager, which will generate a catalog of
+        JSON files if needed."""
         self.fs = PleiadesFilesystem(root_path)
 
     def __len__(self):
+        """Return the number of places in the Pleiades data set"""
         return len(self.fs)
