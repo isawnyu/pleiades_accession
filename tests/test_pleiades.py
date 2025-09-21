@@ -19,3 +19,9 @@ class TestPleiades:
     def test_init(self):
         p = Pleiades(test_data_path / "pleiades_json")
         assert len(p) == 1603
+
+    def test_spatial_index(self):
+        p = Pleiades(test_data_path / "pleiades_json")
+        assert p._spatial_index is not None
+        assert len(p._spatial_index) == 1244
+        assert len(p._spatial_index_2_pid) == 1244
