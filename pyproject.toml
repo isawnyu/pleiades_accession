@@ -1,0 +1,52 @@
+#
+# This file is part of pleiades_accession
+# by Tom Elliott for the Institute for the Study of the Ancient World
+# (c) Copyright 2025 by New York University
+# Licensed under the AGPL-3.0; see LICENSE.txt file.
+#
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pleiades_accession"
+version = "0.0.1"
+authors = [
+  { name="Tom Elliott", email="tom.elliott@nyu.edu" },
+]
+description = "Prepare data for accessioning into Pleiades"
+readme = "README.md"
+requires-python = ">=3.13.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU Affero General Public License v3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+  "airtight",
+#  "colorama",
+#  "encoded_csv @ https://github.com/paregorios/encoded_csv/archive/refs/heads/main.zip",
+#  "haversine",
+  #"iteration_utilities",
+#  "fiona",
+#  "jsonlines",
+  #"pleiades_entities @ file:///Users/paregorios/Documents/files/P/pleiades_entities",
+  "pleiades_local @ https://github.com/isawnyu/pleiades_local/archive/refs/heads/main.zip",
+  "pytest",
+#  "pyperclip",
+  #"reproj",
+  "shapely",
+#  "platformdirs",
+#  "python-slugify",
+#  "textnorm",
+#  "validators",
+  ##"webiquette @ https://github.com/isawnyu/webiquette/archive/refs/heads/main.zip"
+  #"webiquette @ file:///Users/paregorios/Documents/files/W/webiquette"
+]
+[project.urls]
+# "Homepage" = "https://github.com/pypa/sampleproject"
+# "Bug Tracker" = "https://github.com/pypa/sampleproject/issues"
+[tool.pytest.ini_options]
+log_cli = true
+log_cli_level = "INFO"
