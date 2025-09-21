@@ -18,13 +18,10 @@ class Pleiades:
     Manage Pleiades data and queries
     """
 
-    def __init__(self, root_path: Path, cache_path: Path = None):
+    def __init__(self, root_path: Path):
         """Initialize the Pleiades filesystem manager, which will generate a catalog of
         JSON files if needed."""
         logger = logging.getLogger(f"{__name__}:Pleiades.__init__")
-        if cache_path:
-            cache_path.mkdir(parents=True, exist_ok=True)
-        self.cache_path = cache_path
         self.fs = PleiadesFilesystem(root_path)
         logger.info(f"Loaded {len(self.fs):,} Pleiades place resources.")
 
