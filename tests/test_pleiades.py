@@ -10,12 +10,14 @@ Test the pleiades module
 """
 
 from pathlib import Path
+from platformdirs import user_cache_path
 from pleiades_accession.pleiades import Pleiades
 
-test_data_dir = Path(__file__).parent / "data"
+test_data_path = Path(__file__).parent / "data"
+test_cache_path = user_cache_path("pleiades_accession_test", ensure_exists=True)
 
 
 class TestPleiades:
     def test_init(self):
-        p = Pleiades(test_data_dir / "pleiades_json")
+        p = Pleiades(test_data_path / "pleiades_json", cache_path=test_cache_path)
         assert len(p) == 6545
