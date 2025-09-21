@@ -12,7 +12,19 @@ import json
 import logging
 from pathlib import Path
 from pprint import pformat
+from shapely.geometry import shape
 
+class CandidateFeature:
+    """
+    wrapper for a single candidate feature for accessioning into Pleiades
+    """
+
+    def __init__(self, feature: dict):
+        """Initialize the CandidateFeature from a GeoJSON feature dictionary."""
+        self.feature = feature
+        self.id = feature.get("@id")
+        self.geometry = shape(feature.get("geometry", dict()))
+        self.properties = feature.get("properties", dict())
 
 class CandidateDataset:
     """
@@ -45,7 +57,7 @@ class CandidateDataset:
             try:
                 self.features[feature["@id"]]
             except KeyError:
-                candidates[feature["@id"]] = feature
+                candidates[feature["@id"]] = CandidateFeature(feature)
             else:
                 raise ValueError(f"Duplicate candidate feature ID: {feature['@id']}")
         try:

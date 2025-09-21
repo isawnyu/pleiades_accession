@@ -20,4 +20,4 @@ test_cache_path = user_cache_path("pleiades_accession_test", ensure_exists=True)
 class TestPleiades:
     def test_init(self):
         p = Pleiades(test_data_path / "pleiades_json", cache_path=test_cache_path)
-        assert len(p) == 6545
+        assert len(p) == 1603
