@@ -183,5 +183,13 @@ class Pleiades:
         if self._spatial_index is None:
             raise RuntimeError("Spatial index not initialized")
         match_indexes = self._spatial_index.query(geometry)
-        matched_pids = [self._spatial_index_2_pid[i] for i in match_indexes]
+        matched_pids = {self._spatial_index_2_pid[i] for i in match_indexes}
+        return matched_pids
+
+    def spatial_nearest(self, geometry, max_distance=0.18):
+        """Return the nearest Pleiades places to this geometry (less than roughly 20km)."""
+        if self._spatial_index is None:
+            raise RuntimeError("Spatial index not initialized")
+        nearest_geometries = self._spatial_index.query_nearest(geometry, max_distance)
+        matched_pids = {self._spatial_index_2_pid[i] for i in nearest_geometries}
         return matched_pids

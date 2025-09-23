@@ -8,11 +8,13 @@
 """
 Code to manage dataset of candidate places for accessioning into Pleiades"""
 
+import functools
 import json
 import logging
 from pathlib import Path
 from pprint import pformat
 from shapely.geometry import shape
+
 
 class CandidateFeature:
     """
@@ -25,6 +27,16 @@ class CandidateFeature:
         self.id = feature.get("@id")
         self.geometry = shape(feature.get("geometry", dict()))
         self.properties = feature.get("properties", dict())
+
+    @property
+    @functools.lru_cache(maxsize=None)
+    def name_strings(self) -> set:
+        """Return a set containing all name strings for the place."""
+        name_strings = set()
+        name_strings.add(self.properties["title"].strip())
+        name_strings.update({n["toponym"].strip() for n in self.feature["names"]})
+        return name_strings
+
 
 class CandidateDataset:
     """

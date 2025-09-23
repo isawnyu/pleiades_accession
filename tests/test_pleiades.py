@@ -28,6 +28,4 @@ class TestPleiades:
         assert len(p._spatial_index_2_pid) == 1244
         c = Point(32.2592853, 40.0619819)
         results = p.spatial_query(c)
-        assert results == [
-            "582288341",
-        ]
+        assert results == {"582288341"}

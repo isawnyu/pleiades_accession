@@ -1,0 +1,3675 @@
+{
+  "type": "FeatureCollection",
+  "@context": "https://raw.githubusercontent.com/LinkedPasts/linked-places/master/linkedplaces-context-v1.1.jsonld",
+  "citation": {
+    "id": "trade;historical",
+    "type": "dataset",
+    "title": "Voyage Around the Erythraean Sea",
+    "author": [
+      {
+        "family": "Lehning",
+        "given": "Zachary"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2022,
+          12,
+          3
+        ]
+      ]
+    },
+    "URL": "",
+    "DOI": "10.60681/whg-dataset-1165",
+    "publisher": "World Historical Gazetteer",
+    "publisher-place": "Pittsburgh, PA, USA",
+    "description": "A collection of locations mentioned in the \"Periplus of the Erythraean Sea\" itinerary written in the early first century by an unknown author believed to be a merchant or scholar.",
+    "record_count": 31,
+    "source": "The Voyage Around the Erythraean Sea. Accessed October 12, 2022. http://depts.washington.edu/silkroad/texts/periplus/periplus.html.",
+    "source_citation": ""
+  },
+  "filename": "//app/media/downloads/73_trade;historical_20250918_171358.json",
+  "description": "A collection of locations mentioned in the \"Periplus of the Erythraean Sea\" itinerary written in the early first century by an unknown author believed to be a merchant or scholar.",
+  "features": [
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131816",
+      "properties": {
+        "pid": 7131816,
+        "src_id": "1",
+        "title": "Umluj",
+        "ccodes": [
+          "SA"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "Point",
+        "geowkt": "POINT(37.26 25.05)",
+        "coordinates": [
+          37.26,
+          25.05
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Umluj",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "White Village",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Leuke Kome",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "port"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "city"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "governorate"
+        }
+      ],
+      "links": [],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "2022"
+            },
+            "start": {
+              "earliest": "0050"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131817",
+      "properties": {
+        "pid": 7131817,
+        "src_id": "2",
+        "title": "Adulis",
+        "ccodes": [
+          "ER"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "Point",
+            "geowkt": "POINT(39.69 15.27)",
+            "coordinates": [
+              39.69,
+              15.27
+            ]
+          },
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q378940",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                39.6304009,
+                15.2700956
+              ]
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Adulis",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Zula",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "port"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "abandoned settlement"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q378940"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "viaf:243906891"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "bnf:16231740c"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gnd:7660348-9"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Adulis"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0650"
+            },
+            "start": {
+              "earliest": "-0250"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131818",
+      "properties": {
+        "pid": 7131818,
+        "src_id": "3",
+        "title": "Muza",
+        "ccodes": [
+          "YE"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "Point",
+            "geowkt": "POINT(43.25 13.32)",
+            "coordinates": [
+              43.25,
+              13.32
+            ]
+          },
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q339258",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                43.25,
+                13.31666667
+              ]
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Muza",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Mocha",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Mokha",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Al Mokha",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "port"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "city"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "trading hub"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q339258"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "viaf:242079393"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:78751"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Mocha, Yemen"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "2022"
+            },
+            "start": {
+              "earliest": "0050"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131819",
+      "properties": {
+        "pid": 7131819,
+        "src_id": "4",
+        "title": "Avalites",
+        "ccodes": [
+          "SO"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "Point",
+            "geowkt": "POINT(43.47 11.36)",
+            "coordinates": [
+              43.47,
+              11.36
+            ]
+          },
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q157800",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                43.473888888889,
+                11.353888888889
+              ]
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Avalites",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Zeila",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Zaila",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Zayla",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "port"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "city"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q157800"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "viaf:137304525"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "loc:n87930226"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:52078"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Zeila"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "0150"
+            },
+            "start": {
+              "earliest": "-0050"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131820",
+      "properties": {
+        "pid": 7131820,
+        "src_id": "5",
+        "title": "Accanae",
+        "ccodes": [
+          "SO"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "Point",
+            "geowkt": "POINT(50.76 11.97)",
+            "coordinates": [
+              50.76,
+              11.97
+            ]
+          },
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q448076",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                50.75,
+                11.966666666667
+              ]
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Accanae",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Alula",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Aluula",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Caluula",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "port"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "town"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q448076"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "viaf:125607665"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "loc:n89110648"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:63081"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Alula, Somalia"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "2022"
+            },
+            "start": {
+              "earliest": "0050"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131821",
+      "properties": {
+        "pid": 7131821,
+        "src_id": "6",
+        "title": "Cape of Spices",
+        "ccodes": [
+          "SO"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "Point",
+            "geowkt": "POINT(51.29 11.83)",
+            "coordinates": [
+              51.29,
+              11.83
+            ]
+          },
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q1145030",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                51.283333333333,
+                11.816666666667
+              ]
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Cape of Spices",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Noutou Keras",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Aromata Emporion",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Cape Guardafui",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "port"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "trading hub"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q1145030"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "viaf:246985461"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gnd:4822421-2"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:57661"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Cape Guardafui"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "pl:39293"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Aromata"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "2022"
+            },
+            "start": {
+              "earliest": "0050"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131822",
+      "properties": {
+        "pid": 7131822,
+        "src_id": "7",
+        "title": "Dioscorida",
+        "ccodes": [
+          "YE"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "Point",
+            "geowkt": "POINT(53.89 12.48)",
+            "coordinates": [
+              53.89,
+              12.48
+            ]
+          },
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q15728745",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                53.61199951,
+                12.45100021
+              ]
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Dioscorida",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Socotra",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Soqotra",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Suqadara",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Dioscuri",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "port"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "city"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "trading hub"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "island"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q15728745"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:9645387"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Socotra Governorate"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "2022"
+            },
+            "start": {
+              "earliest": "-0050"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131823",
+      "properties": {
+        "pid": 7131823,
+        "src_id": "8",
+        "title": "Opone",
+        "ccodes": [
+          "SO"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "Point",
+            "geowkt": "POINT(51.27 10.42)",
+            "coordinates": [
+              51.27,
+              10.42
+            ]
+          },
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q3237966",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                51.415,
+                10.44361111
+              ],
+              [
+                51.2667,
+                10.4167
+              ],
+              [
+                51.2,
+                10.5
+              ]
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Dante",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Opone",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Hafun",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Xaafuun",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "port"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "town"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": ""
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q3237966"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Ras Hafun"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:50351"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Hafun"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "pl:39403"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Opone"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "2022"
+            },
+            "start": {
+              "earliest": "0000"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131824",
+      "properties": {
+        "pid": 7131824,
+        "src_id": "9",
+        "title": "Rhapta",
+        "ccodes": [
+          "TZ"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "Point",
+            "geowkt": "POINT(39.29 -6.81)",
+            "coordinates": [
+              39.29,
+              -6.81
+            ]
+          },
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q1411192",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                39.202777777778,
+                -6.8780555555556
+              ]
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Rhapta",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Dar es Salaam",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Dar",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Dar es-Selam",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "port"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "city"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "trading hub"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q1411192"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:6297353"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Julius Nyerere International Airport"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "viaf:167026731"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "loc:n79079320"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gnd:4090903-7"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:160263"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Dar es Salaam"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "bnf:11962967b"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:160260"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Dar es Salaam Region"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "2022"
+            },
+            "start": {
+              "earliest": "0050"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131825",
+      "properties": {
+        "pid": 7131825,
+        "src_id": "10",
+        "title": "Cana",
+        "ccodes": [
+          "YE"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "Point",
+        "geowkt": "POINT(48.34 14.02)",
+        "coordinates": [
+          48.34,
+          14.02
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Cana",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Bi'r Ali",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Qani",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Kane",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "port"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "village"
+        }
+      ],
+      "links": [],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "2022"
+            },
+            "start": {
+              "earliest": "0050"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131826",
+      "properties": {
+        "pid": 7131826,
+        "src_id": "11",
+        "title": "Moscha",
+        "ccodes": [
+          "OM"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "Point",
+        "geowkt": "POINT(54.43 17.03)",
+        "coordinates": [
+          54.43,
+          17.03
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Moscha",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "port"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "abandoned trading hub"
+        }
+      ],
+      "links": [],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "2022"
+            },
+            "start": {
+              "earliest": "0050"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131827",
+      "properties": {
+        "pid": 7131827,
+        "src_id": "12",
+        "title": "Sarapis",
+        "ccodes": [
+          "OM"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "Point",
+            "geowkt": "POINT(58.79 20.43)",
+            "coordinates": [
+              58.79,
+              20.43
+            ]
+          },
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q1793853",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                58.815277777778,
+                20.471111111111
+              ]
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Sarapis",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Masirah Island",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Mazeira Island",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Jazirat Masirah",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "port"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "city"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "trading hub"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "island"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q1793853"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "viaf:315526354"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:287295"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Masirah Island"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "2022"
+            },
+            "start": {
+              "earliest": "-0250"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131828",
+      "properties": {
+        "pid": 7131828,
+        "src_id": "13",
+        "title": "Ommana",
+        "ccodes": [
+          "AE"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "Point",
+        "geowkt": "POINT(51.76 24.07)",
+        "coordinates": [
+          51.76,
+          24.07
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Ommana",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "As-Sila",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Al Sila'",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "port"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "city"
+        }
+      ],
+      "links": [],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "2022"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131829",
+      "properties": {
+        "pid": 7131829,
+        "src_id": "14",
+        "title": "Apologus",
+        "ccodes": [
+          "KW"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "Point",
+            "geowkt": "POINT(48.29 29.85)",
+            "coordinates": [
+              48.29,
+              29.85
+            ]
+          },
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q781268",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                48.183333333333,
+                29.783333333333
+              ]
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Apologus",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Bubiyan Island",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "port"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "city"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "island"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q781268"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "viaf:315135132"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:285659"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Bubiyan Island"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "2022"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131830",
+      "properties": {
+        "pid": 7131830,
+        "src_id": "15",
+        "title": "Barbaricum",
+        "ccodes": [
+          "PK"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "Point",
+            "geowkt": "POINT(67.06 24.86)",
+            "coordinates": [
+              67.06,
+              24.86
+            ]
+          },
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q8660",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                67.01,
+                24.86
+              ]
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Barbaricum",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Karachi",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Karaci",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "port"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "city"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "trading hub"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q8660"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "viaf:160654448"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "bnf:142553124"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gnd:4097647-6"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1174872"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Karachi"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Category:Karachi"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "2022"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131831",
+      "properties": {
+        "pid": 7131831,
+        "src_id": "16",
+        "title": "Sinthus",
+        "ccodes": [
+          "PK"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "Point",
+            "geowkt": "POINT(67.61 24.06)",
+            "coordinates": [
+              67.61,
+              24.06
+            ]
+          },
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q7348",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                67.4308,
+                23.9944
+              ],
+              [
+                81.7684,
+                31.2421
+              ]
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Sinthus",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Indus River",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "river"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q7348"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "viaf:237269647"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gnd:4095957-0"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1115007"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Indus River"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "-9999"
+            },
+            "start": {
+              "earliest": "-9999"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131832",
+      "properties": {
+        "pid": 7131832,
+        "src_id": "17",
+        "title": "Minnagara",
+        "ccodes": [
+          "PK"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "Point",
+            "geowkt": "POINT(70.75 24.36)",
+            "coordinates": [
+              70.75,
+              24.36
+            ]
+          },
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q3696265",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                70.7551,
+                24.3579
+              ]
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Minnagara",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Nagarparkar",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Nagarparkar Tehsil",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Nangar Parkar",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "city"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q3696265"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "viaf:137434198"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "loc:n2008058544"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1169550"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Nagarparkar"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "2022"
+            },
+            "start": {
+              "earliest": "0050"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131833",
+      "properties": {
+        "pid": 7131833,
+        "src_id": "18",
+        "title": "Baraca",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "Point",
+            "geowkt": "POINT(69.28 22.44)",
+            "coordinates": [
+              69.28,
+              22.44
+            ]
+          },
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q844917",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                69.5,
+                22.6
+              ]
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Baraca",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Gulf of Kutch",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Gulf of Baraca",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "gulf"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "coral reef"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q844917"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "viaf:244763574"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1268730"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "tgn:1112409"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "loc:sh91004007"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gnd:4831214-9"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Gulf of Kutch"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "-9999"
+            },
+            "start": {
+              "earliest": "-9999"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131834",
+      "properties": {
+        "pid": 7131834,
+        "src_id": "19",
+        "title": "Syrastrene",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "Point",
+            "geowkt": "POINT(70.47 21.49)",
+            "coordinates": [
+              70.47,
+              21.49
+            ]
+          },
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q1069636",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                70.7833,
+                22.3
+              ]
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Syrastrene",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Saurashtra",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Sorath",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Saraostus",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Kathiawar",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "region"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "agriculture"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "peninsula"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q1069636"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "pl:50291"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Saurashtra (region)"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Saurashtra"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "viaf:153574098"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "loc:n50049511"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Saurashtra (state)"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Kathiawar"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "2022"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131835",
+      "properties": {
+        "pid": 7131835,
+        "src_id": "20",
+        "title": "Barygaza",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.0 21.69)",
+            "coordinates": [
+              73.0,
+              21.69
+            ]
+          },
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q760153",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                72.966666666667,
+                21.7
+              ],
+              [
+                72.9805,
+                21.69482
+              ]
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Baruch",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Barygaza",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Bharuch",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Broach",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Parocco",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "port"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "city"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "trading hub"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q760153"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gnd:4346759-3"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1276100"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Bharuch"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "2022"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131836",
+      "properties": {
+        "pid": 7131836,
+        "src_id": "21",
+        "title": "Ozene",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "Point",
+            "geowkt": "POINT(75.78 23.19)",
+            "coordinates": [
+              75.78,
+              23.19
+            ]
+          },
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q200119",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                75.777222222222,
+                23.182777777778
+              ]
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Ozene",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Ujjain",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "city"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q200119"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "viaf:157114520"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "bnf:13542336k"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1253914"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "loc:n81047116"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gnd:4107377-0"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "pl:59972"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Ujjain"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "viaf:153612548"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "loc:n81030113"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1253915"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Ujjain district"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Ujjain division"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "2022"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131837",
+      "properties": {
+        "pid": 7131837,
+        "src_id": "22",
+        "title": "Calliena",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.12 19.23)",
+            "coordinates": [
+              73.12,
+              19.23
+            ]
+          },
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q366754",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.15,
+                19.25
+              ]
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Calliena",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Kalyan",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Kallian",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Cullian",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Calliannee",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Dombivli",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "port"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "city"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q366754"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "viaf:131671392"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "loc:no99002023"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1268295"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Kalyan"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Kalyan-Dombivli"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "2022"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131838",
+      "properties": {
+        "pid": 7131838,
+        "src_id": "23",
+        "title": "Pathana",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "Point",
+            "geowkt": "POINT(75.39 19.47)",
+            "coordinates": [
+              75.39,
+              19.47
+            ]
+          },
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q2445534",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                75.38,
+                19.48
+              ]
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Pathana",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Paithan",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Pratisthana",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "city"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q2445534"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "viaf:140783342"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "loc:n85108083"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "bnf:12651600d"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1260833"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Paithan"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "2022"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131839",
+      "properties": {
+        "pid": 7131839,
+        "src_id": "24",
+        "title": "Tagara",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "Point",
+        "geowkt": "POINT(76.24 18.4)",
+        "coordinates": [
+          76.24,
+          18.4
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Tagara",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Murud",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Nilkhant Tarminal",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "city"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "trading hub"
+        }
+      ],
+      "links": [],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "2022"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131840",
+      "properties": {
+        "pid": 7131840,
+        "src_id": "25",
+        "title": "Colchi",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "Point",
+            "geowkt": "POINT(78.06 8.64)",
+            "coordinates": [
+              78.06,
+              8.64
+            ]
+          },
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q3523812",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                78.066666666667,
+                8.6333333333333
+              ]
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Colchi",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Korkai",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Pandya-Kavada",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "port"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "village"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q3523812"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1266108"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Korkai"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "2022"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131841",
+      "properties": {
+        "pid": 7131841,
+        "src_id": "26",
+        "title": "Poduca",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "Point",
+            "geowkt": "POINT(79.81 11.92)",
+            "coordinates": [
+              79.81,
+              11.92
+            ]
+          },
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q3334432",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                79.812777777778,
+                11.965833333333
+              ]
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Poduca",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Pondicherry",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Puducherry",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "port"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "city"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "trading hub"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q3334432"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:7730221"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Pondicherry Airport"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "bnf:12072382c"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gnd:4103204-4"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1259425"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Pondicherry"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "viaf:244275454"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Arikamedu"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Puducherry district"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gnd:4622229-7"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "bnf:124983164"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "tgn:1002000"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1259424"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Pondicherry (union territory)"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Puducherry"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Portal:Puducherry"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Puducherry (union territory)"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "2022"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131842",
+      "properties": {
+        "pid": 7131842,
+        "src_id": "27",
+        "title": "Ganges",
+        "ccodes": [
+          "IN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "Point",
+        "geowkt": "POINT(88.05 21.8)",
+        "coordinates": [
+          88.05,
+          21.8
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Ganges",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Ganges River",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "river"
+        }
+      ],
+      "links": [],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "-9999"
+            },
+            "start": {
+              "earliest": "-9999"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131843",
+      "properties": {
+        "pid": 7131843,
+        "src_id": "28",
+        "title": "Bucephalus Alexandria",
+        "ccodes": [
+          "PK"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "Point",
+            "geowkt": "POINT(73.72 32.92)",
+            "coordinates": [
+              73.72,
+              32.92
+            ]
+          },
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q121551",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                73.73333333333333,
+                32.93333333333333
+              ]
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Bucephalus Alexandria",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Alexandria Bucephala",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Bucephala",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Bucephalia",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Jhelum",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "city"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q121551"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "viaf:234400345"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gnd:7713233-6"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1175864"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Jhelum"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "viaf:124410824"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "loc:n85336348"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1175862"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Jhelum District"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Alexandria Bucephalous"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "2022"
+            },
+            "start": {
+              "earliest": "-0300"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131844",
+      "properties": {
+        "pid": 7131844,
+        "src_id": "29",
+        "title": "Thinae",
+        "ccodes": [
+          "CN"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "Point",
+            "geowkt": "POINT(112.46 34.59)",
+            "coordinates": [
+              112.46,
+              34.59
+            ]
+          },
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q35721146",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                112.45361111111,
+                34.683611111111
+              ]
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Thinae",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Tenduc",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Luoyang",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "city"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "trading hub"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q35721146"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:1801792"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "2022"
+            },
+            "start": {
+              "earliest": "-0100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131845",
+      "properties": {
+        "pid": 7131845,
+        "src_id": "30",
+        "title": "Laodicea",
+        "ccodes": [
+          "TR"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "Point",
+            "geowkt": "POINT(29.11 37.84)",
+            "coordinates": [
+              29.11,
+              37.84
+            ]
+          },
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q849709",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                29.1075,
+                37.835833333333
+              ]
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Laodicea",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Laodikia pros tou Lykou",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Laodicea ad Lycum",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Laodikeia",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "city"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "trading hub"
+        },
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "abandonded settlement"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q849709"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "viaf:200772265"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "bnf:16550308g"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:8224665"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "pl:638955"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Laodicea on the Lycus"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "2022"
+            },
+            "start": {
+              "earliest": "-0250"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "@id": "https://whgazetteer.org/api/db/?id=7131846",
+      "properties": {
+        "pid": 7131846,
+        "src_id": "31",
+        "title": "Diospolis",
+        "ccodes": [
+          "IL"
+        ],
+        "comment": []
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "Point",
+            "geowkt": "POINT(34.89 31.95)",
+            "coordinates": [
+              34.89,
+              31.95
+            ]
+          },
+          {
+            "type": "MultiPoint",
+            "citation": {
+              "id": "wd:Q207540",
+              "label": "Wikidata"
+            },
+            "coordinates": [
+              [
+                34.9,
+                31.95
+              ]
+            ]
+          }
+        ]
+      },
+      "names": [
+        {
+          "toponym": "Diospolis",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Lod",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "Lydda",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        },
+        {
+          "toponym": "al-Lidd",
+          "citations": [
+            {
+              "id": "",
+              "label": "Periplus Maris Erythraei"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "label": "",
+          "identifier": "",
+          "sourceLabel": "city"
+        }
+      ],
+      "links": [
+        {
+          "type": "closeMatch",
+          "identifier": "wd:Q207540"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "viaf:239476084"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "bnf:12426044m"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gn:294421"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "loc:n85104577"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "gnd:4099733-9"
+        },
+        {
+          "type": "closeMatch",
+          "identifier": "wp:Lod"
+        }
+      ],
+      "when": {
+        "timespans": [
+          {
+            "end": {
+              "latest": "2022"
+            },
+            "start": {
+              "earliest": "-0200"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
