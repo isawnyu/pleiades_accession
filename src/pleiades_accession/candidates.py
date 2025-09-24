@@ -15,6 +15,13 @@ from pathlib import Path
 from pprint import pformat
 from shapely.geometry import shape
 from validators import url as validate_url
+from webiquette.webi import Webi
+
+web_interfaces = dict()
+headers = {
+    "User-Agent": "PleiadesAccessionBot/0.1",
+    "From": "pleiades.admin@nyu.edu",
+}
 
 
 class CandidateFeature:
@@ -25,9 +32,34 @@ class CandidateFeature:
     def __init__(self, feature: dict):
         """Initialize the CandidateFeature from a GeoJSON feature dictionary."""
         self.feature = feature
-        self.id = feature.get("@id")
+        self.id = feature["@id"]
         self.geometry = shape(feature.get("geometry", dict()))
         self.properties = feature.get("properties", dict())
+        if (
+            self.id.startswith("https://whgazetteer.org/api/db/?id=")
+            and self.feature.get("names", []) == []
+        ):
+            # augment with names via other API call if we have a WHG ID but no names
+            try:
+                self.webi = web_interfaces["whgazetteer.org"]
+            except KeyError:
+                self.webi = Webi(
+                    "whgazetteer.org",
+                    headers=headers,
+                    respect_robots_txt=False,
+                )
+                web_interfaces["whgazetteer.org"] = self.webi
+            raw_id = self.id.split("=", 1)[1]
+            r = self.webi.get(f"https://whgazetteer.org/api/place/{raw_id}/")
+            if r.status_code == 200:
+                j = r.json()
+                try:
+                    self.feature["names"]
+                except KeyError:
+                    self.feature["names"] = list()
+                self.feature["names"].extend(j.get("names", []))
+            else:
+                r.raise_for_status()
 
     @property
     @functools.lru_cache(maxsize=None)
