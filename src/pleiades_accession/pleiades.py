@@ -198,9 +198,6 @@ class Pleiades:
                         self._links_index[uri] = set()
                     else:
                         self._links_index[uri].add(pid)
-                        logger.warning(
-                            f"Duplicate link {uri} found in Pleiades data (pids = {pid} and {self._links_index[uri]})"
-                        )
         logger.info(
             f"Generated links index with {len(self._links_index):,} links from Pleiades data"
         )
@@ -210,9 +207,6 @@ class Pleiades:
         logger = logging.getLogger(f"{__name__}:Pleiades._initialize_names_index")
         if names_index_path:
             self._load_names_index(names_index_path)
-            logger.info(
-                f"Using pre-existing names index with {len(self.names_index):,} name strings from {names_index_path}"
-            )
         else:
             for pid in self.fs.index.keys():
                 place = self.get(pid)
