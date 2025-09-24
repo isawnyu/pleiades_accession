@@ -14,7 +14,8 @@ import logging
 from math import cos, radians
 from pathlib import Path
 from pleiades_local.filesystem import PleiadesFilesystem
-from shapely import concave_hull, STRtree
+from shapely import concave_hull, convex_hull, STRtree
+from shapely.errors import GEOSException
 from shapely.geometry import GeometryCollection, shape
 from urllib.parse import urlparse
 
@@ -92,7 +93,19 @@ class PleiadesPlace:
                 geom.buffer(meters_to_degrees(accuracy_value, centroid.y))
             )
         if self.buffered_geometries:
-            return concave_hull(GeometryCollection(self.buffered_geometries), 0.2)
+            try:
+                h = concave_hull(GeometryCollection(self.buffered_geometries), 0.2)
+            except GEOSException:
+                try:
+                    h = convex_hull(GeometryCollection(self.buffered_geometries))
+                except GEOSException as err:
+                    err.add_note(
+                        f"Failed creation of both concave and convex hulls with {len(self.buffered_geometries)} buffered geometries for pid: '{self.pid}'"
+                    )
+                    raise err
+                else:
+                    h = concave_hull(h, 0.2)
+            return h
         else:
             return None
 
@@ -173,6 +186,9 @@ class Pleiades:
         logger = logging.getLogger(f"{__name__}:Pleiades._initialize_names_index")
         if names_index_path:
             self._load_names_index(names_index_path)
+            logger.info(
+                f"Using pre-existing names index with {len(self.names_index):,} name strings from {names_index_path}"
+            )
         else:
             for pid in self.fs.index.keys():
                 place = self.get(pid)
@@ -207,7 +223,7 @@ class Pleiades:
         with open(names_index_path, "r", encoding="utf-8") as f:
             raw_index = json.load(f)
         del f
-        for name_string, pid in raw_index.items():
+        for name_string, pid in raw_index:
             try:
                 self.names_index[name_string]
             except KeyError:
