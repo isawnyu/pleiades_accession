@@ -8,16 +8,21 @@
 """
 Manage Pleiades data and queries
 """
+from datetime import datetime, timedelta
 import functools
 import json
 import logging
 from math import cos, radians
 from pathlib import Path
+from platformdirs import user_cache_path
 from pleiades_local.filesystem import PleiadesFilesystem
-from shapely import concave_hull, convex_hull, STRtree
+from shapely import concave_hull, convex_hull, from_geojson, to_geojson, STRtree
 from shapely.errors import GEOSException
 from shapely.geometry import GeometryCollection, shape
 from urllib.parse import urlparse
+
+hull_cache_path = user_cache_path("pleiades_accession") / "hulls"
+hull_cache_path.mkdir(parents=True, exist_ok=True)
 
 
 @functools.lru_cache(maxsize=None)
@@ -67,6 +72,18 @@ class PleiadesPlace:
     @functools.lru_cache(maxsize=None)
     def footprint(self):
         """Calculate and return the spatial footprint, including accuracy, of all combined locations."""
+        this_cache_path = hull_cache_path / f"{self.pid}.geojson"
+        if this_cache_path.is_file():
+            timestamp = this_cache_path.stat().st_mtime
+            dt = datetime.fromtimestamp(timestamp)
+            if datetime.now() - dt < timedelta(days=1):
+                with open(this_cache_path, "r", encoding="utf-8") as f:
+                    geo_str = f.read()
+                del f
+                if geo_str:
+                    return from_geojson(geo_str)
+                else:
+                    return None
 
         geometries = dict()
         for i, loc in enumerate(self._raw_data.get("locations", [])):
@@ -105,9 +122,16 @@ class PleiadesPlace:
                     raise err
                 else:
                     h = concave_hull(h, 0.2)
-            return h
         else:
-            return None
+            h = None
+        with open(this_cache_path, "w", encoding="utf-8") as f:
+            geojson = to_geojson(h)
+            if geojson:
+                f.write(geojson)
+            else:
+                f.write("")
+        del f
+        return h
 
     @property
     def title(self) -> str:
