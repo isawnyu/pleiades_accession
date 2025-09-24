@@ -14,6 +14,7 @@ import logging
 from pathlib import Path
 from pprint import pformat
 from shapely.geometry import shape
+from validators import url as validate_url
 
 
 class CandidateFeature:
@@ -36,6 +37,45 @@ class CandidateFeature:
         name_strings.add(self.properties["title"].strip())
         name_strings.update({n["toponym"].strip() for n in self.feature["names"]})
         return name_strings
+
+    @property
+    @functools.lru_cache(maxsize=None)
+    def links(self) -> set:
+        """Return a set containing all linked for the place."""
+        links = set()
+        for link in self.feature.get("links", []):
+            if link["type"] == "closeMatch":
+                if link["identifier"].startswith("http"):
+                    raw_link = link["identifier"]
+                else:
+                    namespace, identifier = link["identifier"].split(":", 1)
+                    if namespace == "pl":
+                        raw_link = f"https://pleiades.stoa.org/places/{identifier}"
+                    elif namespace == "wd":
+                        raw_link = f"https://www.wikidata.org/wiki/{identifier}"
+                    elif namespace == "viaf":
+                        raw_link = f"https://viaf.org/viaf/{identifier}"
+                    elif namespace == "wp":
+                        raw_link = f"https://en.wikipedia.org/wiki/{identifier.replace(' ', '_')}"
+                    elif namespace == "gn":
+                        raw_link = f"https://www.geonames.org/{identifier}"
+                    elif namespace == "tgn":
+                        raw_link = f"http://vocab.getty.edu/tgn/{identifier}"
+                    elif namespace in ["loc", "gnd", "bnf"]:
+                        # ignore these links for now
+                        continue
+                    else:
+                        raise NotImplementedError(
+                            f"Unrecognized link namespace: {namespace}"
+                        )
+                (
+                    links.add(raw_link)
+                    if validate_url(raw_link)
+                    else logging.warning(
+                        f"IGNORED: Invalid URL found in candidate links: {raw_link}"
+                    )
+                )
+        return links
 
 
 class CandidateDataset:

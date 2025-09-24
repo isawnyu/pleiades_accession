@@ -16,6 +16,7 @@ from pathlib import Path
 from pleiades_local.filesystem import PleiadesFilesystem
 from shapely import concave_hull, STRtree
 from shapely.geometry import GeometryCollection, shape
+from urllib.parse import urlparse
 
 
 @functools.lru_cache(maxsize=None)
@@ -82,6 +83,10 @@ class PleiadesPlace:
                 raise RuntimeError(
                     f"Location {self._raw_data['locations'][i]['id']} on {self.pid} has no accuracy_value"
                 )
+            if "darmc" in self._raw_data["locations"][i]["accuracy"]:
+                accuracy_value = max(
+                    accuracy_value, 2000.0
+                )  # fudge factor for DARMC relocations to modern labels in GE
             centroid = geometries[i].centroid
             self.buffered_geometries.append(
                 geom.buffer(meters_to_degrees(accuracy_value, centroid.y))
@@ -114,6 +119,7 @@ class Pleiades:
         self._spatial_index = None
         self._spatial_index_2_pid = dict()
         self._initialize_spatial_index()
+        self._initialize_links_index()
 
     def get(self, pid) -> PleiadesPlace:
         """Get the Pleiades place resource for the specified pid."""
@@ -123,6 +129,44 @@ class Pleiades:
             p = PleiadesPlace(self.fs, pid)
             self.places[pid] = p
             return p
+
+    def get_pid_by_link(self, link, netloc=None) -> str | None:
+        """Get the Pleiades place resource for the specified link."""
+        try:
+            return self._links_index[link]
+        except KeyError:
+            return
+
+    def _initialize_links_index(self):
+        """Initialize the links index."""
+        logger = logging.getLogger(f"{__name__}:Pleiades._initialize_links_index")
+        self._links_index = dict()
+        for pid in self.fs.index.keys():
+            place = self.get(pid)
+            for ref in place._raw_data.get("references", []):
+                uri = ref.get("accessURI", "").strip()
+                if not uri:
+                    continue
+                netloc = urlparse(uri).netloc.lower()
+                if netloc in [
+                    "vocab.getty.edu",
+                    "www.geonames.org",
+                    "en.wikipedia.org",
+                    "viaf.org",
+                    "www.wikidata.org",
+                ]:
+                    try:
+                        self._links_index[uri]
+                    except KeyError:
+                        self._links_index[uri] = set()
+                    else:
+                        self._links_index[uri].add(pid)
+                        logger.warning(
+                            f"Duplicate link {uri} found in Pleiades data (pids = {pid} and {self._links_index[uri]})"
+                        )
+        logger.info(
+            f"Generated links index with {len(self._links_index):,} links from Pleiades data"
+        )
 
     def _initialize_names_index(self, names_index_path: Path = None):
         """Initialize the names index, generating it if needed."""
