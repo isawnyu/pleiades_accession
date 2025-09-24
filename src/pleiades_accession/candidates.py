@@ -61,6 +61,15 @@ class CandidateFeature:
             else:
                 r.raise_for_status()
 
+    def as_dict(self) -> dict:
+        """Return the candidate feature as a dictionary."""
+        return {
+            "id": self.id,
+            "properties": self.properties,
+            "name_strings": sorted(list(self.name_strings)),
+            "links": sorted(list(self.links)),
+        }
+
     @property
     @functools.lru_cache(maxsize=None)
     def name_strings(self) -> set:

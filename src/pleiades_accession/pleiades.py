@@ -46,6 +46,18 @@ class PleiadesPlace:
         self.pid = pid
         self._raw_data = places.get(pid)
 
+    @functools.lru_cache(maxsize=None)
+    def as_dict(self) -> dict:
+        """Return the raw data as a dictionary."""
+        d = {
+            "pid": self.pid,
+            "uri": f"https://pleiades.stoa.org/places/{self.pid}",
+            "title": self.title,
+            "name_strings": list(self.name_strings),
+            # "raw_data": self._raw_data,
+        }
+        return d
+
     @property
     @functools.lru_cache(maxsize=None)
     def name_strings(self) -> set:

@@ -10,12 +10,14 @@ Matching script
 """
 
 from airtight.cli import configure_commandline
+import json
 import logging
 from os import environ
 from pathlib import Path
 from pleiades_accession.matching import Matcher
 from pleiades_accession.pleiades import Pleiades
 from pleiades_accession.candidates import CandidateDataset
+from pprint import pprint
 
 default_pleiades_dataset_path = (
     Path(environ.get("PLEIADES_DATASET_PATH", "")).expanduser().resolve()
@@ -78,6 +80,22 @@ def main(**kwargs):
     # logger = logging.getLogger(sys._getframe().f_code.co_name)
     pleiades = Pleiades(kwargs["pleiadespath"], kwargs["namesindexpath"])
     candidates = CandidateDataset(kwargs["candidatespath"])
+    matcher = Matcher(pleiades, candidates)
+    scores = matcher.match()
+    output = dict()
+    for k, v in scores.items():
+        d = {
+            "candidate": candidates.features[k].as_dict(),
+            "matches": {
+                pid: {
+                    "place": pleiades.get(pid).as_dict(),
+                    "match_types": sorted(list(match_types)),
+                }
+                for pid, match_types in v.items()
+            },
+        }
+        output[k] = d
+    print(json.dumps(output, indent=2, ensure_ascii=False))
 
 
 if __name__ == "__main__":
