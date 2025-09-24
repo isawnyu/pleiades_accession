@@ -8,8 +8,22 @@
 """
 Define matcher class for deconfliting candidate places against Pleiades
 """
+import functools
 import logging
+from math import cos, radians
 from pprint import pformat
+from rapidfuzz import process, fuzz, distance, utils
+
+
+@functools.lru_cache(maxsize=None)
+def meters_to_degrees(m, origin_latitude):
+    """
+    Convert meters to degrees latitude/longitude at the specified origin latitude
+    https://gis.stackexchange.com/questions/2951/algorithm-for-offsetting-latitude-longitude-by-some-amount-of-meters
+    """
+    lat = m / 111111
+    lon = m / (111111 * cos(radians(origin_latitude)))
+    return (lat + lon) / 2
 
 
 class Matcher:
@@ -24,19 +38,28 @@ class Matcher:
         self.matches = dict()
         self.unmatched = dict()
 
-    def match(self):
+    def match(self, spatial_buffer=10.0) -> dict:
         """Perform matching of candidate places against Pleiades places."""
+        # spatial_buffer is in km
+        name_choices = list(self.pleiades.names_index.keys())
+
         logger = logging.getLogger(f"{__name__}:Matcher.match")
         match_vote_totals = dict()
         for cid, candidate in self.candidates.features.items():
+            matched = set()
             match_votes = dict()
             # spatial overlap/intersection/containment
             candidate_geom = candidate.geometry
-            spatial_matched_pids = self.pleiades.spatial_query(candidate_geom)
-            for pid in list(spatial_matched_pids)[:10]:  # limit to first 10 matches
+            lat = candidate_geom.centroid.y
+            buffered_geom = candidate_geom.buffer(
+                meters_to_degrees(spatial_buffer * 1000, lat)
+            )
+            spatial_matched_pids = self.pleiades.spatial_query(buffered_geom)
+            for pid in spatial_matched_pids:
                 match_votes[pid] = {
                     "footprint",
                 }
+            matched.update(spatial_matched_pids)
 
             # failing that, spatial proximity
             if not spatial_matched_pids:
@@ -47,6 +70,7 @@ class Matcher:
                     except KeyError:
                         match_votes[pid] = set()
                     match_votes[pid].add("nearest")
+                matched.update(spatial_matched_pids)
 
             # name string matches within spatial matches
             name_matched_pids = set()
@@ -54,16 +78,45 @@ class Matcher:
                 name_matched_pids.update(
                     self.pleiades.names_index.get(name_string, set())
                 )
-            matched = spatial_matched_pids.intersection(name_matched_pids)
-            for pid in matched:
+            for pid in name_matched_pids:
                 try:
                     match_votes[pid]
                 except KeyError:
                     match_votes[pid] = set()
                 match_votes[pid].add("exact name")
+            if spatial_matched_pids:
+                matched.update(spatial_matched_pids.intersection(name_matched_pids))
+            else:
+                matched.update(name_matched_pids)
 
-            # near name string matches
-            # TBD: implement fuzzy matching
+            # near name string matches within spatial matches
+            name_fuzzy_matched_pids = set()
+            for name_string in candidate.name_strings:
+                fuzzy_matches = process.extract(
+                    name_string,
+                    name_choices,
+                    scorer=fuzz.WRatio,
+                    score_cutoff=90,
+                    limit=5,
+                    processor=utils.default_process,
+                )
+                for matched_name, score, _ in fuzzy_matches:
+                    name_fuzzy_matched_pids.update(
+                        self.pleiades.names_index[matched_name]
+                    )
+            if name_fuzzy_matched_pids:
+                if spatial_matched_pids:
+                    name_fuzzy_matched_pids = spatial_matched_pids.intersection(
+                        name_fuzzy_matched_pids
+                    )
+                for pid in name_fuzzy_matched_pids:
+                    if pid in matched:
+                        try:
+                            match_votes[pid]
+                        except KeyError:
+                            match_votes[pid] = set()
+                        match_votes[pid].add("fuzzy name")
+                matched.update(name_fuzzy_matched_pids)
 
             # link matches
             links = candidate.links
@@ -89,8 +142,7 @@ class Matcher:
                     except KeyError:
                         match_votes[pid] = set()
                     match_votes[pid].add("second-order link")
-                    if pid in spatial_matched_pids:
-                        matched.add(pid)
+                    matched.add(pid)
 
             match_vote_totals[cid] = match_votes
 
@@ -103,3 +155,5 @@ class Matcher:
                 logger.debug(f"Candidate {cid} had no matches")
 
         logger.debug(f"Match votes: {pformat(match_vote_totals, indent=4)}")
+
+        return match_vote_totals
