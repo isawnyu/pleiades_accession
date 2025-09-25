@@ -10,10 +10,14 @@ Review matches
 """
 
 from airtight.cli import configure_commandline
+from datetime import datetime
 import json
 import logging
+from pathlib import Path
 import pyperclip
 import re
+import shutil
+
 
 logger = logging.getLogger(__name__)
 rx_compound_cmd = re.compile(r"^(m|l)(\d+)$")
@@ -33,6 +37,20 @@ OPTIONAL_ARGUMENTS = [
         "--veryverbose",
         False,
         "very verbose output (logging level == DEBUG)",
+        False,
+    ],
+    [
+        "-o",
+        "--outputpath",
+        "./data/output/",
+        "path to output directory (default: ./data/)",
+        False,
+    ],
+    [
+        "-c",
+        "--continue",
+        False,
+        "continue from last session, loading data from previous run's output files",
         False,
     ],
 ]
@@ -58,10 +76,82 @@ def main(**kwargs):
     main function
     """
     # logger = logging.getLogger(sys._getframe().f_code.co_name)
-    with open(kwargs["matchfile"], "r", encoding="utf-8") as f:
+    outpath = Path(kwargs["outputpath"]).expanduser().resolve()
+    outpath.mkdir(parents=True, exist_ok=True)
+    accession_ids = set()
+    accession_path = outpath / "to_accession.txt"
+    followup_ids = set()
+    followup_path = outpath / "follow_up.txt"
+    # backup previous session
+    last_modified = datetime.min
+    if (accession_path).exists():
+        last_modified = datetime.fromtimestamp(accession_path.stat().st_mtime)
+    if (followup_path).exists():
+        last_modified = max(
+            last_modified, datetime.fromtimestamp(followup_path.stat().st_mtime)
+        )
+    if last_modified > datetime.min:
+        previous_path = outpath / "previous" / last_modified.isoformat()
+        previous_path.mkdir(parents=True, exist_ok=True)
+        if (accession_path).exists():
+            shutil.copy(accession_path, previous_path / accession_path.name)
+        if (followup_path).exists():
+            shutil.copy(followup_path, previous_path / followup_path.name)
+
+    if not kwargs["continue"]:
+        print(
+            "Starting new review session. Previous output files (if any) will be overwritten. "
+            "Use --continue (-c) to resume from previous session."
+        )
+        s = input("Proceed? (y/n) ")
+        if s.lower().strip() not in {"y", "yes"}:
+            print("Exiting.")
+            exit()
+        accession_path.unlink(missing_ok=True)
+        followup_path.unlink(missing_ok=True)
+    else:
+        print(
+            "Continuing from previous session. Previous output files (if any) will be appended to."
+        )
+        if (accession_path).exists():
+            with open(accession_path, "r", encoding="utf-8") as f:
+                for line in f:
+                    accession_ids.add(line.strip())
+            del f
+            print(
+                f"Loaded {len(accession_ids):,} previously accessioned candidates from {accession_path}."
+            )
+        else:
+            print(
+                f"No previous accession file found at {accession_path}; starting fresh."
+            )
+        if (followup_path).exists():
+            with open(followup_path, "r", encoding="utf-8") as f:
+                for line in f:
+                    followup_ids.add(line.strip())
+            del f
+            print(
+                f"Loaded {len(followup_ids):,} previously marked follow-up candidates from {followup_path}."
+            )
+        else:
+            print(
+                f"No previous follow-up file found at {followup_path}; starting fresh."
+            )
+
+    matchfile_path = Path(kwargs["matchfile"]).expanduser().resolve()
+    with open(matchfile_path, "r", encoding="utf-8") as f:
         j = json.load(f)
     del f
+    print(f"Loaded {len(j):,} candidates from {kwargs['matchfile']}")
+
+    s = input("Proceed to review? (y/n) ")
+    if s.lower().strip() not in {"y", "yes"}:
+        print("Exiting.")
+        exit()
+
     for candidate_id, v in j.items():
+        if candidate_id in accession_ids:
+            continue
         c = v["candidate"]
         matches = v["matches"]
         print("\n" * 2)
@@ -110,22 +200,39 @@ def main(**kwargs):
                 exit()
             if s in ["h", "help", "?"]:
                 print("Enter:")
-                print("  c          to copy candidate URI to clipboard")
+                print("  a, accession to mark candidate for accessioning")
+                print("  c            to copy candidate URI to clipboard")
                 print(
-                    "  lN         to copy link N from candidate to clipboard (e.g. l1, l2, ...)"
+                    "  lN           to copy link N from candidate to clipboard (e.g. l1, l2, ...)"
                 )
                 print(
-                    "  mN         to copy match N URI to clipboard (e.g. m1, m2, ...)"
+                    "  mN           to copy match N URI to clipboard (e.g. m1, m2, ...)"
                 )
-                print("  n, next    to move on to next candidate")
-                print("  q, quit    to exit")
-            elif s in {"n", "next", ""}:
+                print("  n, next      to move on to next candidate")
+                print("  q, quit      to exit")
+                continue
+            elif s in {"n", "next", "s", "skip"}:
                 break
-            elif s == "c":
+            elif s in {"a", "accession"}:
+                accession_ids.add(candidate_id)
+                print(f"Candidate {candidate_id} marked for accessioning.")
+                with open(accession_path, "a", encoding="utf-8") as f:
+                    f.write(f"{candidate_id}\n")
+                del f
+                continue
+            elif s in {"f", "followup"}:
+                followup_ids.add(candidate_id)
+                print(f"Candidate {candidate_id} marked for follow-up.")
+                with open(followup_path, "a", encoding="utf-8") as f:
+                    f.write(f"{candidate_id}\n")
+                del f
+                continue
+            elif s in {"c", "candidate"}:
                 id = candidate_id.split("=")[-1]
                 uri = f"https://whgazetteer.org/places/{id}/detail"
                 pyperclip.copy(uri)
                 print(f"Copied {uri} to clipboard.")
+                continue
             elif len(s) > 1:
                 m = rx_compound_cmd.match(s)
                 if m:
@@ -147,6 +254,11 @@ def main(**kwargs):
                             this_link = links[idx]
                             pyperclip.copy(this_link)
                             print(f"Copied {this_link} to clipboard.")
+                        case _:
+                            print(f"Unrecognized command prefix '{cmd}' in '{s}'.")
+                else:
+                    print(f"Unrecognized command '{s}'.")
+                continue
 
 
 if __name__ == "__main__":
