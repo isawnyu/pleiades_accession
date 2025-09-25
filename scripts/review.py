@@ -13,9 +13,10 @@ from airtight.cli import configure_commandline
 import json
 import logging
 import pyperclip
+import re
 
 logger = logging.getLogger(__name__)
-
+rx_compound_cmd = re.compile(r"^(m|l)(\d+)$")
 DEFAULT_LOG_LEVEL = logging.WARNING
 OPTIONAL_ARGUMENTS = [
     [
@@ -107,27 +108,45 @@ def main(**kwargs):
             if s in {"q", "quit", "exit"}:
                 print("Exiting.")
                 exit()
-            if s == "c":
+            if s in ["h", "help", "?"]:
+                print("Enter:")
+                print("  c          to copy candidate URI to clipboard")
+                print(
+                    "  lN         to copy link N from candidate to clipboard (e.g. l1, l2, ...)"
+                )
+                print(
+                    "  mN         to copy match N URI to clipboard (e.g. m1, m2, ...)"
+                )
+                print("  n, next    to move on to next candidate")
+                print("  q, quit    to exit")
+            elif s in {"n", "next", ""}:
+                break
+            elif s == "c":
                 id = candidate_id.split("=")[-1]
                 uri = f"https://whgazetteer.org/places/{id}/detail"
                 pyperclip.copy(uri)
                 print(f"Copied {uri} to clipboard.")
-            elif s.startswith("m"):
-                val = "".join(list(s)[1:])
-                if val.isdigit():
+            elif len(s) > 1:
+                m = rx_compound_cmd.match(s)
+                if m:
+                    cmd, val = m.groups()
                     idx = int(val) - 1
-                    if 0 <= idx < len(weighted_matches):
-                        m, _ = weighted_matches[idx]
-                        uri = m["place"].get("uri", "")
-                        if uri:
+                    match cmd:
+                        case "m":
+                            if not (0 <= idx < len(weighted_matches)):
+                                print("Invalid match number.")
+                                continue
+                            this_match, _ = weighted_matches[idx]
+                            uri = this_match["place"].get("uri", "")
                             pyperclip.copy(uri)
                             print(f"Copied {uri} to clipboard.")
-                        else:
-                            print("No URI to copy.")
-                    else:
-                        print("Invalid match number.")
-            elif s == "":
-                break
+                        case "l":
+                            if not (0 <= idx < len(links)):
+                                print("Invalid link number.")
+                                continue
+                            this_link = links[idx]
+                            pyperclip.copy(this_link)
+                            print(f"Copied {this_link} to clipboard.")
 
 
 if __name__ == "__main__":
