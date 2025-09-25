@@ -208,8 +208,8 @@ class Pleiades:
                         self._links_index[uri]
                     except KeyError:
                         self._links_index[uri] = set()
-                    else:
-                        self._links_index[uri].add(pid)
+                    self._links_index[uri].add(pid)
+
         logger.info(
             f"Generated links index with {len(self._links_index):,} links from Pleiades data"
         )

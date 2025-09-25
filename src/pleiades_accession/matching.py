@@ -131,7 +131,7 @@ class Matcher:
                 matched.add(pid)
 
             # second-order link matches
-            non_plinks = links.difference(plinks)
+            non_plinks = {link for link in links if "pleiades.stoa.org" not in link}
             for uri in non_plinks:
                 pids = self.pleiades.get_pid_by_link(uri)
                 if not pids:

@@ -63,19 +63,23 @@ def main(**kwargs):
     for candidate_id, v in j.items():
         c = v["candidate"]
         matches = v["matches"]
+        print("\n" * 2)
         print("=" * 80)
         names = sorted(c.get("name_strings", []))
-
         print(", ".join(names))
         print(candidate_id)
+        links = sorted(c.get("links", []))
+        for link in links:
+            print(f" - {link}")
         weights = [
             {"footprint", "exact name", "first-order link"},
             {"footprint", "fuzzy name", "first-order link"},
             {"footprint", "exact name", "second-order link"},
             {"footprint", "fuzzy name", "second-order link"},
             {"footprint", "exact name"},
-            {"footprint", "fuzzy name"},
+            {"exact name", "first-order link", "second-order link"},
             {"footprint", "first-order link"},
+            {"footprint", "fuzzy name"},
             {"first-order link"},
             {"footprint"},
             {"exact name"},
@@ -97,22 +101,6 @@ def main(**kwargs):
             print(f"Match types: {', '.join(match_types) if match_types else 'NONE'}")
             names = sorted(place.get("name_strings", []))
             print(", ".join(names) if names else "NO NAMES")
-            desc = place.get("description", "")
-            if desc:
-                if len(desc) > 200:
-                    desc = desc[:197] + "..."
-                print(desc)
-            location = place.get("location", {})
-            if location:
-                lat = location.get("lat")
-                lon = location.get("lon")
-                if lat and lon:
-                    print(f"Location: {lat}, {lon}")
-            links = place.get("links", [])
-            if links:
-                print("Links:")
-                for link in links:
-                    print(f"  - {link}")
         while True:
             s = input("> ")
             s = s.lower().strip()
