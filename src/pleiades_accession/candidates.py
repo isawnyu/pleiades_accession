@@ -68,6 +68,7 @@ class CandidateFeature:
             "properties": self.properties,
             "name_strings": sorted(list(self.name_strings)),
             "links": sorted(list(self.links)),
+            "centroid_latlon": (self.geometry.centroid.y, self.geometry.centroid.x),
         }
 
     @property

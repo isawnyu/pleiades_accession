@@ -201,7 +201,11 @@ def main(**kwargs):
             if s in ["h", "help", "?"]:
                 print("Enter:")
                 print("  a, accession to mark candidate for accessioning")
-                print("  c            to copy candidate URI to clipboard")
+                print("  c, candidate to copy candidate URI to clipboard")
+                print(
+                    "  centroid     to copy candidate centroid (lat, lon) to clipboard"
+                )
+                print("  f, followup  to mark candidate for follow-up")
                 print(
                     "  lN           to copy link N from candidate to clipboard (e.g. l1, l2, ...)"
                 )
@@ -232,6 +236,14 @@ def main(**kwargs):
                 uri = f"https://whgazetteer.org/places/{id}/detail"
                 pyperclip.copy(uri)
                 print(f"Copied {uri} to clipboard.")
+                continue
+            elif s == "centroid":
+                lat, lon = c.get("centroid_latlon", (None, None))
+                if lat is not None and lon is not None:
+                    pyperclip.copy(f"{lat}, {lon}")
+                    print(f"Copied {lat}, {lon} to clipboard.")
+                else:
+                    print("No centroid available for this candidate.")
                 continue
             elif len(s) > 1:
                 m = rx_compound_cmd.match(s)
