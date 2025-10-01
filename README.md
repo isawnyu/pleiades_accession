@@ -1,5 +1,9 @@
 # Pleiades Accession
 
+Scripts to try to find possible matches between an external candidate dataset and existing Pleiades data and
+to provide functions for facilitating evaluation of same and recording of decisions made about accepting or
+rejecting them.
+
 ## Design
 
 - Read Pleiades dataset (maybe this should be a separate package)
