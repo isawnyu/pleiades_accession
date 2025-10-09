@@ -46,8 +46,13 @@ class Matcher:
 
         logger = logging.getLogger(f"{__name__}:Matcher.match")
         match_vote_totals = dict()
+        i = 0
+        total = len(self.candidates.features)
+        tenth = max(1, total // 10)
         for cid, candidate in self.candidates.features.items():
-            logger.debug(f"Testing candidate {cid}")
+            i += 1
+            if i % tenth == 0:
+                logger.info(f"Finding matches for candidate {i} of {total} ({cid})")
             matched = set()
             match_votes = dict()
 
@@ -70,9 +75,7 @@ class Matcher:
                 pleiades_links = self.pleiades.get_links_by_pid(
                     pid, target_netloc=netloc
                 )
-                logger.debug(
-                    f"Got {len(pleiades_links)} links from Pleiades for this netloc ({netloc})"
-                )
+
                 if cid in pleiades_links:
                     match_votes[pid].add("reciprocal link")
                     skip_other_tests = True

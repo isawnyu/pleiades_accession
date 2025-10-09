@@ -19,6 +19,7 @@ from pleiades_local.filesystem import (
     PleiadesFilesystem,
     PleiadesFilesystemNotIndexedError,
 )
+from pprint import pformat
 from shapely import concave_hull, convex_hull, from_geojson, to_geojson, STRtree
 from shapely.errors import GEOSException
 from shapely.geometry import GeometryCollection, shape
@@ -219,19 +220,12 @@ class Pleiades:
                 if not uri:
                     continue
                 netloc = urlparse(uri).netloc.lower()
-                if netloc in [
-                    "vocab.getty.edu",
-                    "www.geonames.org",
-                    "en.wikipedia.org",
-                    "viaf.org",
-                    "www.wikidata.org",
-                ]:
-                    try:
-                        self._links_index[uri]
-                    except KeyError:
-                        self._links_index[uri] = set()
-                    self._links_index[uri].add(pid)
-                    self._links_by_pids[pid].add(uri)
+                try:
+                    self._links_index[uri]
+                except KeyError:
+                    self._links_index[uri] = set()
+                self._links_index[uri].add(pid)
+                self._links_by_pids[pid].add(uri)
 
         logger.info(
             f"Generated links index with {len(self._links_index):,} links from Pleiades data"
