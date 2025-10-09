@@ -14,6 +14,7 @@ from datetime import datetime
 import json
 import logging
 from pathlib import Path
+from pprint import pformat
 import pyperclip
 import re
 import shutil
@@ -159,10 +160,16 @@ def main(**kwargs):
     for candidate_id, v in j.items():
         if candidate_id in accession_ids:
             continue
-        if kwargs["skipreciprocal"] and "reciprocal link" in v.get("match_types", []):
-            continue
         c = v["candidate"]
         matches = v["matches"]
+        if kwargs["skipreciprocal"] and len(matches) == 1:
+            match = list(matches.values())[0]
+            if "reciprocal link" in match.get("match_types", []):
+                print(
+                    f"Skipping candidate {candidate_id} due to reciprocal link match."
+                )
+                continue
+
         print("\n" * 2)
         print("=" * 80)
         names = sorted(c.get("name_strings", []))
