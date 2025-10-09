@@ -53,6 +53,13 @@ OPTIONAL_ARGUMENTS = [
         "continue from last session, loading data from previous run's output files",
         False,
     ],
+    [
+        "-s",
+        "--skipreciprocal",
+        False,
+        "skip reciprocal link matches (for faster review)",
+        False,
+    ],
 ]
 POSITIONAL_ARGUMENTS = [
     # each row is a list with 3 elements: name, type, help
@@ -152,6 +159,8 @@ def main(**kwargs):
     for candidate_id, v in j.items():
         if candidate_id in accession_ids:
             continue
+        if kwargs["skipreciprocal"] and "reciprocal link" in v.get("match_types", []):
+            continue
         c = v["candidate"]
         matches = v["matches"]
         print("\n" * 2)
@@ -163,6 +172,7 @@ def main(**kwargs):
         for link in links:
             print(f" - {link}")
         weights = [
+            {"reciprocal link"},
             {"footprint", "exact name", "first-order link"},
             {"footprint", "fuzzy name", "first-order link"},
             {"footprint", "exact name", "second-order link"},
