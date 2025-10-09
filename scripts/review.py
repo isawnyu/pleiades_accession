@@ -21,7 +21,7 @@ import shutil
 
 
 logger = logging.getLogger(__name__)
-rx_compound_cmd = re.compile(r"^(m|l)(\d+)$")
+rx_compound_cmd = re.compile(r"^(j|m|l)(\d+)$")
 DEFAULT_LOG_LEVEL = logging.WARNING
 OPTIONAL_ARGUMENTS = [
     [
@@ -90,6 +90,8 @@ def main(**kwargs):
     accession_path = outpath / "to_accession.txt"
     followup_ids = set()
     followup_path = outpath / "follow_up.txt"
+    joins = dict()
+    join_path = outpath / "to_join.txt"
     # backup previous session
     last_modified = datetime.min
     if (accession_path).exists():
@@ -145,6 +147,21 @@ def main(**kwargs):
             print(
                 f"No previous follow-up file found at {followup_path}; starting fresh."
             )
+        if (join_path).exists():
+            with open(join_path, "r", encoding="utf-8") as f:
+                for line in f:
+                    try:
+                        candidate_id, pid = line.strip().split(": ")
+                    except ValueError as err:
+                        err.add_note(
+                            f"Error parsing line in {join_path}: '{line.strip()}'"
+                        )
+                        raise err
+                    joins[candidate_id.strip()] = pid.strip()
+            del f
+            print(f"Loaded {len(joins):,} previously marked joins from {join_path}.")
+        else:
+            print(f"No previous join file found at {join_path}; starting fresh.")
 
     matchfile_path = Path(kwargs["matchfile"]).expanduser().resolve()
     with open(matchfile_path, "r", encoding="utf-8") as f:
@@ -159,6 +176,15 @@ def main(**kwargs):
 
     for candidate_id, v in j.items():
         if candidate_id in accession_ids:
+            print(
+                f"Skipping candidate {candidate_id} (already marked for accessioning)."
+            )
+            continue
+        elif candidate_id in followup_ids:
+            print(f"Skipping candidate {candidate_id} (already marked for follow-up).")
+            continue
+        elif candidate_id in joins.keys():
+            print(f"Skipping candidate {candidate_id} (already marked to join).")
             continue
         c = v["candidate"]
         matches = v["matches"]
@@ -223,6 +249,7 @@ def main(**kwargs):
                     "  centroid     to copy candidate centroid (lat, lon) to clipboard"
                 )
                 print("  f, followup  to mark candidate for follow-up")
+                print("  jN           to join candidate to match N (e.g. j1, j2, ...)")
                 print(
                     "  lN           to copy link N from candidate to clipboard (e.g. l1, l2, ...)"
                 )
@@ -249,8 +276,7 @@ def main(**kwargs):
                 del f
                 continue
             elif s in {"c", "candidate"}:
-                id = candidate_id.split("=")[-1]
-                uri = f"https://whgazetteer.org/places/{id}/detail"
+                uri = candidate_id
                 pyperclip.copy(uri)
                 print(f"Copied {uri} to clipboard.")
                 continue
@@ -267,19 +293,33 @@ def main(**kwargs):
                 if m:
                     cmd, val = m.groups()
                     idx = int(val) - 1
+                    if not (0 <= idx < len(weighted_matches)):
+                        print("Invalid match number.")
+                        continue
                     match cmd:
+                        case "j":
+                            this_match, _ = weighted_matches[idx]
+                            try:
+                                joins[candidate_id]
+                            except KeyError:
+                                joins[candidate_id] = this_match["place"]["pid"]
+                                with open(join_path, "a", encoding="utf-8") as f:
+                                    f.write(
+                                        f"{candidate_id}: {this_match['place']['pid']}\n"
+                                    )
+                                print(
+                                    f"Marked candidate {candidate_id} to join {joins[candidate_id]}."
+                                )
+                            else:
+                                print(
+                                    f"ERROR: Candidate {candidate_id} is already marked to join a different Pleiades place {joins[candidate_id]}. No changes made."
+                                )
                         case "m":
-                            if not (0 <= idx < len(weighted_matches)):
-                                print("Invalid match number.")
-                                continue
                             this_match, _ = weighted_matches[idx]
                             uri = this_match["place"].get("uri", "")
                             pyperclip.copy(uri)
                             print(f"Copied {uri} to clipboard.")
                         case "l":
-                            if not (0 <= idx < len(links)):
-                                print("Invalid link number.")
-                                continue
                             this_link = links[idx]
                             pyperclip.copy(this_link)
                             print(f"Copied {this_link} to clipboard.")
