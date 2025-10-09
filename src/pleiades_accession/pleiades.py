@@ -15,7 +15,10 @@ import logging
 from math import cos, radians
 from pathlib import Path
 from platformdirs import user_cache_path
-from pleiades_local.filesystem import PleiadesFilesystem
+from pleiades_local.filesystem import (
+    PleiadesFilesystem,
+    PleiadesFilesystemNotIndexedError,
+)
 from shapely import concave_hull, convex_hull, from_geojson, to_geojson, STRtree
 from shapely.errors import GEOSException
 from shapely.geometry import GeometryCollection, shape
@@ -156,7 +159,7 @@ class Pleiades:
     Manage Pleiades data and queries
     """
 
-    def __init__(self, root_path: Path, names_index_path: Path = None):
+    def __init__(self, root_path: Path, names_index_path: Path = None):  # type: ignore
         """Initialize the Pleiades filesystem manager, which will generate a catalog of
         JSON files if needed."""
         logger = logging.getLogger(f"{__name__}:Pleiades.__init__")
@@ -170,14 +173,31 @@ class Pleiades:
         self._initialize_spatial_index()
         self._initialize_links_index()
 
-    def get(self, pid) -> PleiadesPlace:
+    def get(self, pid) -> PleiadesPlace | None:
         """Get the Pleiades place resource for the specified pid."""
+        logger = logging.getLogger(f"{__name__}:Pleiades.get")
         try:
             return self.places[pid]
         except KeyError:
-            p = PleiadesPlace(self.fs, pid)
-            self.places[pid] = p
-            return p
+            try:
+                p = PleiadesPlace(self.fs, pid)
+            except PleiadesFilesystemNotIndexedError as err:
+                logger.error(str(err))
+                return None
+            else:
+                self.places[pid] = p
+                return p
+
+    def get_links_by_pid(self, pid, target_netloc: str = "") -> list:
+        """Get all links associated with a particular pid."""
+        try:
+            links = self._links_by_pids[pid]
+        except KeyError:
+            return []
+        if target_netloc:
+            return [link for link in links if urlparse(link).netloc == target_netloc]
+        else:
+            return list(links)
 
     def get_pid_by_link(self, link, netloc=None) -> str | None:
         """Get the Pleiades place resource for the specified link."""
@@ -190,7 +210,9 @@ class Pleiades:
         """Initialize the links index."""
         logger = logging.getLogger(f"{__name__}:Pleiades._initialize_links_index")
         self._links_index = dict()
-        for pid in self.fs.index.keys():
+        self._links_by_pids = dict()
+        for pid in self.fs.index.keys():  # type: ignore
+            self._links_by_pids[pid] = set()
             place = self.get(pid)
             for ref in place._raw_data.get("references", []):
                 uri = ref.get("accessURI", "").strip()
@@ -209,12 +231,13 @@ class Pleiades:
                     except KeyError:
                         self._links_index[uri] = set()
                     self._links_index[uri].add(pid)
+                    self._links_by_pids[pid].add(uri)
 
         logger.info(
             f"Generated links index with {len(self._links_index):,} links from Pleiades data"
         )
 
-    def _initialize_names_index(self, names_index_path: Path = None):
+    def _initialize_names_index(self, names_index_path: Path = None):  # type: ignore
         """Initialize the names index, generating it if needed."""
         logger = logging.getLogger(f"{__name__}:Pleiades._initialize_names_index")
         if names_index_path:
@@ -237,7 +260,7 @@ class Pleiades:
         logger = logging.getLogger(f"{__name__}:Pleiades._initialize_spatial_index")
         hulls = list()
         i = 0
-        for pid in self.fs.index.keys():
+        for pid in self.fs.index.keys():  # type: ignore
             place = self.get(pid)
             if place.footprint:
                 self._spatial_index_2_pid[i] = pid

@@ -88,7 +88,7 @@ class CandidateFeature:
         for link in self.feature.get("links", []):
             if link["type"] == "closeMatch":
                 if link["identifier"].startswith("http"):
-                    raw_link = link["identifier"]
+                    raw_link = link["identifier"].strip()
                 else:
                     namespace, identifier = link["identifier"].split(":", 1)
                     if namespace == "pl":
@@ -114,7 +114,7 @@ class CandidateFeature:
                     links.add(raw_link)
                     if validate_url(raw_link)
                     else logging.warning(
-                        f"IGNORED: Invalid URL found in candidate links: {raw_link}"
+                        f"IGNORED: Invalid URL found in candidate links: '{raw_link}'"
                     )
                 )
         return links

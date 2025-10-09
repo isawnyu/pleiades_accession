@@ -13,6 +13,7 @@ import logging
 from math import cos, radians
 from pprint import pformat
 from rapidfuzz import process, fuzz, distance, utils
+from urllib.parse import urlparse
 
 
 @functools.lru_cache(maxsize=None)
@@ -46,8 +47,57 @@ class Matcher:
         logger = logging.getLogger(f"{__name__}:Matcher.match")
         match_vote_totals = dict()
         for cid, candidate in self.candidates.features.items():
+            logger.debug(f"Testing candidate {cid}")
             matched = set()
             match_votes = dict()
+
+            skip_other_tests = False
+            links = candidate.links
+            plinks = {link for link in links if "pleiades.stoa.org" in link}
+            for puri in plinks:
+                pid = [p for p in puri.split("/") if p][-1]
+
+                # first order link matches
+                try:
+                    match_votes[pid]
+                except KeyError:
+                    match_votes[pid] = set()
+                match_votes[pid].add("first-order link")
+                matched.add(pid)
+
+                # reciprocal link matches
+                netloc = urlparse(cid).netloc
+                pleiades_links = self.pleiades.get_links_by_pid(
+                    pid, target_netloc=netloc
+                )
+                logger.debug(
+                    f"Got {len(pleiades_links)} links from Pleiades for this netloc ({netloc})"
+                )
+                if cid in pleiades_links:
+                    match_votes[pid].add("reciprocal link")
+                    skip_other_tests = True
+
+            if skip_other_tests:
+                match_vote_totals[cid] = match_votes
+                logger.debug(
+                    f"Skipping other tests for candidate {cid} due to reciprocal link match"
+                )
+                continue
+
+            # second-order link matches
+            non_plinks = {link for link in links if "pleiades.stoa.org" not in link}
+            for uri in non_plinks:
+                pids = self.pleiades.get_pid_by_link(uri)
+                if not pids:
+                    continue
+                for pid in pids:
+                    try:
+                        match_votes[pid]
+                    except KeyError:
+                        match_votes[pid] = set()
+                    match_votes[pid].add("second-order link")
+                    matched.add(pid)
+
             # spatial overlap/intersection/containment
             candidate_geom = candidate.geometry
             lat = candidate_geom.centroid.y
@@ -118,41 +168,7 @@ class Matcher:
                         match_votes[pid].add("fuzzy name")
                 matched.update(name_fuzzy_matched_pids)
 
-            # link matches
-            links = candidate.links
-            plinks = {link for link in links if "pleiades.stoa.org" in link}
-            for puri in plinks:
-                pid = [p for p in puri.split("/") if p][-1]
-                try:
-                    match_votes[pid]
-                except KeyError:
-                    match_votes[pid] = set()
-                match_votes[pid].add("first-order link")
-                matched.add(pid)
-
-            # second-order link matches
-            non_plinks = {link for link in links if "pleiades.stoa.org" not in link}
-            for uri in non_plinks:
-                pids = self.pleiades.get_pid_by_link(uri)
-                if not pids:
-                    continue
-                for pid in pids:
-                    try:
-                        match_votes[pid]
-                    except KeyError:
-                        match_votes[pid] = set()
-                    match_votes[pid].add("second-order link")
-                    matched.add(pid)
-
             match_vote_totals[cid] = match_votes
-
-            # debugging report
-            if matched:
-                self.matches[cid] = matched
-                logger.debug(f"Candidate {cid} matched Pleiades IDs: {matched}")
-            else:
-                self.unmatched[cid] = candidate
-                logger.debug(f"Candidate {cid} had no matches")
 
         logger.debug(f"Match votes: {pformat(match_vote_totals, indent=4)}")
 
