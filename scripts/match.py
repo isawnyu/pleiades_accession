@@ -84,14 +84,20 @@ def main(**kwargs):
     scores = matcher.match()
     output = dict()
     for k, v in scores.items():
+        good_pids = set()
+        for pid in v.keys():
+            pplace = pleiades.get(pid)
+            if pplace:
+                good_pids.add(pid)
         d = {
             "candidate": candidates.features[k].as_dict(),
             "matches": {
                 pid: {
-                    "place": pleiades.get(pid).as_dict(),
+                    "place": pleiades.get(pid).as_dict(),  # type: ignore
                     "match_types": sorted(list(match_types)),
                 }
                 for pid, match_types in v.items()
+                if pid in good_pids
             },
         }
         output[k] = d
