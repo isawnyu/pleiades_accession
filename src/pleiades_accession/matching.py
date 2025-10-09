@@ -59,6 +59,7 @@ class Matcher:
             skip_other_tests = False
             links = candidate.links
             plinks = {link for link in links if "pleiades.stoa.org" in link}
+
             for puri in plinks:
                 pid = [p for p in puri.split("/") if p][-1]
 
@@ -75,7 +76,6 @@ class Matcher:
                 pleiades_links = self.pleiades.get_links_by_pid(
                     pid, target_netloc=netloc
                 )
-
                 if cid in pleiades_links:
                     match_votes[pid].add("reciprocal link")
                     skip_other_tests = True
@@ -109,9 +109,11 @@ class Matcher:
             )
             spatial_matched_pids = self.pleiades.spatial_query(buffered_geom)
             for pid in spatial_matched_pids:
-                match_votes[pid] = {
-                    "footprint",
-                }
+                try:
+                    match_votes[pid]
+                except KeyError:
+                    match_votes[pid] = set()
+                match_votes[pid].add("footprint")
             matched.update(spatial_matched_pids)
 
             # failing that, spatial proximity
