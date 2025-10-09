@@ -320,7 +320,11 @@ def main(**kwargs):
                             pyperclip.copy(uri)
                             print(f"Copied {uri} to clipboard.")
                         case "l":
-                            this_link = links[idx]
+                            try:
+                                this_link = links[idx]
+                            except IndexError:
+                                print("Invalid link number.")
+                                continue
                             pyperclip.copy(this_link)
                             print(f"Copied {this_link} to clipboard.")
                         case _:
