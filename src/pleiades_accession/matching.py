@@ -127,14 +127,14 @@ class Matcher:
                     match_votes[pid].add("nearest")
                 matched.update(spatial_matched_pids)
 
-            # name string matches within spatial matches
+            # name string matches within first-order links and/or spatial matches
             name_matched_pids = set()
             for name_string in candidate.name_strings:
                 name_matched_pids.update(
                     self.pleiades.names_index.get(name_string, set())
                 )
-            if spatial_matched_pids:
-                name_matched_pids = spatial_matched_pids.intersection(name_matched_pids)
+            if matched:
+                name_matched_pids = matched.intersection(name_matched_pids)
             for pid in name_matched_pids:
                 try:
                     match_votes[pid]
@@ -158,10 +158,8 @@ class Matcher:
                     name_fuzzy_matched_pids.update(
                         self.pleiades.names_index[matched_name]
                     )
-            if spatial_matched_pids:
-                name_fuzzy_matched_pids = spatial_matched_pids.intersection(
-                    name_fuzzy_matched_pids
-                )
+            if matched:
+                name_fuzzy_matched_pids = matched.intersection(name_fuzzy_matched_pids)
             for pid in name_fuzzy_matched_pids:
                 try:
                     match_votes[pid]
