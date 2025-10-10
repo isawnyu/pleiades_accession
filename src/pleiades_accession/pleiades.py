@@ -8,6 +8,7 @@
 """
 Manage Pleiades data and queries
 """
+import csv
 from datetime import datetime, timedelta
 import functools
 import json
@@ -58,6 +59,7 @@ class PleiadesPlace:
             "uri": f"https://pleiades.stoa.org/places/{self.pid}",
             "title": self.title,
             "name_strings": list(self.name_strings),
+            "precision": self.precision,
             # "raw_data": self._raw_data,
         }
         return d
@@ -150,6 +152,32 @@ class PleiadesPlace:
         return h
 
     @property
+    @functools.lru_cache(maxsize=None)
+    def place_type_uris(self) -> set:
+        """Return a set containing all place types for the place."""
+        place_types = {pt for pt in self._raw_data.get("placeTypeURIs", []) if pt}
+        for loc in self._raw_data.get("locations", []):
+            place_types.update(loc.get("locationTypeURI", []))
+        return place_types
+
+    @property
+    @functools.lru_cache(maxsize=None)
+    def precision(self) -> str:
+        """Return the overall precision of the place."""
+        precisions = set()
+        for i, loc in enumerate(self._raw_data.get("locations", [])):
+            if loc["geometry"]:
+                precisions.add(
+                    self._raw_data["features"][i]["properties"]["location_precision"]
+                )
+        if "precise" in precisions:
+            return "precise"
+        elif "rough" in precisions:
+            return "rough"
+        else:
+            return "unknown"
+
+    @property
     def title(self) -> str:
         """Return the title of the place."""
         return self._raw_data["title"].strip()
@@ -164,11 +192,16 @@ class Pleiades:
         """Initialize the Pleiades filesystem manager, which will generate a catalog of
         JSON files if needed."""
         logger = logging.getLogger(f"{__name__}:Pleiades.__init__")
+        if not isinstance(root_path, Path):
+            self.root_path = Path(root_path)
+        else:
+            self.root_path = root_path
         self.fs = PleiadesFilesystem(root_path)
         self.places = dict()
         logger.info(f"Loaded {len(self.fs):,} Pleiades place resources.")
         self.names_index = dict()
         self._initialize_names_index(names_index_path)
+        self._place_type_vocabulary = dict()
         self._spatial_index = None
         self._spatial_index_2_pid = dict()
         self._initialize_spatial_index()
@@ -215,7 +248,7 @@ class Pleiades:
         for pid in self.fs.index.keys():  # type: ignore
             self._links_by_pids[pid] = set()
             place = self.get(pid)
-            for ref in place._raw_data.get("references", []):
+            for ref in place._raw_data.get("references", []):  # type: ignore
                 uri = ref.get("accessURI", "").strip()
                 if not uri:
                     continue
@@ -256,10 +289,10 @@ class Pleiades:
         i = 0
         for pid in self.fs.index.keys():  # type: ignore
             place = self.get(pid)
-            if place.footprint:
+            if place.footprint:  # type: ignore
                 self._spatial_index_2_pid[i] = pid
                 i += 1
-                hulls.append(place.footprint)
+                hulls.append(place.footprint)  # type: ignore
         self._spatial_index = STRtree(hulls)
         logger.info(
             f"Generated spatial index with {len(self._spatial_index_2_pid):,} place footprints from Pleiades data"
@@ -284,6 +317,59 @@ class Pleiades:
     def __len__(self):
         """Return the number of places in the Pleiades data set"""
         return len(self.fs)
+
+    @functools.lru_cache(maxsize=None)
+    def get_place_types(self, pid: str) -> set:
+        """Return the set of place types for the specified pid."""
+        logger = logging.getLogger(f"{__name__}:Pleiades.get_place_types")
+        place = self.get(pid)
+        if not self._place_type_vocabulary:
+            vocab_path = (self.root_path / "../gis/place_types.csv").resolve()
+            with open(vocab_path, "r", encoding="utf-8-sig") as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                    logger.error(pformat(row))
+                    self._place_type_vocabulary[
+                        f"https://pleiades.stoa.org/vocabularies/place-types/{row['key']}"
+                    ] = {
+                        t.replace("(deprecated)", "").strip()
+                        for t in row["term"].split(",")
+                        if t.strip()
+                    }
+            del f
+            for k, v in self._place_type_vocabulary.items():
+                alternates = set()
+                for t in v:
+                    if "(" in t:
+                        alt_t = t.split("(", 1)[0].strip()
+                        if alt_t and alt_t != t:
+                            alternates.add(alt_t)
+                v.update(alternates)
+            logger.info(
+                f"Loaded {len(self._place_type_vocabulary):,} place type keys from {vocab_path}"
+            )
+        if place:
+            uris = place.place_type_uris
+            terms = set()
+            for uri in uris:
+                try:
+                    these_terms = self._place_type_vocabulary.get(uri, set())
+                except Exception as err:
+                    err.add_note(
+                        f"Failed lookup of place type vocabulary for pid '{pid}' on uri '{pformat(uri)}' from with place_type_uris: {pformat(place.place_type_uris, indent=4)}"
+                    )
+                    raise err
+                else:
+                    try:
+                        terms.update(these_terms)
+                    except TypeError as err:
+                        err.add_note(
+                            f"Failed addition of place type vocabulary term '{pformat(these_terms)}' for pid '{pid}' on uri '{pformat(uri)}' from with place_type_uris: {pformat(place.place_type_uris, indent=4)}"
+                        )
+                        raise err
+            return terms
+        else:
+            return set()
 
     def spatial_query(self, geometry):
         """Return Pleiades places within which this geometry intersects."""

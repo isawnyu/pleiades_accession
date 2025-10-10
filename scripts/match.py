@@ -100,6 +100,8 @@ def main(**kwargs):
                 if pid in good_pids
             },
         }
+        for pid, place in d["matches"].items():
+            place["place"]["place_types"] = sorted(list(pleiades.get_place_types(pid)))
         output[k] = d
     print(json.dumps(output, indent=2, ensure_ascii=False))
 
