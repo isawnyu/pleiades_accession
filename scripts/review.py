@@ -224,6 +224,11 @@ def main(**kwargs):
         )
         print(f"{len(weighted_matches):,} matches found:")
         for i, weighted_match in enumerate(weighted_matches):
+            if i >= 5:
+                print(
+                    f"... and {len(weighted_matches) - i} more matches (use command '(w)hole' to see all)."
+                )
+                break
             m, w = weighted_match
             place = m["place"]
             match_types = m.get("match_types", [])
@@ -258,6 +263,22 @@ def main(**kwargs):
                 )
                 print("  n, next      to move on to next candidate")
                 print("  q, quit      to exit")
+                continue
+            elif s == {"w", "whole"}:
+                for i, weighted_match in enumerate(weighted_matches):
+                    m, w = weighted_match
+                    place = m["place"]
+                    match_types = m.get("match_types", [])
+                    print("-" * 80)
+                    print(
+                        f"{i+1}. {place.get('title', 'NO TITLE')} ({place.get('pid', 'NO PID')})"
+                    )
+                    print(place["uri"])
+                    print(
+                        f"Match types: {', '.join(match_types) if match_types else 'NONE'}"
+                    )
+                    names = sorted(place.get("name_strings", []))
+                    print(", ".join(names) if names else "NO NAMES")
                 continue
             elif s in {"n", "next", "s", "skip"}:
                 break
