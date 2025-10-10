@@ -174,7 +174,10 @@ def main(**kwargs):
         print("Exiting.")
         exit()
 
+    i = 0
+    total = len(j)
     for candidate_id, v in j.items():
+        i += 1
         if candidate_id in accession_ids:
             print(
                 f"Skipping candidate {candidate_id} (already marked for accessioning)."
@@ -198,9 +201,14 @@ def main(**kwargs):
 
         print("\n" * 2)
         print("=" * 80)
+        print(f"Candidate {i} of {total} ({candidate_id})")
         names = sorted(c.get("name_strings", []))
         print(", ".join(names))
         print(candidate_id)
+        place_types = sorted(c["properties"].get("place_types", []))
+        place_types = ", ".join(place_types)
+        if place_types:
+            print(f"Place types: {place_types}")
         links = sorted(c.get("links", []))
         for link in links:
             print(f" - {link}")
@@ -236,7 +244,7 @@ def main(**kwargs):
         weighted_matches = sorted(
             [(m, weight(m, weights)) for m in matches.values()], key=lambda x: x[1]
         )
-        print(f"{len(weighted_matches):,} matches found:")
+        print(f"\n{len(weighted_matches):,} matches found:")
         for i, weighted_match in enumerate(weighted_matches):
             if i >= 5:
                 print(
@@ -251,9 +259,13 @@ def main(**kwargs):
                 f"{i+1}. {place.get('title', 'NO TITLE')} ({place.get('pid', 'NO PID')})"
             )
             print(place["uri"])
-            print(f"Match types: {', '.join(match_types) if match_types else 'NONE'}")
             names = sorted(place.get("name_strings", []))
             print(", ".join(names) if names else "NO NAMES")
+            place_types = sorted(place.get("place_types", []))
+            place_types = ", ".join(place_types)
+            if place_types:
+                print(f"Place types: {place_types}")
+            print(f"Match types: {', '.join(match_types) if match_types else 'NONE'}")
         while True:
             s = input("> ")
             s = s.lower().strip()
