@@ -174,10 +174,10 @@ def main(**kwargs):
         print("Exiting.")
         exit()
 
-    i = 0
+    candidate_i = 0
     total = len(j)
     for candidate_id, v in j.items():
-        i += 1
+        candidate_i += 1
         if candidate_id in accession_ids:
             print(
                 f"Skipping candidate {candidate_id} (already marked for accessioning)."
@@ -201,7 +201,7 @@ def main(**kwargs):
 
         print("\n" * 2)
         print("=" * 80)
-        print(f"Candidate {i} of {total} ({candidate_id})")
+        print(f"Candidate {candidate_i} of {total} ({candidate_id})")
         names = sorted(c.get("name_strings", []))
         print(", ".join(names))
         print(candidate_id)
