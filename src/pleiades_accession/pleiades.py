@@ -328,7 +328,6 @@ class Pleiades:
             with open(vocab_path, "r", encoding="utf-8-sig") as f:
                 reader = csv.DictReader(f)
                 for row in reader:
-                    logger.error(pformat(row))
                     self._place_type_vocabulary[
                         f"https://pleiades.stoa.org/vocabularies/place-types/{row['key']}"
                     ] = {

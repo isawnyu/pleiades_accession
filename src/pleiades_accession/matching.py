@@ -56,10 +56,10 @@ class Matcher:
             matched = set()
             match_votes = dict()
 
+            # first-order and reciprocal links
             skip_other_tests = False
             links = candidate.links
             plinks = {link for link in links if "pleiades.stoa.org" in link}
-
             for puri in plinks:
                 pid = [p for p in puri.split("/") if p][-1]
 
@@ -91,8 +91,8 @@ class Matcher:
             non_plinks = {link for link in links if "pleiades.stoa.org" not in link}
             for uri in non_plinks:
                 pids = self.pleiades.get_pid_by_link(uri)
-                if not pids:
-                    continue
+                if pids is None:
+                    pids = list()
                 for pid in pids:
                     try:
                         match_votes[pid]
@@ -133,16 +133,15 @@ class Matcher:
                 name_matched_pids.update(
                     self.pleiades.names_index.get(name_string, set())
                 )
+            if spatial_matched_pids:
+                name_matched_pids = spatial_matched_pids.intersection(name_matched_pids)
             for pid in name_matched_pids:
                 try:
                     match_votes[pid]
                 except KeyError:
                     match_votes[pid] = set()
                 match_votes[pid].add("exact name")
-            if spatial_matched_pids:
-                matched.update(spatial_matched_pids.intersection(name_matched_pids))
-            else:
-                matched.update(name_matched_pids)
+            matched.update(name_matched_pids)
 
             # near name string matches within spatial matches
             name_fuzzy_matched_pids = set()
@@ -159,19 +158,37 @@ class Matcher:
                     name_fuzzy_matched_pids.update(
                         self.pleiades.names_index[matched_name]
                     )
-            if name_fuzzy_matched_pids:
-                if spatial_matched_pids:
-                    name_fuzzy_matched_pids = spatial_matched_pids.intersection(
-                        name_fuzzy_matched_pids
-                    )
-                for pid in name_fuzzy_matched_pids:
-                    if pid in matched:
-                        try:
-                            match_votes[pid]
-                        except KeyError:
-                            match_votes[pid] = set()
-                        match_votes[pid].add("fuzzy name")
-                matched.update(name_fuzzy_matched_pids)
+            if spatial_matched_pids:
+                name_fuzzy_matched_pids = spatial_matched_pids.intersection(
+                    name_fuzzy_matched_pids
+                )
+            for pid in name_fuzzy_matched_pids:
+                try:
+                    match_votes[pid]
+                except KeyError:
+                    match_votes[pid] = set()
+                match_votes[pid].add("fuzzy name")
+            matched.update(name_fuzzy_matched_pids)
+
+            if matched != set(match_votes.keys()):
+                err = ValueError(
+                    f"Internal error: matched Pleiades IDs {matched} != match votes keys {set(match_votes.keys())} for candidate {cid}"
+                )
+                err.add_note(f"Match votes: {pformat(match_votes, indent=4)}")
+                raise err
+
+            # place type matches
+            candidate_place_types = candidate.place_type_strings
+            for pid in matched:
+                pleiades_place_types = self.pleiades.get_place_types(pid)
+                if candidate_place_types.intersection(pleiades_place_types):
+                    try:
+                        match_votes[pid].add("place type")
+                    except KeyError as err:
+                        err.add_note(
+                            f"Error adding place type match vote for candidate {cid} and Pleiades place {pid}: {pformat(match_votes, indent=4)}"
+                        )
+                        raise err
 
             match_vote_totals[cid] = match_votes
 

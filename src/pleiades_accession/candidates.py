@@ -119,6 +119,18 @@ class CandidateFeature:
                 )
         return links
 
+    @property
+    @functools.lru_cache(maxsize=None)
+    def place_type_strings(self) -> set:
+        """Return a set containing all place type strings for the place."""
+        try:
+            return set(self.properties.get("place_types", []))
+        except TypeError as err:
+            err.add_note(
+                f"Error processing place types {self.properties['place_types']} for candidate {self.id}: {err}"
+            )
+            raise err
+
 
 class CandidateDataset:
     """
