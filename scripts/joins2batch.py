@@ -12,13 +12,16 @@ Script to convert a pleiades_acccession joins text file to a JSON file for use b
 from airtight.cli import configure_commandline
 import json
 import logging
+from os import environ
 from pathlib import Path
-from pprint import pformat
+from pprint import pformat, pprint
 import pywikibot
 from pywikibot.exceptions import IsRedirectPageError
 import re
+from requests.exceptions import HTTPError
 from urllib.parse import urlparse
 from validators import url as valid_url
+from webiquette.webi import Webi
 
 logger = logging.getLogger(__name__)
 
@@ -65,6 +68,12 @@ known_netlocs = {
         "short_title": "Wikipedia (English)",
         "type": "seeFurther",
     },
+    "www.geonames.org": {
+        "bibliographic_uri": "https://www.zotero.org/groups/2533/items/IIFE4W6M",
+        "formatted_citation": '<div class="csl-entry">Marc Wick, and Christophe Boutreux. <i>GeoNames</i>, 2005-. https://www.geonames.org/.</div>',
+        "short_title": "GeoNames",
+        "type": "citesAsRelated",
+    },
     "topostext.org": {
         "bibliographic_uri": "https://www.zotero.org/groups/2533/items/MC9RGDVB",
         "formatted_citation": '<div class="csl-entry">Kiesling, Brady. <i>ToposText – a Reference Tool for Greek Civilization</i>. Version 2.0. Aikaterini Laskaridis Foundation, 2016-. https://topostext.org/.</div>',
@@ -86,6 +95,7 @@ known_netlocs = {
 }
 apis = {}
 webis = dict()
+rx_geonames_id = re.compile(r"^https?://(www\.)?geonames\.org/([0-9]+)(/.*)?$")
 rx_wikidata_item = re.compile(r"^https?://www.wikidata.org/wiki/(Q[0-9]+)$")
 rx_whg_alias_netloc = re.compile(r"^([^\s]+):(.+)$")
 
@@ -125,6 +135,36 @@ def _get_title_from_en_wikipedia_org(uri):
     """
     parts = urlparse(uri)
     title = parts.path.split("/wiki/")[-1].replace("_", " ")
+    return title
+
+
+def _get_title_from_www_geonames_org(uri):
+    """
+    get title from geonames page
+    """
+    m = rx_geonames_id.match(uri)
+    if not m:
+        logger.error(f"Could not parse GeoNames ID from {uri}")
+        return None
+    geoname_id = m.group(2)
+    webi = get_webi("www.geonames.org")
+    base_url = f"http://api.geonames.org/"
+    endpoint = "getJSON"
+    params = {
+        "username": environ.get("GEONAMES_API_USERNAME"),
+        "geonameId": geoname_id,
+    }
+    try:
+        r = webi.get(base_url + endpoint, params=params)
+    except HTTPError as err:
+        logger.error(f"GeoNames API request for ID {geoname_id} failed: {err}")
+        return None
+    if r.status_code != 200:
+        logger.error(
+            f"GeoNames API request for ID {geoname_id} failed with status code {r.status_code}: {r.text}"
+        )
+        return None
+    title = r.json().get("toponymName")
     return title
 
 
@@ -220,14 +260,16 @@ def main(**kwargs):
                 if m:
                     netloc = m.group(1)
                     identifier = m.group(2)
-                    if netloc == "wp":
-                        link_uri = f"https://en.wikipedia.org/wiki/{identifier}"
-                    elif netloc == "wd":
-                        link_uri = f"https://www.wikidata.org/wiki/{identifier}"
+                    if netloc == "gn":
+                        link_uri = f"https://www.geonames.org/{identifier}"
                     elif netloc == "pl":
                         link_uri = f"https://pleiades.stoa.org/places/{identifier}"
                     elif netloc == "tgn":
                         link_uri = f"http://vocab.getty.edu/tgn/{identifier}"
+                    elif netloc == "wd":
+                        link_uri = f"https://www.wikidata.org/wiki/{identifier}"
+                    elif netloc == "wp":
+                        link_uri = f"https://en.wikipedia.org/wiki/{identifier}"
                     else:
                         logger.warning(
                             f"Unrecognized WHG netloc alias '{netloc}' in link '{pformat(link, indent=4)}' in {external_uri} LPF; skipping."
