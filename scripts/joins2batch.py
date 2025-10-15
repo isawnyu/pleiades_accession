@@ -18,7 +18,7 @@ import pywikibot
 from pywikibot.exceptions import IsRedirectPageError
 import re
 from urllib.parse import urlparse
-from webiquette.webi import Webi
+from validators import url as valid_url
 
 logger = logging.getLogger(__name__)
 
@@ -59,15 +59,27 @@ WEBI_HEADER = {
 }
 
 known_netlocs = {
+    "en.wikipedia.org": {
+        "bibliographic_uri": "https://www.zotero.org/groups/2533/items/CI6F6W7W",
+        "formatted_citation": '<div class="csl-entry"><i>Wikipedia: The Free Encyclopedia That Anyone Can Edit</i>. Wikimedia Foundation, 2001-. https://en.wikipedia.org.</div>',
+        "short_title": "Wikipedia (English)",
+        "type": "seeFurther",
+    },
     "topostext.org": {
         "bibliographic_uri": "https://www.zotero.org/groups/2533/items/MC9RGDVB",
-        "formatted_citation": '<div class="csl-entry">Kiesling, Brady. <i>ToposText – a Reference Tool for Greek Civilization</i>. Version 2.0. Aikaterini Laskaridis Foundation, 2016. https://topostext.org/.</div>',
+        "formatted_citation": '<div class="csl-entry">Kiesling, Brady. <i>ToposText – a Reference Tool for Greek Civilization</i>. Version 2.0. Aikaterini Laskaridis Foundation, 2016-. https://topostext.org/.</div>',
         "short_title": "ToposText",
+        "type": "citesAsRelated",
+    },
+    "whgazetteer.org": {
+        "bibliographic_uri": "https://www.zotero.org/groups/2533/items/RHX229R6",
+        "formatted_citation": '<div class="csl-entry">Mostern, Ruth, Alexandra Straub, Stephen Gadd, Karl Grossner, and David Ruvolo, eds. <i>World Historical Gazetteer: Linking Knowledge about the Past via Place</i>. Pittsburgh, PA: The World History Center at University of Pittsburgh, 2017-. http://whgazetteer.org/.</div>',
+        "short_title": "WHG",
         "type": "citesAsRelated",
     },
     "www.wikidata.org": {
         "bibliographic_uri": "https://www.zotero.org/groups/2533/items/BCQIKDKS",
-        "formatted_citation": '<div class="csl-entry"><i>Wikidata: The Free Knowledge Base That Anyone Can Edit</i>. Wikimedia Foundation, 2014. https://www.wikidata.org/.</div>',
+        "formatted_citation": '<div class="csl-entry"><i>Wikidata: The Free Knowledge Base That Anyone Can Edit</i>. Wikimedia Foundation, 2014-. https://www.wikidata.org/.</div>',
         "short_title": "Wikidata",
         "type": "citesAsRelated",
     },
@@ -75,6 +87,7 @@ known_netlocs = {
 apis = {}
 webis = dict()
 rx_wikidata_item = re.compile(r"^https?://www.wikidata.org/wiki/(Q[0-9]+)$")
+rx_whg_alias_netloc = re.compile(r"^([^\s]+):(.+)$")
 
 
 def _get_wikidata_item(item_id) -> dict | None:
@@ -104,6 +117,15 @@ def get_webi(netloc):
         webi = Webi(netloc=netloc, headers=WEBI_HEADER, respect_robots_txt=False)
         webis[netloc] = webi
     return webi
+
+
+def _get_title_from_en_wikipedia_org(uri):
+    """
+    get title from wikipedia page
+    """
+    parts = urlparse(uri)
+    title = parts.path.split("/wiki/")[-1].replace("_", " ")
+    return title
 
 
 def _get_title_from_www_wikidata_org(uri):
@@ -193,13 +215,31 @@ def main(**kwargs):
             if link["type"] != "closeMatch":
                 continue
             link_uri = link["identifier"]
+            if not valid_url(link_uri):
+                m = rx_whg_alias_netloc.match(link_uri)
+                if m:
+                    netloc = m.group(1)
+                    identifier = m.group(2)
+                    if netloc == "wp":
+                        link_uri = f"https://en.wikipedia.org/wiki/{identifier}"
+                    elif netloc == "wd":
+                        link_uri = f"https://www.wikidata.org/wiki/{identifier}"
+                    elif netloc == "pl":
+                        link_uri = f"https://pleiades.stoa.org/places/{identifier}"
+                    elif netloc == "tgn":
+                        link_uri = f"http://vocab.getty.edu/tgn/{identifier}"
+                    else:
+                        logger.warning(
+                            f"Unrecognized WHG netloc alias '{netloc}' in link '{pformat(link, indent=4)}' in {external_uri} LPF; skipping."
+                        )
+                        continue
             parts = urlparse(link_uri)
             netloc = parts.netloc
             if netloc == "pleiades.stoa.org":
                 continue
             if netloc not in link_netlocs:
                 logger.info(
-                    f"Encountered new netloc {netloc} from link in {external_uri} LPF. Not supported for addition via the --netloc command-line argument, so skipping."
+                    f"Encountered new netloc '{netloc}' from link '{pformat(link, indent=4)}' in {external_uri} LPF. Not supported for addition via the --netloc command-line argument, so skipping."
                 )
                 continue
             base_ref = known_netlocs.get(netloc)
