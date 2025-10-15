@@ -308,7 +308,7 @@ def main(**kwargs):
                 print("  n, next      to move on to next candidate")
                 print("  q, quit      to exit")
                 continue
-            elif s == {"w", "whole"}:
+            elif s in {"w", "whole"}:
                 for i, weighted_match in enumerate(weighted_matches):
                     m, w = weighted_match
                     place = m["place"]
