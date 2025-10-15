@@ -28,7 +28,7 @@ default_pleiades_names_index_path = (
 
 logger = logging.getLogger(__name__)
 
-DEFAULT_LOG_LEVEL = logging.WARNING
+DEFAULT_LOG_LEVEL = logging.INFO
 OPTIONAL_ARGUMENTS = [
     [
         "-l",

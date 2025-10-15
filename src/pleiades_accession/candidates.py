@@ -35,6 +35,7 @@ class CandidateFeature:
         self.id = feature["@id"]
         self.geometry = shape(feature.get("geometry", dict()))
         self.properties = feature.get("properties", dict())
+        self.properties["place_types"] = list(self.place_type_strings)
         if (
             self.id.startswith("https://whgazetteer.org/api/db/?id=")
             and self.feature.get("names", []) == []
@@ -123,13 +124,18 @@ class CandidateFeature:
     @functools.lru_cache(maxsize=None)
     def place_type_strings(self) -> set:
         """Return a set containing all place type strings for the place."""
+        pts = set()
         try:
-            return set(self.properties.get("place_types", []))
+            pts.update(self.properties.get("place_types", []))
         except TypeError as err:
             err.add_note(
-                f"Error processing place types {self.properties['place_types']} for candidate {self.id}: {err}"
+                f"Error processing place types from properties {self.properties['place_types']} for candidate {self.id}: {err}"
             )
             raise err
+        for pt in self.feature.get("types", []):
+            pts.add(pt["label"])
+            pts.add(pt["sourceLabel"])
+        return pts
 
 
 class CandidateDataset:
