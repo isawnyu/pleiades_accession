@@ -324,6 +324,9 @@ def main(**kwargs):
                 continue
             elif s in {"c", "candidate"}:
                 uri = candidate_id
+                if uri.startswith("https://whgazetteer.org/api/db/?id="):
+                    raw_id = uri.split("=", 1)[1]
+                    uri = f"https://whgazetteer.org/places/{raw_id}/detail"
                 pyperclip.copy(uri)
                 print(f"Copied {uri} to clipboard.")
                 continue
