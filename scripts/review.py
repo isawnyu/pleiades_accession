@@ -90,23 +90,25 @@ def main(**kwargs):
     accession_path = outpath / "to_accession.txt"
     followup_ids = set()
     followup_path = outpath / "follow_up.txt"
+    ignore_ids = set()
+    ignore_path = outpath / "ignore.txt"
     joins = dict()
     join_path = outpath / "to_join.txt"
     # backup previous session
-    last_modified = datetime.min
-    if (accession_path).exists():
-        last_modified = datetime.fromtimestamp(accession_path.stat().st_mtime)
-    if (followup_path).exists():
-        last_modified = max(
-            last_modified, datetime.fromtimestamp(followup_path.stat().st_mtime)
-        )
-    if last_modified > datetime.min:
+    last_modified = datetime.fromtimestamp(outpath.stat().st_mtime)
+    content_exists = False
+    for this_path in [accession_path, followup_path, ignore_path, join_path]:
+        if this_path.exists():
+            content_exists = True
+            last_modified = max(
+                last_modified, datetime.fromtimestamp(this_path.stat().st_mtime)
+            )
+    if content_exists:
         previous_path = outpath / "previous" / last_modified.isoformat()
         previous_path.mkdir(parents=True, exist_ok=True)
-        if (accession_path).exists():
-            shutil.copy(accession_path, previous_path / accession_path.name)
-        if (followup_path).exists():
-            shutil.copy(followup_path, previous_path / followup_path.name)
+        for this_path in [accession_path, followup_path, ignore_path, join_path]:
+            if this_path.exists():
+                shutil.copy(this_path, previous_path / this_path.name)
 
     if not kwargs["continue"]:
         print(
@@ -119,6 +121,8 @@ def main(**kwargs):
             exit()
         accession_path.unlink(missing_ok=True)
         followup_path.unlink(missing_ok=True)
+        ignore_path.unlink(missing_ok=True)
+        join_path.unlink(missing_ok=True)
     else:
         print(
             "Continuing from previous session. Previous output files (if any) will be appended to."
@@ -162,6 +166,16 @@ def main(**kwargs):
             print(f"Loaded {len(joins):,} previously marked joins from {join_path}.")
         else:
             print(f"No previous join file found at {join_path}; starting fresh.")
+        if (ignore_path).exists():
+            with open(ignore_path, "r", encoding="utf-8") as f:
+                for line in f:
+                    ignore_ids.add(line.strip())
+            del f
+            print(
+                f"Loaded {len(ignore_ids):,} previously ignored candidates from {ignore_path}."
+            )
+        else:
+            print(f"No previous ignore file found at {ignore_path}; starting fresh.")
 
     matchfile_path = Path(kwargs["matchfile"]).expanduser().resolve()
     with open(matchfile_path, "r", encoding="utf-8") as f:
@@ -188,6 +202,9 @@ def main(**kwargs):
             continue
         elif candidate_id in joins.keys():
             print(f"Skipping candidate {candidate_id} (already marked to join).")
+            continue
+        elif candidate_id in ignore_ids:
+            print(f"Skipping candidate {candidate_id} (already marked to be ignored).")
             continue
         c = v["candidate"]
         matches = v["matches"]
@@ -280,6 +297,7 @@ def main(**kwargs):
                     "  centroid     to copy candidate centroid (lat, lon) to clipboard"
                 )
                 print("  f, followup  to mark candidate for follow-up")
+                print("  i, ignore    to mark candidate to be ignored")
                 print("  jN           to join candidate to match N (e.g. j1, j2, ...)")
                 print(
                     "  lN           to copy link N from candidate to clipboard (e.g. l1, l2, ...)"
@@ -306,8 +324,15 @@ def main(**kwargs):
                     names = sorted(place.get("name_strings", []))
                     print(", ".join(names) if names else "NO NAMES")
                 continue
-            elif s in {"n", "next", "s", "skip"}:
+            elif s in {"n", "next"}:
                 break
+            elif s in {"i", "ignore"}:
+                ignore_ids.add(candidate_id)
+                print(f"Candidate {candidate_id} marked to be ignored.")
+                with open(ignore_path, "a", encoding="utf-8") as f:
+                    f.write(f"{candidate_id}\n")
+                del f
+                continue
             elif s in {"a", "accession"}:
                 accession_ids.add(candidate_id)
                 print(f"Candidate {candidate_id} marked for accessioning.")
