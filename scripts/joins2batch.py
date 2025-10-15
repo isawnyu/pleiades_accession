@@ -80,6 +80,13 @@ known_netlocs = {
         "short_title": "ToposText",
         "type": "citesAsRelated",
     },
+    "vocab.getty.edu": {
+        # assumption is we are using the TGN
+        "bibliographic_uri": "https://www.zotero.org/groups/2533/items/ZLJQ5AZJ",
+        "formatted_citation": '<div class="csl-entry"><i>Getty Thesaurus of Geographic Names® Online</i>, n.d. https://www.getty.edu/research/tools/vocabularies/tgn/.</div>',
+        "short_title": "TGN",
+        "type": "citesAsRelated",
+    },
     "whgazetteer.org": {
         "bibliographic_uri": "https://www.zotero.org/groups/2533/items/RHX229R6",
         "formatted_citation": '<div class="csl-entry">Mostern, Ruth, Alexandra Straub, Stephen Gadd, Karl Grossner, and David Ruvolo, eds. <i>World Historical Gazetteer: Linking Knowledge about the Past via Place</i>. Pittsburgh, PA: The World History Center at University of Pittsburgh, 2017-. http://whgazetteer.org/.</div>',
@@ -96,6 +103,7 @@ known_netlocs = {
 apis = {}
 webis = dict()
 rx_geonames_id = re.compile(r"^https?://(www\.)?geonames\.org/([0-9]+)(/.*)?$")
+rx_tgn_id = re.compile(r"^https?://vocab\.getty\.edu/tgn/([0-9]+)$")
 rx_wikidata_item = re.compile(r"^https?://www.wikidata.org/wiki/(Q[0-9]+)$")
 rx_whg_alias_netloc = re.compile(r"^([^\s]+):(.+)$")
 
@@ -165,6 +173,33 @@ def _get_title_from_www_geonames_org(uri):
         )
         return None
     title = r.json().get("toponymName")
+    return title
+
+
+def _get_title_from_vocab_getty_edu(uri):
+    """
+    get title from TGN page
+    """
+    m = rx_tgn_id.match(uri)
+    if not m:
+        logger.error(f"Could not parse TGN ID from {uri}")
+        return None
+    tgn_id = m.group(1)
+    webi = get_webi("vocab.getty.edu")
+    try:
+        r = webi.get(f"http://vocab.getty.edu/tgn/{tgn_id}.json")
+    except HTTPError as err:
+        logger.error(f"TGN request for ID {tgn_id} failed: {err}")
+        return None
+    if r.status_code != 200:
+        logger.error(
+            f"TGN request for ID {tgn_id} failed with status code {r.status_code}: {r.text}"
+        )
+        return None
+    j = r.json()
+    title = [node for node in j.get("identified_by") if node.get("type") == "Name"][0][
+        "content"
+    ].strip()
     return title
 
 
@@ -244,6 +279,15 @@ def main(**kwargs):
                 f"netloc {netloc} from {external_uri} not found in known_netlocs; please update the script with bibliographic details for this base URI"
             )
         ref = dict(base_ref)
+        if external_uri.startswith("https://whgazetteer.org/api/db/?id="):
+            m = re.match(
+                r"^https?://whgazetteer\.org/api/db/\?id=([0-9]+)$", external_uri
+            )
+            if not m:
+                logger.error(f"Could not parse WHG ID from {external_uri}")
+                continue
+            whg_id = m.group(1)
+            external_uri = f"http://whgazetteer.org/places/{whg_id}/detail"
         ref["access_uri"] = external_uri
         ref["citation_detail"] = title.strip()
         additions[f"https://pleiades.stoa.org/places/{pid}"] = [
