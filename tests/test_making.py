@@ -6,122 +6,30 @@
 #
 
 """
-Test the candidates module
+Test the making module
 """
-
-import json
+import logging
 from pathlib import Path
-from platformdirs import user_cache_path
-from pleiades_accession.candidates import CandidateDataset, CandidateFeature
+from pleiades_accession.making import Maker, LPFPlace
+from pprint import pprint, pformat
 
 test_data_path = Path(__file__).parent / "data"
-test_cache_path = user_cache_path("pleiades_accession_test", ensure_exists=True)
 
 
-class TestCandidatesDataset:
+class TestMaker:
     def test_init(self):
-        p = CandidateDataset(test_data_path / "gethin_monasteries.json")
+        m = Maker()
+        assert isinstance(m, Maker)
 
-
-class TestCandidateFeature:
-    def test_init(self):
-        s = """
-            {
-                "type": "Feature",
-                "@id": "https://whgazetteer.org/api/db/?id=6524428",
-                "properties": {
-                    "pid": 6524428,
-                    "src_id": "wgm5",
-                    "title": "Chaul",
-                    "ccodes": [
-                    "IN"
-                    ],
-                    "comment": []
-                },
-                "geometry": {
-                    "type": "GeometryCollection",
-                    "geometries": [
-                    {
-                        "type": "MultiPoint",
-                        "citation": {
-                        "id": "wd:Q1068374",
-                        "label": "Wikidata"
-                        },
-                        "coordinates": [
-                        [
-                            72.9272,
-                            18.5461
-                        ]
-                        ]
-                    },
-                    {
-                        "type": "Point",
-                        "geowkt": "POINT(72.947 18.568)",
-                        "coordinates": [
-                        72.947,
-                        18.568
-                        ]
-                    }
-                    ]
-                },
-                "names": [
-                    {
-                    "lang": "",
-                    "toponym": "Chaul",
-                    "citations": [
-                        {
-                        "id": "https://doi.org/10.5281/zenodo.998080",
-                        "label": "10.5281/zenodo.998080"
-                        }
-                    ]
-                    }
-                ],
-                "types": [
-                    {
-                    "label": "",
-                    "identifier": "",
-                    "sourceLabel": "Buddhist monastery"
-                    },
-                    {
-                    "label": "",
-                    "identifier": "",
-                    "sourceLabel": "Satavahana"
-                    },
-                    {
-                    "label": "",
-                    "identifier": "",
-                    "sourceLabel": "Early Historic"
-                    }
-                ],
-                "links": [
-                    {
-                    "type": "closeMatch",
-                    "identifier": "wd:Q1068374"
-                    },
-                    {
-                    "type": "closeMatch",
-                    "identifier": "gn:1274503"
-                    },
-                    {
-                    "type": "closeMatch",
-                    "identifier": "viaf:245125742"
-                    }
-                ],
-                "when": {
-                    "timespans": [
-                    {
-                        "end": {
-                        "latest": "0449"
-                        },
-                        "start": {
-                        "earliest": "0100"
-                        }
-                    }
-                    ]
-                }
-            }"""
-        j = json.loads(s)
-        f = CandidateFeature(j)
-        assert f.id == "https://whgazetteer.org/api/db/?id=6524428"
-        assert f.geometry.geom_type == "GeometryCollection"
-        assert f.properties["pid"] == 6524428
+    def test_make_from_wsg(self):
+        m = Maker()
+        assert isinstance(m, Maker)
+        place = m.make(
+            sources=[
+                "https://whgazetteer.org/api/db/?id=6691895",
+            ]
+        )
+        assert len(m.places) == 1
+        assert isinstance(place, LPFPlace)
+        logger = logging.getLogger(f"{__name__}.{self.__class__.__name__}")
+        logger.info(pformat(place.to_dict(), indent=2))
