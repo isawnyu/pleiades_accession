@@ -10,16 +10,12 @@ Test the pleiades module
 """
 
 from pathlib import Path
-from pleiades_accession.matching import Matcher
-from pleiades_accession.pleiades import Pleiades
-from pleiades_accession.candidates import CandidateDataset
+from pleiades_accession.making import Maker
 
 test_data_path = Path(__file__).parent / "data"
 
 
-class TestMatcher:
+class TestMaker:
     def test_init(self):
-        pleiades = Pleiades(test_data_path / "pleiades_json")
-        candidates = CandidateDataset(test_data_path / "lehning_periplus.json")
-        m = Matcher(pleiades, candidates)
-        m.match()
+        m = Maker()
+        assert isinstance(m, Maker)
