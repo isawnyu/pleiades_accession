@@ -146,6 +146,36 @@ def _get_title_from_en_wikipedia_org(uri):
     return title
 
 
+def _get_title_from_whgazetteer_org(uri):
+    """
+    get title from WHG API
+    """
+    # https://whgazetteer.org/api/db/?id=6691743
+    webi = get_webi("whgazetteer.org")
+    try:
+        r = webi.get(uri)
+    except HTTPError as err:
+        logger.error(f"WHG API request for {uri} failed: {err}")
+        return None
+    if r.status_code != 200:
+        logger.error(
+            f"WHG API request for ID {uri} failed with status code {r.status_code}: {r.text}"
+        )
+        return None
+    j = r.json()
+    title = j["features"][0]["properties"].get("title")
+    if not title:
+        logger.error(f"No names found for WHG {uri}")
+        return None
+    m = re.match(r"^https?://whgazetteer\.org/api/db/\?id=([0-9]+)$", uri)
+    if not m:
+        logger.error(f"Could not parse WHG ID from {uri}")
+        return None
+    whg_id = m.group(1)
+    title = f"{whg_id}: {title}"
+    return title
+
+
 def _get_title_from_www_geonames_org(uri):
     """
     get title from geonames page
@@ -172,7 +202,7 @@ def _get_title_from_www_geonames_org(uri):
             f"GeoNames API request for ID {geoname_id} failed with status code {r.status_code}: {r.text}"
         )
         return None
-    title = r.json().get("toponymName")
+    title = f"{geoname_id}: {r.json().get('toponymName')}"
     return title
 
 
@@ -200,6 +230,7 @@ def _get_title_from_vocab_getty_edu(uri):
     title = [node for node in j.get("identified_by") if node.get("type") == "Name"][0][
         "content"
     ].strip()
+    title = f"{tgn_id}: {title}"
     return title
 
 
@@ -266,11 +297,12 @@ def main(**kwargs):
         feature = features.get(external_uri)
         if feature is None:
             raise ValueError(f"feature {external_uri} not found in LPF file {lfp_path}")
-        title = feature["properties"].get("title")
+        title = get_title_from_web(urlparse(external_uri).netloc, external_uri)
         if title is None:
             raise ValueError(
                 f"title not found for feature {external_uri} in LPF file {lfp_path}"
             )
+            continue
         parts = urlparse(external_uri)
         netloc = parts.netloc
         base_ref = known_netlocs.get(netloc)
