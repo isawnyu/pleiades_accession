@@ -54,3 +54,7 @@ class TestMaker:
         assert s["types"] == [
             {"identifier": "aat:300000810", "label": "archaeological site"}
         ]
+        assert s["geometry"] == {
+            "type": "GeometryCollection",
+            "geometries": [{"type": "Point", "coordinates": [62.286987, 40.063667]}],
+        }

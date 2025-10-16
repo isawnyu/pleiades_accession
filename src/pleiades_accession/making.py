@@ -36,6 +36,7 @@ VALID_LINK_TYPES = {
     "citesAsDataSource",
     "member",
 }
+VALID_CERTAINTY_VALUES = {"certain", "less-certain", "uncertain"}
 
 
 class LPFSourceLabel:
@@ -102,6 +103,35 @@ class LPFType:
         return d
 
 
+class LPFGeometry:
+    """
+    Class representing a GeoJSON geometry
+    """
+
+    def __init__(
+        self, geom_type: str = "", coordinates: list = [], certainty: str = "certain"
+    ):
+        """
+        Initialize LPFGeometry class
+        """
+        self.type = geom_type  # GeoJSON geometry type
+        self.coordinates = coordinates  # GeoJSON coordinates
+        self.when = None  # when? (not implemented yet)
+        self.citations = []  # citations? (not implemented yet)
+        self.certainty = None  # certainty? (not implemented yet)
+
+    def to_dict(self) -> dict:
+        """
+        Convert LPFGeometry to dictionary, ready for JSON serialization in LPF format
+        """
+        d = {
+            "type": self.type,
+            "coordinates": self.coordinates,
+            "certainty": self.certainty,
+        }
+        return d
+
+
 class LPFPlace:
     """
     Class representing a place after Linked Places Format (LPF)
@@ -119,6 +149,7 @@ class LPFPlace:
         self._links = dict()  # keys are urls, values are strings
         self._title = ""  # title of record
         self._country_codes = set()
+        self._geometries = list()  # GeoJSON geometry
 
     #
     # country codes
@@ -151,6 +182,30 @@ class LPFPlace:
         Add a feature class
         """
         self._feature_classes.add(feature_class)
+
+    #
+    # geometries
+    #
+    @property
+    def geometries(self) -> list:
+        """
+        Get geometries as list
+        """
+        return [g.to_dict() for g in self._geometries]
+
+    def add_geometry(
+        self, geom_type: str, coordinates: list, certainty: str = "certain"
+    ):
+        """
+        Add a geometry
+        """
+        if certainty not in VALID_CERTAINTY_VALUES:
+            raise ValueError(f"Unrecognized certainty value: {certainty}")
+        self._geometries.append(
+            LPFGeometry(
+                geom_type=geom_type, coordinates=coordinates, certainty=certainty
+            )
+        )
 
     #
     # place types
@@ -264,6 +319,14 @@ class LPFPlace:
             "types": self.types,
             "links": self.links,
         }
+        geoms = self.geometries
+        if len(geoms) == 1:
+            d["geometry"] = geoms[0].to_dict()
+        else:
+            d["geometry"] = {
+                "type": "GeometryCollection",
+                "geometries": [g.to_dict() for g in geoms],
+            }
         return d
 
 
@@ -373,6 +436,21 @@ class Maker:
                 else:
                     raise NotImplementedError(
                         f"WHG DB API property '{k}' not implemented yet"
+                    )
+            # geometry
+            geom = feature.get("geometry", {})
+            if geom:
+                if geom.get("type") == "MultiPoint" and len(geom["coordinates"]) == 1:
+                    place.add_geometry(
+                        geom_type="Point",
+                        coordinates=geom["coordinates"][0],
+                        certainty=geom.get("certainty", "certain"),
+                    )
+                else:
+                    place.add_geometry(
+                        geom_type=geom.get("type", ""),
+                        coordinates=geom.get("coordinates", []),
+                        certainty=geom.get("certainty", "certain"),
                     )
 
     def _augment_from_whg_place_api(self, place: LPFPlace, source_data: dict | list):
