@@ -31,5 +31,18 @@ class TestMaker:
         )
         assert len(m.places) == 1
         assert isinstance(place, LPFPlace)
+        assert isinstance(place.id, str)
         logger = logging.getLogger(f"{__name__}.{self.__class__.__name__}")
-        logger.info(pformat(place.to_dict(), indent=2))
+        s = place.to_dict()
+        logger.info(pformat(s, indent=2))
+        assert s["type"] == "Feature"
+        assert s["links"] == [
+            {
+                "identifier": "https://whgazetteer.org/api/place/6691895",
+                "type": "closeMatch",
+            }
+        ]
+        assert s["properties"]["fclasses"] == ["S"]
+        assert s["types"] == [
+            {"identifier": "aat:300000810", "label": "archaeological site"}
+        ]

@@ -79,6 +79,7 @@ class LPFType:
         """
         d = {
             "label": self.label,
+            "sourceLabels": [],
         }
         for sl in self.sourceLabels:
             if sl.label == self.label:
@@ -87,6 +88,8 @@ class LPFType:
                 d["sourceLabels"].append({"label": sl.label, "lang": sl.lang})
             else:
                 d["sourceLabels"].append({"label": sl.label})
+        if not d["sourceLabels"]:
+            del d["sourceLabels"]
         return d
 
 
@@ -104,6 +107,7 @@ class LPFPlace:
             dict()
         )  # keys are urns (preferably urls), values are {label, sourceLabels*, when?}
         self._feature_classes = set()  # geonames feature classes
+        self._links = dict()  # keys are urls, values are strings
 
     #
     # feature classes
@@ -175,6 +179,28 @@ class LPFPlace:
         if gn_class:
             self.add_feature_class(gn_class)
 
+    #
+    # links
+    #
+
+    @property
+    def links(self) -> list:
+        """
+        Get links as list
+        """
+        return [{"identifier": k, "type": v} for k, v in self._links.items()]
+
+    def add_link(self, identifier: str, link_type: str = "closeMatch"):
+        """
+        Add a link
+        """
+        if link_type not in {"closeMatch", "primaryTopicOf", "subjectOf", "seeAlso"}:
+            raise ValueError(f"Unrecognized link type: {link_type}")
+        if identifier not in self._links:
+            self._links[identifier] = link_type
+        elif link_type == "closeMatch" and self._links[identifier] != "closeMatch":
+            self._links[identifier] = link_type
+
     def to_dict(self) -> dict:
         """
         Convert LPFPlace to dictionary, ready for JSON serialization in LPF format
@@ -186,6 +212,7 @@ class LPFPlace:
                 "fclasses": self.feature_classes,
             },
             "types": self.types,
+            "links": self.links,
         }
         return d
 
@@ -240,6 +267,30 @@ class Maker:
             # types
             for ptype in feature.get("types", []):
                 place.add_type(**ptype)
+            # links
+            if feature.get("links", []):
+                raise NotImplementedError("WHG DB API 'links' not implemented yet")
+            # related
+            if feature.get("related", []):
+                raise NotImplementedError("WHG DB API 'related' not implemented yet")
+            # whens
+            if feature.get("whens", []):
+                raise NotImplementedError("WHG DB API 'whens' not implemented yet")
+            # descriptions
+            if feature.get("descriptions", []):
+                raise NotImplementedError(
+                    "WHG DB API 'descriptions' not implemented yet"
+                )
+            # depictions
+            if feature.get("depictions", []):
+                raise NotImplementedError("WHG DB API 'depictions' not implemented yet")
+            # type = Feature
+            if feature.get("type") != "Feature":
+                raise ValueError(
+                    f"WHG DB API feature unexpected type value {feature.get('type')}, expected Feature"
+                )
+            # uri
+            place.add_link(identifier=feature.get("uri"), link_type="closeMatch")
 
     def _augment_from_whg_place_api(self, place: LPFPlace, source_data: dict | list):
         """
