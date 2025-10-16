@@ -39,10 +39,18 @@ class TestMaker:
         assert s["links"] == [
             {
                 "identifier": "https://whgazetteer.org/api/place/6691895",
-                "type": "closeMatch",
-            }
+                "label": "",
+                "type": "citesAsDataSource",
+            },
+            {
+                "identifier": "https://whgazetteer.org/datasets/838/places",
+                "label": "An Historical Atlas of Central Asia",
+                "type": "member",
+            },
         ]
+        assert s["properties"]["ccodes"] == ["TM"]
         assert s["properties"]["fclasses"] == ["S"]
+        assert s["properties"]["title"] == "Daya-Khatïn"
         assert s["types"] == [
             {"identifier": "aat:300000810", "label": "archaeological site"}
         ]

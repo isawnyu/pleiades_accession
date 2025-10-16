@@ -12,6 +12,7 @@ from datetime import timedelta
 import json
 from pathlib import Path
 import re
+from pleiades_accession.text import normalize_text
 from urllib.parse import urlparse
 from uuid import uuid4
 from validators import url as validate_url
@@ -27,6 +28,14 @@ origin_url_rxx = [
     (r"^https://whgazetteer\.org/api/db/\?id=(\d)+$", "whg_db_api"),
     (r"^https://whgazetteer.org/api/place/(\d)+/$", "whg_place_api"),
 ]
+VALID_LINK_TYPES = {
+    "closeMatch",
+    "primaryTopicOf",
+    "subjectOf",
+    "seeAlso",
+    "citesAsDataSource",
+    "member",
+}
 
 
 class LPFSourceLabel:
@@ -108,6 +117,24 @@ class LPFPlace:
         )  # keys are urns (preferably urls), values are {label, sourceLabels*, when?}
         self._feature_classes = set()  # geonames feature classes
         self._links = dict()  # keys are urls, values are strings
+        self._title = ""  # title of record
+        self._country_codes = set()
+
+    #
+    # country codes
+    #
+    @property
+    def country_codes(self) -> list:
+        """
+        Get country codes as list
+        """
+        return list(self._country_codes)
+
+    def add_country_code(self, country_code: str):
+        """
+        Add a country code
+        """
+        self._country_codes.add(country_code.upper())
 
     #
     # feature classes
@@ -188,18 +215,39 @@ class LPFPlace:
         """
         Get links as list
         """
-        return [{"identifier": k, "type": v} for k, v in self._links.items()]
+        return [
+            {"identifier": k, "type": v["type"], "label": v["label"]}
+            for k, v in self._links.items()
+        ]
 
-    def add_link(self, identifier: str, link_type: str = "closeMatch"):
+    def add_link(self, identifier: str, link_type: str = "closeMatch", label: str = ""):
         """
         Add a link
         """
-        if link_type not in {"closeMatch", "primaryTopicOf", "subjectOf", "seeAlso"}:
+        if link_type not in VALID_LINK_TYPES:
             raise ValueError(f"Unrecognized link type: {link_type}")
         if identifier not in self._links:
-            self._links[identifier] = link_type
-        elif link_type == "closeMatch" and self._links[identifier] != "closeMatch":
-            self._links[identifier] = link_type
+            self._links[identifier] = {"type": link_type, "label": label}
+
+    #
+    # title
+    #
+    @property
+    def title(self) -> str:
+        """
+        Get title (preferred label)
+        """
+        return self._title
+
+    @title.setter
+    def title(self, value: str):
+        """
+        Set title (preferred label)
+        """
+        value = normalize_text(value)
+        if not value:
+            raise ValueError("Title cannot be empty")
+        self._title = value
 
     def to_dict(self) -> dict:
         """
@@ -209,6 +257,8 @@ class LPFPlace:
             "@id": self.id,
             "type": "Feature",
             "properties": {
+                "title": self.title,
+                "ccodes": self.country_codes,
                 "fclasses": self.feature_classes,
             },
             "types": self.types,
@@ -290,7 +340,40 @@ class Maker:
                     f"WHG DB API feature unexpected type value {feature.get('type')}, expected Feature"
                 )
             # uri
-            place.add_link(identifier=feature.get("uri"), link_type="closeMatch")
+            place.add_link(identifier=feature.get("uri"), link_type="citesAsDataSource")
+            # properties
+            for k, v in feature.get("properties", {}).items():
+                if k in [
+                    "place_id",
+                    "src_id",
+                    "dataset_label",
+                    "dataset_title",
+                    "minmax",
+                ]:
+                    continue
+                elif k == "title":
+                    place.title = v
+                elif k == "dataset_uri":
+                    place.add_link(
+                        identifier=v,
+                        link_type="member",
+                        label=feature["properties"].get("dataset_title", ""),
+                    )
+                elif k == "ccodes":
+                    for cc in v:
+                        place.add_country_code(cc)
+                elif k == "fclasses":
+                    for fc in v:
+                        place.add_feature_class(fc)
+                elif k == "timespans":
+                    if v:
+                        raise NotImplementedError(
+                            "WHG DB API 'timespans' not implemented yet (value: {v})"
+                        )
+                else:
+                    raise NotImplementedError(
+                        f"WHG DB API property '{k}' not implemented yet"
+                    )
 
     def _augment_from_whg_place_api(self, place: LPFPlace, source_data: dict | list):
         """
