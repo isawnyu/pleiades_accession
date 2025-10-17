@@ -72,3 +72,54 @@ class TestMaker:
         assert isinstance(place._geometries[0], LPFGeometry)
         s = place.to_dict()
         logger.info(pformat(s, indent=2))
+        assert s["type"] == "Feature"
+        assert s["links"] == [
+            {
+                "identifier": "https://whgazetteer.org/api/place/6691895/",
+                "label": "",
+                "type": "citesAsDataSource",
+            },
+            {
+                "identifier": "https://whgazetteer.org/places/6691895/detail",
+                "label": "",
+                "type": "closeMatch",
+            },
+            {
+                "identifier": "https://whgazetteer.org/datasets/838/places",
+                "label": "An Historical Atlas of Central Asia",
+                "type": "member",
+            },
+        ]
+        assert s["properties"]["ccodes"] == ["TM"]
+        assert s["properties"]["fclasses"] == ["S"]
+        assert s["properties"]["title"] == "Daya-Khatïn"
+        assert s["types"] == [
+            {"identifier": "aat:300000810", "label": "archaeological site"}
+        ]
+        assert s["geometry"] == {
+            "type": "Point",
+            "coordinates": [62.286987, 40.063667],
+            "certainty": "less-certain",
+        }
+        assert s["names"] == [
+            {
+                "lang": "und",
+                "romanizations": ["Daya Khatin", "Daya-Khatïn"],
+                "toponym": "Daya-Khatïn",
+            },
+            {
+                "citations": [
+                    {
+                        "@id": "http://www.worldcat.org/oclc/433931548",
+                        "label": "An Historical Atlas of Central Asia "
+                        "(Bregel, 2003).",
+                    }
+                ],
+                "lang": "und",
+                "romanizations": [
+                    "Daya Khatin caravanseray",
+                    "Daya-Khatïn,caravanseray",
+                ],
+                "toponym": "Daya-Khatïn,caravanseray",
+            },
+        ]

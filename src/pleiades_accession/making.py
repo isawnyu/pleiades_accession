@@ -8,14 +8,18 @@
 """
 Make new LPF from scratch, using provided resources
 """
+from alphabet_detector import AlphabetDetector
 from datetime import timedelta
 import json
 import logging
 from pathlib import Path
 from pprint import pformat
 import re
+from romanize import romanize
 from pleiades_accession.text import normalize_text
 from shapely import from_geojson, to_geojson
+from shapely.testing import assert_geometries_equal
+from slugify import slugify
 from urllib.parse import urlparse
 from uuid import uuid4
 from validators import url as validate_url
@@ -40,6 +44,7 @@ VALID_LINK_TYPES = {
     "member",
 }
 VALID_CERTAINTY_VALUES = {"certain", "less-certain", "uncertain"}
+ALPHABET_DETECTOR = AlphabetDetector()
 
 
 class LPFSourceLabel:
@@ -103,6 +108,10 @@ class LPFType:
                 d["sourceLabels"].append({"label": sl.label})
         if not d["sourceLabels"]:
             del d["sourceLabels"]
+        else:
+            d["sourceLabels"] = sorted(
+                d["sourceLabels"], key=lambda x: x["label"]
+            )  # type: ignore
         return d
 
 
@@ -112,7 +121,11 @@ class LPFGeometry:
     """
 
     def __init__(
-        self, geom_type: str = "", coordinates: list = [], certainty: str = "certain"
+        self,
+        geom_type: str = "",
+        coordinates: list = [],
+        certainty: str = "certain",
+        citations: list = [],
     ):
         """
         Initialize LPFGeometry class
@@ -137,6 +150,102 @@ class LPFGeometry:
         return d
 
 
+class LPFCitation:
+    """
+    Class representing a citation after Linked Places Format (LPF)
+    """
+
+    def __init__(self, label: str = "", year: int = None, identifier: str = "", **kwargs):  # type: ignore
+        """
+        Initialize LPFCitation class
+        """
+        try:
+            self.label = normalize_text(label)
+        except TypeError as err:
+            err.add_note(
+                f"while normalizing citation label of type {type(label)}: {pformat(label)}"
+            )
+            raise err
+        self.year = year  # citation year
+        self.identifier = identifier  # citation identifier (i.e. URL)
+
+
+class LPFName:
+    """
+    Class representing a place name after Linked Places Format (LPF) with additional Pleiades requirements
+    """
+
+    def __init__(
+        self,
+        toponym: str,
+        romanizations: list = [],
+        lang: str = "und",
+        citations: list = [],
+        when: dict = dict(),
+    ):
+        """
+        Initialize LPFName class
+        """
+        self.toponym = normalize_text(toponym)  # place name
+        self.romanizations = {
+            normalize_text(r) for r in romanizations
+        }  # romanized forms
+        self.lang = lang  # language tag
+        self.romanizations.add(slugify(toponym, separator=" ", lowercase=False))
+        if lang == "de":
+            # German U with umlaut special case
+            self.romanizations.add(
+                slugify(
+                    toponym,
+                    separator=" ",
+                    lowercase=False,
+                    replacements=[["Ü", "UE"], ["ü", "ue"]],
+                )
+            )
+        if ALPHABET_DETECTOR.only_alphabet_chars(toponym, "LATIN"):
+            self.romanizations.add(toponym)
+        else:
+            alphabets = ALPHABET_DETECTOR.detect_alphabet(toponym)
+            if alphabets == {"GREEK"} and lang in {"el", "grc", "und"}:
+                self.romanizations.add(romanize(toponym))
+                if lang == "und":
+                    self.lang = "el"
+            elif len(alphabets) > 1:
+                pass  # skip mixed-alphabet toponyms; slugify is best we can do
+            else:
+                raise NotImplementedError(
+                    f"Romanization for alphabet {alphabets} not implemented yet"
+                )
+        if citations:
+            for c in citations:
+                if "@id" in c:
+                    c["identifier"] = c["@id"]
+            self.citations = [LPFCitation(**c) for c in citations]
+        if when:
+            raise NotImplementedError("LPFName 'when' not implemented yet for names")
+
+    def to_dict(self) -> dict:
+        """
+        Convert LPFName to dictionary, ready for JSON serialization in LPF format
+        """
+        d = {
+            "toponym": self.toponym,
+            "lang": self.lang,
+        }
+        if self.romanizations:
+            d["romanizations"] = sorted(list(self.romanizations))  # type: ignore
+        if hasattr(self, "citations"):
+            d["citations"] = [  # type: ignore
+                {
+                    "label": c.label,
+                    **({"year": c.year} if c.year else {}),
+                    **({"@id": c.identifier} if c.identifier else {}),
+                }
+                for c in self.citations
+            ]
+        return d
+
+
 class LPFPlace:
     """
     Class representing a place after Linked Places Format (LPF)
@@ -155,6 +264,7 @@ class LPFPlace:
         self._title = ""  # title of record
         self._country_codes = set()
         self._geometries = list()  # GeoJSON geometry
+        self._names = list()  # LPFName instances
 
     #
     # country codes
@@ -166,11 +276,15 @@ class LPFPlace:
         """
         return list(self._country_codes)
 
-    def add_country_code(self, country_code: str):
+    def add_country_code(self, country_code: str | dict):
         """
         Add a country code
         """
-        self._country_codes.add(country_code.upper())
+        if isinstance(country_code, dict):
+            country_code = country_code.get("ccode", "")
+        elif isinstance(country_code, str):
+            country_code = country_code
+        self._country_codes.add(country_code.upper())  # type: ignore
 
     #
     # feature classes
@@ -182,11 +296,20 @@ class LPFPlace:
         """
         return list(self._feature_classes)
 
-    def add_feature_class(self, feature_class: str):
+    def add_feature_class(self, feature_class: str | dict):
         """
         Add a feature class
         """
-        self._feature_classes.add(feature_class)
+        if isinstance(feature_class, dict):
+            feature_class = feature_class.get("code", "")
+        elif isinstance(feature_class, str):
+            feature_class = feature_class
+        else:
+            raise TypeError(
+                f"Feature class must be str or dict. Got {type(feature_class)}"
+            )
+        if feature_class:
+            self._feature_classes.add(feature_class)
 
     #
     # geometries
@@ -199,18 +322,35 @@ class LPFPlace:
         return [g.to_dict() for g in self._geometries]
 
     def add_geometry(
-        self, geom_type: str, coordinates: list, certainty: str = "certain"
+        self,
+        geom_type: str,
+        coordinates: list,
+        certainty: str = "certain",
+        citations: list = [],
     ):
         """
         Add a geometry
         """
         if certainty not in VALID_CERTAINTY_VALUES:
             raise ValueError(f"Unrecognized certainty value: {certainty}")
-        self._geometries.append(
-            LPFGeometry(
-                geom_type=geom_type, coordinates=coordinates, certainty=certainty
-            )
+        new_geom = LPFGeometry(
+            geom_type=geom_type,
+            coordinates=coordinates,
+            certainty=certainty,
+            citations=citations,
         )
+        if self._geometries:
+            # check for duplicates
+            new_shape = new_geom.shape
+            for existing_geom in self._geometries:
+                if assert_geometries_equal(
+                    existing_geom.shape, new_shape, normalize=True
+                ):
+                    # geometries are equal
+                    if not existing_geom.citations and citations:
+                        existing_geom.citations = citations
+                    return
+        self._geometries.append(new_geom)
 
     #
     # place types
@@ -290,6 +430,36 @@ class LPFPlace:
             self._links[identifier] = {"type": link_type, "label": label}
 
     #
+    # names
+    #
+
+    @property
+    def names(self) -> list:
+        """
+        Get names as list
+        """
+        raise NotImplementedError("LPFPlace 'names' not implemented yet")
+
+    @property
+    def name_strings(self) -> list:
+        nstrings = set()
+        for name in self._names:
+            nstrings.add(name.toponym)
+            nstrings.update(name.romanizations)
+        return list(nstrings)
+
+    def add_name(
+        self, toponym: str, lang: str = "und", citations: list = [], when: dict = dict()
+    ):
+        """
+        Add a name
+        """
+        if normalize_text(toponym) not in self.name_strings:
+            self._names.append(
+                LPFName(toponym=toponym, lang=lang, citations=citations, when=when)
+            )
+
+    #
     # title
     #
     @property
@@ -323,15 +493,14 @@ class LPFPlace:
             },
             "types": self.types,
             "links": self.links,
+            "names": [n.to_dict() for n in self._names],
         }
         geoms = self.geometries
         logger = logging.getLogger(f"{__name__}.{self.__class__.__name__}")
         logger.debug(pformat(geoms, indent=2))
         if len(geoms) == 1:
-            logger.debug("foo")
             d["geometry"] = geoms[0]
         else:
-            logger.debug("bar")
             d["geometry"] = {
                 "type": "GeometryCollection",
                 "geometries": [g for g in geoms],
@@ -497,7 +666,99 @@ class Maker:
         """
         Augment place from WHG Place API data
         """
-        raise NotImplementedError("WHG Place API not implemented yet")
+        if isinstance(source_data, list):
+            raise TypeError("WHG Place API data should be a dict, not a list")
+        for k, v in source_data.items():
+
+            if not v:
+                continue
+
+            # ignore
+            if k in {"extent", "minmax"}:
+                continue
+            # id
+            if k == "id":
+                place.add_link(
+                    identifier=f"https://whgazetteer.org/api/place/{v}/",
+                    link_type="citesAsDataSource",
+                )
+                place.add_link(
+                    identifier=f"https://whgazetteer.org/places/{v}/detail",
+                    link_type="closeMatch",
+                )
+
+            # datasets
+            elif k == "datasets":
+                for dataset in v:
+                    place.add_link(
+                        identifier=f"https://whgazetteer.org/datasets/{dataset['id']}/places",
+                        link_type="member",
+                        label=dataset.get("title", ""),
+                    )
+
+            # title
+            elif k == "title":
+                place.title = v
+                place.add_name(toponym=place.title)
+
+            # names
+            elif k == "names":
+                for name in v:
+                    place.add_name(**name)
+
+            # types
+            elif k == "types":
+                for ptype in v:
+                    place.add_type(**ptype)
+
+            # fclasses
+            elif k == "fclasses":
+                for fc in v:
+                    place.add_feature_class(fc)
+
+            # geoms
+            elif k == "geoms":
+                for geom in v:
+                    dataset_id = geom.get("ds", "")
+                    dataset_uri = ""
+                    if dataset_id:
+                        dataset_uri = (
+                            f"https://whgazetteer.org/datasets/{dataset_id}/places"
+                        )
+                    citations = []
+                    if dataset_uri:
+                        citations.append(
+                            LPFCitation(
+                                identifier=dataset_uri,
+                            )
+                        )
+                    if (
+                        geom.get("type") == "MultiPoint"  # type: ignore
+                        and len(geom["coordinates"]) == 1  # type: ignore
+                    ):
+                        place.add_geometry(
+                            geom_type="Point",
+                            coordinates=geom["coordinates"][0],  # type: ignore
+                            certainty=geom.get("certainty", "certain"),  # type: ignore
+                            citations=citations,
+                        )
+                    else:
+                        place.add_geometry(
+                            geom_type=geom["type"],  # type: ignore
+                            coordinates=geom["coordinates"],  # type: ignore
+                            certainty=geom.get("certainty", "certain"),  # type: ignore
+                            citations=citations,
+                        )
+
+            # countries
+            elif k == "countries":
+                for cc in v:
+                    place.add_country_code(cc)
+
+            else:
+                raise NotImplementedError(
+                    f"WHG Place API key '{k}' not implemented yet"
+                )
 
     def _identify_source(self, source: str) -> str:
         """

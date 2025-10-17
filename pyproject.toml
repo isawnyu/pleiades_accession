@@ -25,12 +25,15 @@ classifiers = [
 ]
 dependencies = [
   "airtight",
+  "alphabet-detector",
   "pleiades_local @ https://github.com/isawnyu/pleiades_local/archive/refs/heads/main.zip",
   "pytest",
   "pyperclip",
   "pywikibot",
   "platformdirs",
+  "python-slugify",
   "rapidfuzz",
+  "romanize",
   "shapely",
   "textnorm",
   "validators",
