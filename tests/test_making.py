@@ -14,6 +14,7 @@ from pleiades_accession.making import Maker, LPFPlace, LPFGeometry
 from pprint import pprint, pformat
 
 test_data_path = Path(__file__).parent / "data"
+logger = logging.getLogger(__name__)
 
 
 class TestMaker:
@@ -21,9 +22,8 @@ class TestMaker:
         m = Maker()
         assert isinstance(m, Maker)
 
-    def test_make_from_wsg(self):
+    def test_make_from_wsg_db_api(self):
         m = Maker()
-        assert isinstance(m, Maker)
         place = m.make(
             sources=[
                 "https://whgazetteer.org/api/db/?id=6691895",
@@ -33,9 +33,7 @@ class TestMaker:
         assert isinstance(place, LPFPlace)
         assert isinstance(place.id, str)
         assert isinstance(place._geometries[0], LPFGeometry)
-        logger = logging.getLogger(f"{__name__}.{self.__class__.__name__}")
         s = place.to_dict()
-        logger.info(pformat(s, indent=2))
         assert s["type"] == "Feature"
         assert s["links"] == [
             {
@@ -60,3 +58,17 @@ class TestMaker:
             "coordinates": [62.286987, 40.063667],
             "certainty": "less-certain",
         }
+
+    def test_make_from_wsg_place_api_(self):
+        m = Maker()
+        place = m.make(
+            sources=[
+                "https://whgazetteer.org/api/place/6691895/",
+            ]
+        )
+        assert len(m.places) == 1
+        assert isinstance(place, LPFPlace)
+        assert isinstance(place.id, str)
+        assert isinstance(place._geometries[0], LPFGeometry)
+        s = place.to_dict()
+        logger.info(pformat(s, indent=2))

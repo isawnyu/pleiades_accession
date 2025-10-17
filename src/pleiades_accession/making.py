@@ -497,7 +497,7 @@ class Maker:
         """
         Augment place from WHG Place API data
         """
-        pass
+        raise NotImplementedError("WHG Place API not implemented yet")
 
     def _identify_source(self, source: str) -> str:
         """
