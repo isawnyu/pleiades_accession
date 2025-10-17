@@ -386,81 +386,103 @@ class Maker:
             raise TypeError("WHG DB API data should be a dict, not a list")
         features = source_data.get("features", [])
         for feature in features:
-            # types
-            for ptype in feature.get("types", []):
-                place.add_type(**ptype)
-            # links
-            if feature.get("links", []):
-                raise NotImplementedError("WHG DB API 'links' not implemented yet")
-            # related
-            if feature.get("related", []):
-                raise NotImplementedError("WHG DB API 'related' not implemented yet")
-            # whens
-            if feature.get("whens", []):
-                raise NotImplementedError("WHG DB API 'whens' not implemented yet")
-            # descriptions
-            if feature.get("descriptions", []):
-                raise NotImplementedError(
-                    "WHG DB API 'descriptions' not implemented yet"
-                )
-            # depictions
-            if feature.get("depictions", []):
-                raise NotImplementedError("WHG DB API 'depictions' not implemented yet")
-            # type = Feature
-            if feature.get("type") != "Feature":
-                raise ValueError(
-                    f"WHG DB API feature unexpected type value {feature.get('type')}, expected Feature"
-                )
-            # uri
-            place.add_link(identifier=feature.get("uri"), link_type="citesAsDataSource")
-            # properties
-            for k, v in feature.get("properties", {}).items():
-                if k in [
-                    "place_id",
-                    "src_id",
-                    "dataset_label",
-                    "dataset_title",
-                    "minmax",
-                ]:
-                    continue
-                elif k == "title":
-                    place.title = v
-                elif k == "dataset_uri":
-                    place.add_link(
-                        identifier=v,
-                        link_type="member",
-                        label=feature["properties"].get("dataset_title", ""),
-                    )
-                elif k == "ccodes":
-                    for cc in v:
-                        place.add_country_code(cc)
-                elif k == "fclasses":
-                    for fc in v:
-                        place.add_feature_class(fc)
-                elif k == "timespans":
-                    if v:
-                        raise NotImplementedError(
-                            "WHG DB API 'timespans' not implemented yet (value: {v})"
-                        )
-                else:
+            for k, v in feature.items():
+
+                # types
+                if k == "types" and v:
+                    for ptype in v:
+                        place.add_type(**ptype)
+
+                # links
+                if k == "links" and v:
+                    raise NotImplementedError("WHG DB API 'links' not implemented yet")
+
+                # related
+                if k == "related" and v:
                     raise NotImplementedError(
-                        f"WHG DB API property '{k}' not implemented yet"
+                        "WHG DB API 'related' not implemented yet"
                     )
-            # geometry
-            geom = feature.get("geometry", {})
-            if geom:
-                if geom.get("type") == "MultiPoint" and len(geom["coordinates"]) == 1:
-                    place.add_geometry(
-                        geom_type="Point",
-                        coordinates=geom["coordinates"][0],
-                        certainty=geom.get("certainty", "certain"),
+
+                # whens
+                if k == "whens" and v:
+                    raise NotImplementedError("WHG DB API 'whens' not implemented yet")
+
+                # descriptions
+                if k == "descriptions" and v:
+                    raise NotImplementedError(
+                        "WHG DB API 'descriptions' not implemented yet"
                     )
-                else:
-                    place.add_geometry(
-                        geom_type=geom["type"],
-                        coordinates=geom["coordinates"],
-                        certainty=geom.get("certainty", "certain"),
+
+                # depictions
+                if k == "depictions" and v:
+                    raise NotImplementedError(
+                        "WHG DB API 'depictions' not implemented yet"
                     )
+
+                # type = Feature
+                if k == "type" and v != "Feature":
+                    raise ValueError(
+                        f"WHG DB API feature unexpected type value {feature.get('type')}, expected Feature"
+                    )
+
+                # uri
+                if k == "uri":
+                    place.add_link(v, link_type="citesAsDataSource")
+
+                # properties
+                if k == "properties":
+                    for kk, vv in v.items():  # type: ignore
+                        if kk in [
+                            "place_id",
+                            "src_id",
+                            "dataset_label",
+                            "dataset_title",
+                            "minmax",
+                        ]:
+                            continue
+                        elif kk == "title":
+                            place.title = normalize_text(vv)
+                        elif kk == "dataset_uri":
+                            place.add_link(
+                                identifier=vv,
+                                link_type="member",
+                                label=feature["properties"].get("dataset_title", ""),
+                            )
+                        elif kk == "ccodes":
+                            for cc in vv:
+                                place.add_country_code(cc)
+                        elif kk == "fclasses":
+                            for fc in vv:
+                                place.add_feature_class(fc)
+                        elif kk == "timespans":
+                            if vv:
+                                raise NotImplementedError(
+                                    "WHG DB API 'timespans' not implemented yet (value: {vv})"
+                                )
+                        else:
+                            raise NotImplementedError(
+                                f"WHG DB API property '{k}' not implemented yet"
+                            )
+
+                # geometry
+                if k == "geometry":
+                    geom = v
+                    if geom:
+                        if (
+                            geom.get("type") == "MultiPoint"  # type: ignore
+                            and len(geom["coordinates"]) == 1  # type: ignore
+                        ):
+                            place.add_geometry(
+                                geom_type="Point",
+                                coordinates=geom["coordinates"][0],  # type: ignore
+                                certainty=geom.get("certainty", "certain"),  # type: ignore
+                            )
+                        else:
+                            place.add_geometry(
+                                geom_type=geom["type"],  # type: ignore
+                                coordinates=geom["coordinates"],  # type: ignore
+                                certainty=geom.get("certainty", "certain"),  # type: ignore
+                            )
 
     def _augment_from_whg_place_api(self, place: LPFPlace, source_data: dict | list):
         """
