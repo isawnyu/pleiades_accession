@@ -986,6 +986,16 @@ class Maker:
                 for cc in v:
                     place.add_country_code(cc)
 
+            # links
+            elif k == "links":
+                for link in v:
+                    identifier = self._expand_whg_link_prefix(link["identifier"])
+                    place.add_link(
+                        identifier=identifier,
+                        link_type=link.get("type", "closeMatch"),
+                        label=link.get("label", ""),
+                    )
+
             else:
                 raise NotImplementedError(
                     f"WHG Place API key '{k}' not implemented yet"
