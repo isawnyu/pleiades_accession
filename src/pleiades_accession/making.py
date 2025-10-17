@@ -547,6 +547,31 @@ class Maker:
         """
         return getattr(self, f"_augment_from_{source_identity}")(place, source_data)
 
+    def _expand_whg_link_prefix(self, identifier: str) -> str:
+        """
+        Expand WHG link prefix to full URL
+        """
+        logger = logging.getLogger(f"{__name__}.{self.__class__.__name__}")
+        if validate_url(identifier):
+            return identifier
+        prefix, id = identifier.split(":", 1)
+        if prefix == "tgn":
+            return f"http://vocab.getty.edu/tgn/{id}"
+        elif prefix == "wd":
+            return f"https://www.wikidata.org/wiki/{id}"
+        elif prefix == "gn":
+            return f"https://www.geonames.org/{id}"
+        elif prefix == "loc":
+            return f"https://id.loc.gov/authorities/names/{id}"
+        elif prefix == "bnf":
+            return f"https://catalogue.bnf.fr/ark:/12148/cb{id}"
+        elif prefix == "viaf":
+            return f"https://viaf.org/viaf/{id}"
+        elif prefix == "wp":
+            return f"https://en.wikipedia.org/wiki/{id}"
+        else:
+            logger.warning(f"Unrecognized WHG link prefix: {prefix}")
+
     def _augment_from_whg_db_api(self, place: LPFPlace, source_data: dict | list):
         """
         Augment place from WHG DB API data
@@ -567,7 +592,12 @@ class Maker:
 
                 # links
                 elif k == "links":
-                    raise NotImplementedError("WHG DB API 'links' not implemented yet")
+                    for link in v:
+                        place.add_link(
+                            identifier=link["identifier"],
+                            link_type=link.get("type", "closeMatch"),
+                            label=link.get("label", ""),
+                        )
 
                 # related
                 elif k == "related":

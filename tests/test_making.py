@@ -123,3 +123,19 @@ class TestMaker:
                 "toponym": "Daya-Khatïn,caravanseray",
             },
         ]
+
+    def test_make_from_wsg_both_apis(self):
+        m = Maker()
+        place = m.make(
+            sources=[
+                "https://whgazetteer.org/api/db/?id=6692152",
+                "https://whgazetteer.org/api/place/6692152/",
+            ]
+        )
+        assert len(m.places) == 1
+        assert isinstance(place, LPFPlace)
+        assert isinstance(place.id, str)
+        assert isinstance(place._geometries[0], LPFGeometry)
+        s = place.to_dict()
+        logger.info(pformat(s, indent=2))
+        assert s["type"] == "Feature"
