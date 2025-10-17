@@ -526,16 +526,35 @@ class LPFPlace:
         """
         Add a type
         """
+        new_type = LPFType(
+            identifier=identifier,
+            label=label,
+            sourceLabels=sourceLabels,
+            sourceLabel=sourceLabel,
+            when=when,
+        )
         if identifier not in self._types:
-            self._types[identifier] = LPFType(
-                identifier=identifier,
-                label=label,
-                sourceLabels=sourceLabels,
-                sourceLabel=sourceLabel,
-                when=when,
-            )
+            self._types[identifier] = new_type
         else:
-            raise NotImplementedError("Updating existing LPFType not implemented yet")
+            former_type = self._types[identifier]
+            if not former_type.label and new_type.label:
+                former_type.label = new_type.label
+            if sourceLabel:
+                former_sl = [
+                    sl for sl in former_type.sourceLabels if sl.label == sourceLabel
+                ]
+                if not former_sl:
+                    former_type.sourceLabels.append(LPFSourceLabel(label=sourceLabel))
+                elif len(former_sl) == 1:
+                    pass  # already present
+                else:
+                    raise ValueError(
+                        f"Multiple sourceLabels with label '{sourceLabel}' found in existing LPFType"
+                    )
+            if sourceLabels:
+                raise NotImplementedError(
+                    "Updating existing LPFType with sourceLabels not implemented yet"
+                )
         if gn_class:
             self.add_feature_class(gn_class)
 
