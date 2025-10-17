@@ -388,49 +388,53 @@ class Maker:
         for feature in features:
             for k, v in feature.items():
 
+                if not v:
+                    continue
+
                 # types
-                if k == "types" and v:
+                if k == "types":
                     for ptype in v:
                         place.add_type(**ptype)
 
                 # links
-                if k == "links" and v:
+                elif k == "links":
                     raise NotImplementedError("WHG DB API 'links' not implemented yet")
 
                 # related
-                if k == "related" and v:
+                elif k == "related":
                     raise NotImplementedError(
                         "WHG DB API 'related' not implemented yet"
                     )
 
                 # whens
-                if k == "whens" and v:
+                elif k == "whens":
                     raise NotImplementedError("WHG DB API 'whens' not implemented yet")
 
                 # descriptions
-                if k == "descriptions" and v:
+                elif k == "descriptions":
                     raise NotImplementedError(
                         "WHG DB API 'descriptions' not implemented yet"
                     )
 
                 # depictions
-                if k == "depictions" and v:
+                elif k == "depictions":
                     raise NotImplementedError(
                         "WHG DB API 'depictions' not implemented yet"
                     )
 
                 # type = Feature
-                if k == "type" and v != "Feature":
-                    raise ValueError(
-                        f"WHG DB API feature unexpected type value {feature.get('type')}, expected Feature"
-                    )
+                elif k == "type":
+                    if v != "Feature":
+                        raise ValueError(
+                            f"WHG DB API feature unexpected type value {feature.get('type')}, expected Feature"
+                        )
 
                 # uri
-                if k == "uri":
+                elif k == "uri":
                     place.add_link(v, link_type="citesAsDataSource")
 
                 # properties
-                if k == "properties":
+                elif k == "properties":
                     for kk, vv in v.items():  # type: ignore
                         if kk in [
                             "place_id",
@@ -465,7 +469,7 @@ class Maker:
                             )
 
                 # geometry
-                if k == "geometry":
+                elif k == "geometry":
                     geom = v
                     if geom:
                         if (
@@ -483,6 +487,11 @@ class Maker:
                                 coordinates=geom["coordinates"],  # type: ignore
                                 certainty=geom.get("certainty", "certain"),  # type: ignore
                             )
+
+                else:
+                    raise NotImplementedError(
+                        f"WHG DB API feature key '{k}' not implemented yet"
+                    )
 
     def _augment_from_whg_place_api(self, place: LPFPlace, source_data: dict | list):
         """
