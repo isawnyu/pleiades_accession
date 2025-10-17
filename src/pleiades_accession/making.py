@@ -43,8 +43,139 @@ VALID_LINK_TYPES = {
     "citesAsDataSource",
     "member",
 }
+VALID_MILESTONE_TYPES = {"in", "earliest", "latest"}
 VALID_CERTAINTY_VALUES = {"certain", "less-certain", "uncertain"}
 ALPHABET_DETECTOR = AlphabetDetector()
+RX_ISO8601_DATE = re.compile(r"^\d{4}(-\d{2}|-\d{2}-\d{2})?$")
+
+
+class LPFMilestone:
+    """
+    Class representing an ISO 8601 temporal milestone used in LPFTimespan after Linked Places Format (LPF)
+    """
+
+    def __init__(self, milestone_type: str = "in", iso_date: str = ""):
+        """
+        Initialize LPFMilestone class
+        """
+        if milestone_type not in VALID_MILESTONE_TYPES:
+            raise ValueError(f"Unrecognized milestone type: {milestone_type}")
+        if not RX_ISO8601_DATE.match(iso_date):
+            raise ValueError(f"Invalid ISO 8601 date: {iso_date}")
+        self.milestone_type = milestone_type
+        self.iso_date = iso_date
+
+    def to_dict(self) -> dict:
+        """
+        Convert LPFMilestone to dictionary, ready for JSON serialization in LPF format
+        """
+        return {self.milestone_type: self.iso_date}
+
+
+class LPFTimespan:
+    """
+    Class representing a timespan after Linked Places Format (LPF)
+    """
+
+    def __init__(
+        self, start: list[LPFMilestone] | dict, end: list[LPFMilestone] | dict = []
+    ):
+        """
+        Initialize LPFTimespan class
+        """
+        logger = logging.getLogger(f"{__name__}.{self.__class__.__name__}")
+        logger.debug(
+            f"Initializing LPFTimespan with start={pformat(start)} end={pformat(end)}"
+        )
+        self.start = []
+        if isinstance(start, list):
+            for ms in start:
+                if not isinstance(ms, LPFMilestone):
+                    raise TypeError(
+                        "Start list items must be LPFMilestone instances. Got {type(ms)}: {pformat(ms)}"
+                    )
+                self.start.append(ms)
+        elif isinstance(start, dict):
+            for k, v in start.items():
+                self.start.append(LPFMilestone(milestone_type=k, iso_date=v))
+        else:
+            raise TypeError(
+                "Start must be list of LPFMilestone instances or dict. Got {type(start)}: {pformat(start)}"
+            )
+
+        self.end = []
+        if end:
+            if isinstance(end, list):
+                for ms in end:
+                    if not isinstance(ms, LPFMilestone):
+                        raise TypeError(
+                            "End list items must be LPFMilestone instances. Got {type(ms)}: {pformat(ms)}"
+                        )
+                    self.end.append(ms)
+            elif isinstance(end, dict):
+                for k, v in end.items():
+                    self.end.append(LPFMilestone(milestone_type=k, iso_date=v))
+            else:
+                raise TypeError(
+                    "End must be list of LPFMilestone instances or dict. Got {type(end)}: {pformat(end)}"
+                )
+
+    def to_dict(self) -> dict:
+        """
+        Convert LPFTimespan to dictionary, ready for JSON serialization in LPF format
+        """
+        d = {
+            "start": [s.to_dict() for s in self.start],
+            "end": [],
+        }
+        if self.end:
+            d["end"] = [e.to_dict() for e in self.end]
+        else:
+            del d["end"]
+        return d
+
+
+class LPFWhen:
+    """
+    Class representing a 'when' after Linked Places Format (LPF)
+    """
+
+    def __init__(self, timespans: list, periods: list = [], certainty: str = "certain", label: str = "", duration: str = ""):  # type: ignore
+        """
+        Initialize LPFWhen class
+        """
+        self.timespans = []
+        for ts in timespans:
+            if isinstance(ts, LPFTimespan):
+                self.timespans.append(ts)
+            elif isinstance(ts, dict):
+                logger = logging.getLogger(f"{__name__}.{self.__class__.__name__}")
+                logger.debug(f"Initializing LPFTimespan from dict: {pformat(ts)}")
+                self.timespans.append(LPFTimespan(**ts))
+
+        self.periods = []
+        if periods:
+            raise NotImplementedError("LPFWhen 'periods' not implemented yet")
+        self.certainty = certainty
+        self.label = label
+        self.duration = duration
+
+    def to_dict(self) -> dict:
+        """
+        Convert LPFWhen to dictionary, ready for JSON serialization in LPF format
+        """
+        d = {
+            "timespans": [ts.to_dict() for ts in self.timespans],
+        }
+        if self.periods:
+            d["periods"] = self.periods
+        if self.certainty:
+            d["certainty"] = self.certainty  # type: ignore
+        if self.label:
+            d["label"] = self.label  # type: ignore
+        if self.duration:
+            d["duration"] = self.duration  # type: ignore
+        return d
 
 
 class LPFSourceLabel:
@@ -265,6 +396,7 @@ class LPFPlace:
         self._country_codes = set()
         self._geometries = list()  # GeoJSON geometry
         self._names = list()  # LPFName instances
+        self._whens = list()  # LPFWhen instances
 
     #
     # country codes
@@ -479,6 +611,37 @@ class LPFPlace:
             raise ValueError("Title cannot be empty")
         self._title = value
 
+    #
+    # whens
+    #
+    @property
+    def whens(self) -> list:
+        """
+        Get whens as list
+        """
+        return [w.to_dict() for w in self._whens]
+
+    def add_when(
+        self,
+        timespans: list,
+        periods: list = [],
+        certainty: str = "certain",
+        label: str = "",
+        duration: str = "",
+    ):
+        """
+        Add a when
+        """
+        self._whens.append(
+            LPFWhen(
+                timespans=timespans,
+                periods=periods,
+                certainty=certainty,
+                label=label,
+                duration=duration,
+            )
+        )
+
     def to_dict(self) -> dict:
         """
         Convert LPFPlace to dictionary, ready for JSON serialization in LPF format
@@ -576,6 +739,7 @@ class Maker:
         """
         Augment place from WHG DB API data
         """
+        logger = logging.getLogger(f"{__name__}.{self.__class__.__name__}")
         if isinstance(source_data, list):
             raise TypeError("WHG DB API data should be a dict, not a list")
         features = source_data.get("features", [])
@@ -608,7 +772,8 @@ class Maker:
 
                 # whens
                 elif k == "whens":
-                    raise NotImplementedError("WHG DB API 'whens' not implemented yet")
+                    for when in v:
+                        place.add_when(**when)
 
                 # descriptions
                 elif k == "descriptions":
@@ -660,9 +825,21 @@ class Maker:
                                 place.add_feature_class(fc)
                         elif kk == "timespans":
                             if vv:
-                                raise NotImplementedError(
-                                    "WHG DB API 'timespans' not implemented yet (value: {vv})"
-                                )
+                                if (
+                                    isinstance(vv, list)
+                                    and len(vv) == 1
+                                    and isinstance(vv[0], list)
+                                    and len(vv[0]) == 2
+                                    and isinstance(vv[0][0], int)
+                                    and isinstance(vv[0][1], int)
+                                ):
+                                    logger.warning(
+                                        f"IGNORED WHG DB API 'timespans' value in properties; it appears to be a list of two integers: {vv}"
+                                    )
+                                else:
+                                    raise NotImplementedError(
+                                        f"WHG DB API 'timespans' not implemented yet (value: {vv})"
+                                    )
                         else:
                             raise NotImplementedError(
                                 f"WHG DB API property '{k}' not implemented yet"
