@@ -139,3 +139,17 @@ class TestMaker:
         s = place.to_dict()
         logger.info(pformat(s, indent=2))
         assert s["type"] == "Feature"
+
+    def test_make_from_wikidata(self):
+        m = Maker()
+        place = m.make(
+            sources=[
+                "https://www.wikidata.org/wiki/Q131350",
+            ]
+        )
+        assert len(m.places) == 1
+        assert isinstance(place, LPFPlace)
+        assert isinstance(place.id, str)
+        s = place.to_dict()
+        logger.info(pformat(s, indent=2))
+        assert s["type"] == "Feature"
