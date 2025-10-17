@@ -593,8 +593,9 @@ class Maker:
                 # links
                 elif k == "links":
                     for link in v:
+                        identifier = self._expand_whg_link_prefix(link["identifier"])
                         place.add_link(
-                            identifier=link["identifier"],
+                            identifier=identifier,
                             link_type=link.get("type", "closeMatch"),
                             label=link.get("label", ""),
                         )
