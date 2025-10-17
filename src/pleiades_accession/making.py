@@ -10,9 +10,12 @@ Make new LPF from scratch, using provided resources
 """
 from datetime import timedelta
 import json
+import logging
 from pathlib import Path
+from pprint import pformat
 import re
 from pleiades_accession.text import normalize_text
+from shapely import from_geojson, to_geojson
 from urllib.parse import urlparse
 from uuid import uuid4
 from validators import url as validate_url
@@ -118,17 +121,19 @@ class LPFGeometry:
         self.coordinates = coordinates  # GeoJSON coordinates
         self.when = None  # when? (not implemented yet)
         self.citations = []  # citations? (not implemented yet)
-        self.certainty = None  # certainty? (not implemented yet)
+        self.certainty = certainty
+        self.shape = from_geojson(
+            json.dumps({"type": geom_type, "coordinates": coordinates})
+        )
+        logger = logging.getLogger(f"{__name__}.{self.__class__.__name__}")
+        logger.debug(f"Created LPFGeometry: {self.shape.wkt}")
 
     def to_dict(self) -> dict:
         """
         Convert LPFGeometry to dictionary, ready for JSON serialization in LPF format
         """
-        d = {
-            "type": self.type,
-            "coordinates": self.coordinates,
-            "certainty": self.certainty,
-        }
+        d = json.loads(to_geojson(self.shape))
+        d["certainty"] = self.certainty
         return d
 
 
@@ -320,12 +325,16 @@ class LPFPlace:
             "links": self.links,
         }
         geoms = self.geometries
+        logger = logging.getLogger(f"{__name__}.{self.__class__.__name__}")
+        logger.debug(pformat(geoms, indent=2))
         if len(geoms) == 1:
-            d["geometry"] = geoms[0].to_dict()
+            logger.debug("foo")
+            d["geometry"] = geoms[0]
         else:
+            logger.debug("bar")
             d["geometry"] = {
                 "type": "GeometryCollection",
-                "geometries": [g.to_dict() for g in geoms],
+                "geometries": [g for g in geoms],
             }
         return d
 
@@ -448,8 +457,8 @@ class Maker:
                     )
                 else:
                     place.add_geometry(
-                        geom_type=geom.get("type", ""),
-                        coordinates=geom.get("coordinates", []),
+                        geom_type=geom["type"],
+                        coordinates=geom["coordinates"],
                         certainty=geom.get("certainty", "certain"),
                     )
 

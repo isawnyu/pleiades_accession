@@ -10,7 +10,7 @@ Test the making module
 """
 import logging
 from pathlib import Path
-from pleiades_accession.making import Maker, LPFPlace
+from pleiades_accession.making import Maker, LPFPlace, LPFGeometry
 from pprint import pprint, pformat
 
 test_data_path = Path(__file__).parent / "data"
@@ -32,6 +32,7 @@ class TestMaker:
         assert len(m.places) == 1
         assert isinstance(place, LPFPlace)
         assert isinstance(place.id, str)
+        assert isinstance(place._geometries[0], LPFGeometry)
         logger = logging.getLogger(f"{__name__}.{self.__class__.__name__}")
         s = place.to_dict()
         logger.info(pformat(s, indent=2))
@@ -55,6 +56,7 @@ class TestMaker:
             {"identifier": "aat:300000810", "label": "archaeological site"}
         ]
         assert s["geometry"] == {
-            "type": "GeometryCollection",
-            "geometries": [{"type": "Point", "coordinates": [62.286987, 40.063667]}],
+            "type": "Point",
+            "coordinates": [62.286987, 40.063667],
+            "certainty": "less-certain",
         }

@@ -25,30 +25,16 @@ classifiers = [
 ]
 dependencies = [
   "airtight",
-#  "colorama",
-#  "encoded_csv @ https://github.com/paregorios/encoded_csv/archive/refs/heads/main.zip",
-#  "haversine",
-  #"iteration_utilities",
-#  "fiona",
-#  "geonamescache",
-#  "jsonlines",
-  #"pleiades_entities @ file:///Users/paregorios/Documents/files/P/pleiades_entities",
   "pleiades_local @ https://github.com/isawnyu/pleiades_local/archive/refs/heads/main.zip",
   "pytest",
   "pyperclip",
   "pywikibot",
-  #"reproj",
-  "shapely",
   "platformdirs",
-  "pywikibot",
   "rapidfuzz",
-  # "rdflib",
-#  "python-slugify",
+  "shapely",
   "textnorm",
   "validators",
-# "viapy @ https://github.com/Princeton-CDH/viapy/archive/refs/tags/0.4.zip",
   "webiquette @ https://github.com/isawnyu/webiquette/archive/refs/heads/main.zip"
-  #"webiquette @ file:///Users/paregorios/Documents/files/W/webiquette"
 ]
 [project.urls]
 # "Homepage" = "https://github.com/pypa/sampleproject"
