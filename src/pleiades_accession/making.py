@@ -778,9 +778,12 @@ class Maker:
                 elif k == "links":
                     for link in v:
                         identifier = self._expand_whg_link_prefix(link["identifier"])
+                        default_link_type = "closeMatch"
+                        if urlparse(identifier).netloc == "en.wikipedia.org":
+                            default_link_type = "seeAlso"
                         place.add_link(
                             identifier=identifier,
-                            link_type=link.get("type", "closeMatch"),
+                            link_type=link.get("type", default_link_type),
                             label=link.get("label", ""),
                         )
 
