@@ -475,13 +475,14 @@ class LPFPlace:
             # check for duplicates
             new_shape = new_geom.shape
             for existing_geom in self._geometries:
-                if assert_geometries_equal(
-                    existing_geom.shape, new_shape, normalize=True
-                ):
-                    # geometries are equal
-                    if not existing_geom.citations and citations:
-                        existing_geom.citations = citations
-                    return
+                try:
+                    assert_geometries_equal(
+                        existing_geom.shape, new_shape, normalize=True
+                    )
+                except AssertionError:
+                    pass
+                else:
+                    return  # duplicate found; do not add
         self._geometries.append(new_geom)
 
     #
@@ -847,8 +848,11 @@ class Maker:
 
                 # geometry
                 elif k == "geometry":
-                    geom = v
-                    if geom:
+                    if v["type"] == "GeometryCollection":
+                        geoms = v.get("geometries", [])
+                    else:
+                        geoms = [v]
+                    for geom in geoms:
                         if (
                             geom.get("type") == "MultiPoint"  # type: ignore
                             and len(geom["coordinates"]) == 1  # type: ignore
