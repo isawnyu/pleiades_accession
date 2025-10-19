@@ -301,7 +301,7 @@ class LPFCitation:
     Class representing a citation after Linked Places Format (LPF)
     """
 
-    def __init__(self, label: str = "", year: int = None, identifier: str = "", **kwargs):  # type: ignore
+    def __init__(self, label: str = "", year: int = None, identifier: str = "", ctype: str = "citesAsDataSource", **kwargs):  # type: ignore
         """
         Initialize LPFCitation class
         """
@@ -314,6 +314,7 @@ class LPFCitation:
             raise err
         self.year = year  # citation year
         self.identifier = identifier  # citation identifier (i.e. URL)
+        self.ctype = ctype
 
     def to_dict(self) -> dict:
         """
@@ -326,6 +327,8 @@ class LPFCitation:
             d["year"] = self.year  # type: ignore
         if self.identifier:
             d["@id"] = self.identifier  # type: ignore
+        if self.ctype:
+            d["type"] = self.ctype  # type: ignore
         return d
 
 
@@ -345,6 +348,7 @@ class LPFName:
         """
         Initialize LPFName class
         """
+        self.citations = []
         self.toponym = normalize_text(toponym)  # place name
         romanizations_d = {
             normalize_text(r): 1 for r in romanizations
@@ -379,9 +383,12 @@ class LPFName:
         self.lang = lang  # language tag
         if citations:
             for c in citations:
-                if "@id" in c:
-                    c["identifier"] = c["@id"]
-            self.citations = [LPFCitation(**c) for c in citations]
+                if isinstance(c, dict):
+                    if "@id" in c:
+                        c["identifier"] = c["@id"]
+                    self.citations.append(LPFCitation(**c))
+                elif isinstance(c, LPFCitation):
+                    self.citations.append(c)
         if when:
             raise NotImplementedError("LPFName 'when' not implemented yet for names")
 
@@ -396,14 +403,7 @@ class LPFName:
         if self.romanizations:
             d["romanizations"] = self.romanizations  # type: ignore
         if hasattr(self, "citations"):
-            d["citations"] = [  # type: ignore
-                {
-                    "label": c.label,
-                    **({"year": c.year} if c.year else {}),
-                    **({"@id": c.identifier} if c.identifier else {}),
-                }
-                for c in self.citations
-            ]
+            d["citations"] = [c.to_dict() for c in self.citations]  # type: ignore
         return d
 
 
@@ -632,13 +632,20 @@ class LPFPlace:
             nstrings.update(name.romanizations)
         return list(nstrings)
 
+    @property
+    def name_toponyms(self) -> list:
+        toponyms = set()
+        for name in self._names:
+            toponyms.add(name.toponym)
+        return list(toponyms)
+
     def add_name(
         self, toponym: str, lang: str = "und", citations: list = [], when: dict = dict()
     ):
         """
         Add a name
         """
-        if normalize_text(toponym) not in self.name_strings:
+        if normalize_text(toponym) not in self.name_toponyms:
             self._names.append(
                 LPFName(toponym=toponym, lang=lang, citations=citations, when=when)
             )
@@ -1052,9 +1059,29 @@ class Maker:
                     )
 
             elif k == "labels":
-                target_langs = ["en", "de", "fr", "it", "es", "la", "grc"]
-                for lang, label in v.items():
-                    place.add_name(toponym=label, lang=lang)
+                target_langs = {code: 1 for code in WIKIDATA_LABEL_LANGUAGES}
+                for country_id, country_data in self._get_wikidata_countries(source_data).items():  # type: ignore
+                    for lang_data in country_data["official_languages"].values():
+                        target_langs[lang_data["wiki_code"]] = 1
+                for lang_id in target_langs:
+                    try:
+                        label = v[lang_id]
+                    except KeyError:
+                        continue
+                    except TypeError as err:
+                        err.add_note(
+                            f"while processing Wikidata labels for lang '{lang_id}': {pformat(v)}"
+                        )
+                        raise err
+                    place.add_name(
+                        toponym=label,
+                        lang=lang_id,
+                        citations=[
+                            LPFCitation(
+                                identifier=f"https://www.wikidata.org/wiki/{source_data['id']}"
+                            )
+                        ],
+                    )  # type: ignore
 
             elif k == "descriptions":
                 # ignore descriptions for now
@@ -1090,11 +1117,9 @@ class Maker:
                     )
 
                 # try to get wikipedias for the containing country's official languages as well
+                hits = 0
                 wiki_lang_codes = set()
-                country_props = source_data["statements"].get("P17", [])  # type: ignore
-                for cprop in country_props:
-                    country_id = cprop["value"]["content"]
-                    country_data = self._get_wikidata_country_data(country_id)
+                for country_id, country_data in self._get_wikidata_countries(source_data).items():  # type: ignore
                     for lang_data in country_data["official_languages"].values():
                         wiki_lang_codes.add(lang_data["wiki_code"])
                 for wiki_lang_code in wiki_lang_codes:
@@ -1102,11 +1127,24 @@ class Maker:
                         wikivals = v[wiki_lang_code]
                     except KeyError:
                         continue
+                    hits += 1
                     place.add_link(
                         identifier=wikivals["url"],
                         link_type="seeAlso",
                         label=wikivals["title"],
                     )
+
+                # if hits == 0:
+                #     # try to add wikipedia articles in the official languages of the most populous countries
+                #     # on the continent where the place is located
+                #     logger.debug(pformat(source_data, indent=2))
+                #     continents = self._get_wikidata_continents(source_data)  # type: ignore
+                #     if not continents:
+                #         continents = dict()
+                #         for country_id, country_data in = self._get_wikidata_countries(source_data).items():  # type: ignore
+                #             for continent_id, continent_data in country_data.get("continents", []).items():
+                #                 continents[continent_id] = continent_data
+                #     # from here a sparql query would be the best bet, but for now we will not try to get more wikipedia links
 
             elif k == "statements":
                 # P131 - located in the administrative territorial entity
@@ -1161,9 +1199,9 @@ class Maker:
                         continue
                     if prop_id == "P17":  # country
                         logger.debug(f"Wikidata country: {pformat(prop_val, indent=2)}")
-                        item_id = prop_val[0]["value"]["content"]
-                        item_data = self._get_wikidata_item(item_id)
-                        place.add_country_code(item_data["statements"]["P297"][0])
+                        country_id = prop_val[0]["value"]["content"]
+                        country_data = self._get_wikidata_country_data(country_id)
+                        place.add_country_code(country_data["country_code"])
 
                     elif prop_id in properties_4_links:
                         prop_data = self._get_wikidata_property(prop_id)
@@ -1239,6 +1277,12 @@ class Maker:
             "official_names": self._get_wikidata_official_names(raw_country_data),
             "continents": self._get_wikidata_continents(raw_country_data),
         }
+        try:
+            country_code = raw_country_data["statements"]["P297"][0]["value"]["content"]
+        except KeyError as err:
+            err.add_note(f"Wikidata country {country_id} has no P297 country code")
+            raise err
+        country_record["country_code"] = country_code
         self._wikidata_country_info[country_id] = country_record
         return country_record
 
@@ -1289,6 +1333,18 @@ class Maker:
             continents[cont_id] = cont_data
         return continents
 
+    def _get_wikidata_countries(self, item_data: dict) -> dict:
+        """
+        Get Wikidata countries
+        """
+        countries = dict()
+        for country_entry in item_data["statements"].get("P17", []):
+            country_id = country_entry["value"]["content"]
+            country_data = self._get_wikidata_country_data(country_id)
+            countries[country_id] = country_data
+        return countries
+
+    @lru_cache()
     def _get_wikidata_continent_data(self, cont_id: str) -> dict:
         """
         Get Wikidata continent data
@@ -1349,10 +1405,8 @@ class Maker:
         # official names P1448
         place["official_names"] = self._get_wikidata_official_names(item_data)
 
-        # country P17
-        for country_entry in item_data["statements"].get("P17", []):
-            country_id = country_entry["value"]["content"]
-            country_data = self._get_wikidata_country_data(country_id)
+        # country
+        for country_id, country_data in self._get_wikidata_countries(item_data).items():
             place["countries"][country_id] = country_data["label"]
 
         self._wikidata_place_info[place_id] = place
