@@ -1330,6 +1330,10 @@ class Maker:
                         "P1465",  # category for people who died here
                         "P1792",  #  category of associated people
                         "P2044",  # elevation above sea level
+                        "P1997",  #  facebook location ID)
+                        "P1082",  # population
+                        "P948",  #  page banner
+                        "P856",  # official website
                     }:
                         continue
 
@@ -1503,10 +1507,26 @@ class Maker:
                             label = item["value"]["content"]
                             identifier = f"https://commons.wikimedia.org/wiki/File:{label.replace(' ', '_')}"
                             place.add_depiction(title=label, identifier=identifier)
-                    else:
-                        raise NotImplementedError(
-                            f"Wikidata property '{prop_id}' not implemented yet: {pformat(prop_val)}"
-                        )
+                    elif prop_id == "P1705":  # native label
+                        for item in prop_val:
+                            lang_code = item["value"]["content"]["language"]
+                            toponym = item["value"]["content"]["text"]
+                            place.add_name(
+                                toponym=toponym,
+                                lang=lang_code,
+                                citations=[
+                                    LPFCitation(
+                                        identifier=f"https://www.wikidata.org/wiki/{source_data['id']}",  # type: ignore
+                                        label=self._get_wikidata_preferred_label(
+                                            source_data["id"]  # type: ignore
+                                        ),
+                                    )
+                                ],
+                            )
+                    # else:
+                    #     raise NotImplementedError(
+                    #         f"Wikidata property '{prop_id}' not implemented yet: {pformat(prop_val)}"
+                    #     )
             #
             elif k == "title":
                 raise NotImplementedError(
