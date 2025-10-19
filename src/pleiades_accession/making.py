@@ -1078,7 +1078,10 @@ class Maker:
                         lang=lang_id,
                         citations=[
                             LPFCitation(
-                                identifier=f"https://www.wikidata.org/wiki/{source_data['id']}"
+                                identifier=f"https://www.wikidata.org/wiki/{source_data['id']}",
+                                label=self._get_wikidata_preferred_label(
+                                    source_data["id"]  # type: ignore
+                                ),
                             )
                         ],
                     )  # type: ignore
