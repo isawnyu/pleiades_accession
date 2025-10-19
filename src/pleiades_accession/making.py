@@ -332,6 +332,39 @@ class LPFCitation:
         return d
 
 
+class LPFDescription:
+    """
+    Class representing a description after Linked Places Format (LPF)
+    """
+
+    def __init__(
+        self, value: str, lang: str = "und", citations: list[LPFCitation | dict] = []
+    ):
+        """
+        Initialize LPFDescription class
+        """
+        self.value = normalize_text(value)  # description text
+        self.lang = lang  # language tag
+        self.citations = []
+        for c in citations:
+            if isinstance(c, dict):
+                self.citations.append(LPFCitation(**c))
+            elif isinstance(c, LPFCitation):
+                self.citations.append(c)
+
+    def to_dict(self) -> dict:
+        """
+        Convert LPFDescription to dictionary, ready for JSON serialization in LPF format
+        """
+        d = {
+            "value": self.value,
+            "lang": self.lang,
+        }
+        if self.citations:
+            d["citations"] = [c.to_dict() for c in self.citations]  # type: ignore
+        return d
+
+
 class LPFName:
     """
     Class representing a place name after Linked Places Format (LPF) with additional Pleiades requirements
@@ -427,6 +460,7 @@ class LPFPlace:
         self._geometries = list()  # GeoJSON geometry
         self._names = list()  # LPFName instances
         self._whens = list()  # LPFWhen instances
+        self._descriptions = list()  # LPFDescription instances
 
     #
     # country codes
@@ -447,6 +481,24 @@ class LPFPlace:
         elif isinstance(country_code, str):
             country_code = country_code
         self._country_codes.add(country_code.upper())  # type: ignore
+
+    #
+    # descriptions
+    #
+    @property
+    def descriptions(self) -> list:
+        """
+        Get descriptions as list
+        """
+        return [d.to_dict() for d in self._descriptions]
+
+    def add_description(self, value: str, lang: str = "und", citations: list = []):
+        """
+        Add a description
+        """
+        self._descriptions.append(
+            LPFDescription(value=value, lang=lang, citations=citations)
+        )
 
     #
     # feature classes
@@ -737,6 +789,7 @@ class LPFPlace:
             "types": self.types,
             "links": self.links,
             "names": [n.to_dict() for n in self._names],
+            "descriptions": [d.to_dict() for d in self._descriptions],
         }
         geoms = self.geometries
         logger = logging.getLogger(f"{__name__}.{self.__class__.__name__}")
@@ -1176,7 +1229,7 @@ class Maker:
                 #     # from here a sparql query would be the best bet, but for now we will not try to get more wikipedia links
 
             elif k == "statements":
-                # P131 - located in the administrative territorial entity
+
                 # P31 - instance of
                 # P1705 - native label
                 # P1448 - official name
@@ -1225,6 +1278,8 @@ class Maker:
                         "P373",  # commons category
                         "P473",  # local dialing code
                         "P19",  # place of birth
+                        "P646",  # freebase ID
+                        "P190",  #  twinned administrative body
                     }:
                         continue
 
@@ -1298,6 +1353,84 @@ class Maker:
                                 link_type="seeAlso",
                                 label=label,
                             )
+                    elif (
+                        prop_id == "P131"
+                    ):  # located in the administrative territorial entity
+                        wherein = []
+                        item_id = prop_val[0]["value"]["content"]
+                        while True:
+                            wherein.append(self._get_wikidata_preferred_label(item_id))
+                            item_data = self._get_wikidata_item(item_id)
+                            try:
+                                item_id = item_data["statements"]["P131"][0]["value"][
+                                    "content"
+                                ]
+                            except KeyError:
+                                break
+                        if wherein:
+                            place.add_description(
+                                value=f"Located in: {', '.join(wherein)}",
+                                lang="en",
+                                citations=[
+                                    LPFCitation(
+                                        identifier=f"https://www.wikidata.org/wiki/{source_data['id']}",  # type: ignore
+                                        label=self._get_wikidata_preferred_label(
+                                            source_data["id"]  # type: ignore
+                                        ),
+                                    ),
+                                ],
+                            )
+                    elif prop_id == "P31":  # instance of
+                        for item in prop_val:
+                            item_id = item["value"]["content"]
+                            label = self._get_wikidata_preferred_label(item_id)
+                            item_data = self._get_wikidata_item(item_id)
+                            identifier = f"https://www.wikidata.org/wiki/{item_id}"
+                            include = True
+                            while True:
+                                try:
+                                    aat_id = item_data["statements"][
+                                        "P1014"
+                                    ]  # getty AAT ID
+                                except KeyError:
+                                    pass
+                                else:
+                                    raise NotImplementedError(
+                                        f"Wikidata P31 with Getty AAT ID not implemented yet: {pformat(aat_id, indent=2)}"
+                                    )
+                                parts = label.split(" of ", 1)
+                                if len(parts) == 2 and parts[0].strip() in {
+                                    "administrative divisions",
+                                    "administrative territorial entity",
+                                    "city",
+                                }:
+                                    include = False
+                                    try:
+                                        item_id = item_data["statements"]["P279"][0][
+                                            "value"
+                                        ]["content"]
+                                    except KeyError:
+                                        break
+                                    else:
+                                        label = self._get_wikidata_preferred_label(
+                                            item_id
+                                        )
+                                        identifier = (
+                                            f"https://www.wikidata.org/wiki/{item_id}"
+                                        )
+                                        item_data = self._get_wikidata_item(item_id)
+                                else:
+                                    include = True
+                                    break
+                            if include:
+                                place.add_type(
+                                    identifier=identifier,
+                                    label=label,
+                                )
+                    # else:
+                    #    raise NotImplementedError(
+                    #        f"Wikidata property '{prop_id}' not implemented yet: {pformat(prop_val)}"
+                    #    )
 
             elif k == "title":
                 raise NotImplementedError(
