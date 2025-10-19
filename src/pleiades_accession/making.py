@@ -1389,6 +1389,16 @@ class Maker:
                             include = True
                             while True:
                                 try:
+                                    gn_feature_class = item_data["statements"]["P2452"]
+                                except KeyError:
+                                    pass
+                                else:
+                                    gn_feature_class = gn_feature_class[0]["value"][
+                                        "content"
+                                    ]
+                                    gn_feature_class = gn_feature_class.split(".")[0]
+                                    place.add_feature_class(gn_feature_class)
+                                try:
                                     aat_id = item_data["statements"][
                                         "P1014"
                                     ]  # getty AAT ID
@@ -1427,6 +1437,16 @@ class Maker:
                                     identifier=identifier,
                                     label=label,
                                 )
+                                for term in [
+                                    "city",
+                                    "town",
+                                    "village",
+                                    "settlement",
+                                    "hamlet",
+                                ]:
+                                    if term in label.lower():
+                                        place.add_feature_class("P")  # populated place
+                                        break
                     # else:
                     #    raise NotImplementedError(
                     #        f"Wikidata property '{prop_id}' not implemented yet: {pformat(prop_val)}"
