@@ -9,6 +9,7 @@
 Make new LPF from scratch, using provided resources
 """
 from datetime import timedelta
+from functools import lru_cache
 import json
 import logging
 from pathlib import Path
@@ -48,6 +49,15 @@ VALID_CERTAINTY_VALUES = {"certain", "less-certain", "uncertain"}
 RX_ISO8601_DATE = re.compile(r"^\d{4}(-\d{2}|-\d{2}-\d{2})?$")
 
 SCRIPT_DETECTOR = ScriptDetector()
+
+WIKIDATA_LABEL_LANGUAGES = [
+    "en",
+    "de",
+    "es",
+    "fr",
+    "it",
+    "pt",
+]
 
 
 class LPFMilestone:
@@ -1042,6 +1052,7 @@ class Maker:
                     )
 
             elif k == "labels":
+                target_langs = ["en", "de", "fr", "it", "es", "la", "grc"]
                 for lang, label in v.items():
                     place.add_name(toponym=label, lang=lang)
 
@@ -1077,26 +1088,26 @@ class Maker:
                         link_type="seeAlso",
                         label=wikivals["title"],
                     )
+                    break
+
                 # try to get wikipedias for the containing country's official languages as well
-                c = source_data["statements"].get("P17", [])  # type: ignore
-                if c:
-                    country_id = c[0]["value"]["content"]
-                    country_data = self._get_wikidata_item(country_id)
-                    language_codes = {}
-                    for lang_id in country_data["statements"].get("P37", []):  # type: ignore
-                        lang_data = self._get_wikidata_item(lang_id["value"]["content"])
-                        wiki_lang_codes = lang_data["statements"].get("P424", [])  # type: ignore
-                        for wiki_lang_code in wiki_lang_codes:
-                            code_s = wiki_lang_code["value"]["content"]
-                            try:
-                                wikivals = v[code_s]
-                            except KeyError:
-                                continue
-                            place.add_link(
-                                identifier=wikivals["url"],
-                                link_type="seeAlso",
-                                label=wikivals["title"],
-                            )
+                wiki_lang_codes = set()
+                country_props = source_data["statements"].get("P17", [])  # type: ignore
+                for cprop in country_props:
+                    country_id = cprop["value"]["content"]
+                    country_data = self._get_wikidata_country_data(country_id)
+                    for lang_data in country_data["official_languages"].values():
+                        wiki_lang_codes.add(lang_data["wiki_code"])
+                for wiki_lang_code in wiki_lang_codes:
+                    try:
+                        wikivals = v[wiki_lang_code]
+                    except KeyError:
+                        continue
+                    place.add_link(
+                        identifier=wikivals["url"],
+                        link_type="seeAlso",
+                        label=wikivals["title"],
+                    )
 
             elif k == "statements":
                 # P131 - located in the administrative territorial entity
@@ -1214,6 +1225,105 @@ class Maker:
                     f"Wikidata key '{k}' not implemented yet: {pformat(v)}"
                 )
 
+    def _get_wikidata_country_data(self, country_id: str) -> dict:
+        """
+        Get Wikidata country data
+        """
+        if country_id in self._wikidata_country_info:
+            return self._wikidata_country_info[country_id]
+        raw_country_data = self._get_wikidata_item(country_id)
+        country_record = {
+            "label": self._get_wikidata_preferred_label(country_id),
+            "official_languages": self._get_wikidata_official_languages(
+                raw_country_data
+            ),
+            "official_names": self._get_wikidata_official_names(raw_country_data),
+            "continents": self._get_wikidata_continents(raw_country_data),
+        }
+        self._wikidata_country_info[country_id] = country_record
+        return country_record
+
+    def _get_wikidata_language_data(self, lang_id: str) -> dict:
+        """
+        Get Wikidata language data
+        """
+        if lang_id in self._wikidata_language_info:
+            return self._wikidata_language_info[lang_id]
+        pref_label = self._get_wikidata_preferred_label(lang_id)  # type: ignore
+        language_data = {"label": pref_label, "code": "", "wiki_code": ""}
+        item_data = self._get_wikidata_item(lang_id)
+        # wiki code P424
+        for code_entry in item_data["statements"].get("P424", []):
+            code_s = code_entry["value"]["content"]
+            language_data["wiki_code"] = code_s
+            break
+        # iso 639-1 code P218
+        for code_entry in item_data["statements"].get("P218", []):
+            code_s = code_entry["value"]["content"]
+            language_data["code"] = code_s
+            break
+        self._wikidata_language_info[lang_id] = language_data
+        return language_data
+
+    @lru_cache(maxsize=512)
+    def _get_wikidata_preferred_label(self, item_id: str) -> str:
+        """
+        Get Wikidata preferred label
+        """
+        item_data = self._get_wikidata_item(item_id)
+        for lang in WIKIDATA_LABEL_LANGUAGES:
+            try:
+                label_entry = item_data["labels"][lang]
+            except KeyError:
+                continue
+            return label_entry
+        raise RuntimeError("Preferred label not found in expected languages")
+
+    def _get_wikidata_continents(self, item_data: dict) -> dict:
+        """
+        Get Wikidata continents
+        """
+        continents = dict()
+        for cont_entry in item_data["statements"].get("P30", []):
+            cont_id = cont_entry["value"]["content"]
+            cont_data = self._get_wikidata_continent_data(cont_id)
+            continents[cont_id] = cont_data
+        return continents
+
+    def _get_wikidata_continent_data(self, cont_id: str) -> dict:
+        """
+        Get Wikidata continent data
+        """
+        if cont_id in self._wikidata_continent_info:
+            return self._wikidata_continent_info[cont_id]
+        continent_data = {"label": "", "official_names": dict()}
+        continent_data["label"] = self._get_wikidata_preferred_label(cont_id)
+        item_data = self._get_wikidata_item(cont_id)
+        continent_data["official_names"] = self._get_wikidata_official_names(item_data)
+        self._wikidata_continent_info[cont_id] = continent_data
+        return continent_data
+
+    def _get_wikidata_official_languages(self, item_data: dict) -> dict:
+        """
+        Get Wikidata official languages
+        """
+        languages = dict()
+        for lang_entry in item_data["statements"].get("P37", []):
+            lang_id = lang_entry["value"]["content"]
+            lang_data = self._get_wikidata_language_data(lang_id)
+            languages[lang_id] = lang_data
+        return languages
+
+    def _get_wikidata_official_names(self, item_data: dict) -> dict:
+        """
+        Get Wikidata official names
+        """
+        official_names = dict()
+        for name_entry in item_data["statements"].get("P1448", []):
+            lang_id = name_entry["value"]["content"]["language"]
+            official_names[lang_id] = name_entry["value"]["content"]["text"]
+        return official_names
+
     def _get_wikidata_item(self, item_id: str) -> dict:
         """
         Get Wikidata item data
@@ -1224,6 +1334,30 @@ class Maker:
         interface = web_interfaces[url_parts.netloc]
         r = interface.get(url)
         return r.json()
+
+    def _get_wikidata_place_data(self, place_id: str) -> dict:
+        """
+        Get Wikidata place data
+        """
+        if place_id in self._wikidata_place_info:
+            return self._wikidata_place_info[place_id]
+        item_data = self._get_wikidata_item(place_id)
+        place = {"label": "", "official_names": dict(), "countries": dict()}
+
+        # preferred label "labels"
+        place["label"] = self._get_wikidata_preferred_label(place_id)
+
+        # official names P1448
+        place["official_names"] = self._get_wikidata_official_names(item_data)
+
+        # country P17
+        for country_entry in item_data["statements"].get("P17", []):
+            country_id = country_entry["value"]["content"]
+            country_data = self._get_wikidata_country_data(country_id)
+            place["countries"][country_id] = country_data["label"]
+
+        self._wikidata_place_info[place_id] = place
+        return place
 
     def _get_wikidata_property(self, prop_id: str) -> dict:
         """
@@ -1275,6 +1409,12 @@ class Maker:
             url = f"{base_url}/entities/items/{qid}"
             url_parts = urlparse(url)
             self._wikidata_properties = dict()
+            self._wikidata_place_info = dict()
+            self._wikidata_country_info = dict()
+            self._wikidata_continent_info = dict()
+            self._wikidata_continents_by_place = dict()
+            self._wikidata_countries_by_place = dict()
+            self._wikidata_language_info = dict()
         try:
             interface = web_interfaces[url_parts.netloc]
         except KeyError:
