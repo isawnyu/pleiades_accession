@@ -104,7 +104,7 @@ class TestMaker:
         assert s["names"] == [
             {
                 "lang": "und",
-                "romanizations": ["Daya Khatin", "Daya-Khatïn"],
+                "romanizations": ["Daya-Khatïn", "Daya Khatin"],
                 "toponym": "Daya-Khatïn",
             },
             {
@@ -117,8 +117,8 @@ class TestMaker:
                 ],
                 "lang": "und",
                 "romanizations": [
-                    "Daya Khatin caravanseray",
                     "Daya-Khatïn,caravanseray",
+                    "Daya Khatin caravanseray",
                 ],
                 "toponym": "Daya-Khatïn,caravanseray",
             },

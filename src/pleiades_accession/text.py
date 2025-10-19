@@ -8,10 +8,11 @@
 """
 Functions for dealing with text
 """
-
+from functools import lru_cache
 import textnorm
 
 
+@lru_cache(maxsize=5000)
 def normalize_text(s: str) -> str:
     """
     Normalize text using textnorm

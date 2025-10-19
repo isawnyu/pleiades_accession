@@ -8,15 +8,14 @@
 """
 Make new LPF from scratch, using provided resources
 """
-from alphabet_detector import AlphabetDetector
 from datetime import timedelta
 import json
 import logging
 from pathlib import Path
 from pprint import pformat
-import re
-from romanize import romanize
 from pleiades_accession.text import normalize_text
+from pleiades_writing_systems.romanization import Romanizer, ScriptDetector
+import re
 from shapely import from_geojson, to_geojson
 from shapely.testing import assert_geometries_equal
 from slugify import slugify
@@ -27,13 +26,14 @@ from webiquette.webi import Webi
 
 web_interfaces = dict()
 HEADERS = {
-    "User-Agent": "pleiades_accession/0.1 (+https://pleiades.stoa.org)",
+    "User-Agent": "pleiades_accession/0.1 (https://pleiades.stoa.org; pleiades.admin@nyu.edu)",
     "From": "pleiades.admin@nyu.edu",
 }
 EXPIRE_AFTER = timedelta(days=1)
 origin_url_rxx = [
     (r"^https://whgazetteer\.org/api/db/\?id=(\d)+$", "whg_db_api"),
     (r"^https://whgazetteer.org/api/place/(\d)+/$", "whg_place_api"),
+    (r"^https://www.wikidata.org/wiki/(Q\d+)/?$", "wikidata"),
 ]
 VALID_LINK_TYPES = {
     "closeMatch",
@@ -45,8 +45,9 @@ VALID_LINK_TYPES = {
 }
 VALID_MILESTONE_TYPES = {"in", "earliest", "latest"}
 VALID_CERTAINTY_VALUES = {"certain", "less-certain", "uncertain"}
-ALPHABET_DETECTOR = AlphabetDetector()
 RX_ISO8601_DATE = re.compile(r"^\d{4}(-\d{2}|-\d{2}-\d{2})?$")
+
+SCRIPT_DETECTOR = ScriptDetector()
 
 
 class LPFMilestone:
@@ -318,35 +319,29 @@ class LPFName:
         Initialize LPFName class
         """
         self.toponym = normalize_text(toponym)  # place name
-        self.romanizations = {
-            normalize_text(r) for r in romanizations
-        }  # romanized forms
-        self.lang = lang  # language tag
-        self.romanizations.add(slugify(toponym, separator=" ", lowercase=False))
-        if lang == "de":
-            # German U with umlaut special case
-            self.romanizations.add(
-                slugify(
-                    toponym,
-                    separator=" ",
-                    lowercase=False,
-                    replacements=[["Ü", "UE"], ["ü", "ue"]],
-                )
-            )
-        if ALPHABET_DETECTOR.only_alphabet_chars(toponym, "LATIN"):
-            self.romanizations.add(toponym)
-        else:
-            alphabets = ALPHABET_DETECTOR.detect_alphabet(toponym)
-            if alphabets == {"GREEK"} and lang in {"el", "grc", "und"}:
-                self.romanizations.add(romanize(toponym))
-                if lang == "und":
-                    self.lang = "el"
-            elif len(alphabets) > 1:
-                pass  # skip mixed-alphabet toponyms; slugify is best we can do
+        romanizations_d = {
+            normalize_text(r): 1 for r in romanizations
+        }  # romanized forms, preserve order
+        for romanization in Romanizer().romanize(self.toponym, lang_tags=lang):
+            rs = romanization.romanized
+            try:
+                romanizations_d[rs]
+            except KeyError:
+                romanizations_d[rs] = 1
             else:
-                raise NotImplementedError(
-                    f"Romanization for alphabet {alphabets} not implemented yet"
-                )
+                romanizations_d[rs] += 1
+
+        self.romanizations = sorted(
+            romanizations_d, key=romanizations_d.get, reverse=True
+        )  # type: ignore
+        script = SCRIPT_DETECTOR.detect_scripts(self.toponym)
+        if script == ["Latn"]:
+            # if the toponym is already in Latin script, ensure it's included in romanizations
+            if self.toponym in self.romanizations:
+                del self.romanizations[self.romanizations.index(self.toponym)]
+            self.romanizations.insert(0, self.toponym)  # type: ignore
+
+        self.lang = lang  # language tag
         if citations:
             for c in citations:
                 if "@id" in c:
@@ -364,7 +359,7 @@ class LPFName:
             "lang": self.lang,
         }
         if self.romanizations:
-            d["romanizations"] = sorted(list(self.romanizations))  # type: ignore
+            d["romanizations"] = self.romanizations  # type: ignore
         if hasattr(self, "citations"):
             d["citations"] = [  # type: ignore
                 {
@@ -1004,6 +999,26 @@ class Maker:
                     f"WHG Place API key '{k}' not implemented yet"
                 )
 
+    def _augment_from_wikidata(self, place: LPFPlace, source_data: dict | list):
+        """
+        Augment place from Wikidata data
+        """
+        logger = logging.getLogger(f"{__name__}.{self.__class__.__name__}")
+        for k, v in source_data.items():  # type: ignore
+            if not v:
+                continue
+            if k == "type":
+                if v != "item":
+                    raise ValueError(
+                        f"Wikidata entity unexpected type value {v}, expected item"
+                    )
+
+            elif k == "labels":
+                for lang, label in v.items():
+                    place.add_name(toponym=label, lang=lang)
+            else:
+                raise NotImplementedError(f"Wikidata key '{k}' not implemented yet")
+
     def _identify_source(self, source: str) -> str:
         """
         Identify source type
@@ -1020,7 +1035,14 @@ class Maker:
         """
         Ingest data from URL
         """
+
         url_parts = urlparse(url)
+        # substitute url for API if needed
+        if url_parts.netloc == "www.wikidata.org":
+            base_url = "https://www.wikidata.org/w/rest.php/wikibase/v1"
+            qid = url_parts.path.split("/")[-1]
+            url = f"{base_url}/entities/items/{qid}"
+            url_parts = urlparse(url)
         try:
             interface = web_interfaces[url_parts.netloc]
         except KeyError:

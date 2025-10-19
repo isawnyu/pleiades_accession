@@ -25,12 +25,13 @@ classifiers = [
 ]
 dependencies = [
   "airtight",
-  "pleiades_local @ https://github.com/isawnyu/pleiades_local/archive/refs/heads/main.zip",
-  "pytest",
-  "pyperclip",
-  "pywikibot",
   "platformdirs",
+  "pleiades_local @ https://github.com/isawnyu/pleiades_local/archive/refs/heads/main.zip",
+  "pleiades_writing_systems @ https://github.com/isawnyu/pleiades_writing_systems/archive/refs/heads/main.zip",
+  "pyperclip",
+  "pytest",
   "python-slugify",
+  "pywikibot",
   "qwikidata",
   "rapidfuzz",
   "shapely",
