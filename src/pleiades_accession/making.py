@@ -1301,6 +1301,7 @@ class Maker:
                     "P2326",  # GNS Unique Feature ID (National Geospatial-Intelligence Agency's GEOnet Names Server)
                     "P1667",  # Getty Thesaurus of Geographic Names ID
                     "P9951",  # Greek Castles ID (Kastrologos)
+                    "P8406",  #  Grove Art Online ID
                     "P6916",  #  Heritage Gazetteer of Cyprus
                     "P6751",  #  Heritage Gazetteer of Libya ID
                     "P8217",  #  iDAI.gazetteer ID
@@ -1308,6 +1309,7 @@ class Maker:
                     "P244",  # Library of Congress authority ID
                     "P9736",  #  MANTO ID
                     "P4356",  # Megalithic Portal ID
+                    "P9957",  # Museum-digital ID
                     "P2950",  # Nomisma ID
                     "P402",  # OpenStreetMap relation ID
                     "P11693",  # OpenStreetMap node ID
@@ -1323,6 +1325,7 @@ class Maker:
                     "P214",  # VIAF ID
                     "P1481",  #  vici.org ID
                     "P13061",  #  World Historical Gazetteer place ID
+                    "P13591",  # Yale LUX ID
                 }
                 for prop_id, prop_val in v.items():
                     # logger.debug(prop_id)
@@ -1348,6 +1351,21 @@ class Maker:
                         "P1376",  # Capital of
                         "P2924",  # Great Russian Encyclopedia Online ID (old version)
                         "P6766",  # Who's on First ID
+                        "P982",  # MusicBrainz area ID
+                        "P227",  # GND ID
+                        "P8189",  # National Library of Israel ID
+                        "P269",  # IDref ID
+                        "P9495",  # National Historical Museums of Sweden ID
+                        "P7305",  # Online PWN Encyclopedia ID
+                        "P1791",  # category for people buried here
+                        "P1540",  # male population
+                        "P1539",  # female population
+                        "P950",  # National Library of Spain SpMaBN ID (BNE v1.0)
+                        "P8179",  # Canadiana name authority ID
+                        "P2163",  # FAST ID
+                        "P463",  # member of
+                        "P12749",  # SNARC ID
+                        "P7314",  # TDV Encyclopedia of Islam ID
                     }:
                         continue
 
@@ -1408,9 +1426,10 @@ class Maker:
                             citations=citations,
                         )
                     elif prop_id in {
-                        "P910",
-                        "P7867",
-                    }:  # topic's main category, category for maps or plans
+                        "P910",  # topic's main category
+                        "P7867",  # category for maps or plans
+                        "P8989",  # category for the view of the item
+                    }:
                         item_id = prop_val[0]["value"]["content"]
                         item_data = self._get_wikidata_item(item_id)
                         statement_data = item_data["statements"].get("P373")
@@ -1542,10 +1561,10 @@ class Maker:
                                 force=True,  # make sure this name gets added even if we already have other names in this language
                             )
 
-                    # else:
-                    #     raise NotImplementedError(
-                    #         f"Wikidata property '{prop_id}' not implemented yet: {pformat(prop_val)}"
-                    #     )
+                    else:
+                        raise NotImplementedError(
+                            f"Wikidata property '{prop_id}' not implemented yet: {pformat(prop_val)}"
+                        )
             #
             elif k == "title":
                 raise NotImplementedError(
