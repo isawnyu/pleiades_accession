@@ -754,14 +754,21 @@ class LPFPlace:
         return list(toponyms)
 
     def add_name(
-        self, toponym: str, lang: str = "und", citations: list = [], when: dict = dict()
+        self,
+        toponym: str,
+        lang: str = "und",
+        citations: list = [],
+        when: dict = dict(),
+        force=False,
     ):
         """
         Add a name
         """
         add_it = False
         normed = normalize_text(toponym)
-        if normed not in self.name_toponyms and not self.get_names_by_lang(lang):
+        if force:
+            add_it = True
+        elif normed not in self.name_toponyms and not self.get_names_by_lang(lang):
             add_it = True
         if add_it:
             self._names.append(
@@ -1180,9 +1187,11 @@ class Maker:
 
             elif k in {"labels", "aliases"}:
                 target_langs = {code: 1 for code in WIKIDATA_LABEL_LANGUAGES}
+                country_langs = dict()
                 for country_id, country_data in self._get_wikidata_countries(source_data).items():  # type: ignore
                     for lang_data in country_data["official_languages"].values():
                         target_langs[lang_data["wiki_code"]] = 1
+                        country_langs[lang_data["wiki_code"]] = 1
                 for lang_id in target_langs:
                     try:
                         label = v[lang_id]
@@ -1213,6 +1222,7 @@ class Maker:
                                     ),
                                 )
                             ],
+                            force=(lang_id in country_langs),
                         )  # type: ignore
 
             elif k == "descriptions":
@@ -1507,7 +1517,7 @@ class Maker:
                             label = item["value"]["content"]
                             identifier = f"https://commons.wikimedia.org/wiki/File:{label.replace(' ', '_')}"
                             place.add_depiction(title=label, identifier=identifier)
-                    elif prop_id == "P1705":  # native label
+                    elif prop_id in {"P1705", "P1448"}:  # native label, official name
                         for item in prop_val:
                             lang_code = item["value"]["content"]["language"]
                             toponym = item["value"]["content"]["text"]
@@ -1522,6 +1532,7 @@ class Maker:
                                         ),
                                     )
                                 ],
+                                force=True,  # make sure this name gets added even if we already have other names in this language
                             )
                     # else:
                     #     raise NotImplementedError(
