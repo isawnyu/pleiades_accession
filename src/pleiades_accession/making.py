@@ -622,7 +622,24 @@ class LPFPlace:
         """
         Get names as list
         """
-        raise NotImplementedError("LPFPlace 'names' not implemented yet")
+        return self._names
+
+    def get_names_by_lang(self, lang: str) -> list:
+        """
+        Get names by language
+        """
+        return [name for name in self._names if name.lang == lang]
+
+    def get_namestrings_by_lang(self, lang: str) -> list:
+        """
+        Get name strings by language
+        """
+        nstrings = set()
+        for name in self._names:
+            if name.lang == lang:
+                nstrings.add(name.toponym)
+                nstrings.update(name.romanizations)
+        return list(nstrings)
 
     @property
     def name_strings(self) -> list:
@@ -645,7 +662,11 @@ class LPFPlace:
         """
         Add a name
         """
-        if normalize_text(toponym) not in self.name_toponyms:
+        add_it = False
+        normed = normalize_text(toponym)
+        if normed not in self.name_toponyms and not self.get_names_by_lang(lang):
+            add_it = True
+        if add_it:
             self._names.append(
                 LPFName(toponym=toponym, lang=lang, citations=citations, when=when)
             )
@@ -1058,7 +1079,7 @@ class Maker:
                         f"Wikidata entity unexpected type value {v}, expected item"
                     )
 
-            elif k == "labels":
+            elif k in {"labels", "aliases"}:
                 target_langs = {code: 1 for code in WIKIDATA_LABEL_LANGUAGES}
                 for country_id, country_data in self._get_wikidata_countries(source_data).items():  # type: ignore
                     for lang_data in country_data["official_languages"].values():
@@ -1073,25 +1094,30 @@ class Maker:
                             f"while processing Wikidata labels for lang '{lang_id}': {pformat(v)}"
                         )
                         raise err
-                    place.add_name(
-                        toponym=label,
-                        lang=lang_id,
-                        citations=[
-                            LPFCitation(
-                                identifier=f"https://www.wikidata.org/wiki/{source_data['id']}",
-                                label=self._get_wikidata_preferred_label(
-                                    source_data["id"]  # type: ignore
-                                ),
-                            )
-                        ],
-                    )  # type: ignore
+                    if isinstance(label, str):
+                        labels = [label]
+                    elif isinstance(label, list):
+                        labels = label
+                    else:
+                        raise TypeError(
+                            f"Wikidata label for lang '{lang_id}' must be str or list. Got {type(label)}"
+                        )
+                    for label in labels:
+                        place.add_name(
+                            toponym=label,
+                            lang=lang_id,
+                            citations=[
+                                LPFCitation(
+                                    identifier=f"https://www.wikidata.org/wiki/{source_data['id']}",
+                                    label=self._get_wikidata_preferred_label(
+                                        source_data["id"]  # type: ignore
+                                    ),
+                                )
+                            ],
+                        )  # type: ignore
 
             elif k == "descriptions":
                 # ignore descriptions for now
-                pass
-
-            elif k == "aliases":
-                # ignore aliases for now
                 pass
 
             elif k == "id":
