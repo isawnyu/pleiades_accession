@@ -1222,10 +1222,12 @@ class Maker:
                 for prop_id, prop_val in v.items():
                     # logger.debug(prop_id)
                     if prop_id in {
-                        "P373",
-                        "P473",
-                    }:  # commons category  #local dialing code
+                        "P373",  # commons category
+                        "P473",  # local dialing code
+                        "P19",  # place of birth
+                    }:
                         continue
+
                     if prop_id == "P17":  # country
                         logger.debug(f"Wikidata country: {pformat(prop_val, indent=2)}")
                         country_id = prop_val[0]["value"]["content"]
@@ -1282,9 +1284,25 @@ class Maker:
                             ),
                             citations=citations,
                         )
+                    elif prop_id == "P910":  # topic's main category
+                        item_id = prop_val[0]["value"]["content"]
+                        item_data = self._get_wikidata_item(item_id)
+                        statement_data = item_data["statements"].get("P373")
+                        if statement_data:
+                            label = statement_data[0]["value"]["content"]
+                            identifier = (
+                                f"https://commons.wikimedia.org/wiki/Category:{label}"
+                            )
+                            place.add_link(
+                                identifier=identifier,
+                                link_type="seeAlso",
+                                label=label,
+                            )
 
             elif k == "title":
-                pass
+                raise NotImplementedError(
+                    "Wikidata 'title' at top level is not handled yet"
+                )
             else:
                 logger.debug(pformat(v, indent=2))
                 raise NotImplementedError(
