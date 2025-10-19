@@ -1286,12 +1286,6 @@ class Maker:
 
             elif k == "statements":
 
-                # P31 - instance of
-                # P1705 - native label
-                # P1448 - official name
-                # P402 - OpenStreetMap relation ID
-                # P11693 - OpenStreetMap node ID
-
                 properties_4_links = {
                     "P4102",  #  Atlas of Hillforts ID
                     "P5633",  #  Amphi-Theatrum ID
@@ -1315,6 +1309,8 @@ class Maker:
                     "P9736",  #  MANTO ID
                     "P4356",  # Megalithic Portal ID
                     "P2950",  # Nomisma ID
+                    "P402",  # OpenStreetMap relation ID
+                    "P11693",  # OpenStreetMap node ID
                     "P9106",  # Oxford Classical Dictionary ID
                     "P4212",  # PACTOLS thesaurus ID
                     "P12062",  # Pinakes city ID
@@ -1344,6 +1340,14 @@ class Maker:
                         "P1082",  # population
                         "P948",  #  page banner
                         "P856",  # official website
+                        "P421",  # time zone
+                        "P3417",  # Quora topic ID
+                        "P1417",  # Encyclopædia Britannica Online ID
+                        "P3219",  # Encyclopædia Universalis ID
+                        "P443",  # Pronunciation audio
+                        "P1376",  # Capital of
+                        "P2924",  # Great Russian Encyclopedia Online ID (old version)
+                        "P6766",  # Who's on First ID
                     }:
                         continue
 
@@ -1403,7 +1407,10 @@ class Maker:
                             ),
                             citations=citations,
                         )
-                    elif prop_id == "P910":  # topic's main category
+                    elif prop_id in {
+                        "P910",
+                        "P7867",
+                    }:  # topic's main category, category for maps or plans
                         item_id = prop_val[0]["value"]["content"]
                         item_data = self._get_wikidata_item(item_id)
                         statement_data = item_data["statements"].get("P373")
@@ -1534,6 +1541,7 @@ class Maker:
                                 ],
                                 force=True,  # make sure this name gets added even if we already have other names in this language
                             )
+
                     # else:
                     #     raise NotImplementedError(
                     #         f"Wikidata property '{prop_id}' not implemented yet: {pformat(prop_val)}"
