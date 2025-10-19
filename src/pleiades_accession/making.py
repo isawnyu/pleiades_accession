@@ -1078,9 +1078,9 @@ class Maker:
                 )
             elif k == "sitelinks":
                 # other Wiki links
-                for wiki_key in ["enwiki", "dewiki", "frwiki"]:
+                for langid in WIKIDATA_LABEL_LANGUAGES:
                     try:
-                        wikivals = v[wiki_key]
+                        wikivals = v[f"{langid}wiki"]
                     except KeyError:
                         continue
                     place.add_link(
@@ -1088,7 +1088,6 @@ class Maker:
                         link_type="seeAlso",
                         label=wikivals["title"],
                     )
-                    break
 
                 # try to get wikipedias for the containing country's official languages as well
                 wiki_lang_codes = set()
