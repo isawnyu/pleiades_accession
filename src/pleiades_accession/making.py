@@ -365,6 +365,32 @@ class LPFDescription:
         return d
 
 
+class LPFDepiction:
+    """
+    Class representing a depiction after Linked Places Format (LPF)
+    """
+
+    def __init__(self, identifier: str, title: str = "", license: str = ""):
+        """
+        Initialize LPFDepiction class
+        """
+        self.identifier = identifier  # depiction identifier (i.e. URL)
+        self.title = normalize_text(title)  # depiction label
+        self.license = license
+
+    def to_dict(self) -> dict:
+        """
+        Convert LPFDepiction to dictionary, ready for JSON serialization in LPF format
+        """
+        d = {
+            "@id": self.identifier,
+            "title": self.title,
+        }
+        if self.license:
+            d["license"] = self.license  # type: ignore
+        return d
+
+
 class LPFName:
     """
     Class representing a place name after Linked Places Format (LPF) with additional Pleiades requirements
@@ -460,6 +486,7 @@ class LPFPlace:
         self._geometries = list()  # GeoJSON geometry
         self._names = list()  # LPFName instances
         self._whens = list()  # LPFWhen instances
+        self._depictions = list()  # LPFDepiction instances
         self._descriptions = list()  # LPFDescription instances
 
     #
@@ -481,6 +508,24 @@ class LPFPlace:
         elif isinstance(country_code, str):
             country_code = country_code
         self._country_codes.add(country_code.upper())  # type: ignore
+
+    #
+    # depictions
+    #
+    @property
+    def depictions(self) -> list:
+        """
+        Get depictions as list
+        """
+        return [l.to_dict() for l in self._depictions]
+
+    def add_depiction(self, identifier: str, title: str = "", license: str = ""):
+        """
+        Add a depiction
+        """
+        self._depictions.append(
+            LPFDepiction(identifier=identifier, title=title, license=license)
+        )
 
     #
     # descriptions
@@ -789,6 +834,7 @@ class LPFPlace:
             "types": self.types,
             "links": self.links,
             "names": [n.to_dict() for n in self._names],
+            "depictions": [d.to_dict() for d in self._depictions],
             "descriptions": [d.to_dict() for d in self._descriptions],
         }
         geoms = self.geometries
@@ -1280,6 +1326,10 @@ class Maker:
                         "P19",  # place of birth
                         "P646",  # freebase ID
                         "P190",  #  twinned administrative body
+                        "P1464",  # category for people born here
+                        "P1465",  # category for people who died here
+                        "P1792",  #  category of associated people
+                        "P2044",  # elevation above sea level
                     }:
                         continue
 
@@ -1447,11 +1497,17 @@ class Maker:
                                     if term in label.lower():
                                         place.add_feature_class("P")  # populated place
                                         break
-                    # else:
-                    #    raise NotImplementedError(
-                    #        f"Wikidata property '{prop_id}' not implemented yet: {pformat(prop_val)}"
-                    #    )
 
+                    elif prop_id == "P18":  # image
+                        for item in prop_val:
+                            label = item["value"]["content"]
+                            identifier = f"https://commons.wikimedia.org/wiki/File:{label.replace(' ', '_')}"
+                            place.add_depiction(title=label, identifier=identifier)
+                    else:
+                        raise NotImplementedError(
+                            f"Wikidata property '{prop_id}' not implemented yet: {pformat(prop_val)}"
+                        )
+            #
             elif k == "title":
                 raise NotImplementedError(
                     "Wikidata 'title' at top level is not handled yet"
