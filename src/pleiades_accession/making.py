@@ -258,6 +258,7 @@ class LPFGeometry:
         coordinates: list = [],
         certainty: str = "certain",
         citations: list = [],
+        precision: float = 0.0,
     ):
         """
         Initialize LPFGeometry class
@@ -265,8 +266,9 @@ class LPFGeometry:
         self.type = geom_type  # GeoJSON geometry type
         self.coordinates = coordinates  # GeoJSON coordinates
         self.when = None  # when? (not implemented yet)
-        self.citations = []  # citations? (not implemented yet)
+        self.citations = citations  # citations? (not implemented yet)
         self.certainty = certainty
+        self.precision = precision
         self.shape = from_geojson(
             json.dumps({"type": geom_type, "coordinates": coordinates})
         )
@@ -279,6 +281,8 @@ class LPFGeometry:
         """
         d = json.loads(to_geojson(self.shape))
         d["certainty"] = self.certainty
+        d["precision"] = self.precision
+        d["citations"] = [c.to_dict() for c in self.citations]
         return d
 
 
@@ -300,6 +304,19 @@ class LPFCitation:
             raise err
         self.year = year  # citation year
         self.identifier = identifier  # citation identifier (i.e. URL)
+
+    def to_dict(self) -> dict:
+        """
+        Convert LPFCitation to dictionary, ready for JSON serialization in LPF format
+        """
+        d = {
+            "label": self.label,
+        }
+        if self.year:
+            d["year"] = self.year  # type: ignore
+        if self.identifier:
+            d["@id"] = self.identifier  # type: ignore
+        return d
 
 
 class LPFName:
@@ -462,6 +479,7 @@ class LPFPlace:
         coordinates: list,
         certainty: str = "certain",
         citations: list = [],
+        precision: float = 0.0,
     ):
         """
         Add a geometry
@@ -473,6 +491,7 @@ class LPFPlace:
             coordinates=coordinates,
             certainty=certainty,
             citations=citations,
+            precision=precision,
         )
         if self._geometries:
             # check for duplicates
@@ -1012,6 +1031,7 @@ class Maker:
         Augment place from Wikidata data
         """
         logger = logging.getLogger(f"{__name__}.{self.__class__.__name__}")
+
         for k, v in source_data.items():  # type: ignore
             if not v:
                 continue
@@ -1024,8 +1044,211 @@ class Maker:
             elif k == "labels":
                 for lang, label in v.items():
                     place.add_name(toponym=label, lang=lang)
+
+            elif k == "descriptions":
+                # ignore descriptions for now
+                pass
+
+            elif k == "aliases":
+                # ignore aliases for now
+                pass
+
+            elif k == "id":
+                item_data = self._get_wikidata_item(v)
+                try:
+                    title = item_data["labels"]["en"]
+                except KeyError as err:
+                    err.add_note(pformat(item_data))
+                    raise err
+                place.add_link(
+                    identifier=f"https://www.wikidata.org/wiki/{v}",
+                    link_type="citesAsDataSource",
+                    label=title,
+                )
+            elif k == "sitelinks":
+                # other Wiki links
+                for wiki_key in ["enwiki", "dewiki", "frwiki"]:
+                    try:
+                        wikivals = v[wiki_key]
+                    except KeyError:
+                        continue
+                    place.add_link(
+                        identifier=wikivals["url"],
+                        link_type="seeAlso",
+                        label=wikivals["title"],
+                    )
+                # try to get wikipedias for the containing country's official languages as well
+                c = source_data["statements"].get("P17", [])  # type: ignore
+                if c:
+                    country_id = c[0]["value"]["content"]
+                    country_data = self._get_wikidata_item(country_id)
+                    language_codes = {}
+                    for lang_id in country_data["statements"].get("P37", []):  # type: ignore
+                        lang_data = self._get_wikidata_item(lang_id["value"]["content"])
+                        wiki_lang_codes = lang_data["statements"].get("P424", [])  # type: ignore
+                        for wiki_lang_code in wiki_lang_codes:
+                            code_s = wiki_lang_code["value"]["content"]
+                            try:
+                                wikivals = v[code_s]
+                            except KeyError:
+                                continue
+                            place.add_link(
+                                identifier=wikivals["url"],
+                                link_type="seeAlso",
+                                label=wikivals["title"],
+                            )
+
+            elif k == "statements":
+                # P131 - located in the administrative territorial entity
+                # P31 - instance of
+                # P1705 - native label
+                # P1448 - official name
+                # P402 - OpenStreetMap relation ID
+                # P11693 - OpenStreetMap node ID
+
+                properties_4_links = {
+                    "P4102",  #  Atlas of Hillforts ID
+                    "P5633",  #  Amphi-Theatrum ID
+                    "P10053",  #  Atlas Project of Roman Aqueducts ID
+                    "P8218",  #  Archaeology in Greece Online place ID
+                    "P10510",  # Arachne entity ID
+                    "P268",  # Bibliothèque nationale de France ID
+                    "P4711",  # CHGIS ID
+                    "P13279",  # Dictionary of Late Antiquity ID
+                    "P1936",  #  Digital Atlas of the Roman Empire ID
+                    "P9505",  #  Gardens of the Roman Empire ID
+                    "P1566",  # GeoNames ID
+                    "P2326",  # GNS Unique Feature ID (National Geospatial-Intelligence Agency's GEOnet Names Server)
+                    "P1667",  # Getty Thesaurus of Geographic Names ID
+                    "P9951",  # Greek Castles ID (Kastrologos)
+                    "P6916",  #  Heritage Gazetteer of Cyprus
+                    "P6751",  #  Heritage Gazetteer of Libya ID
+                    "P8217",  #  iDAI.gazetteer ID
+                    "P8137",  # Inventory of Archaic and Classical Poleis ID
+                    "P244",  # Library of Congress authority ID
+                    "P9736",  #  MANTO ID
+                    "P4356",  # Megalithic Portal ID
+                    "P2950",  # Nomisma ID
+                    "P9106",  # Oxford Classical Dictionary ID
+                    "P4212",  # PACTOLS thesaurus ID
+                    "P12062",  # Pinakes city ID
+                    "P1584",  #  Pleiades ID
+                    "P13136",  #  Princeton Encyclopedia of Classical Sites ID
+                    "P13496",  #  The Rural Settlement of Roman Britain ID
+                    "P5634",  # Theatrum ID
+                    "P8069",  # ToposText person ID
+                    "P1958",  # Trismegistos Geo ID
+                    "P214",  # VIAF ID
+                    "P1481",  #  vici.org ID
+                    "P13061",  #  World Historical Gazetteer place ID
+                }
+                for prop_id, prop_val in v.items():
+                    # logger.debug(prop_id)
+                    if prop_id in {
+                        "P373",
+                        "P473",
+                    }:  # commons category  #local dialing code
+                        continue
+                    if prop_id == "P17":  # country
+                        logger.debug(f"Wikidata country: {pformat(prop_val, indent=2)}")
+                        item_id = prop_val[0]["value"]["content"]
+                        item_data = self._get_wikidata_item(item_id)
+                        place.add_country_code(item_data["statements"]["P297"][0])
+
+                    elif prop_id in properties_4_links:
+                        prop_data = self._get_wikidata_property(prop_id)
+                        identifier = prop_data["url_template"].format(
+                            prop_val[0]["value"]["content"]
+                        )
+                        place.add_link(
+                            identifier=identifier,
+                            link_type="closeMatch",
+                        )
+                    elif prop_id == "P1343":  # described by source
+                        ignore_refs = {
+                            "Q867541": "Encyclopædia Britannica 11th edition"
+                        }
+                        for ref in prop_val:
+                            item_id = ref["value"]["content"]
+                            if item_id in ignore_refs:
+                                continue
+                            else:
+                                item_data = self._get_wikidata_item(item_id)
+                                logger.debug(
+                                    f"Unhandled described by source: {item_data['title']['en']})"
+                                )
+                                exit()
+                    elif prop_id == "P625":  # coordinate location
+                        try:
+                            lat = prop_val[0]["value"]["content"]["latitude"]
+                        except (TypeError, KeyError) as err:
+                            err.add_note(f"{pformat(prop_val, indent=2)}")
+                            raise err
+                        lon = prop_val[0]["value"]["content"]["longitude"]
+                        precision = prop_val[0]["value"]["content"]["precision"]
+                        whence = prop_val[0]["references"][0]["parts"][0]["value"][
+                            "content"
+                        ]
+                        if whence == "Q830106":
+                            citations = [LPFCitation(label="GeoNames")]
+                        else:
+                            raise NotImplementedError(
+                                f"Wikidata coordinate location reference '{whence}' not implemented yet"
+                            )
+                        place.add_geometry(
+                            geom_type="Point",
+                            coordinates=[lon, lat],
+                            certainty=(
+                                "certain"
+                                if precision and precision <= 0.0001
+                                else "uncertain"
+                            ),
+                            citations=citations,
+                        )
+
+            elif k == "title":
+                pass
             else:
-                raise NotImplementedError(f"Wikidata key '{k}' not implemented yet")
+                logger.debug(pformat(v, indent=2))
+                raise NotImplementedError(
+                    f"Wikidata key '{k}' not implemented yet: {pformat(v)}"
+                )
+
+    def _get_wikidata_item(self, item_id: str) -> dict:
+        """
+        Get Wikidata item data
+        """
+        base_url = "https://www.wikidata.org/w/rest.php/wikibase/v1"
+        url = f"{base_url}/entities/items/{item_id}"
+        url_parts = urlparse(url)
+        interface = web_interfaces[url_parts.netloc]
+        r = interface.get(url)
+        return r.json()
+
+    def _get_wikidata_property(self, prop_id: str) -> dict:
+        """
+        Get Wikidata property data
+        """
+        if prop_id in self._wikidata_properties:
+            return self._wikidata_properties[prop_id]
+        base_url = "https://www.wikidata.org/w/rest.php/wikibase/v1"
+        url = f"{base_url}/entities/properties/{prop_id}"
+        url_parts = urlparse(url)
+        interface = web_interfaces[url_parts.netloc]
+        r = interface.get(url)
+        prop_data = r.json()
+        try:
+            formatter_url = prop_data["statements"].get("P1630")[0]["value"]["content"]
+        except TypeError as err:
+            err.add_note(f"while getting formatter URL for Wikidata property {prop_id}")
+            raise err
+        formatter_url = formatter_url.replace("$1", "{}")
+        self._wikidata_properties[prop_id] = {
+            "url_template": formatter_url,
+            "title": prop_data.get("labels", {}).get("en", ""),
+            "description": prop_data.get("descriptions", {}).get("en", ""),
+        }
+        return self._wikidata_properties[prop_id]
 
     def _identify_source(self, source: str) -> str:
         """
@@ -1051,6 +1274,7 @@ class Maker:
             qid = url_parts.path.split("/")[-1]
             url = f"{base_url}/entities/items/{qid}"
             url_parts = urlparse(url)
+            self._wikidata_properties = dict()
         try:
             interface = web_interfaces[url_parts.netloc]
         except KeyError:

@@ -57,6 +57,8 @@ class TestMaker:
             "type": "Point",
             "coordinates": [62.286987, 40.063667],
             "certainty": "less-certain",
+            "precision": 0.0,
+            "citations": [],
         }
 
     def test_make_from_wsg_place_api_(self):
@@ -100,6 +102,10 @@ class TestMaker:
             "type": "Point",
             "coordinates": [62.286987, 40.063667],
             "certainty": "less-certain",
+            "precision": 0.0,
+            "citations": [
+                {"@id": "https://whgazetteer.org/datasets/838/places", "label": ""},
+            ],
         }
         assert s["names"] == [
             {
