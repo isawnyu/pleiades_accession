@@ -322,7 +322,15 @@ class LPFName:
         romanizations_d = {
             normalize_text(r): 1 for r in romanizations
         }  # romanized forms, preserve order
-        for romanization in Romanizer().romanize(self.toponym, lang_tags=lang):
+        romanization_engines = [
+            "yuconv",
+            "romanize-schizas",
+            "python-slugify",
+            "iuliia",
+        ]
+        for romanization in Romanizer(use_engines=romanization_engines).romanize(
+            self.toponym, lang_tags=lang
+        ):
             rs = romanization.romanized
             try:
                 romanizations_d[rs]
