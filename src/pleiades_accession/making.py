@@ -1786,6 +1786,27 @@ class Maker:
                                     ),
                                 ],
                             )
+                    elif prop_id == "P814":  # IUCN protected areas category
+                        for item in prop_val:
+                            item_id = item["value"]["content"]
+                            label = self._get_wikidata_preferred_label(item_id)
+                            parts = label.split(":", 1)
+                            if len(parts) == 2:
+                                if parts[0].startswith("IUCN category "):
+                                    parts[0] = "IUCN protected areas " + parts[0][5:]
+                                label = parts[0] + ":" + parts[1]
+                            place.add_description(
+                                value=label,
+                                lang="en",
+                                citations=[
+                                    LPFCitation(
+                                        identifier=f"https://www.wikidata.org/wiki/{source_data['id']}",  # type: ignore
+                                        label=self._get_wikidata_preferred_label(
+                                            source_data["id"]  # type: ignore
+                                        ),
+                                    ),
+                                ],
+                            )
                     else:
                         logger.debug(pformat(prop_val, indent=2))
                         raise NotImplementedError(
