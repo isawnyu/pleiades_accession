@@ -47,8 +47,10 @@ VALID_LINK_TYPES = {
 }
 VALID_MILESTONE_TYPES = {"in", "earliest", "latest"}
 VALID_CERTAINTY_VALUES = {"certain", "less-certain", "uncertain"}
-RX_ISO8601_DATE = re.compile(r"^-?\d{4}(-\d{2}|-\d{2}-\d{2})?$")
-RX_WIKIDATA_TIME = re.compile(r"^(?P<year>-?\d{4})-(?P<month>\d{2})-(?P<day>\d{2})T.+$")
+RX_ISO8601_DATE = re.compile(r"^(\-|\+)?\d{4}(-\d{2}|-\d{2}-\d{2})?$")
+RX_WIKIDATA_TIME = re.compile(
+    r"^(?P<year>(\+|\-)?\d{4})-(?P<month>\d{2})-(?P<day>\d{2})T.+$"
+)
 
 SCRIPT_DETECTOR = ScriptDetector()
 
@@ -91,7 +93,7 @@ class LPFTimespan:
     """
 
     def __init__(
-        self, start: list[LPFMilestone] | dict, end: list[LPFMilestone] | dict = []
+        self, start: list[LPFMilestone] | dict = [], end: list[LPFMilestone] | dict = []
     ):
         """
         Initialize LPFTimespan class
@@ -895,7 +897,7 @@ class LPFPlace:
     #
     # timespans
     #
-    def add_timespan(self, start: dict, end: dict):
+    def add_timespan(self, start: dict = dict(), end: dict = dict()):
         """
         Add a timespan
         """
@@ -1715,6 +1717,12 @@ class Maker:
                                     ),
                                 ],
                             )
+                    elif prop_id == "P571":  # inception
+                        for item in prop_val:
+                            time = item["value"]["content"]["time"]
+                            m = RX_WIKIDATA_TIME.match(time)
+                            if m:
+                                place.add_timespan(start={"in": m.group("year")})
                     elif prop_id == "P2348":  # time period
                         # create a when for the place
                         for item in prop_val:
