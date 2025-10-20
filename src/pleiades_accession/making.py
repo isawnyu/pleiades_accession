@@ -8,6 +8,7 @@
 """
 Make new LPF from scratch, using provided resources
 """
+from bs4 import BeautifulSoup
 from datetime import timedelta
 from functools import lru_cache
 import json
@@ -332,6 +333,51 @@ class LPFCitation:
         return d
 
 
+class LPFLink:
+    """
+    Class representing a link after Linked Places Format (LPF)
+    """
+
+    def __init__(
+        self,
+        identifier: str,
+        link_type: str = "closeMatch",
+        label: str = "",
+        source: str = "",
+        authority: str = "",
+        authority_alias: str = "",
+    ):
+        """
+        Initialize LPFLink class
+        """
+        self.identifier = identifier  # link identifier (i.e. URL)
+        if link_type not in VALID_LINK_TYPES:
+            raise ValueError(f"Unrecognized link type: {link_type}")
+        self.link_type = link_type
+        self.label = normalize_text(label)  # link label
+        self.source = source  # link source
+        if authority and not authority_alias:
+            authority_alias = slugify(authority)
+        self.authority_alias = authority_alias  # link authority alias
+        self.authority = authority  # link authority
+
+    def to_dict(self) -> dict:
+        """
+        Convert LPFLink to dictionary, ready for JSON serialization in LPF format
+        """
+        d = {
+            "identifier": self.identifier,
+            "type": self.link_type,
+        }
+        if self.label:
+            d["label"] = self.label  # type: ignore
+        if self.source:
+            d["source"] = self.source  # type: ignore
+        if self.authority:
+            d["authority"] = self.authority  # type: ignore
+        return d
+
+
 class LPFDescription:
     """
     Class representing a description after Linked Places Format (LPF)
@@ -480,7 +526,7 @@ class LPFPlace:
             dict()
         )  # keys are urns (preferably urls), values are {label, sourceLabels*, when?}
         self._feature_classes = set()  # geonames feature classes
-        self._links = dict()  # keys are urls, values are strings
+        self._links = list()  # LPFLink instances
         self._title = ""  # title of record
         self._country_codes = set()
         self._geometries = list()  # GeoJSON geometry
@@ -696,19 +742,59 @@ class LPFPlace:
         """
         Get links as list
         """
-        return [
-            {"identifier": k, "type": v["type"], "label": v["label"]}
-            for k, v in self._links.items()
-        ]
+        return [l.to_dict() for l in self._links]
 
-    def add_link(self, identifier: str, link_type: str = "closeMatch", label: str = ""):
+    @property
+    def link_keys(self) -> list:
+        """
+        Get link identifiers as list
+        """
+        keys = set()
+        for l in self._links:
+            if validate_url(l.identifier):
+                keys.add(l.identifier)
+            else:
+                keys.add(l.authority_alias + ":" + l.identifier)
+        return list(keys)
+
+    def add_link(
+        self,
+        identifier: str,
+        link_type: str = "closeMatch",
+        label: str = "",
+        source: str = "",
+        authority: str = "",
+        authority_alias: str = "",
+    ):
         """
         Add a link
         """
         if link_type not in VALID_LINK_TYPES:
             raise ValueError(f"Unrecognized link type: {link_type}")
-        if identifier not in self._links:
-            self._links[identifier] = {"type": link_type, "label": label}
+        add_it = True
+        keys = self.link_keys
+        if validate_url(identifier):
+            if identifier in keys:
+                add_it = False
+        elif authority_alias:
+            key = authority_alias + ":" + identifier
+            if key in keys:
+                add_it = False
+        else:
+            key = slugify(authority) + ":" + identifier
+            if key in keys:
+                add_it = False
+        if add_it:
+            self._links.append(
+                LPFLink(
+                    identifier=identifier,
+                    link_type=link_type,
+                    label=label,
+                    source=source,
+                    authority=authority,
+                    authority_alias=authority_alias,
+                )
+            )
 
     #
     # names
@@ -1306,6 +1392,7 @@ class Maker:
                     "P6751",  #  Heritage Gazetteer of Libya ID
                     "P8217",  #  iDAI.gazetteer ID
                     "P8137",  # Inventory of Archaic and Classical Poleis ID
+                    "P1369",  # Iranian National Heritage registration number
                     "P244",  # Library of Congress authority ID
                     "P9736",  #  MANTO ID
                     "P4356",  # Megalithic Portal ID
@@ -1377,13 +1464,14 @@ class Maker:
 
                     elif prop_id in properties_4_links:
                         prop_data = self._get_wikidata_property(prop_id)
-                        identifier = prop_data["url_template"].format(
-                            prop_val[0]["value"]["content"]
-                        )
-                        place.add_link(
-                            identifier=identifier,
-                            link_type="closeMatch",
-                        )
+                        try:
+                            identifier = prop_data["url_template"].format(
+                                prop_val[0]["value"]["content"]
+                            )
+                        except KeyError:
+                            # some properties do not have url_template
+                            identifier = prop_val[0]["value"]["content"]
+                        place.add_link(identifier=identifier, link_type="closeMatch")
                     elif prop_id == "P1343":  # described by source
                         ignore_refs = {
                             "Q867541": "Encyclopædia Britannica 11th edition"
@@ -1411,6 +1499,8 @@ class Maker:
                         ]
                         if whence == "Q830106":
                             citations = [LPFCitation(label="GeoNames")]
+                        elif whence == "Q48952":
+                            citations = [LPFCitation(label="Persian Wikipedia")]
                         else:
                             raise NotImplementedError(
                                 f"Wikidata coordinate location reference '{whence}' not implemented yet"
@@ -1489,15 +1579,19 @@ class Maker:
                                     gn_feature_class = gn_feature_class.split(".")[0]
                                     place.add_feature_class(gn_feature_class)
                                 try:
-                                    aat_id = item_data["statements"][
+                                    aat_ids = item_data["statements"][
                                         "P1014"
                                     ]  # getty AAT ID
                                 except KeyError:
                                     pass
                                 else:
-                                    raise NotImplementedError(
-                                        f"Wikidata P31 with Getty AAT ID not implemented yet: {pformat(aat_id, indent=2)}"
-                                    )
+                                    for aat_id in aat_ids:
+                                        url = f"http://vocab.getty.edu/aat/{aat_id['value']['content']}"
+                                        label = self._get_webpage_title(url)
+                                        place.add_type(
+                                            identifier=url,
+                                            label=label,
+                                        )
                                 parts = label.split(" of ", 1)
                                 if len(parts) == 2 and parts[0].strip() in {
                                     "administrative divisions",
@@ -1560,8 +1654,25 @@ class Maker:
                                 ],
                                 force=True,  # make sure this name gets added even if we already have other names in this language
                             )
+                    elif prop_id == "P1435":  # heritage designation
+                        for item in prop_val:
+                            item_id = item["value"]["content"]
+                            label = self._get_wikidata_preferred_label(item_id)
+                            place.add_description(
+                                value=f"Heritage designation: {label}",
+                                lang="en",
+                                citations=[
+                                    LPFCitation(
+                                        identifier=f"https://www.wikidata.org/wiki/{source_data['id']}",  # type: ignore
+                                        label=self._get_wikidata_preferred_label(
+                                            source_data["id"]  # type: ignore
+                                        ),
+                                    ),
+                                ],
+                            )
 
                     else:
+                        logger.debug(pformat(prop_val, indent=2))
                         raise NotImplementedError(
                             f"Wikidata property '{prop_id}' not implemented yet: {pformat(prop_val)}"
                         )
@@ -1741,14 +1852,15 @@ class Maker:
         try:
             formatter_url = prop_data["statements"].get("P1630")[0]["value"]["content"]
         except TypeError as err:
-            err.add_note(f"while getting formatter URL for Wikidata property {prop_id}")
-            raise err
-        formatter_url = formatter_url.replace("$1", "{}")
+            formatter_url = ""
+        else:
+            formatter_url = formatter_url.replace("$1", "{}")
         self._wikidata_properties[prop_id] = {
-            "url_template": formatter_url,
             "title": prop_data.get("labels", {}).get("en", ""),
             "description": prop_data.get("descriptions", {}).get("en", ""),
         }
+        if formatter_url:
+            self._wikidata_properties[prop_id]["url_template"] = formatter_url
         return self._wikidata_properties[prop_id]
 
     def _identify_source(self, source: str) -> str:
@@ -1806,3 +1918,27 @@ class Maker:
             r = json.load(f)
         del f
         return r
+
+    def _get_webpage_title(self, url: str) -> str:
+        """
+        Get webpage title
+        """
+        url_parts = urlparse(url)
+        try:
+            interface = web_interfaces[url_parts.netloc]
+        except KeyError:
+            interface = Webi(
+                url_parts.netloc,
+                headers=HEADERS,
+                respect_robots_txt=False,
+                cache_control=False,
+                expire_after=EXPIRE_AFTER,
+            )
+            web_interfaces[url_parts.netloc] = interface
+        r = interface.get(url)
+        html_soup = BeautifulSoup(r.text, "html.parser")
+        title_tag = html_soup.find("title")
+        if title_tag:
+            return normalize_text(title_tag.string)
+        else:
+            return ""
