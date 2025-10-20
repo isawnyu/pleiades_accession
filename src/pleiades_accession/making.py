@@ -47,7 +47,7 @@ VALID_LINK_TYPES = {
 }
 VALID_MILESTONE_TYPES = {"in", "earliest", "latest"}
 VALID_CERTAINTY_VALUES = {"certain", "less-certain", "uncertain"}
-RX_ISO8601_DATE = re.compile(r"^\d{4}(-\d{2}|-\d{2}-\d{2})?$")
+RX_ISO8601_DATE = re.compile(r"^-?\d{4}(-\d{2}|-\d{2}-\d{2})?$")
 RX_WIKIDATA_TIME = re.compile(r"^(?P<year>-?\d{4})-(?P<month>\d{2})-(?P<day>\d{2})T.+$")
 
 SCRIPT_DETECTOR = ScriptDetector()
@@ -113,7 +113,7 @@ class LPFTimespan:
                 self.start.append(LPFMilestone(milestone_type=k, iso_date=v))
         else:
             raise TypeError(
-                "Start must be list of LPFMilestone instances or dict. Got {type(start)}: {pformat(start)}"
+                f"Start must be list of LPFMilestone instances or dict. Got {type(start)}: {pformat(start)}"
             )
 
         self.end = []
@@ -1707,6 +1707,9 @@ class Maker:
                                 name=period_name,
                                 uri=period_url,
                             )
+                            logger.debug(
+                                f"added time period from wikidata: {period_name} ({period_url})"
+                            )
                             # timespan
                             item_data = self._get_wikidata_item(item_id)
                             span = []
@@ -1718,19 +1721,35 @@ class Maker:
                                             time_prop, []
                                         )
                                         if t["value"]["content"]["calendarmodel"]
-                                        == "Q1985786"
+                                        == "http://www.wikidata.org/entity/Q1985786"
                                     ][0]["time"]
                                 except (IndexError, KeyError):
+                                    logger.debug(
+                                        pformat(
+                                            item_data["statements"].get(time_prop, []),
+                                            indent=2,
+                                        )
+                                    )
+                                    raise RuntimeError(
+                                        f"Wikidata time period {item_id} has no valid time for property {time_prop}"
+                                    )
                                     break
                                 m = RX_WIKIDATA_TIME.match(time)
                                 if m:
                                     span.append(m.group("year"))
                                 else:
+                                    raise RuntimeError(
+                                        f"Wikidata time value '{time}' not understood"
+                                    )
                                     break
                             if len(span) == 2:
                                 place.add_timespan(
-                                    start=span[0],
-                                    end=span[1],
+                                    start={"earliest": span[0]},
+                                    end={"latest": span[1]},
+                                )
+                            else:
+                                raise RuntimeError(
+                                    f"Wikidata time period {item_id} does not have both start and end times: {pformat(span, indent=2)}"
                                 )
                     else:
                         logger.debug(pformat(prop_val, indent=2))
