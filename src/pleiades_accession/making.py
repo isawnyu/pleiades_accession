@@ -1431,6 +1431,7 @@ class Maker:
                     "P4711",  # CHGIS ID
                     "P13279",  # Dictionary of Late Antiquity ID
                     "P1936",  #  Digital Atlas of the Roman Empire ID
+                    "P9809",  # Enciclopedia dell'Arte Antica ID
                     "P9505",  #  Gardens of the Roman Empire ID
                     "P1566",  # GeoNames ID
                     "P2326",  # GNS Unique Feature ID (National Geospatial-Intelligence Agency's GEOnet Names Server)
@@ -1457,13 +1458,15 @@ class Maker:
                     "P13136",  #  Princeton Encyclopedia of Classical Sites ID
                     "P13496",  #  The Rural Settlement of Roman Britain ID
                     "P5634",  # Theatrum ID
-                    "P8069",  # ToposText person ID
+                    "P8068",  # ToposText place ID
+                    "P3365",  # Treccani ID
                     "P1958",  # Trismegistos Geo ID
                     "P214",  # VIAF ID
                     "P1481",  #  vici.org ID
                     "P757",  # World Heritage Site ID
                     "P4171",  # World Heritage Tentative List ID
                     "P13061",  #  World Historical Gazetteer place ID
+                    "P9000",  # World History Encyclopedia ID
                     "P13591",  # Yale LUX ID
                 }
                 for prop_id, prop_val in v.items():
@@ -1515,6 +1518,18 @@ class Maker:
                         "P12385",  # Gran Enciclopèdia Catalana ID
                         "P935",  # Commons gallery
                         "P206",  # Located in or next to body of water
+                        "P2046",  # area
+                        "P6821",  # Alvin ID
+                        "P793",  # significant event
+                        "P3222",  # NE.se ID
+                        "P4342",  # Great Norwegian Encyclopedia ID
+                        "P112",  # founded by
+                        "P138",  # named after
+                        "P5008",  # on focus list of Wikimedia project
+                        "P1438",  # Jewish Encyclopedia ID (Russian)
+                        "P349",  # NDL Authority ID
+                        "P9037",  # BHCL UUID
+                        "P12800",  # Vikidia article ID
                     }:
                         continue
 
@@ -1571,7 +1586,7 @@ class Maker:
                                     place.add_link(
                                         identifier=article_url,
                                         link_type="seeAlso",
-                                        label=f"{article_title}.replace('RE:', '')",
+                                        label=f"{article_title.replace('RE:', '')}",
                                     )
                             else:
                                 title = self._get_wikidata_preferred_label(item_id)
@@ -1887,11 +1902,27 @@ class Maker:
                                     ),
                                 ],
                             )
-                    elif prop_id == "P527":  # has part
+                    elif prop_id == "P5816":  # state of conservation
+                        for item in prop_val:
+                            item_id = item["value"]["content"]
+                            label = self._get_wikidata_preferred_label(item_id)
+                            place.add_description(
+                                value=f"State of conservation: {label}",
+                                lang="en",
+                                citations=[
+                                    LPFCitation(
+                                        identifier=f"https://www.wikidata.org/wiki/{source_data['id']}",  # type: ignore
+                                        label=self._get_wikidata_preferred_label(
+                                            source_data["id"]  # type: ignore
+                                        ),
+                                    ),
+                                ],
+                            )
                         # raise NotImplementedError(
-                        #     f"Needs relations: Wikidata property 'has part' (P527) not implemented yet: {pformat(prop_val)}"
-                        # )
-                        pass
+                    elif prop_id in {"P706", "P527", "P1366"}:
+                        logger.warning(
+                            f"Wikidata property {prop_id} -> relations, not implemented yet"
+                        )
                     else:
                         logger.debug(pformat(prop_val, indent=2))
                         raise NotImplementedError(
