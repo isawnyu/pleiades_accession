@@ -1530,6 +1530,7 @@ class Maker:
                         "P349",  # NDL Authority ID
                         "P9037",  # BHCL UUID
                         "P12800",  # Vikidia article ID
+                        "P2671",  # Google Knowledge Graph ID
                     }:
                         continue
 
@@ -1743,7 +1744,11 @@ class Maker:
                                         place.add_feature_class("P")  # populated place
                                         break
 
-                    elif prop_id == "P18":  # image
+                    elif prop_id in {
+                        "P18",
+                        "P5775",
+                        "P8592",
+                    }:  # image, image of interior, aerial view
                         for item in prop_val:
                             label = item["value"]["content"]
                             identifier = f"https://commons.wikimedia.org/wiki/File:{label.replace(' ', '_')}"
@@ -1799,6 +1804,26 @@ class Maker:
                                 year = m.group("year")
                                 year = self._get_proper_year(year, calendar_model)
                                 place.add_timespan(end={"in": m.group("year")})
+                    elif prop_id == "P575":  # discovery or invention date
+                        for item in prop_val:
+                            time = item["value"]["content"]["time"]
+                            calendar_model = item["value"]["content"]["calendarmodel"]
+                            m = RX_WIKIDATA_TIME.match(time)
+                            if m:
+                                year = m.group("year")
+                                year = self._get_proper_year(year, calendar_model)
+                                place.add_description(
+                                    value=f"Discovered in {year}",
+                                    lang="en",
+                                    citations=[
+                                        LPFCitation(
+                                            identifier=f"https://www.wikidata.org/wiki/{source_data['id']}",  # type: ignore
+                                            label=self._get_wikidata_preferred_label(
+                                                source_data["id"]  # type: ignore
+                                            ),
+                                        ),
+                                    ],
+                                )
                     elif prop_id == "P2348":  # time period
                         # create a when for the place
                         for item in prop_val:
