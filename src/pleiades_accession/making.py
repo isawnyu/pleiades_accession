@@ -909,7 +909,17 @@ class LPFPlace:
         """
         Get title (preferred label)
         """
-        return self._title
+        if self._title:
+            title = self._title
+        else:
+            try:
+                title = self.get_names_by_lang("en")[0].toponym
+            except IndexError:
+                try:
+                    title = self._names[0].toponym
+                except IndexError:
+                    title = "Untitled Place"
+        return title
 
     @title.setter
     def title(self, value: str):
