@@ -1502,6 +1502,7 @@ class Maker:
                         "P7314",  # TDV Encyclopedia of Islam ID
                         "P8168",  # FactGrid ID
                         "P4839",  # Wolfram Language Entity Code
+                        "P1766",  # place name sign
                     }:
                         continue
 
