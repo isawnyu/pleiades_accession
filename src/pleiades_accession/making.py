@@ -1501,6 +1501,7 @@ class Maker:
                         "P12749",  # SNARC ID
                         "P7314",  # TDV Encyclopedia of Islam ID
                         "P8168",  # FactGrid ID
+                        "P4839",  # Wolfram Language Entity Code
                     }:
                         continue
 
@@ -1778,12 +1779,16 @@ class Maker:
                                 raise RuntimeError(
                                     f"Wikidata time period {item_id} does not have both start and end times: {pformat(span, indent=2)}"
                                 )
-                    elif prop_id == "P276":  # location
+                    elif prop_id in {"P276", "P7153"}:  # location, significant place
                         for item in prop_val:
                             item_id = item["value"]["content"]
                             label = self._get_wikidata_preferred_label(item_id)
+                            if prop_id == "P276":
+                                label = "Location: " + label
+                            elif prop_id == "P7153":
+                                label = "Significant place: " + label
                             place.add_description(
-                                value=f"Location: {label}",
+                                value=label,
                                 lang="en",
                                 citations=[
                                     LPFCitation(
