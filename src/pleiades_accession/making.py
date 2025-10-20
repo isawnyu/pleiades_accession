@@ -11,6 +11,7 @@ Make new LPF from scratch, using provided resources
 from bs4 import BeautifulSoup
 from datetime import timedelta
 from functools import lru_cache
+from jdcal import gcal2jd, jd2gcal, jcal2jd, jd2jcal
 import json
 import logging
 from pathlib import Path
@@ -1420,6 +1421,7 @@ class Maker:
             elif k == "statements":
 
                 properties_4_links = {
+                    "P5573",  # archINFORM location ID
                     "P4102",  #  Atlas of Hillforts ID
                     "P5633",  #  Amphi-Theatrum ID
                     "P10053",  #  Atlas Project of Roman Aqueducts ID
@@ -1459,6 +1461,8 @@ class Maker:
                     "P1958",  # Trismegistos Geo ID
                     "P214",  # VIAF ID
                     "P1481",  #  vici.org ID
+                    "P757",  # World Heritage Site ID
+                    "P4171",  # World Heritage Tentative List ID
                     "P13061",  #  World Historical Gazetteer place ID
                     "P13591",  # Yale LUX ID
                 }
@@ -1509,6 +1513,8 @@ class Maker:
                         "P691",  # NL CR AUT ID
                         "P4223",  # Treccani's Enciclopedia Italiana ID
                         "P12385",  # Gran Enciclopèdia Catalana ID
+                        "P935",  # Commons gallery
+                        "P206",  # Located in or next to body of water
                     }:
                         continue
 
@@ -1530,18 +1536,48 @@ class Maker:
                         place.add_link(identifier=identifier, link_type="closeMatch")
                     elif prop_id == "P1343":  # described by source
                         ignore_refs = {
-                            "Q867541": "Encyclopædia Britannica 11th edition"
+                            "Q867541": "Encyclopædia Britannica 11th edition",
+                            "Q4086271": "Bible Encyclopedia of Archimandrite Nicephorus",
+                            "Q4173137": "Jewish Encyclopedia of Brockhaus and Efron",
+                            "Q19180675": "Small Brockhaus and Efron Encyclopedic Dictionary",
+                            "Q602358": "Brockhaus and Efron Encyclopedic Dictionary",
+                            "Q4114391": "Sytin Military Encyclopedia",
+                            "Q4532135": "Encyclopedic Lexicon",
+                            "Q20078554": "Great Soviet Encyclopedia (1926–1947)",
+                            "Q30059240": "Реальный словарь классических древностей по Любкеру, 1885",
+                            "Q3181656": "The Nuttall Encyclopædia",
+                            "Q19211082": "Orthodox Theological Encyclopedia",
+                            "Q16082057": "The New Student's Reference Work",
+                            "Q123560817": "Armenian Soviet Encyclopedia, vol. 1",
                         }
                         for ref in prop_val:
                             item_id = ref["value"]["content"]
                             if item_id in ignore_refs:
                                 continue
+                            elif item_id == "Q1138524":  # Pauly–Wissowa
+                                for article_ref in [
+                                    r
+                                    for r in ref["qualifiers"]
+                                    if r["property"]["id"] == "P805"
+                                ]:
+                                    article_id = article_ref["value"]["content"]
+                                    article_data = self._get_wikidata_item(article_id)
+                                    article_title = article_data["sitelinks"][
+                                        "dewikisource"
+                                    ]["title"]
+                                    article_url = article_data["sitelinks"][
+                                        "dewikisource"
+                                    ]["url"]
+                                    place.add_link(
+                                        identifier=article_url,
+                                        link_type="seeAlso",
+                                        label=f"{article_title}.replace('RE:', '')",
+                                    )
                             else:
-                                item_data = self._get_wikidata_item(item_id)
-                                logger.debug(
-                                    f"Unhandled described by source: {item_data['title']['en']})"
+                                title = self._get_wikidata_preferred_label(item_id)
+                                raise NotImplementedError(
+                                    f"Unhandled described by source: {title} ({item_id})"
                                 )
-                                exit()
                     elif prop_id == "P625":  # coordinate location
                         try:
                             lat = prop_val[0]["value"]["content"]["latitude"]
@@ -1550,10 +1586,15 @@ class Maker:
                             raise err
                         lon = prop_val[0]["value"]["content"]["longitude"]
                         precision = prop_val[0]["value"]["content"]["precision"]
-                        whence = prop_val[0]["references"][0]["parts"][0]["value"][
-                            "content"
-                        ]
-                        if whence == "Q830106":
+                        try:
+                            whence = prop_val[0]["references"][0]["parts"][0]["value"][
+                                "content"
+                            ]
+                        except IndexError:
+                            whence = ""
+                        if whence == "":
+                            citations = []
+                        elif whence == "Q830106":
                             citations = [LPFCitation(label="GeoNames")]
                         elif whence == "Q48952":
                             citations = [LPFCitation(label="Persian Wikipedia")]
@@ -1728,9 +1769,21 @@ class Maker:
                     elif prop_id == "P571":  # inception
                         for item in prop_val:
                             time = item["value"]["content"]["time"]
+                            calendar_model = item["value"]["content"]["calendarmodel"]
                             m = RX_WIKIDATA_TIME.match(time)
                             if m:
-                                place.add_timespan(start={"in": m.group("year")})
+                                year = m.group("year")
+                                year = self._get_proper_year(year, calendar_model)
+                                place.add_timespan(start={"in": year})
+                    elif prop_id == "P576":  # dissolved, abolished or demolished date
+                        for item in prop_val:
+                            time = item["value"]["content"]["time"]
+                            calendar_model = item["value"]["content"]["calendarmodel"]
+                            m = RX_WIKIDATA_TIME.match(time)
+                            if m:
+                                year = m.group("year")
+                                year = self._get_proper_year(year, calendar_model)
+                                place.add_timespan(end={"in": m.group("year")})
                     elif prop_id == "P2348":  # time period
                         # create a when for the place
                         for item in prop_val:
@@ -1747,40 +1800,25 @@ class Maker:
                             )
                             # timespan
                             item_data = self._get_wikidata_item(item_id)
-                            span = []
+                            span = {}
+                            time = ""
                             for time_prop in ["P580", "P582"]:  # start time, end time
-                                try:
-                                    time = [
-                                        t["value"]["content"]
-                                        for t in item_data["statements"].get(
-                                            time_prop, []
+                                for chunk in item_data["statements"].get(time_prop, []):
+                                    time = chunk["value"]["content"]["time"]
+                                    calendar_model = chunk["value"]["content"][
+                                        "calendarmodel"
+                                    ]
+                                    m = RX_WIKIDATA_TIME.match(time)
+                                    if m:
+                                        year = m.group("year")
+                                        year = self._get_proper_year(
+                                            year, calendar_model
                                         )
-                                        if t["value"]["content"]["calendarmodel"]
-                                        == "http://www.wikidata.org/entity/Q1985786"
-                                    ][0]["time"]
-                                except (IndexError, KeyError):
-                                    logger.debug(
-                                        pformat(
-                                            item_data["statements"].get(time_prop, []),
-                                            indent=2,
-                                        )
-                                    )
-                                    raise RuntimeError(
-                                        f"Wikidata time period {item_id} has no valid time for property {time_prop}"
-                                    )
-                                    break
-                                m = RX_WIKIDATA_TIME.match(time)
-                                if m:
-                                    span.append(m.group("year"))
-                                else:
-                                    raise RuntimeError(
-                                        f"Wikidata time value '{time}' not understood"
-                                    )
-                                    break
+                                        span[time_prop] = year
                             if len(span) == 2:
                                 place.add_timespan(
-                                    start={"earliest": span[0]},
-                                    end={"latest": span[1]},
+                                    start={"earliest": span["P580"]},
+                                    end={"latest": span["P582"]},
                                 )
                             else:
                                 raise RuntimeError(
@@ -1833,6 +1871,27 @@ class Maker:
                                     ),
                                 ],
                             )
+                    elif prop_id == "P1889":  # different from
+                        for item in prop_val:
+                            item_id = item["value"]["content"]
+                            label = self._get_wikidata_preferred_label(item_id)
+                            place.add_description(
+                                value=f"Different from: {label}",
+                                lang="en",
+                                citations=[
+                                    LPFCitation(
+                                        identifier=f"https://www.wikidata.org/wiki/{source_data['id']}",  # type: ignore
+                                        label=self._get_wikidata_preferred_label(
+                                            source_data["id"]  # type: ignore
+                                        ),
+                                    ),
+                                ],
+                            )
+                    elif prop_id == "P527":  # has part
+                        # raise NotImplementedError(
+                        #     f"Needs relations: Wikidata property 'has part' (P527) not implemented yet: {pformat(prop_val)}"
+                        # )
+                        pass
                     else:
                         logger.debug(pformat(prop_val, indent=2))
                         raise NotImplementedError(
@@ -1867,8 +1926,7 @@ class Maker:
         try:
             country_code = raw_country_data["statements"]["P297"][0]["value"]["content"]
         except KeyError as err:
-            err.add_note(f"Wikidata country {country_id} has no P297 country code")
-            raise err
+            return country_record
         country_record["country_code"] = country_code
         self._wikidata_country_info[country_id] = country_record
         return country_record
@@ -1901,11 +1959,14 @@ class Maker:
         Get Wikidata preferred label
         """
         item_data = self._get_wikidata_item(item_id)
-        for lang in WIKIDATA_LABEL_LANGUAGES:
+        sought_langs = list(WIKIDATA_LABEL_LANGUAGES)
+        for lang in sought_langs:
             try:
                 label_entry = item_data["labels"][lang]
             except KeyError:
                 continue
+            return label_entry
+        for label_entry in item_data["labels"].items():
             return label_entry
         raise RuntimeError("Preferred label not found in expected languages")
 
@@ -1993,8 +2054,9 @@ class Maker:
         place["official_names"] = self._get_wikidata_official_names(item_data)
 
         # country
-        for country_id, country_data in self._get_wikidata_countries(item_data).items():
-            place["countries"][country_id] = country_data["label"]
+        countries = self._get_wikidata_countries(item_data)
+        country_id, country_data = next(iter(countries.items()), None)  # type: ignore
+        place["countries"][country_id] = country_data["label"]
 
         self._wikidata_place_info[place_id] = place
         return place
@@ -2104,3 +2166,59 @@ class Maker:
             return normalize_text(title_tag.string)
         else:
             return ""
+
+    def _get_proper_year(self, year_s: str, wikidata_calendar: str) -> str:
+        """
+        Get proper year from Wikidata year and calendar model
+        """
+        year = int(year_s)
+        gregorian = {
+            "http://www.wikidata.org/entity/Q1985727",
+            "http://www.wikidata.org/entity/Q12138",
+        }
+        julian = {
+            "http://www.wikidata.org/entity/Q1985786",
+            "http://www.wikidata.org/entity/Q11184",
+        }
+        if year >= 1582:
+            # should be gregorian
+            if wikidata_calendar in gregorian:
+                pass
+            elif wikidata_calendar in julian:
+                gcal = jd2gcal(*gcal2jd(year, 1, 1))
+                year = gcal[0]
+            else:
+                year = None
+        else:
+            # should be proleptic julian
+            if wikidata_calendar in julian:
+                pass
+            elif wikidata_calendar in gregorian:
+                jcal = jd2jcal(*gcal2jd(year, 1, 1))
+                year = jcal[0]
+            else:
+                year = None
+        if year is None:
+            raise NotImplementedError(
+                f"Wikidata calendar model '{wikidata_calendar}' not implemented yet"
+            )
+
+        if year < 0:
+            year_string = f"-{str(abs(year)).zfill(4)}"
+        else:
+            year_string = str(year).zfill(4)
+        if year_string.startswith("-"):
+            if len(year_string) != 5:
+                raise RuntimeError(
+                    f"Generated invalid year string '{year_string}' from Wikidata year '{year_s}'"
+                )
+        elif len(year_string) != 4:
+            raise RuntimeError(
+                f"Generated invalid year string '{year_string}' from Wikidata year '{year_s}'"
+            )
+        if year_string is None:
+            raise RuntimeError(
+                f"Could not generate year string from Wikidata year '{year_s}'"
+            )
+
+        return year_string
