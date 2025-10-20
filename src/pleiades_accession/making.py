@@ -1537,6 +1537,8 @@ class Maker:
                             citations = [LPFCitation(label="GeoNames")]
                         elif whence == "Q48952":
                             citations = [LPFCitation(label="Persian Wikipedia")]
+                        elif whence == "Q328":
+                            citations = [LPFCitation(label="English Wikipedia")]
                         else:
                             raise NotImplementedError(
                                 f"Wikidata coordinate location reference '{whence}' not implemented yet"
@@ -1544,12 +1546,9 @@ class Maker:
                         place.add_geometry(
                             geom_type="Point",
                             coordinates=[lon, lat],
-                            certainty=(
-                                "certain"
-                                if precision and precision <= 0.0001
-                                else "uncertain"
-                            ),
+                            certainty="certain",
                             citations=citations,
+                            precision=precision,
                         )
                     elif prop_id in {
                         "P910",  # topic's main category
@@ -1761,6 +1760,22 @@ class Maker:
                                 raise RuntimeError(
                                     f"Wikidata time period {item_id} does not have both start and end times: {pformat(span, indent=2)}"
                                 )
+                    elif prop_id == "P276":  # location
+                        for item in prop_val:
+                            item_id = item["value"]["content"]
+                            label = self._get_wikidata_preferred_label(item_id)
+                            place.add_description(
+                                value=f"Location: {label}",
+                                lang="en",
+                                citations=[
+                                    LPFCitation(
+                                        identifier=f"https://www.wikidata.org/wiki/{source_data['id']}",  # type: ignore
+                                        label=self._get_wikidata_preferred_label(
+                                            source_data["id"]  # type: ignore
+                                        ),
+                                    ),
+                                ],
+                            )
                     else:
                         logger.debug(pformat(prop_val, indent=2))
                         raise NotImplementedError(
