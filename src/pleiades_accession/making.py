@@ -48,6 +48,7 @@ VALID_LINK_TYPES = {
 VALID_MILESTONE_TYPES = {"in", "earliest", "latest"}
 VALID_CERTAINTY_VALUES = {"certain", "less-certain", "uncertain"}
 RX_ISO8601_DATE = re.compile(r"^\d{4}(-\d{2}|-\d{2}-\d{2})?$")
+RX_WIKIDATA_TIME = re.compile(r"^(?P<year>-?\d{4})-(?P<month>\d{2})-(?P<day>\d{2})T.+$")
 
 SCRIPT_DETECTOR = ScriptDetector()
 
@@ -144,6 +145,26 @@ class LPFTimespan:
             d["end"] = [e.to_dict() for e in self.end]
         else:
             del d["end"]
+        return d
+
+
+class LPFPeriod:
+    """
+    Class representing a 'period' after Linked Places Format (LPF)
+    """
+
+    def __init__(self, name: str = "", uri: str = ""):
+        """
+        Initialize LPFPeriod class
+        """
+        self.name = name  # preferred label
+        self.uri = uri  # urn or url
+
+    def to_dict(self) -> dict:
+        """
+        Convert LPFPeriod to dictionary, ready for JSON serialization in LPF format
+        """
+        d = {"name": self.name, "uri": self.uri}
         return d
 
 
@@ -531,7 +552,8 @@ class LPFPlace:
         self._country_codes = set()
         self._geometries = list()  # GeoJSON geometry
         self._names = list()  # LPFName instances
-        self._whens = list()  # LPFWhen instances
+        self._timespans = list()  # LPFTimespan instances
+        self._periods = list()  # LPFPeriod instancess
         self._depictions = list()  # LPFDepiction instances
         self._descriptions = list()  # LPFDescription instances
 
@@ -862,6 +884,24 @@ class LPFPlace:
             )
 
     #
+    # periods
+    #
+    def add_period(self, name: str, uri: str):
+        """
+        Add a period
+        """
+        self._periods.append(LPFPeriod(name=name, uri=uri))
+
+    #
+    # timespans
+    #
+    def add_timespan(self, start: dict, end: dict):
+        """
+        Add a timespan
+        """
+        self._timespans.append(LPFTimespan(start=start, end=end))
+
+    #
     # title
     #
     @property
@@ -882,35 +922,19 @@ class LPFPlace:
         self._title = value
 
     #
-    # whens
+    # when
     #
     @property
-    def whens(self) -> list:
+    def when(self) -> dict:
         """
-        Get whens as list
+        Create when as dict
         """
-        return [w.to_dict() for w in self._whens]
-
-    def add_when(
-        self,
-        timespans: list,
-        periods: list = [],
-        certainty: str = "certain",
-        label: str = "",
-        duration: str = "",
-    ):
-        """
-        Add a when
-        """
-        self._whens.append(
-            LPFWhen(
-                timespans=timespans,
-                periods=periods,
-                certainty=certainty,
-                label=label,
-                duration=duration,
-            )
-        )
+        d = dict()
+        if self._timespans:
+            d["timespans"] = [ts.to_dict() for ts in self._timespans]
+        if self._periods:
+            d["periods"] = [p.to_dict() for p in self._periods]
+        return d
 
     def to_dict(self) -> dict:
         """
@@ -929,6 +953,7 @@ class LPFPlace:
             "names": [n.to_dict() for n in self._names],
             "depictions": [d.to_dict() for d in self._depictions],
             "descriptions": [d.to_dict() for d in self._descriptions],
+            "when": self.when,
         }
         geoms = self.geometries
         logger = logging.getLogger(f"{__name__}.{self.__class__.__name__}")
@@ -1453,6 +1478,7 @@ class Maker:
                         "P463",  # member of
                         "P12749",  # SNARC ID
                         "P7314",  # TDV Encyclopedia of Islam ID
+                        "P8168",  # FactGrid ID
                     }:
                         continue
 
@@ -1670,7 +1696,42 @@ class Maker:
                                     ),
                                 ],
                             )
-
+                    elif prop_id == "P2348":  # time period
+                        # create a when for the place
+                        for item in prop_val:
+                            item_id = item["value"]["content"]
+                            # period
+                            period_name = self._get_wikidata_preferred_label(item_id)
+                            period_url = f"https://www.wikidata.org/wiki/{item_id}"
+                            place.add_period(
+                                name=period_name,
+                                uri=period_url,
+                            )
+                            # timespan
+                            item_data = self._get_wikidata_item(item_id)
+                            span = []
+                            for time_prop in ["P580", "P582"]:  # start time, end time
+                                try:
+                                    time = [
+                                        t["value"]["content"]
+                                        for t in item_data["statements"].get(
+                                            time_prop, []
+                                        )
+                                        if t["value"]["content"]["calendarmodel"]
+                                        == "Q1985786"
+                                    ][0]["time"]
+                                except (IndexError, KeyError):
+                                    break
+                                m = RX_WIKIDATA_TIME.match(time)
+                                if m:
+                                    span.append(m.group("year"))
+                                else:
+                                    break
+                            if len(span) == 2:
+                                place.add_timespan(
+                                    start=span[0],
+                                    end=span[1],
+                                )
                     else:
                         logger.debug(pformat(prop_val, indent=2))
                         raise NotImplementedError(
