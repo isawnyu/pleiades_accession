@@ -940,11 +940,21 @@ class LPFPlace:
         """
         Convert LPFPlace to dictionary, ready for JSON serialization in LPF format
         """
+        if self.title:
+            title = self.title
+        else:
+            try:
+                title = self.get_names_by_lang("en")[0].toponym
+            except IndexError:
+                try:
+                    title = self._names[0].toponym
+                except IndexError:
+                    title = "Untitled Place"
         d = {
             "@id": self.id,
             "type": "Feature",
             "properties": {
-                "title": self.title,
+                "title": title,
                 "ccodes": self.country_codes,
                 "fclasses": self.feature_classes,
             },
