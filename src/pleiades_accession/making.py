@@ -1440,6 +1440,7 @@ class Maker:
                     "P8217",  #  iDAI.gazetteer ID
                     "P8137",  # Inventory of Archaic and Classical Poleis ID
                     "P1369",  # Iranian National Heritage registration number
+                    "P11729",  # Kulturenvanteri monument ID
                     "P244",  # Library of Congress authority ID
                     "P9736",  #  MANTO ID
                     "P4356",  # Megalithic Portal ID
@@ -1503,6 +1504,11 @@ class Maker:
                         "P8168",  # FactGrid ID
                         "P4839",  # Wolfram Language Entity Code
                         "P1766",  # place name sign
+                        "P1296",  # Gran Enciclopèdia Catalana ID (former scheme)
+                        "P6404",  # Treccani's Dizionario di Storia ID
+                        "P691",  # NL CR AUT ID
+                        "P4223",  # Treccani's Enciclopedia Italiana ID
+                        "P12385",  # Gran Enciclopèdia Catalana ID
                     }:
                         continue
 
@@ -1780,7 +1786,11 @@ class Maker:
                                 raise RuntimeError(
                                     f"Wikidata time period {item_id} does not have both start and end times: {pformat(span, indent=2)}"
                                 )
-                    elif prop_id in {"P276", "P7153"}:  # location, significant place
+                    elif prop_id in {
+                        "P276",
+                        "P7153",
+                        "P2596",
+                    }:  # location, significant place, culture
                         for item in prop_val:
                             item_id = item["value"]["content"]
                             label = self._get_wikidata_preferred_label(item_id)
@@ -1788,6 +1798,8 @@ class Maker:
                                 label = "Location: " + label
                             elif prop_id == "P7153":
                                 label = "Significant place: " + label
+                            elif prop_id == "P2596":
+                                label = "Culture: " + label
                             place.add_description(
                                 value=label,
                                 lang="en",
