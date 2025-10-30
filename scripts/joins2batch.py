@@ -10,6 +10,7 @@ Script to convert a pleiades_acccession joins text file to a JSON file for use b
 """
 
 from airtight.cli import configure_commandline
+from bs4 import BeautifulSoup
 import json
 import logging
 from os import environ
@@ -262,6 +263,31 @@ def _get_title_from_www_wikidata_org(uri):
     return title
 
 
+def _get_title_from_topostext_org(uri):
+    """
+    get title from ToposText page
+    """
+    webi = get_webi("topostext.org")
+    try:
+        r = webi.get(uri)
+    except HTTPError as err:
+        logger.error(f"ToposText request for {uri} failed: {err}")
+        return None
+    if r.status_code != 200:
+        logger.error(
+            f"ToposText request for {uri} failed with status code {r.status_code}: {r.text}"
+        )
+        return None
+    # parse title from HTML
+    soup = BeautifulSoup(r.text, "html.parser")
+    title_tag = soup.find("h3")
+    if title_tag is None:
+        logger.error(f"Could not find title tag in ToposText page {uri}")
+        return None
+    title = title_tag.get_text().strip()
+    return title
+
+
 def get_title_from_web(netloc, uri):
     """
     get title from web page at uri
@@ -291,7 +317,9 @@ def main(**kwargs):
     features = {f["@id"]: f for f in lpf["features"]}
 
     additions = dict()
-    for line in lines:
+    for i, line in enumerate(lines):
+        if i % 10 == 0:
+            logger.info(f"Processing join {i+1} of {len(lines)}")
         external_uri, pid = [p.strip() for p in line.split(": ")]
         logger.debug(f'"external_uri": "{external_uri}", "pid": "{pid}",')
         feature = features.get(external_uri)
