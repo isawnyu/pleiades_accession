@@ -134,7 +134,10 @@ class CandidateFeature:
             raise err
         for pt in self.feature.get("types", []):
             pts.add(pt["label"])
-            pts.add(pt["sourceLabel"])
+            try:
+                pts.add(pt["sourceLabel"])
+            except KeyError:
+                pass
         return pts
 
 
