@@ -24,26 +24,42 @@ pip install -U -e .
 
 ## Operation
 
-Your external candidates need to been in LPF format.
-
-So, e.g. download a copy of this dataset to `~/scratch/`, unpack it and rename the JSON "lehning_periplus.json".
-
+Your external candidates need to be in LPF format. Then you use `scripts/match.py` to generate all the possible matches and their weights:
 
 ```
-python scripts/match.py -c ~/scratch/lehning_periplus.json > ~/scratch/matches.json
+python scripts/match.py -h
+usage: match.py [-h] [-l LOGLEVEL] [-v] [-w] [-p PLEIADESPATH] [-n NAMESINDEXPATH]
+                -c CANDIDATESPATH
+
+Matching script
+
+options:
+  -h, --help            show this help message and exit
+  -l, --loglevel LOGLEVEL
+                        desired logging level (case-insensitive string: DEBUG, INFO,
+                        WARNING, or ERROR (default: NOTSET)
+  -v, --verbose         verbose output (logging level == INFO) (default: True)
+  -w, --veryverbose     very verbose output (logging level == DEBUG) (default: False)
+  -p, --pleiadespath PLEIADESPATH
+                        path to Pleiades dataset directory (default:
+                        /Users/paregorios/Documents/files/P/pleiades.datasets/data/json)
+  -n, --namesindexpath NAMESINDEXPATH
+                        path to Pleiades names index file (if not in dataset directory)
+                        (default: /Users/paregorios/Documents/files/P/pleiades.datasets/
+                        data/indexes/name_index.json)
+  -c, --candidatespath CANDIDATESPATH
+                        path to candidate places LPF GeoJSON file (default: )
 ```
 
-To work through the possible matches thus generated and record decisions on their disposition, then run:
+For example:
 
 ```
-python scripts/review.py ~/scratch/matches.json
-```
 
-Note that adding `-h` to either of the scripts will give you help, including (for review.py) a list of possible commands, currently:
+To work through the possible matches thus generated and record decisions on their disposition, then run `scripts/review.py`:
 
 ```
-python scripts/review.py -h
-usage: review.py [-h] [-l LOGLEVEL] [-v] [-w] [-o OUTPUTPATH] [-c] matchfile
+python scripts/review.py -h 
+usage: review.py [-h] [-l LOGLEVEL] [-v] [-w] [-o OUTPUTPATH] [-c] [-s] matchfile
 
 Review matches
 
@@ -62,9 +78,16 @@ options:
                         ./data/output/)
   -c, --continue        continue from last session, loading data from previous run's
                         output files (default: False)
+  -s, --skipreciprocal  skip reciprocal link matches (for faster review) (default:
+                        False)
+
 ```
 
+So like this to continue a previous session:
 
+```
+python scripts/review.py -c -s -o ../pleiades_topostext/data/2025-09-29/ ../pleiades_topostext/data/2025-09-29/matches.json 
+```
 
 ## Design (old)
 
