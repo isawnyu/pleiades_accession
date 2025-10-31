@@ -177,6 +177,13 @@ class Matcher:
 
             # place type matches
             candidate_place_types = candidate.place_type_strings
+            for s in ["polity", "city", "town", "village"]:
+                if s in candidate_place_types:
+                    candidate_place_types.add("settlement")
+            if "harbor" in candidate_place_types:
+                candidate_place_types.add("port")
+            elif "port" in candidate_place_types:
+                candidate_place_types.add("harbor")
             for pid in matched:
                 pleiades_place_types = self.pleiades.get_place_types(pid)
                 if candidate_place_types.intersection(pleiades_place_types):

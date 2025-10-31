@@ -23,6 +23,10 @@ import shutil
 logger = logging.getLogger(__name__)
 rx_compound_cmd = re.compile(r"^(j|m|l)(\d+)$")
 DEFAULT_LOG_LEVEL = logging.WARNING
+AUTOJOIN_RULES = [
+    {"footprint", "exact name", "first-order link", "place type"},
+    {"footprint", "fuzzy name", "first-order link", "place type"},
+]
 OPTIONAL_ARGUMENTS = [
     [
         "-l",
@@ -59,6 +63,13 @@ OPTIONAL_ARGUMENTS = [
         "--skipreciprocal",
         False,
         "skip reciprocal link matches (for faster review)",
+        False,
+    ],
+    [
+        "-a",
+        "--autojoin",
+        False,
+        "automatically join candidates when there's only one match that meets the highest weight criteria",
         False,
     ],
 ]
@@ -215,7 +226,26 @@ def main(**kwargs):
                     f"Skipping candidate {candidate_id} due to reciprocal link match."
                 )
                 continue
-
+        if kwargs["autojoin"]:
+            autojoin_matches = []
+            for pid, values in matches.items():
+                match_types = set(values.get("match_types", []))
+                for rule in AUTOJOIN_RULES:
+                    if rule.issubset(match_types):
+                        autojoin_matches.append(pid)
+                        break
+            if len(autojoin_matches) == 1:
+                pid = autojoin_matches[0]
+                try:
+                    joins[candidate_id]
+                except KeyError:
+                    joins[candidate_id] = pid
+                    with open(join_path, "a", encoding="utf-8") as f:
+                        f.write(f"{candidate_id}: {pid}\n")
+                        print(
+                            f"Autojoin marked candidate {candidate_id} to join {joins[candidate_id]}."
+                        )
+                        continue
         print("\n" * 2)
         print("=" * 80)
         print(f"Candidate {candidate_i} of {total} ({candidate_id})")
