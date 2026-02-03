@@ -90,6 +90,7 @@ class PleiadesPlace:
     @functools.lru_cache(maxsize=None)
     def footprint(self):
         """Calculate and return the spatial footprint, including accuracy, of all combined locations."""
+        logger = logging.getLogger(f"{__name__}:PleiadesPlace.footprint")
         this_cache_path = hull_cache_path / f"{self.pid}.geojson"
         if this_cache_path.is_file():
             timestamp = this_cache_path.stat().st_mtime
@@ -116,10 +117,11 @@ class PleiadesPlace:
         for i, geom in geometries.items():
             accuracy_value = self._raw_data["locations"][i]["accuracy_value"]
             if accuracy_value is None:
-                raise RuntimeError(
+                logger.error(
                     f"Location {self._raw_data['locations'][i]['id']} on {self.pid} has no accuracy_value"
                 )
-            if "darmc" in self._raw_data["locations"][i]["accuracy"]:
+                accuracy_value = 1000.0  # default to 1km
+            elif "darmc" in self._raw_data["locations"][i]["accuracy"]:
                 accuracy_value = max(
                     accuracy_value, 2000.0
                 )  # fudge factor for DARMC relocations to modern labels in GE
