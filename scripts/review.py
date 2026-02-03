@@ -18,6 +18,7 @@ from pprint import pformat
 import pyperclip
 import re
 import shutil
+import sys
 
 
 logger = logging.getLogger(__name__)
@@ -94,7 +95,7 @@ def main(**kwargs):
     """
     main function
     """
-    # logger = logging.getLogger(sys._getframe().f_code.co_name)
+    logger = logging.getLogger(sys._getframe().f_code.co_name)
     outpath = Path(kwargs["outputpath"]).expanduser().resolve()
     outpath.mkdir(parents=True, exist_ok=True)
     accession_ids = set()
@@ -232,10 +233,13 @@ def main(**kwargs):
                 match_types = set(values.get("match_types", []))
                 for rule in AUTOJOIN_RULES:
                     if rule.issubset(match_types):
-                        autojoin_matches.append(pid)
-                        break
+                        if pid not in autojoin_matches:
+                            autojoin_matches.append(pid)
             if len(autojoin_matches) == 1:
                 pid = autojoin_matches[0]
+                logger.debug(
+                    f"Exactly one autojoin match for candidate {candidate_id}: {pid}."
+                )
                 try:
                     joins[candidate_id]
                 except KeyError:
@@ -246,6 +250,14 @@ def main(**kwargs):
                             f"Autojoin marked candidate {candidate_id} to join {joins[candidate_id]}."
                         )
                         continue
+            elif len(autojoin_matches) > 1:
+                logger.debug(
+                    f"Multiple ({len(autojoin_matches)}) autojoin matches for candidate {candidate_id}: {autojoin_matches}; manual review required."
+                )
+            else:
+                logger.debug(
+                    f"No autojoin matches for candidate {candidate_id}; manual review required."
+                )
         print("\n" * 2)
         print("=" * 80)
         print(f"Candidate {candidate_i} of {total} ({candidate_id})")
